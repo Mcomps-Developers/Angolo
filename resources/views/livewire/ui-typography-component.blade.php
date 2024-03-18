@@ -37,50 +37,50 @@
                          <li><a href="/wishlist"><i class="ri-heart-line"></i>wishlist</a></li>
                        </ul>
                     </li>
-                    <li class="active active-menu">
-                       <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span class="ripple rippleEffect"></span><i class="las la-home iq-arrow-left"></i><span>Admin</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                       <ul id="admin" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
-                          <li><a href="/admin-dashboard"><i class="las la-house-damage"></i>Dashboard</a></li>
-                          <li><a href="/admin-category"><i class="ri-function-line"></i>Books Category</a></li>
-                          <li><a href="/admin-author"><i class="ri-book-line"></i>Author</a></li>
-                          <li class="active"><a href="/admin-books"><i class="ri-file-pdf-line"></i>Books</a></li>
+                    <li>
+                       <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false"><span class="ripple rippleEffect"></span><i class="ri-admin-line"></i><span>Admin</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                       <ul id="admin" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                          <li><a href="/admin-dashboard"><i class="ri-dashboard-line"></i>Dashboard</a></li>
+                          <li><a href="/admin-category"><i class="ri-list-check-2"></i>Category Lists</a></li>
+                          <li><a href="/admin-author"><i class="ri-file-user-line"></i>Author</a></li>
+                          <li><a href="/admin-books"><i class="ri-book-2-line"></i>Books</a></li>
                        </ul>
                     </li>
                     <li>
                        <a href="#userinfo" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false"><span class="ripple rippleEffect"></span><i class="las la-user-tie iq-arrow-left"></i><span>User</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                        <ul id="userinfo" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle" style="">
-                          <li><a href="profile.html"><i class="las la-id-card-alt"></i>User Profile</a></li>
-                          <li><a href="profile-edit.html"><i class="las la-edit"></i>User Edit</a></li>
-                          <li><a href="add-user.html"><i class="las la-plus-circle"></i>User Add</a></li>
-                          <li><a href="user-list.html"><i class="las la-th-list"></i>User List</a></li>
+                          <li><a href="/profile"><i class="las la-id-card-alt"></i>User Profile</a></li>
+                          <li><a href="/profile-edit"><i class="las la-edit"></i>User Edit</a></li>
+                          <li><a href="/add-user"><i class="las la-plus-circle"></i>User Add</a></li>
+                          <li><a href="/user-list"><i class="las la-th-list"></i>User List</a></li>
                        </ul>
                     </li>
-                    <li>
-                       <a href="#ui-elements" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="lab la-elementor iq-arrow-left"></i><span>UI Elements</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                       <ul id="ui-elements" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                          <li class="elements">
-                             <a href="#sub-menu" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-play-circle-line"></i><span>UI Kit</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                             <ul id="sub-menu" class="iq-submenu collapse" data-parent="#ui-elements">
-                                <li><a href="ui-colors.html"><i class="las la-palette"></i>colors</a></li>
-                                <li><a href="ui-typography.html"><i class="las la-keyboard"></i>Typography</a></li>
-                                <li><a href="ui-alerts.html"><i class="las la-tag"></i>Alerts</a></li>
-                                <li><a href="ui-badges.html"><i class="lab la-atlassian"></i>Badges</a></li>
-                                <li><a href="ui-breadcrumb.html"><i class="las la-bars"></i>Breadcrumb</a></li>
-                                <li><a href="ui-buttons.html"><i class="las la-tablet"></i>Buttons</a></li>
-                                <li><a href="ui-cards.html"><i class="las la-credit-card"></i>Cards</a></li>
-                                <li><a href="ui-carousel.html"><i class="las la-film"></i>Carousel</a></li>
-                                <li><a href="ui-embed-video.html"><i class="las la-video"></i>Video</a></li>
-                                <li><a href="ui-grid.html"><i class="las la-border-all"></i>Grid</a></li>
-                                <li><a href="ui-images.html"><i class="las la-images"></i>Images</a></li>
-                                <li><a href="ui-list-group.html"><i class="las la-list"></i>list Group</a></li>
-                                <li><a href="ui-media-object.html"><i class="las la-ad"></i>Media</a></li>
-                                <li><a href="ui-modal.html"><i class="las la-columns"></i>Modal</a></li>
-                                <li><a href="ui-notifications.html"><i class="las la-bell"></i>Notifications</a></li>
-                                <li><a href="ui-pagination.html"><i class="las la-ellipsis-h"></i>Pagination</a></li>
-                                <li><a href="ui-popovers.html"><i class="las la-eraser"></i>Popovers</a></li>
-                                <li><a href="ui-progressbars.html"><i class="las la-hdd"></i>Progressbars</a></li>
-                                <li><a href="ui-tabs.html"><i class="las la-database"></i>Tabs</a></li>
-                                <li><a href="ui-tooltips.html"><i class="las la-magnet"></i>Tooltips</a></li>
+                    <li class="active active-menu">
+                       <a href="#ui-elements" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="true"><i class="lab la-elementor iq-arrow-left"></i><span>UI Elements</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                       <ul id="ui-elements" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
+                          <li class="elements active active-menu">
+                             <a href="#sub-menu" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="true"><i class="ri-play-circle-line"></i><span>UI Kit</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                             <ul id="sub-menu" class="iq-submenu collapse show" data-parent="#ui-elements">
+                                <li><a href="ui-colors"><i class="las la-palette"></i>colors</a></li>
+                                <li class="active"><a href="ui-typography"><i class="las la-keyboard"></i>Typography</a></li>
+                                <li><a href="/ui-alerts"><i class="las la-tag"></i>Alerts</a></li>
+                                <li><a href="/ui-badges"><i class="lab la-atlassian"></i>Badges</a></li>
+                                <li><a href="/ui-breadcrumb"><i class="las la-bars"></i>Breadcrumb</a></li>
+                                <li><a href="/ui-buttons"><i class="las la-tablet"></i>Buttons</a></li>
+                                <li><a href="/ui-cards"><i class="las la-credit-card"></i>Cards</a></li>
+                                <li><a href="/ui-carousel"><i class="las la-film"></i>Carousel</a></li>
+                                <li><a href="/ui-embed-video"><i class="las la-video"></i>Video</a></li>
+                                <li><a href="/ui-grid"><i class="las la-border-all"></i>Grid</a></li>
+                                <li><a href="/ui-images"><i class="las la-images"></i>Images</a></li>
+                                <li><a href="/ui-list-group"><i class="las la-list"></i>list Group</a></li>
+                                <li><a href="/ui-media-object"><i class="las la-ad"></i>Media</a></li>
+                                <li><a href="/ui-modal"><i class="las la-columns"></i>Modal</a></li>
+                                <li><a href="/ui-notifications"><i class="las la-bell"></i>Notifications</a></li>
+                                <li><a href="/ui-pagination"><i class="las la-ellipsis-h"></i>Pagination</a></li>
+                                <li><a href="/ui-popovers"><i class="las la-eraser"></i>Popovers</a></li>
+                                <li><a href="/ui-progressbars"><i class="las la-hdd"></i>Progressbars</a></li>
+                                <li><a href="/ui-tabs"><i class="las la-database"></i>Tabs</a></li>
+                                <li><a href="/ui-tooltips"><i class="las la-magnet"></i>Tooltips</a></li>
                              </ul>
                           </li>
                           <li class="form">
@@ -104,9 +104,9 @@
                           <li>
                              <a href="#tables" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-table-line"></i><span>Table</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                              <ul id="tables" class="iq-submenu collapse" data-parent="#ui-elements">
-                                <li><a href="tables-basic.html"><i class="ri-table-line"></i>Basic Tables</a></li>
-                                <li><a href="data-table.html"><i class="ri-database-line"></i>Data Table</a></li>
-                                <li><a href="table-editable.html"><i class="ri-refund-line"></i>Editable Table</a></li>
+                                <li><a href="/tables-basic"><i class="ri-table-line"></i>Basic Tables</a></li>
+                                <li><a href="/data-table"><i class="ri-database-line"></i>Data Table</a></li>
+                                <li><a href="/table-editable"><i class="ri-refund-line"></i>Editable Table</a></li>
                              </ul>
                           </li>
                           <li>
@@ -136,26 +136,25 @@
                           <li>
                              <a href="#authentication" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-pages-line"></i><span>Authentication</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                              <ul id="authentication" class="iq-submenu collapse" data-parent="#pages">
-                                <li><a href="sign-in.html"><i class="las la-sign-in-alt"></i>Login</a></li>
-                                <li><a href="sign-up.html"><i class="ri-login-circle-line"></i>Register</a></li>
-                                <li><a href="pages-recoverpw.html"><i class="ri-record-mail-line"></i>Recover Password</a></li>
-                                <li><a href="pages-confirm-mail.html"><i class="ri-file-code-line"></i>Confirm Mail</a></li>
-                                <li><a href="pages-lock-screen.html"><i class="ri-lock-line"></i>Lock Screen</a></li>
+                                <li><a href="/sign-in"><i class="las la-sign-in-alt"></i>Login</a></li>
+                                <li><a href="/sign-up"><i class="ri-login-circle-line"></i>Register</a></li>
+                                <li><a href="/pages-recovery"><i class="ri-record-mail-line"></i>Recover Password</a></li>
+                                <li><a href="/pages-confirm-mail"><i class="ri-file-code-line"></i>Confirm Mail</a></li>
+                                <li><a href="/pages-lock-screen"><i class="ri-lock-line"></i>Lock Screen</a></li>
                              </ul>
                           </li>
                           <li>
                              <a href="#extra-pages" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-pantone-line"></i><span>Extra Pages</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                              <ul id="extra-pages" class="iq-submenu collapse" data-parent="#pages">
-                                <li><a href="pages-timeline.html"><i class="ri-map-pin-time-line"></i>Timeline</a></li>
-                                <li><a href="pages-invoice.html"><i class="ri-question-answer-line"></i>Invoice</a></li>
-                                <li><a href="blank-page.html"><i class="ri-invision-line"></i>Blank Page</a></li>
-                                <li><a href="pages-error.html"><i class="ri-error-warning-line"></i>Error 404</a></li>
-                                <li><a href="pages-error-500.html"><i class="ri-error-warning-line"></i>Error 500</a></li>
-                                <li><a href="pages-pricing.html"><i class="ri-price-tag-line"></i>Pricing</a></li>
-                                <li><a href="pages-pricing-one.html"><i class="ri-price-tag-2-line"></i>Pricing 1</a></li>
-                                <li><a href="pages-maintenance.html"><i class="ri-archive-line"></i>Maintenance</a></li>
-                                <li><a href="pages-comingsoon.html"><i class="ri-mastercard-line"></i>Coming Soon</a></li>
-                                <li><a href="pages-faq.html"><i class="ri-compasses-line"></i>Faq</a></li>
+                                <li><a href="/pages-timeline"><i class="ri-map-pin-time-line"></i>Timeline</a></li>
+                                <li><a href="/pages-invoice"><i class="ri-question-answer-line"></i>Invoice</a></li>
+                                <li><a href="/blank-page"><i class="ri-invision-line"></i>Blank Page</a></li>
+                                <li><a href="/pages-error"><i class="ri-error-warning-line"></i>Error 404</a></li>
+                                <li><a href="/pages-error-500"><i class="ri-error-warning-line"></i>Error 500</a></li>
+                                <li><a href="/pages-pricing"><i class="ri-price-tag-line"></i>Pricing</a></li>
+                                <li><a href="/pages-maintenance"><i class="ri-archive-line"></i>Maintenance</a></li>
+                                <li><a href="/pages-comingsoon"><i class="ri-mastercard-line"></i>Coming Soon</a></li>
+                                <li><a href="/pages-faq"><i class="ri-compasses-line"></i>Faq</a></li>
                              </ul>
                           </li>
                        </ul>
@@ -213,11 +212,11 @@
                     </div>
                  </div>
                  <div class="navbar-breadcrumb">
-                    <h5 class="mb-0">Books</h5>
+                    <h5 class="mb-0">Typography</h5>
                     <nav aria-label="breadcrumb">
                        <ul class="breadcrumb">
-                          <li class="breadcrumb-item"><a href="/">Admin</a></li>
-                          <li class="breadcrumb-item active" aria-current="page">Books</li>
+                          <li class="breadcrumb-item"><a href="/">Home</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">Typography</li>
                        </ul>
                     </nav>
                  </div>
@@ -243,7 +242,7 @@
                        </li>
                        <li class="nav-item nav-icon">
                           <a href="#" class="search-toggle iq-waves-effect text-gray rounded">
-                          <i class="ri-notification-2-line"></i>
+                          <i class="ri-notification-2-fill"></i>
                           <span class="bg-primary dots"></span>
                           </a>
                           <div class="iq-sub-dropdown">
@@ -306,8 +305,8 @@
                        </li>
                        <li class="nav-item nav-icon dropdown">
                           <a href="#" class="search-toggle iq-waves-effect text-gray rounded">
-                          <i class="ri-mail-line"></i>
-                          <span class="bg-primary dots"></span>
+                          <i class="fa fa-envelope" aria-hidden="true"></i>
+                          <span class="bg-primary count-mail"></span>
                           </a>
                           <div class="iq-sub-dropdown">
                              <div class="iq-card shadow-none m-0">
@@ -489,7 +488,7 @@
                                          </div>
                                       </div>
                                    </a>
-                                   <a href="privacy-setting.html" class="iq-sub-card iq-bg-primary-hover">
+                                   <a href="/privacy-setting" class="iq-sub-card iq-bg-primary-hover">
                                       <div class="media align-items-center">
                                          <div class="rounded iq-card-icon iq-bg-primary">
                                             <i class="ri-lock-line"></i>
@@ -501,7 +500,7 @@
                                       </div>
                                    </a>
                                    <div class="d-inline-block w-100 text-center p-3">
-                                      <a class="bg-primary iq-sign-btn" href="sign-in.html" role="button">Sign out<i class="ri-login-box-line ml-2"></i></a>
+                                      <a class="bg-primary iq-sign-btn" href="/sign-in" role="button">Sign out<i class="ri-login-box-line ml-2"></i></a>
                                    </div>
                                 </div>
                              </div>
@@ -513,6 +512,7 @@
            </div>
         </div>
         <!-- TOP Nav Bar END -->
+
         <!-- Page Content  -->
         <div id="content-page" class="content-page">
            <div class="container-fluid">
@@ -521,213 +521,160 @@
                     <div class="iq-card">
                        <div class="iq-card-header d-flex justify-content-between">
                           <div class="iq-header-title">
-                             <h4 class="card-title">book Lists</h4>
-                          </div>
-                          <div class="iq-card-header-toolbar d-flex align-items-center">
-                             <a href="/admin-add-book" class="btn btn-primary">Add New book</a>
+                             <h4 class="card-title">Display headings</h4>
                           </div>
                        </div>
                        <div class="iq-card-body">
-                          <div class="table-responsive">
-                             <table class="data-tables table table-striped table-bordered" style="width:100%">
-                               <thead>
-                                   <tr>
-                                       <th style="width: 3%;">No</th>
-                                       <th style="width: 12%;">Book Image</th>
-                                       <th style="width: 15%;">Book Name</th>
-                                       <th style="width: 15%;">Book Catrgory</th>
-                                       <th style="width: 15%;">Book Author</th>
-                                       <th style="width: 18%;">Book Description</th>
-                                       <th style="width: 7%;">Book Price</th>
-                                       <th style="width: 7%;">Book pdf</th>
-                                       <th style="width: 15%;">Action</th>
-                                   </tr>
-                               </thead>
-                               <tbody>
-                                   <tr>
-                                       <td>1</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/01.jpg" alt=""></td>
-                                       <td>Reading on the Worlds</td>
-                                       <td>General Books</td>
-                                       <td>Jhone Steben</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$89</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>2</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/02.jpg" alt=""></td>
-                                       <td>The Catcher in the Rye</td>
-                                       <td>History Books</td>
-                                       <td>Fritz Wold</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$89</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>3</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/03.jpg" alt=""></td>
-                                       <td>Little Black Book</td>
-                                       <td>Comic Books</td>
-                                       <td>John Klok</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$129</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>4</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/04.jpg" alt=""></td>
-                                       <td>Take On The Risk</td>
-                                       <td>General Books</td>
-                                       <td>George Strong</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$89</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>5</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/05.jpg" alt=""></td>
-                                       <td>Absteact On Background</td>
-                                       <td>Film & Photography</td>
-                                       <td>Ichae Semos</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$99</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>6</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/06.jpg" alt=""></td>
-                                       <td>Find The Wave Book</td>
-                                       <td>General Books</td>
-                                       <td>Fidel Martin</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$100</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>7</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/07.jpg" alt=""></td>
-                                       <td>See the More Story</td>
-                                       <td>Horror Story</td>
-                                       <td>Jules Boutin</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$79</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>8</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/08.jpg" alt=""></td>
-                                       <td>The Wikde Book</td>
-                                       <td> Computers & Internet</td>
-                                       <td>Kusti Franti</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$89</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>9</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/09.jpg" alt=""></td>
-                                       <td>Conversion Erik Routley</td>
-                                       <td>Sports</td>
-                                       <td>Argele Intili</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$79</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>10</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/10.jpg" alt=""></td>
-                                       <td>The Leo Dominica</td>
-                                       <td>General Books</td>
-                                       <td>Henry Jurk</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$99</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-
-                               </tbody>
-                           </table>
+                          <p>Traditional heading elements are designed to work best in the meat of your page content. When you need a heading to stand out, consider using a <strong>display heading</strong>—a larger, slightly more opinionated heading style. Keep in mind these headings are not responsive by default, but it’s possible to enable <a href="https://getbootstrap.com/" target="_blank">responsive font sizes</a>.</p>
+                          <h1 class="display-1">Display headings</h1>
+                          <h1 class="display-2">Display headings</h1>
+                          <h1 class="display-3">Display headings</h1>
+                          <h1 class="display-4">Display headings</h1>
+                          <h1 class="display-5">Display headings</h1>
+                          <h1 class="display-6 mb-0">Display headings</h1>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-sm-12 col-lg-6">
+                    <div class="iq-card">
+                       <div class="iq-card-header d-flex justify-content-between">
+                          <div class="iq-header-title">
+                             <h4 class="card-title">Typography</h4>
                           </div>
+                       </div>
+                       <div class="iq-card-body">
+                          <p>All HTML headings, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>, are available.</p>
+                          <h1>h1. Bootstrap heading</h1>
+                          <h2>h2. Bootstrap heading</h2>
+                          <h3>h3. Bootstrap heading</h3>
+                          <h4>h4. Bootstrap heading</h4>
+                          <h5>h5. Bootstrap heading</h5>
+                          <h6 class="mb-0">h6. Bootstrap heading</h6>
+                       </div>
+                    </div>
+                    <div class="iq-card">
+                       <div class="iq-card-header d-flex justify-content-between">
+                          <div class="iq-header-title">
+                             <h4 class="card-title">Inline text elements</h4>
+                          </div>
+                       </div>
+                       <div class="iq-card-body">
+                          <p>Styling for common inline HTML5 elements.</p>
+                          <p>You can use the mark tag to <mark>highlight</mark> text.</p>
+                          <p><del>This line of text is meant to be treated as deleted text.</del></p>
+                          <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+                          <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+                          <p><u>This line of text will render as underlined</u></p>
+                          <p><small>This line of text is meant to be treated as fine print.</small></p>
+                          <p><strong>This line rendered as bold text.</strong></p>
+                          <p><em>This line rendered as italicized text.</em></p>
+                       </div>
+                    </div>
+                    <div class="iq-card">
+                       <div class="iq-card-header d-flex justify-content-between">
+                          <div class="iq-header-title">
+                             <h4 class="card-title">Lists Inline</h4>
+                          </div>
+                       </div>
+                       <div class="iq-card-body">
+                          <p>Remove a list’s bullets and apply some light <code>margin</code> with a combination of two classes, <code>.list-inline</code> and <code>.list-inline-item</code>.</p>
+                          <ul class="list-inline">
+                             <li class="list-inline-item">Lorem ipsum</li>
+                             <li class="list-inline-item">Phasellus iaculis</li>
+                             <li class="list-inline-item">Nulla volutpat</li>
+                          </ul>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-sm-12 col-lg-6">
+                    <div class="iq-card">
+                       <div class="iq-card-header d-flex justify-content-between">
+                          <div class="iq-header-title">
+                             <h4 class="card-title">Headings</h4>
+                          </div>
+                       </div>
+                       <div class="iq-card-body">
+                          <p><code>.h1</code> through <code>.h6</code> classes are also available, for when you want to match the font styling of a heading but cannot use the associated HTML element.</p>
+                          <p class="h1 mb-3">h1. Bootstrap heading</p>
+                          <p class="h2 mb-3">h2. Bootstrap heading</p>
+                          <p class="h3 mb-3">h3. Bootstrap heading</p>
+                          <p class="h4 mb-3">h4. Bootstrap heading</p>
+                          <p class="h5 mb-3">h5. Bootstrap heading</p>
+                          <p class="h6 mb-0">h6. Bootstrap heading</p>
+                       </div>
+                    </div>
+                    <div class="iq-card">
+                       <div class="iq-card-header d-flex justify-content-between">
+                          <div class="iq-header-title">
+                             <h4 class="card-title">Lists Unstyled</h4>
+                          </div>
+                       </div>
+                       <div class="iq-card-body">
+                          <p>Remove the default <code>list-style</code> and left margin on list items (immediate children only). <strong>This only applies to immediate children list items</strong>, meaning you will need to add the class for any nested lists as well.</p>
+                          <ul class="list-unstyled">
+                             <li>Lorem ipsum dolor sit amet</li>
+                             <li>Consectetur adipiscing elit</li>
+                             <li>Integer molestie lorem at massa</li>
+                             <li>Facilisis in pretium nisl aliquet</li>
+                             <li>
+                                Nulla volutpat aliquam velit
+                                <ul>
+                                   <li>Phasellus iaculis neque</li>
+                                   <li>Purus sodales ultricies</li>
+                                   <li>Vestibulum laoreet porttitor sem</li>
+                                   <li>Ac tristique libero volutpat at</li>
+                                </ul>
+                             </li>
+                             <li>Faucibus porta lacus fringilla vel</li>
+                             <li>Aenean sit amet erat nunc</li>
+                             <li>Eget porttitor lorem</li>
+                          </ul>
+                       </div>
+                    </div>
+                    <div class="iq-card">
+                       <div class="iq-card-header d-flex justify-content-between">
+                          <div class="iq-header-title">
+                             <h4 class="card-title">Blockquotes</h4>
+                          </div>
+                       </div>
+                       <div class="iq-card-body">
+                          <p>For quoting blocks of content from another source within your document. Wrap <code>&lt;blockquote class="blockquote"&gt;</code> around any <abbr title="HyperText Markup Language">HTML</abbr> as the quote.</p>
+                          <blockquote class="blockquote">
+                             <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                             <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                          </blockquote>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-sm-12">
+                    <div class="iq-card">
+                       <div class="iq-card-header d-flex justify-content-between">
+                          <div class="iq-header-title">
+                             <h4 class="card-title">Description list alignment</h4>
+                          </div>
+                       </div>
+                       <div class="iq-card-body">
+                          <p>Align terms and descriptions horizontally by using our grid system’s predefined classes (or semantic mixins). For longer terms, you can optionally add a <code>.text-truncate</code> class to truncate the text with an ellipsis.</p>
+                          <dl class="row">
+                             <dt class="col-sm-3">Description lists</dt>
+                             <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
+                             <dt class="col-sm-3">Euismod</dt>
+                             <dd class="col-sm-9">
+                                <p>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</p>
+                                <p>Donec id elit non mi porta gravida at eget metus.</p>
+                             </dd>
+                             <dt class="col-sm-3">Malesuada porta</dt>
+                             <dd class="col-sm-9">Etiam porta sem malesuada magna mollis euismod.</dd>
+                             <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
+                             <dd class="col-sm-9">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+                             <dt class="col-sm-3">Nesting</dt>
+                             <dd class="col-sm-9">
+                                <dl class="row">
+                                   <dt class="col-sm-4">Nested definition list</dt>
+                                   <dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>
+                                </dl>
+                             </dd>
+                          </dl>
                        </div>
                     </div>
                  </div>

@@ -40,10 +40,10 @@
                     <li class="active active-menu">
                        <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span class="ripple rippleEffect"></span><i class="las la-home iq-arrow-left"></i><span>Admin</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                        <ul id="admin" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
-                          <li><a href="admin-dashboard.html"><i class="las la-house-damage"></i>Dashboard</a></li>
-                          <li><a href="admin-category.html"><i class="ri-function-line"></i>Books Category</a></li>
-                          <li class="active"><a href="admin-author.html"><i class="ri-book-line"></i>Author</a></li>
-                          <li><a href="admin-books.html"><i class="ri-file-pdf-line"></i>Books</a></li>
+                          <li><a href="/admin-dashboard"><i class="las la-house-damage"></i>Dashboard</a></li>
+                          <li><a href="/admin-category"><i class="ri-function-line"></i>Books Category</a></li>
+                          <li class="active"><a href="admin-author"><i class="ri-book-line"></i>Author</a></li>
+                          <li><a href="/admin-books"><i class="ri-file-pdf-line"></i>Books</a></li>
                        </ul>
                     </li>
                     <li>
@@ -104,9 +104,9 @@
                           <li>
                              <a href="#tables" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-table-line"></i><span>Table</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                              <ul id="tables" class="iq-submenu collapse" data-parent="#ui-elements">
-                                <li><a href="tables-basic.html"><i class="ri-table-line"></i>Basic Tables</a></li>
-                                <li><a href="data-table.html"><i class="ri-database-line"></i>Data Table</a></li>
-                                <li><a href="table-editable.html"><i class="ri-refund-line"></i>Editable Table</a></li>
+                                <li><a href="/tables-basic"><i class="ri-table-line"></i>Basic Tables</a></li>
+                                <li><a href="/data-table"><i class="ri-database-line"></i>Data Table</a></li>
+                                <li><a href="/table-editable"><i class="ri-refund-line"></i>Editable Table</a></li>
                              </ul>
                           </li>
                           <li>

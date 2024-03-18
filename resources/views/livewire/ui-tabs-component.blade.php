@@ -1,4 +1,4 @@
-<main>
+<div>
     <div id="loading">
         <div id="loading-center">
         </div>
@@ -29,7 +29,7 @@
                     <li>
                        <a href="#dashboard" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false"><span class="ripple rippleEffect"></span><i class="las la-home iq-arrow-left"></i><span>Shop</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                        <ul id="dashboard" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                          <li class="active"><a href="/"><i class="las la-house-damage"></i>Home Page</a></li>
+                          <li><a href="/"><i class="las la-house-damage"></i>Home Page</a></li>
                           <li><a href="/category"><i class="ri-function-line"></i>Category Page</a></li>
                           <li><a href="/book-page"><i class="ri-book-line"></i>Book Page</a></li>
                           <li><a href="/book-pdf"><i class="ri-file-pdf-line"></i>Book PDF</a></li>
@@ -37,50 +37,50 @@
                          <li><a href="/wishlist"><i class="ri-heart-line"></i>wishlist</a></li>
                        </ul>
                     </li>
-                    <li class="active active-menu">
-                       <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span class="ripple rippleEffect"></span><i class="las la-home iq-arrow-left"></i><span>Admin</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                       <ul id="admin" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
-                          <li class="active"><a href="/admin-dashboard"><i class="las la-house-damage"></i>Dashboard</a></li>
-                          <li><a href="/admin-category"><i class="ri-function-line"></i>Books Category</a></li>
-                          <li><a href="/admin-author"><i class="ri-book-line"></i>Author</a></li>
-                          <li><a href="/admin-books"><i class="ri-file-pdf-line"></i>Books</a></li>
+                    <li>
+                       <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false"><span class="ripple rippleEffect"></span><i class="ri-admin-line"></i><span>Admin</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                       <ul id="admin" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                          <li><a href="/admin-dashboard"><i class="ri-dashboard-line"></i>Dashboard</a></li>
+                          <li><a href="/admin-category"><i class="ri-list-check-2"></i>Category Lists</a></li>
+                          <li><a href="/admin-author"><i class="ri-file-user-line"></i>Author</a></li>
+                          <li><a href="/admin-books"><i class="ri-book-2-line"></i>Books</a></li>
                        </ul>
                     </li>
                     <li>
                        <a href="#userinfo" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false"><span class="ripple rippleEffect"></span><i class="las la-user-tie iq-arrow-left"></i><span>User</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                        <ul id="userinfo" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle" style="">
-                          <li><a href="profile.html"><i class="las la-id-card-alt"></i>User Profile</a></li>
-                          <li><a href="profile-edit.html"><i class="las la-edit"></i>User Edit</a></li>
-                          <li><a href="add-user.html"><i class="las la-plus-circle"></i>User Add</a></li>
-                          <li><a href="user-list.html"><i class="las la-th-list"></i>User List</a></li>
+                          <li><a href="/profile"><i class="las la-id-card-alt"></i>User Profile</a></li>
+                          <li><a href="/profile-edit"><i class="las la-edit"></i>User Edit</a></li>
+                          <li><a href="/add-user"><i class="las la-plus-circle"></i>User Add</a></li>
+                          <li><a href="/user-list"><i class="las la-th-list"></i>User List</a></li>
                        </ul>
                     </li>
-                    <li>
-                       <a href="#ui-elements" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="lab la-elementor iq-arrow-left"></i><span>UI Elements</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                       <ul id="ui-elements" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                          <li class="elements">
-                             <a href="#sub-menu" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-play-circle-line"></i><span>UI Kit</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                             <ul id="sub-menu" class="iq-submenu collapse" data-parent="#ui-elements">
-                                <li><a href="ui-colors.html"><i class="las la-palette"></i>colors</a></li>
-                                <li><a href="ui-typography.html"><i class="las la-keyboard"></i>Typography</a></li>
-                                <li><a href="ui-alerts.html"><i class="las la-tag"></i>Alerts</a></li>
-                                <li><a href="ui-badges.html"><i class="lab la-atlassian"></i>Badges</a></li>
-                                <li><a href="ui-breadcrumb.html"><i class="las la-bars"></i>Breadcrumb</a></li>
-                                <li><a href="ui-buttons.html"><i class="las la-tablet"></i>Buttons</a></li>
-                                <li><a href="ui-cards.html"><i class="las la-credit-card"></i>Cards</a></li>
-                                <li><a href="ui-carousel.html"><i class="las la-film"></i>Carousel</a></li>
-                                <li><a href="ui-embed-video.html"><i class="las la-video"></i>Video</a></li>
-                                <li><a href="ui-grid.html"><i class="las la-border-all"></i>Grid</a></li>
-                                <li><a href="ui-images.html"><i class="las la-images"></i>Images</a></li>
-                                <li><a href="ui-list-group.html"><i class="las la-list"></i>list Group</a></li>
-                                <li><a href="ui-media-object.html"><i class="las la-ad"></i>Media</a></li>
-                                <li><a href="ui-modal.html"><i class="las la-columns"></i>Modal</a></li>
-                                <li><a href="ui-notifications.html"><i class="las la-bell"></i>Notifications</a></li>
-                                <li><a href="ui-pagination.html"><i class="las la-ellipsis-h"></i>Pagination</a></li>
-                                <li><a href="ui-popovers.html"><i class="las la-eraser"></i>Popovers</a></li>
-                                <li><a href="ui-progressbars.html"><i class="las la-hdd"></i>Progressbars</a></li>
-                                <li><a href="ui-tabs.html"><i class="las la-database"></i>Tabs</a></li>
-                                <li><a href="ui-tooltips.html"><i class="las la-magnet"></i>Tooltips</a></li>
+                    <li class="active active-menu">
+                       <a href="#ui-elements" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="true"><i class="lab la-elementor iq-arrow-left"></i><span>UI Elements</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                       <ul id="ui-elements" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
+                          <li class="elements active active-menu">
+                             <a href="#sub-menu" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="true"><i class="ri-play-circle-line"></i><span>UI Kit</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                             <ul id="sub-menu" class="iq-submenu collapse show" data-parent="#ui-elements">
+                                <li><a href="/ui-colors"><i class="las la-palette"></i>colors</a></li>
+                                <li><a href="/ui-typography"><i class="las la-keyboard"></i>Typography</a></li>
+                                <li><a href="/ui-alerts"><i class="las la-tag"></i>Alerts</a></li>
+                                <li><a href="/ui-badges"><i class="lab la-atlassian"></i>Badges</a></li>
+                                <li><a href="/ui-breadcrumb"><i class="las la-bars"></i>Breadcrumb</a></li>
+                                <li><a href="/ui-buttons"><i class="las la-tablet"></i>Buttons</a></li>
+                                <li><a href="/ui-cards"><i class="las la-credit-card"></i>Cards</a></li>
+                                <li><a href="/ui-carousel"><i class="las la-film"></i>Carousel</a></li>
+                                <li><a href="/ui-embed-video"><i class="las la-video"></i>Video</a></li>
+                                <li><a href="/ui-grid"><i class="las la-border-all"></i>Grid</a></li>
+                                <li><a href="/ui-images"><i class="las la-images"></i>Images</a></li>
+                                <li><a href="/ui-list-group"><i class="las la-list"></i>list Group</a></li>
+                                <li><a href="/ui-media-object"><i class="las la-ad"></i>Media</a></li>
+                                <li><a href="/ui-modal"><i class="las la-columns"></i>Modal</a></li>
+                                <li><a href="/ui-notifications"><i class="las la-bell"></i>Notifications</a></li>
+                                <li><a href="/ui-pagination"><i class="las la-ellipsis-h"></i>Pagination</a></li>
+                                <li><a href="/ui-popovers"><i class="las la-eraser"></i>Popovers</a></li>
+                                <li><a href="/ui-progressbars"><i class="las la-hdd"></i>Progressbars</a></li>
+                                <li class="active"><a href="/ui-tabs"><i class="las la-database"></i>Tabs</a></li>
+                                <li><a href="/ui-tooltips"><i class="las la-magnet"></i>Tooltips</a></li>
                              </ul>
                           </li>
                           <li class="form">
@@ -104,9 +104,9 @@
                           <li>
                              <a href="#tables" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-table-line"></i><span>Table</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                              <ul id="tables" class="iq-submenu collapse" data-parent="#ui-elements">
-                                <li><a href="tables-basic.html"><i class="ri-table-line"></i>Basic Tables</a></li>
-                                <li><a href="data-table.html"><i class="ri-database-line"></i>Data Table</a></li>
-                                <li><a href="table-editable.html"><i class="ri-refund-line"></i>Editable Table</a></li>
+                                <li><a href="/tables-basic"><i class="ri-table-line"></i>Basic Tables</a></li>
+                                <li><a href="/data-table"><i class="ri-database-line"></i>Data Table</a></li>
+                                <li><a href="/table-editable"><i class="ri-refund-line"></i>Editable Table</a></li>
                              </ul>
                           </li>
                           <li>
@@ -136,26 +136,25 @@
                           <li>
                              <a href="#authentication" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-pages-line"></i><span>Authentication</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                              <ul id="authentication" class="iq-submenu collapse" data-parent="#pages">
-                                <li><a href="sign-in.html"><i class="las la-sign-in-alt"></i>Login</a></li>
-                                <li><a href="sign-up.html"><i class="ri-login-circle-line"></i>Register</a></li>
-                                <li><a href="pages-recoverpw.html"><i class="ri-record-mail-line"></i>Recover Password</a></li>
-                                <li><a href="pages-confirm-mail.html"><i class="ri-file-code-line"></i>Confirm Mail</a></li>
-                                <li><a href="pages-lock-screen.html"><i class="ri-lock-line"></i>Lock Screen</a></li>
+                                <li><a href="/sign-in"><i class="las la-sign-in-alt"></i>Login</a></li>
+                                <li><a href="/sign-up"><i class="ri-login-circle-line"></i>Register</a></li>
+                                <li><a href="/pages-recoverpw"><i class="ri-record-mail-line"></i>Recover Password</a></li>
+                                <li><a href="/pages-confirm-mail"><i class="ri-file-code-line"></i>Confirm Mail</a></li>
+                                <li><a href="/pages-lock-screen"><i class="ri-lock-line"></i>Lock Screen</a></li>
                              </ul>
                           </li>
                           <li>
                              <a href="#extra-pages" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-pantone-line"></i><span>Extra Pages</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                              <ul id="extra-pages" class="iq-submenu collapse" data-parent="#pages">
-                                <li><a href="pages-timeline.html"><i class="ri-map-pin-time-line"></i>Timeline</a></li>
-                                <li><a href="pages-invoice.html"><i class="ri-question-answer-line"></i>Invoice</a></li>
-                                <li><a href="blank-page.html"><i class="ri-invision-line"></i>Blank Page</a></li>
-                                <li><a href="pages-error.html"><i class="ri-error-warning-line"></i>Error 404</a></li>
-                                <li><a href="pages-error-500.html"><i class="ri-error-warning-line"></i>Error 500</a></li>
-                                <li><a href="pages-pricing.html"><i class="ri-price-tag-line"></i>Pricing</a></li>
-                                <li><a href="pages-pricing-one.html"><i class="ri-price-tag-2-line"></i>Pricing 1</a></li>
-                                <li><a href="pages-maintenance.html"><i class="ri-archive-line"></i>Maintenance</a></li>
-                                <li><a href="pages-comingsoon.html"><i class="ri-mastercard-line"></i>Coming Soon</a></li>
-                                <li><a href="pages-faq.html"><i class="ri-compasses-line"></i>Faq</a></li>
+                                <li><a href="/pages-timeline"><i class="ri-map-pin-time-line"></i>Timeline</a></li>
+                                <li><a href="/pages-invoice"><i class="ri-question-answer-line"></i>Invoice</a></li>
+                                <li><a href="/blank-page"><i class="ri-invision-line"></i>Blank Page</a></li>
+                                <li><a href="/pages-error"><i class="ri-error-warning-line"></i>Error 404</a></li>
+                                <li><a href="/pages-error-500"><i class="ri-error-warning-line"></i>Error 500</a></li>
+                                <li><a href="/pages-pricing"><i class="ri-price-tag-line"></i>Pricing</a></li>
+                                <li><a href="/pages-maintenance"><i class="ri-archive-line"></i>Maintenance</a></li>
+                                <li><a href="/pages-comingsoon"><i class="ri-mastercard-line"></i>Coming Soon</a></li>
+                                <li><a href="/pages-faq"><i class="ri-compasses-line"></i>Faq</a></li>
                              </ul>
                           </li>
                        </ul>
@@ -187,7 +186,7 @@
                  <div class="iq-card">
                     <div class="iq-card-body">
                        <div class="sidebarbottom-content">
-                          <div class="image"><img src="images/page-img/side-bkg.png" alt=""></div>                           
+                          <div class="image"><img src="images/page-img/side-bkg.png" alt=""></div>
                           <button type="submit" class="btn w-100 btn-primary mt-4 view-more">Become Membership</button>
                        </div>
                     </div>
@@ -204,7 +203,7 @@
                        <div class="main-circle"><i class="las la-bars"></i></div>
                     </div>
                     <div class="iq-navbar-logo d-flex justify-content-between">
-                       <a href="/" class="header-logo">
+                       <a href="index.html" class="header-logo">
                           <img src="images/logo.png" class="img-fluid rounded-normal" alt="">
                           <div class="logo-title">
                              <span class="text-primary text-uppercase">Booksto</span>
@@ -213,11 +212,11 @@
                     </div>
                  </div>
                  <div class="navbar-breadcrumb">
-                    <h5 class="mb-0">Dashbord</h5>
+                    <h5 class="mb-0">Tabs</h5>
                     <nav aria-label="breadcrumb">
                        <ul class="breadcrumb">
-                          <li class="breadcrumb-item"><a href="/">Admin</a></li>
-                          <li class="breadcrumb-item active" aria-current="page">Dashbord</li>
+                          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">Tabs</li>
                        </ul>
                     </nav>
                  </div>
@@ -243,7 +242,7 @@
                        </li>
                        <li class="nav-item nav-icon">
                           <a href="#" class="search-toggle iq-waves-effect text-gray rounded">
-                          <i class="ri-notification-2-line"></i>
+                          <i class="ri-notification-2-fill"></i>
                           <span class="bg-primary dots"></span>
                           </a>
                           <div class="iq-sub-dropdown">
@@ -306,8 +305,8 @@
                        </li>
                        <li class="nav-item nav-icon dropdown">
                           <a href="#" class="search-toggle iq-waves-effect text-gray rounded">
-                          <i class="ri-mail-line"></i>
-                          <span class="bg-primary dots"></span>
+                          <i class="fa fa-envelope" aria-hidden="true"></i>
+                          <span class="bg-primary count-mail"></span>
                           </a>
                           <div class="iq-sub-dropdown">
                              <div class="iq-card shadow-none m-0">
@@ -456,7 +455,7 @@
                                       <h5 class="mb-0 text-white line-height">Hello Barry Tech</h5>
                                       <span class="text-white font-size-12">Available</span>
                                    </div>
-                                   <a href="profile.html" class="iq-sub-card iq-bg-primary-hover">
+                                   <a href="/profile" class="iq-sub-card iq-bg-primary-hover">
                                       <div class="media align-items-center">
                                          <div class="rounded iq-card-icon iq-bg-primary">
                                             <i class="ri-file-user-line"></i>
@@ -467,7 +466,7 @@
                                          </div>
                                       </div>
                                    </a>
-                                   <a href="profile-edit.html" class="iq-sub-card iq-bg-primary-hover">
+                                   <a href="/profile-edit" class="iq-sub-card iq-bg-primary-hover">
                                       <div class="media align-items-center">
                                          <div class="rounded iq-card-icon iq-bg-primary">
                                             <i class="ri-profile-line"></i>
@@ -478,7 +477,7 @@
                                          </div>
                                       </div>
                                    </a>
-                                   <a href="account-setting.html" class="iq-sub-card iq-bg-primary-hover">
+                                   <a href="/account-setting" class="iq-sub-card iq-bg-primary-hover">
                                       <div class="media align-items-center">
                                          <div class="rounded iq-card-icon iq-bg-primary">
                                             <i class="ri-account-box-line"></i>
@@ -489,7 +488,7 @@
                                          </div>
                                       </div>
                                    </a>
-                                   <a href="privacy-setting.html" class="iq-sub-card iq-bg-primary-hover">
+                                   <a href="/privacy-setting" class="iq-sub-card iq-bg-primary-hover">
                                       <div class="media align-items-center">
                                          <div class="rounded iq-card-icon iq-bg-primary">
                                             <i class="ri-lock-line"></i>
@@ -501,7 +500,7 @@
                                       </div>
                                    </a>
                                    <div class="d-inline-block w-100 text-center p-3">
-                                      <a class="bg-primary iq-sign-btn" href="sign-in.html" role="button">Sign out<i class="ri-login-box-line ml-2"></i></a>
+                                      <a class="bg-primary iq-sign-btn" href="/sign-in" role="button">Sign out<i class="ri-login-box-line ml-2"></i></a>
                                    </div>
                                 </div>
                              </div>
@@ -513,217 +512,271 @@
            </div>
         </div>
         <!-- TOP Nav Bar END -->
+
         <!-- Page Content  -->
         <div id="content-page" class="content-page">
            <div class="container-fluid">
               <div class="row">
-                 <div class="col-md-6 col-lg-3">
-                    <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
-                       <div class="iq-card-body">
-                          <div class="d-flex align-items-center">
-                             <div class="rounded-circle iq-card-icon bg-primary"><i class="ri-user-line"></i></div>
-                             <div class="text-left ml-3">                                 
-                                <h2 class="mb-0"><span class="counter">5000</span></h2>
-                                <h5 class="">Users</h5>
-                             </div>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-                 <div class="col-md-6 col-lg-3">
-                    <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
-                       <div class="iq-card-body">
-                          <div class="d-flex align-items-center">
-                             <div class="rounded-circle iq-card-icon bg-danger"><i class="ri-book-line"></i></div>
-                             <div class="text-left ml-3">                                 
-                                <h2 class="mb-0"><span class="counter">4.8</span>k</h2>
-                                <h5 class="">Books</h5>
-                             </div>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-                 <div class="col-md-6 col-lg-3">
-                    <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
-                       <div class="iq-card-body">
-                          <div class="d-flex align-items-center">
-                             <div class="rounded-circle iq-card-icon bg-warning"><i class="ri-shopping-cart-2-line"></i></div>
-                             <div class="text-left ml-3">                                 
-                                <h2 class="mb-0"><span class="counter">1.2</span>k</h2>
-                                <h5 class="">Sale</h5>
-                             </div>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-                 <div class="col-md-6 col-lg-3">
-                    <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
-                       <div class="iq-card-body">
-                          <div class="d-flex align-items-center">
-                             <div class="rounded-circle iq-card-icon bg-info"><i class="ri-radar-line"></i></div>
-                             <div class="text-left ml-3">                                 
-                                <h2 class="mb-0"><span class="counter">690</span></h2>
-                                <h5 class="">Orders</h5>
-                             </div>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-                 <div class="col-md-4">
-                    <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
-                       <div class="iq-card-header d-flex justify-content-between align-items-center">
-                          <div class="iq-header-title">
-                             <h4 class="card-title mb-0">Daily Sales</h4>
-                          </div>
-                       </div>
-                       <div class="iq-card-body">
-                          <div id="iq-sale-chart"></div>
-                       </div>
-                    </div>
-                 </div>
-                 <div class="col-md-4">
-                    <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
-                       <div class="iq-card-header d-flex justify-content-between align-items-center">
-                          <div class="iq-header-title">
-                             <h4 class="card-title mb-0">Summary</h4>
-                          </div>
-                       </div>
-                       <div class="iq-card-body">
-                          <ul class="list-inline p-0 mb-0">
-                             <li>
-                                <div class="iq-details mb-2">
-                                   <span class="title">Income</span>
-                                   <div class="percentage float-right text-primary">95 <span>%</span></div>
-                                   <div class="iq-progress-bar-linear d-inline-block w-100">
-                                      <div class="iq-progress-bar iq-bg-primary">
-                                         <span class="bg-primary" data-percent="90"></span>
-                                      </div>
-                                   </div>
-                                </div>                                       
-                             </li>
-                             <li>
-                                <div class="iq-details mb-2">
-                                   <span class="title">Profit</span>
-                                   <div class="percentage float-right text-warning">72 <span>%</span></div>
-                                   <div class="iq-progress-bar-linear d-inline-block w-100">
-                                      <div class="iq-progress-bar iq-bg-warning">
-                                         <span class="bg-warning" data-percent="75"></span>
-                                      </div>
-                                   </div>
-                                </div>
-                             </li>
-                             <li>
-                               <div class="iq-details mb-2">
-                                   <span class="title">Expenses</span>
-                                   <div class="percentage float-right text-info">75 <span>%</span></div>
-                                   <div class="iq-progress-bar-linear d-inline-block w-100">
-                                      <div class="iq-progress-bar iq-bg-info">
-                                         <span class="bg-info" data-percent="65"></span>
-                                      </div>
-                                   </div>
-                                </div> 
-                             </li>
-                          </ul>
-                       </div>
-                    </div>
-                 </div>
-                 <div class="col-md-4">
-                    <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
-                          <div class="iq-card-body">
-                             <h4 class="text-uppercase text-black mb-0">Session(Now)</h4>
-                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="font-size-80 text-black">12</div>
-                                <div class="text-left">
-                                   <p class="m-0 text-uppercase font-size-12">1 Hours Ago</p>
-                                   <div class="mb-1 text-black">1500<span class="text-danger"><i class="ri-arrow-down-s-fill"></i>3.25%</span></div>
-                                   <p class="m-0 text-uppercase font-size-12">1 Day Ago</p>
-                                   <div class="mb-1 text-black">1890<span class="text-success"><i class="ri-arrow-down-s-fill"></i>1.00%</span></div>
-                                   <p class="m-0 text-uppercase font-size-12">1 Week Ago</p>
-                                   <div class="text-black">1260<span class="text-danger"><i class="ri-arrow-down-s-fill"></i>9.87%</span></div>
-                                </div>
-                             </div>
-                             <div id="wave-chart-7"></div>
-                          </div>
-                       </div>
-                 </div>
-                 <div class="col-sm-12">
-                    <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                 <div class="col-sm-12 col-lg-6">
+                    <div class="iq-card">
                        <div class="iq-card-header d-flex justify-content-between">
                           <div class="iq-header-title">
-                             <h4 class="card-title">Open Invoices</h4>
+                             <h4 class="card-title">Basic Tabs</h4>
                           </div>
-                          <div class="iq-card-header-toolbar d-flex align-items-center">
-                             <div class="dropdown">
-                                <span class="dropdown-toggle text-primary" id="dropdownMenuButton5" data-toggle="dropdown">
-                                <i class="ri-more-fill"></i>
-                                </span>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton5">
-                                   <a class="dropdown-item" href="#"><i class="ri-eye-fill mr-2"></i>View</a>
-                                   <a class="dropdown-item" href="#"><i class="ri-delete-bin-6-fill mr-2"></i>Delete</a>
-                                   <a class="dropdown-item" href="#"><i class="ri-pencil-fill mr-2"></i>Edit</a>
-                                   <a class="dropdown-item" href="#"><i class="ri-printer-fill mr-2"></i>Print</a>
-                                   <a class="dropdown-item" href="#"><i class="ri-file-download-fill mr-2"></i>Download</a>
+                       </div>
+                       <div class="iq-card-body">
+                          <p>The base <code>.nav</code> component does not include any <code>.active</code> state. The following examples include the class, mainly to demonstrate that this particular class does not trigger any special styling.</p>
+                          <ul class="nav nav-tabs" id="myTab-1" role="tablist">
+                             <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                             </li>
+                          </ul>
+                          <div class="tab-content" id="myTabContent-2">
+                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                             </div>
+                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                             </div>
+                             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="iq-card">
+                       <div class="iq-card-header d-flex justify-content-between">
+                          <div class="iq-header-title">
+                             <h4 class="card-title">Basic Tabs Style 3</h4>
+                          </div>
+                       </div>
+                       <div class="iq-card-body">
+                          <p>Takes the basic nav from above and adds the <code>.nav-tabs</code> class to generate a tabbed interface.</p>
+                          <ul class="nav nav-tabs" id="myTab-two" role="tablist">
+                             <li class="nav-item">
+                                <a class="nav-link active" id="home-tab-two" data-toggle="tab" href="#home-two" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" id="profile-tab-two" data-toggle="tab" href="#profile-two" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" id="contact-tab-two" data-toggle="tab" href="#contact-two" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                             </li>
+                          </ul>
+                          <div class="tab-content" id="myTabContent-1">
+                             <div class="tab-pane fade show active" id="home-two" role="tabpanel" aria-labelledby="home-tab-two">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                             </div>
+                             <div class="tab-pane fade" id="profile-two" role="tabpanel" aria-labelledby="profile-tab-two">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                             </div>
+                             <div class="tab-pane fade" id="contact-two" role="tabpanel" aria-labelledby="contact-tab-two">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="iq-card">
+                       <div class="iq-card-header d-flex justify-content-between">
+                          <div class="iq-header-title">
+                             <h4 class="card-title">Tabs Vertical Pills</h4>
+                          </div>
+                       </div>
+                       <div class="iq-card-body">
+                          <p>Stack your navigation by changing the flex item direction with the <code>.flex-column</code> utility.</p>
+                          <div class="row">
+                             <div class="col-sm-3">
+                                <div class="nav flex-column nav-pills text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                   <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
+                                   <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+                                   <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+                                   <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+                                </div>
+                             </div>
+                             <div class="col-sm-9">
+                                <div class="tab-content mt-0" id="v-pills-tabContent">
+                                   <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                   </div>
+                                   <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                   </div>
+                                   <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                   </div>
+                                   <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                   </div>
                                 </div>
                              </div>
                           </div>
                        </div>
+                    </div>
+                    <div class="iq-card">
+                       <div class="iq-card-header d-flex justify-content-between">
+                          <div class="iq-header-title">
+                             <h4 class="card-title">Tabs Justify Center</h4>
+                          </div>
+                       </div>
                        <div class="iq-card-body">
-                          <div class="table-responsive">
-                             <table class="table mb-0 table-borderless">
-                                <thead>
-                                   <tr>
-                                      <th scope="col">Client</th>
-                                      <th scope="col">Date</th>
-                                      <th scope="col">Invoice</th>
-                                      <th scope="col">Amount</th>
-                                      <th scope="col">atatus</th>
-                                      <th scope="col">Action</th>
-
-                                   </tr>
-                                </thead>
-                                <tbody>
-                                   <tr>
-                                      <td>Ira Membrit</td>
-                                      <td>18/10/2019</td>
-                                      <td>20156</td>
-                                      <td>$1500</td>
-                                      <td><div class="badge badge-pill badge-success">Paid</div></td>
-                                      <td>Copy</td>
-                                   </tr>
-                                   <tr>
-                                      <td>Pete Sariya</td>
-                                      <td>26/10/2019</td>
-                                      <td>7859</td>
-                                      <td>$2000</td>
-                                      <td><div class="badge badge-pill badge-success">Paid</div></td>
-                                      <td>Send Email</td>
-                                   </tr>
-                                   <tr>
-                                      <td>Cliff Hanger</td>
-                                      <td>18/11/2019</td>
-                                      <td>6396</td>
-                                      <td>$2500</td>
-                                      <td><div class="badge badge-pill badge-danger">Past Due</div></td>
-                                      <td>Before Due</td>
-                                   </tr>
-                                   <tr>
-                                      <td>Terry Aki</td>
-                                      <td>14/12/2019</td>
-                                      <td>7854</td>
-                                      <td>$5000</td>
-                                      <td><div class="badge badge-pill badge-success">Paid</div></td>
-                                      <td>Copy</td>
-                                   </tr>
-                                   <tr>
-                                      <td>Anna Mull</td>
-                                      <td>24/12/2019</td>
-                                      <td>568569</td>
-                                      <td>$10000</td>
-                                      <td><div class="badge badge-pill badge-success">Paid</div></td>
-                                      <td>Send Email</td>
-                                   </tr>
-                                </tbody>
-                             </table>
+                          <p>Centered with <code>.justify-content-center</code></p>
+                          <ul class="nav nav-tabs justify-content-center" id="myTab-2" role="tablist">
+                             <li class="nav-item">
+                                <a class="nav-link active" id="home-tab-justify" data-toggle="tab" href="#home-justify" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" id="profile-tab-justify" data-toggle="tab" href="#profile-justify" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" id="contact-tab-justify" data-toggle="tab" href="#contact-justify" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                             </li>
+                          </ul>
+                          <div class="tab-content" id="myTabContent-3">
+                             <div class="tab-pane fade show active" id="home-justify" role="tabpanel" aria-labelledby="home-tab-justify">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                             </div>
+                             <div class="tab-pane fade" id="profile-justify" role="tabpanel" aria-labelledby="profile-tab-justify">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                             </div>
+                             <div class="tab-pane fade" id="contact-justify" role="tabpanel" aria-labelledby="contact-tab-justify">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-sm-12 col-lg-6">
+                    <div class="iq-card">
+                       <div class="iq-card-header d-flex justify-content-between">
+                          <div class="iq-header-title">
+                             <h4 class="card-title">Basic Tabs Style 2</h4>
+                          </div>
+                       </div>
+                       <div class="iq-card-body">
+                          <p>Take that same HTML, but use <code>.nav-pills</code> instead:</p>
+                          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                             <li class="nav-item">
+                                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+                             </li>
+                          </ul>
+                          <div class="tab-content" id="pills-tabContent-2">
+                             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                             </div>
+                             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                             </div>
+                             <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="iq-card">
+                       <div class="iq-card-header d-flex justify-content-between">
+                          <div class="iq-header-title">
+                             <h4 class="card-title">Basic Tabs Style 4</h4>
+                          </div>
+                       </div>
+                       <div class="iq-card-body">
+                          <p>Takes the basic nav from above and adds the <code>.nav-tabs</code> class to generate a tabbed interface.</p>
+                          <ul class="nav nav-tabs" id="myTab-three" role="tablist">
+                             <li class="nav-item">
+                                <a class="nav-link active" id="home-tab-three" data-toggle="tab" href="#home-three" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" id="profile-tab-three" data-toggle="tab" href="#profile-three" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" id="contact-tab-three" data-toggle="tab" href="#contact-three" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                             </li>
+                          </ul>
+                          <div class="tab-content" id="myTabContent-4">
+                             <div class="tab-pane fade show active" id="home-three" role="tabpanel" aria-labelledby="home-tab-three">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                             </div>
+                             <div class="tab-pane fade" id="profile-three" role="tabpanel" aria-labelledby="profile-tab-three">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                             </div>
+                             <div class="tab-pane fade" id="contact-three" role="tabpanel" aria-labelledby="contact-tab-three">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="iq-card">
+                       <div class="iq-card-header d-flex justify-content-between">
+                          <div class="iq-header-title">
+                             <h4 class="card-title">Tabs Fill and justify</h4>
+                          </div>
+                       </div>
+                       <div class="iq-card-body">
+                          <p>Force your <code>.nav</code>’s contents to extend the full available width one of two modifier classes. To proportionately fill all available space with your <code>.nav-item</code>s, use <code>.nav-fill</code>. Notice that all horizontal space is occupied, but not every nav item has the same width.</p>
+                          <ul class="nav nav-pills mb-3 nav-fill" id="pills-tab-1" role="tablist">
+                             <li class="nav-item">
+                                <a class="nav-link active" id="pills-home-tab-fill" data-toggle="pill" href="#pills-home-fill" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" id="pills-profile-tab-fill" data-toggle="pill" href="#pills-profile-fill" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" id="pills-contact-tab-fill" data-toggle="pill" href="#pills-contact-fill" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+                             </li>
+                          </ul>
+                          <div class="tab-content" id="pills-tabContent-1">
+                             <div class="tab-pane fade show active" id="pills-home-fill" role="tabpanel" aria-labelledby="pills-home-tab-fill">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                             </div>
+                             <div class="tab-pane fade" id="pills-profile-fill" role="tabpanel" aria-labelledby="pills-profile-tab-fill">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                             </div>
+                             <div class="tab-pane fade" id="pills-contact-fill" role="tabpanel" aria-labelledby="pills-contact-tab-fill">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="iq-card">
+                       <div class="iq-card-header d-flex justify-content-between">
+                          <div class="iq-header-title">
+                             <h4 class="card-title">Tabs Justify Right</h4>
+                          </div>
+                       </div>
+                       <div class="iq-card-body">
+                          <p>Right-aligned with <code>.justify-content-end</code>.</p>
+                          <ul class="nav nav-tabs justify-content-end" id="myTab-4" role="tablist">
+                             <li class="nav-item">
+                                <a class="nav-link active" id="home-tab-end" data-toggle="tab" href="#home-end" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" id="profile-tab-end" data-toggle="tab" href="#profile-end" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" id="contact-tab-end" data-toggle="tab" href="#contact-end" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                             </li>
+                          </ul>
+                          <div class="tab-content" id="myTabContent-5">
+                             <div class="tab-pane fade show active" id="home-end" role="tabpanel" aria-labelledby="home-tab-end">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                             </div>
+                             <div class="tab-pane fade" id="profile-end" role="tabpanel" aria-labelledby="profile-tab-end">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                             </div>
+                             <div class="tab-pane fade" id="contact-end" role="tabpanel" aria-labelledby="contact-tab-end">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                             </div>
                           </div>
                        </div>
                     </div>
@@ -732,4 +785,4 @@
            </div>
         </div>
      </div>
-</main>
+</div>

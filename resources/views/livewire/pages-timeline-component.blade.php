@@ -1,4 +1,4 @@
-<div>
+<main>
     <div id="loading">
         <div id="loading-center">
         </div>
@@ -33,25 +33,25 @@
                           <li><a href="/category"><i class="ri-function-line"></i>Category Page</a></li>
                           <li><a href="/book-page"><i class="ri-book-line"></i>Book Page</a></li>
                           <li><a href="/book-pdf"><i class="ri-file-pdf-line"></i>Book PDF</a></li>
-                          <li><a href="/checkout"><i class="ri-checkbox-multiple-blank-line"></i>Checkout</a></li>
+                          <li><a href="/Checkout"><i class="ri-checkbox-multiple-blank-line"></i>Checkout</a></li>
                          <li><a href="/wishlist"><i class="ri-heart-line"></i>wishlist</a></li>
                        </ul>
                     </li>
-                    <li class="active active-menu">
-                       <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span class="ripple rippleEffect"></span><i class="las la-home iq-arrow-left"></i><span>Admin</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                       <ul id="admin" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
-                          <li><a href="/admin-dashboard"><i class="las la-house-damage"></i>Dashboard</a></li>
-                          <li><a href="/admin-category"><i class="ri-function-line"></i>Books Category</a></li>
-                          <li><a href="/admin-author"><i class="ri-book-line"></i>Author</a></li>
-                          <li class="active"><a href="/admin-books"><i class="ri-file-pdf-line"></i>Books</a></li>
+                    <li>
+                       <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false"><span class="ripple rippleEffect"></span><i class="ri-admin-line"></i><span>Admin</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                       <ul id="admin" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                          <li><a href="/admin-dashboard"><i class="ri-dashboard-line"></i>Dashboard</a></li>
+                          <li><a href="/admin-category"><i class="ri-list-check-2"></i>Category Lists</a></li>
+                          <li><a href="/admin-author"><i class="ri-file-user-line"></i>Author</a></li>
+                          <li><a href="/admin-books"><i class="ri-book-2-line"></i>Books</a></li>
                        </ul>
                     </li>
                     <li>
                        <a href="#userinfo" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false"><span class="ripple rippleEffect"></span><i class="las la-user-tie iq-arrow-left"></i><span>User</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                        <ul id="userinfo" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle" style="">
-                          <li><a href="profile.html"><i class="las la-id-card-alt"></i>User Profile</a></li>
+                          <li><a href="/profile"><i class="las la-id-card-alt"></i>User Profile</a></li>
                           <li><a href="profile-edit.html"><i class="las la-edit"></i>User Edit</a></li>
-                          <li><a href="add-user.html"><i class="las la-plus-circle"></i>User Add</a></li>
+                          <li><a href="/add-user"><i class="las la-plus-circle"></i>User Add</a></li>
                           <li><a href="user-list.html"><i class="las la-th-list"></i>User List</a></li>
                        </ul>
                     </li>
@@ -130,9 +130,9 @@
                           </li>
                        </ul>
                     </li>
-                    <li>
-                       <a href="#pages" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="las la-file-alt iq-arrow-left"></i><span>Pages</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                       <ul id="pages" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                    <li class="active active-menu">
+                       <a href="#pages" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="true"><i class="las la-file-alt iq-arrow-left"></i><span>Pages</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                       <ul id="pages" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
                           <li>
                              <a href="#authentication" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-pages-line"></i><span>Authentication</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                              <ul id="authentication" class="iq-submenu collapse" data-parent="#pages">
@@ -143,16 +143,15 @@
                                 <li><a href="pages-lock-screen.html"><i class="ri-lock-line"></i>Lock Screen</a></li>
                              </ul>
                           </li>
-                          <li>
-                             <a href="#extra-pages" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-pantone-line"></i><span>Extra Pages</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                             <ul id="extra-pages" class="iq-submenu collapse" data-parent="#pages">
-                                <li><a href="pages-timeline.html"><i class="ri-map-pin-time-line"></i>Timeline</a></li>
+                          <li class="active active-menu">
+                             <a href="#extra-pages" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="true"><i class="ri-pantone-line"></i><span>Extra Pages</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                             <ul id="extra-pages" class="iq-submenu collapse show" data-parent="#pages">
+                                <li class="active"><a href="pages-timeline.html"><i class="ri-map-pin-time-line"></i>Timeline</a></li>
                                 <li><a href="pages-invoice.html"><i class="ri-question-answer-line"></i>Invoice</a></li>
                                 <li><a href="blank-page.html"><i class="ri-invision-line"></i>Blank Page</a></li>
                                 <li><a href="pages-error.html"><i class="ri-error-warning-line"></i>Error 404</a></li>
                                 <li><a href="pages-error-500.html"><i class="ri-error-warning-line"></i>Error 500</a></li>
                                 <li><a href="pages-pricing.html"><i class="ri-price-tag-line"></i>Pricing</a></li>
-                                <li><a href="pages-pricing-one.html"><i class="ri-price-tag-2-line"></i>Pricing 1</a></li>
                                 <li><a href="pages-maintenance.html"><i class="ri-archive-line"></i>Maintenance</a></li>
                                 <li><a href="pages-comingsoon.html"><i class="ri-mastercard-line"></i>Coming Soon</a></li>
                                 <li><a href="pages-faq.html"><i class="ri-compasses-line"></i>Faq</a></li>
@@ -213,11 +212,11 @@
                     </div>
                  </div>
                  <div class="navbar-breadcrumb">
-                    <h5 class="mb-0">Books</h5>
+                    <h5 class="mb-0">Timeline</h5>
                     <nav aria-label="breadcrumb">
                        <ul class="breadcrumb">
-                          <li class="breadcrumb-item"><a href="/">Admin</a></li>
-                          <li class="breadcrumb-item active" aria-current="page">Books</li>
+                          <li class="breadcrumb-item"><a href="/">Home</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">Timeline</li>
                        </ul>
                     </nav>
                  </div>
@@ -243,7 +242,7 @@
                        </li>
                        <li class="nav-item nav-icon">
                           <a href="#" class="search-toggle iq-waves-effect text-gray rounded">
-                          <i class="ri-notification-2-line"></i>
+                          <i class="ri-notification-2-fill"></i>
                           <span class="bg-primary dots"></span>
                           </a>
                           <div class="iq-sub-dropdown">
@@ -306,8 +305,8 @@
                        </li>
                        <li class="nav-item nav-icon dropdown">
                           <a href="#" class="search-toggle iq-waves-effect text-gray rounded">
-                          <i class="ri-mail-line"></i>
-                          <span class="bg-primary dots"></span>
+                          <i class="fa fa-envelope" aria-hidden="true"></i>
+                          <span class="bg-primary count-mail"></span>
                           </a>
                           <div class="iq-sub-dropdown">
                              <div class="iq-card shadow-none m-0">
@@ -456,7 +455,7 @@
                                       <h5 class="mb-0 text-white line-height">Hello Barry Tech</h5>
                                       <span class="text-white font-size-12">Available</span>
                                    </div>
-                                   <a href="profile.html" class="iq-sub-card iq-bg-primary-hover">
+                                   <a href="/profile" class="iq-sub-card iq-bg-primary-hover">
                                       <div class="media align-items-center">
                                          <div class="rounded iq-card-icon iq-bg-primary">
                                             <i class="ri-file-user-line"></i>
@@ -478,7 +477,7 @@
                                          </div>
                                       </div>
                                    </a>
-                                   <a href="account-setting.html" class="iq-sub-card iq-bg-primary-hover">
+                                   <a href="/account-setting" class="iq-sub-card iq-bg-primary-hover">
                                       <div class="media align-items-center">
                                          <div class="rounded iq-card-icon iq-bg-primary">
                                             <i class="ri-account-box-line"></i>
@@ -513,221 +512,162 @@
            </div>
         </div>
         <!-- TOP Nav Bar END -->
+
         <!-- Page Content  -->
         <div id="content-page" class="content-page">
            <div class="container-fluid">
-              <div class="row">
-                 <div class="col-sm-12">
+              <div class="row justify-content-center">
+                 <div class="col-lg-6">
                     <div class="iq-card">
                        <div class="iq-card-header d-flex justify-content-between">
                           <div class="iq-header-title">
-                             <h4 class="card-title">book Lists</h4>
-                          </div>
-                          <div class="iq-card-header-toolbar d-flex align-items-center">
-                             <a href="/admin-add-book" class="btn btn-primary">Add New book</a>
+                             <h4 class="card-title">Product Orders</h4>
                           </div>
                        </div>
                        <div class="iq-card-body">
-                          <div class="table-responsive">
-                             <table class="data-tables table table-striped table-bordered" style="width:100%">
-                               <thead>
-                                   <tr>
-                                       <th style="width: 3%;">No</th>
-                                       <th style="width: 12%;">Book Image</th>
-                                       <th style="width: 15%;">Book Name</th>
-                                       <th style="width: 15%;">Book Catrgory</th>
-                                       <th style="width: 15%;">Book Author</th>
-                                       <th style="width: 18%;">Book Description</th>
-                                       <th style="width: 7%;">Book Price</th>
-                                       <th style="width: 7%;">Book pdf</th>
-                                       <th style="width: 15%;">Action</th>
-                                   </tr>
-                               </thead>
-                               <tbody>
-                                   <tr>
-                                       <td>1</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/01.jpg" alt=""></td>
-                                       <td>Reading on the Worlds</td>
-                                       <td>General Books</td>
-                                       <td>Jhone Steben</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$89</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>2</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/02.jpg" alt=""></td>
-                                       <td>The Catcher in the Rye</td>
-                                       <td>History Books</td>
-                                       <td>Fritz Wold</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$89</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>3</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/03.jpg" alt=""></td>
-                                       <td>Little Black Book</td>
-                                       <td>Comic Books</td>
-                                       <td>John Klok</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$129</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>4</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/04.jpg" alt=""></td>
-                                       <td>Take On The Risk</td>
-                                       <td>General Books</td>
-                                       <td>George Strong</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$89</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>5</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/05.jpg" alt=""></td>
-                                       <td>Absteact On Background</td>
-                                       <td>Film & Photography</td>
-                                       <td>Ichae Semos</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$99</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>6</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/06.jpg" alt=""></td>
-                                       <td>Find The Wave Book</td>
-                                       <td>General Books</td>
-                                       <td>Fidel Martin</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$100</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>7</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/07.jpg" alt=""></td>
-                                       <td>See the More Story</td>
-                                       <td>Horror Story</td>
-                                       <td>Jules Boutin</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$79</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>8</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/08.jpg" alt=""></td>
-                                       <td>The Wikde Book</td>
-                                       <td> Computers & Internet</td>
-                                       <td>Kusti Franti</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$89</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>9</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/09.jpg" alt=""></td>
-                                       <td>Conversion Erik Routley</td>
-                                       <td>Sports</td>
-                                       <td>Argele Intili</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$79</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>10</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/10.jpg" alt=""></td>
-                                       <td>The Leo Dominica</td>
-                                       <td>General Books</td>
-                                       <td>Henry Jurk</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$99</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-
-                               </tbody>
-                           </table>
+                          <ul class="iq-timeline">
+                             <li>
+                                <div class="timeline-dots"><i class="ri-pantone-line"></i></div>
+                                <h6 class="float-left mb-1">Client Meeting</h6>
+                                <small class="float-right mt-1">19 November 2019</small>
+                                <div class="d-inline-block w-100">
+                                   <p>Bonbon macaroon jelly beans gummi bears jelly lollipop apple</p>
+                                </div>
+                             </li>
+                             <li>
+                                <div class="timeline-dots border-success"><i class="ri-pantone-line"></i></div>
+                                <h6 class="float-left mb-1">Client Meeting</h6>
+                                <small class="float-right mt-1">19 November 2019</small>
+                                <div class="d-inline-block w-100">
+                                   <p>Bonbon macaroon jelly beans gummi bears jelly lollipop apple</p>
+                                </div>
+                             </li>
+                             <li>
+                                <div class="timeline-dots border-danger"><i class="ri-pantone-line"></i></div>
+                                <h6 class="float-left mb-1">Client Meeting</h6>
+                                <small class="float-right mt-1">19 November 2019</small>
+                                <div class="d-inline-block w-100">
+                                   <p>Bonbon macaroon jelly beans <a href="#">gummi bears</a>gummi bears jelly lollipop apple</p>
+                                </div>
+                             </li>
+                             <li>
+                                <div class="timeline-dots border-primary"><i class="ri-pantone-line"></i></div>
+                                <h6 class="float-left mb-1">Client Meeting</h6>
+                                <small class="float-right mt-1">19 November 2019</small>
+                                <div class="d-inline-block w-100">
+                                   <p>Bonbon macaroon jelly beans gummi bears jelly lollipop apple</p>
+                                </div>
+                             </li>
+                             <li>
+                                <div class="timeline-dots border-info"><i class="ri-pantone-line"></i></div>
+                                <h6 class="float-left mb-1">Client Meeting</h6>
+                                <small class="float-right mt-1">19 November 2019</small>
+                                <div class="d-inline-block w-100">
+                                   <p>Bonbon macaroon jelly beans gummi bears jelly lollipop apple</p>
+                                </div>
+                             </li>
+                             <li>
+                                <div class="timeline-dots border-info"><i class="ri-pantone-line"></i></div>
+                                <h6 class="float-left mb-1">Client Meeting</h6>
+                                <small class="float-right mt-1">19 November 2019</small>
+                                <div class="d-inline-block w-100">
+                                   <p>Bonbon macaroon jelly beans gummi bears jelly lollipop apple</p>
+                                </div>
+                             </li>
+                             <li>
+                                <div class="timeline-dots border-warning"><i class="ri-pantone-line"></i></div>
+                                <h6 class="float-left mb-1">Client Meeting</h6>
+                                <small class="float-right mt-1">19 November 2019</small>
+                                <div class="d-inline-block w-100">
+                                   <p>Bonbon macaroon jelly beans gummi bears jelly lollipop apple</p>
+                                </div>
+                             </li>
+                             <li>
+                                <div class="timeline-dots border-info"><i class="ri-pantone-line"></i></div>
+                                <h6 class="float-left mb-1">Client Meeting</h6>
+                                <small class="float-right mt-1">19 November 2019</small>
+                                <div class="d-inline-block w-100">
+                                   <p>Bonbon macaroon jelly beans gummi bears jelly lollipop apple</p>
+                                </div>
+                             </li>
+                          </ul>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-lg-6">
+                    <div class="iq-card">
+                       <div class="iq-card-header d-flex justify-content-between">
+                          <div class="iq-header-title">
+                             <h4 class="card-title">Product Orders</h4>
                           </div>
+                       </div>
+                       <div class="iq-card-body">
+                          <ul class="iq-timeline">
+                             <li>
+                                <div class="timeline-dots"><i class="ri-pantone-line"></i></div>
+                                <h6 class="float-left mb-1">Client Meeting</h6>
+                                <small class="float-right mt-1">19 November 2019</small>
+                                <div class="d-inline-block w-100">
+                                   <p>Bonbon macaroon jelly beans gummi bears jelly lollipop apple</p>
+                                </div>
+                             </li>
+                             <li>
+                                <div class="timeline-dots border-success"><i class="ri-pantone-line"></i></div>
+                                <h6 class="float-left mb-1">Client Meeting</h6>
+                                <small class="float-right mt-1">19 November 2019</small>
+                                <div class="d-inline-block w-100">
+                                   <p>Bonbon macaroon jelly beans gummi bears jelly lollipop apple</p>
+                                </div>
+                             </li>
+                             <li>
+                                <div class="timeline-dots border-danger"><i class="ri-pantone-line"></i></div>
+                                <h6 class="float-left mb-1">Client Meeting</h6>
+                                <small class="float-right mt-1">19 November 2019</small>
+                                <div class="d-inline-block w-100">
+                                   <p>Bonbon macaroon jelly beans <a href="#">gummi bears</a>gummi bears jelly lollipop apple</p>
+                                </div>
+                             </li>
+                             <li>
+                                <div class="timeline-dots border-primary"><i class="ri-pantone-line"></i></div>
+                                <h6 class="float-left mb-1">Client Meeting</h6>
+                                <small class="float-right mt-1">19 November 2019</small>
+                                <div class="d-inline-block w-100">
+                                   <p>Bonbon macaroon jelly beans gummi bears jelly lollipop apple</p>
+                                </div>
+                             </li>
+                             <li>
+                                <div class="timeline-dots border-info"><i class="ri-pantone-line"></i></div>
+                                <h6 class="float-left mb-1">Client Meeting</h6>
+                                <small class="float-right mt-1">19 November 2019</small>
+                                <div class="d-inline-block w-100">
+                                   <p>Bonbon macaroon jelly beans gummi bears jelly lollipop apple</p>
+                                </div>
+                             </li>
+                             <li>
+                                <div class="timeline-dots border-info"><i class="ri-pantone-line"></i></div>
+                                <h6 class="float-left mb-1">Client Meeting</h6>
+                                <small class="float-right mt-1">19 November 2019</small>
+                                <div class="d-inline-block w-100">
+                                   <p>Bonbon macaroon jelly beans gummi bears jelly lollipop apple</p>
+                                </div>
+                             </li>
+                             <li>
+                                <div class="timeline-dots border-warning"><i class="ri-pantone-line"></i></div>
+                                <h6 class="float-left mb-1">Client Meeting</h6>
+                                <small class="float-right mt-1">19 November 2019</small>
+                                <div class="d-inline-block w-100">
+                                   <p>Bonbon macaroon jelly beans gummi bears jelly lollipop apple</p>
+                                </div>
+                             </li>
+                             <li>
+                                <div class="timeline-dots border-info"><i class="ri-pantone-line"></i></div>
+                                <h6 class="float-left mb-1">Client Meeting</h6>
+                                <small class="float-right mt-1">19 November 2019</small>
+                                <div class="d-inline-block w-100">
+                                   <p>Bonbon macaroon jelly beans gummi bears jelly lollipop apple</p>
+                                </div>
+                             </li>
+                          </ul>
                        </div>
                     </div>
                  </div>
@@ -735,4 +675,4 @@
            </div>
         </div>
      </div>
-</div>
+</main>

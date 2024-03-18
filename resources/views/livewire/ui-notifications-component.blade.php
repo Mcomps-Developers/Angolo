@@ -37,50 +37,50 @@
                          <li><a href="/wishlist"><i class="ri-heart-line"></i>wishlist</a></li>
                        </ul>
                     </li>
-                    <li class="active active-menu">
-                       <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span class="ripple rippleEffect"></span><i class="las la-home iq-arrow-left"></i><span>Admin</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                       <ul id="admin" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
-                          <li><a href="/admin-dashboard"><i class="las la-house-damage"></i>Dashboard</a></li>
-                          <li><a href="/admin-category"><i class="ri-function-line"></i>Books Category</a></li>
-                          <li><a href="/admin-author"><i class="ri-book-line"></i>Author</a></li>
-                          <li class="active"><a href="/admin-books"><i class="ri-file-pdf-line"></i>Books</a></li>
+                    <li>
+                       <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false"><span class="ripple rippleEffect"></span><i class="ri-admin-line"></i><span>Admin</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                       <ul id="admin" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                          <li><a href="/admin-dashboard"><i class="ri-dashboard-line"></i>Dashboard</a></li>
+                          <li><a href="/admin-category"><i class="ri-list-check-2"></i>Category Lists</a></li>
+                          <li><a href="/admin-author"><i class="ri-file-user-line"></i>Author</a></li>
+                          <li><a href="/admin-books"><i class="ri-book-2-line"></i>Books</a></li>
                        </ul>
                     </li>
                     <li>
                        <a href="#userinfo" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false"><span class="ripple rippleEffect"></span><i class="las la-user-tie iq-arrow-left"></i><span>User</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                        <ul id="userinfo" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle" style="">
-                          <li><a href="profile.html"><i class="las la-id-card-alt"></i>User Profile</a></li>
-                          <li><a href="profile-edit.html"><i class="las la-edit"></i>User Edit</a></li>
-                          <li><a href="add-user.html"><i class="las la-plus-circle"></i>User Add</a></li>
-                          <li><a href="user-list.html"><i class="las la-th-list"></i>User List</a></li>
+                          <li><a href="/profile"><i class="las la-id-card-alt"></i>User Profile</a></li>
+                          <li><a href="/profile-edit"><i class="las la-edit"></i>User Edit</a></li>
+                          <li><a href="/add-user"><i class="las la-plus-circle"></i>User Add</a></li>
+                          <li><a href="/user-list"><i class="las la-th-list"></i>User List</a></li>
                        </ul>
                     </li>
-                    <li>
-                       <a href="#ui-elements" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="lab la-elementor iq-arrow-left"></i><span>UI Elements</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                       <ul id="ui-elements" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                          <li class="elements">
-                             <a href="#sub-menu" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-play-circle-line"></i><span>UI Kit</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                             <ul id="sub-menu" class="iq-submenu collapse" data-parent="#ui-elements">
-                                <li><a href="ui-colors.html"><i class="las la-palette"></i>colors</a></li>
-                                <li><a href="ui-typography.html"><i class="las la-keyboard"></i>Typography</a></li>
-                                <li><a href="ui-alerts.html"><i class="las la-tag"></i>Alerts</a></li>
-                                <li><a href="ui-badges.html"><i class="lab la-atlassian"></i>Badges</a></li>
-                                <li><a href="ui-breadcrumb.html"><i class="las la-bars"></i>Breadcrumb</a></li>
-                                <li><a href="ui-buttons.html"><i class="las la-tablet"></i>Buttons</a></li>
-                                <li><a href="ui-cards.html"><i class="las la-credit-card"></i>Cards</a></li>
-                                <li><a href="ui-carousel.html"><i class="las la-film"></i>Carousel</a></li>
-                                <li><a href="ui-embed-video.html"><i class="las la-video"></i>Video</a></li>
-                                <li><a href="ui-grid.html"><i class="las la-border-all"></i>Grid</a></li>
-                                <li><a href="ui-images.html"><i class="las la-images"></i>Images</a></li>
-                                <li><a href="ui-list-group.html"><i class="las la-list"></i>list Group</a></li>
-                                <li><a href="ui-media-object.html"><i class="las la-ad"></i>Media</a></li>
-                                <li><a href="ui-modal.html"><i class="las la-columns"></i>Modal</a></li>
-                                <li><a href="ui-notifications.html"><i class="las la-bell"></i>Notifications</a></li>
-                                <li><a href="ui-pagination.html"><i class="las la-ellipsis-h"></i>Pagination</a></li>
-                                <li><a href="ui-popovers.html"><i class="las la-eraser"></i>Popovers</a></li>
-                                <li><a href="ui-progressbars.html"><i class="las la-hdd"></i>Progressbars</a></li>
-                                <li><a href="ui-tabs.html"><i class="las la-database"></i>Tabs</a></li>
-                                <li><a href="ui-tooltips.html"><i class="las la-magnet"></i>Tooltips</a></li>
+                    <li class="active active-menu">
+                       <a href="#ui-elements" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="true"><i class="lab la-elementor iq-arrow-left"></i><span>UI Elements</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                       <ul id="ui-elements" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
+                          <li class="elements active active-menu">
+                             <a href="#sub-menu" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="true"><i class="ri-play-circle-line"></i><span>UI Kit</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                             <ul id="sub-menu" class="iq-submenu collapse show" data-parent="#ui-elements">
+                                <li><a href="/ui-colors"><i class="las la-palette"></i>colors</a></li>
+                                <li><a href="/ui-typography"><i class="las la-keyboard"></i>Typography</a></li>
+                                <li><a href="/ui-alerts"><i class="las la-tag"></i>Alerts</a></li>
+                                <li><a href="/ui-badges"><i class="lab la-atlassian"></i>Badges</a></li>
+                                <li><a href="/ui-breadcrumb"><i class="las la-bars"></i>Breadcrumb</a></li>
+                                <li><a href="/ui-buttons"><i class="las la-tablet"></i>Buttons</a></li>
+                                <li><a href="/ui-cards"><i class="las la-credit-card"></i>Cards</a></li>
+                                <li><a href="/ui-carousel"><i class="las la-film"></i>Carousel</a></li>
+                                <li><a href="/ui-embed-video"><i class="las la-video"></i>Video</a></li>
+                                <li><a href="/ui-grid"><i class="las la-border-all"></i>Grid</a></li>
+                                <li><a href="/ui-images"><i class="las la-images"></i>Images</a></li>
+                                <li><a href="/ui-list-group"><i class="las la-list"></i>list Group</a></li>
+                                <li><a href="/ui-media-object"><i class="las la-ad"></i>Media</a></li>
+                                <li><a href="/ui-modal"><i class="las la-columns"></i>Modal</a></li>
+                                <li class="active"><a href="/ui-notifications"><i class="las la-bell"></i>Notifications</a></li>
+                                <li><a href="/ui-pagination"><i class="las la-ellipsis-h"></i>Pagination</a></li>
+                                <li><a href="/ui-popovers"><i class="las la-eraser"></i>Popovers</a></li>
+                                <li><a href="/ui-progressbars"><i class="las la-hdd"></i>Progressbars</a></li>
+                                <li><a href="/ui-tabs"><i class="las la-database"></i>Tabs</a></li>
+                                <li><a href="/ui-tooltips"><i class="las la-magnet"></i>Tooltips</a></li>
                              </ul>
                           </li>
                           <li class="form">
@@ -136,26 +136,25 @@
                           <li>
                              <a href="#authentication" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-pages-line"></i><span>Authentication</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                              <ul id="authentication" class="iq-submenu collapse" data-parent="#pages">
-                                <li><a href="sign-in.html"><i class="las la-sign-in-alt"></i>Login</a></li>
-                                <li><a href="sign-up.html"><i class="ri-login-circle-line"></i>Register</a></li>
-                                <li><a href="pages-recoverpw.html"><i class="ri-record-mail-line"></i>Recover Password</a></li>
-                                <li><a href="pages-confirm-mail.html"><i class="ri-file-code-line"></i>Confirm Mail</a></li>
-                                <li><a href="pages-lock-screen.html"><i class="ri-lock-line"></i>Lock Screen</a></li>
+                                <li><a href="/sign-in"><i class="las la-sign-in-alt"></i>Login</a></li>
+                                <li><a href="/sign-up"><i class="ri-login-circle-line"></i>Register</a></li>
+                                <li><a href="/pages-recoverpw"><i class="ri-record-mail-line"></i>Recover Password</a></li>
+                                <li><a href="/pages-confirm-mail"><i class="ri-file-code-line"></i>Confirm Mail</a></li>
+                                <li><a href="/pages-lock-screen"><i class="ri-lock-line"></i>Lock Screen</a></li>
                              </ul>
                           </li>
                           <li>
                              <a href="#extra-pages" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-pantone-line"></i><span>Extra Pages</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                              <ul id="extra-pages" class="iq-submenu collapse" data-parent="#pages">
-                                <li><a href="pages-timeline.html"><i class="ri-map-pin-time-line"></i>Timeline</a></li>
-                                <li><a href="pages-invoice.html"><i class="ri-question-answer-line"></i>Invoice</a></li>
-                                <li><a href="blank-page.html"><i class="ri-invision-line"></i>Blank Page</a></li>
-                                <li><a href="pages-error.html"><i class="ri-error-warning-line"></i>Error 404</a></li>
-                                <li><a href="pages-error-500.html"><i class="ri-error-warning-line"></i>Error 500</a></li>
-                                <li><a href="pages-pricing.html"><i class="ri-price-tag-line"></i>Pricing</a></li>
-                                <li><a href="pages-pricing-one.html"><i class="ri-price-tag-2-line"></i>Pricing 1</a></li>
-                                <li><a href="pages-maintenance.html"><i class="ri-archive-line"></i>Maintenance</a></li>
-                                <li><a href="pages-comingsoon.html"><i class="ri-mastercard-line"></i>Coming Soon</a></li>
-                                <li><a href="pages-faq.html"><i class="ri-compasses-line"></i>Faq</a></li>
+                                <li><a href="/pages-timeline"><i class="ri-map-pin-time-line"></i>Timeline</a></li>
+                                <li><a href="/pages-invoice"><i class="ri-question-answer-line"></i>Invoice</a></li>
+                                <li><a href="/blank-page"><i class="ri-invision-line"></i>Blank Page</a></li>
+                                <li><a href="/pages-error"><i class="ri-error-warning-line"></i>Error 404</a></li>
+                                <li><a href="/pages-error-500"><i class="ri-error-warning-line"></i>Error 500</a></li>
+                                <li><a href="/pages-pricing"><i class="ri-price-tag-line"></i>Pricing</a></li>
+                                <li><a href="/pages-maintenance"><i class="ri-archive-line"></i>Maintenance</a></li>
+                                <li><a href="/pages-comingsoon"><i class="ri-mastercard-line"></i>Coming Soon</a></li>
+                                <li><a href="/pages-faq"><i class="ri-compasses-line"></i>Faq</a></li>
                              </ul>
                           </li>
                        </ul>
@@ -213,11 +212,11 @@
                     </div>
                  </div>
                  <div class="navbar-breadcrumb">
-                    <h5 class="mb-0">Books</h5>
+                    <h5 class="mb-0">Notifications</h5>
                     <nav aria-label="breadcrumb">
                        <ul class="breadcrumb">
-                          <li class="breadcrumb-item"><a href="/">Admin</a></li>
-                          <li class="breadcrumb-item active" aria-current="page">Books</li>
+                          <li class="breadcrumb-item"><a href="/">Home</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">Notifications</li>
                        </ul>
                     </nav>
                  </div>
@@ -243,7 +242,7 @@
                        </li>
                        <li class="nav-item nav-icon">
                           <a href="#" class="search-toggle iq-waves-effect text-gray rounded">
-                          <i class="ri-notification-2-line"></i>
+                          <i class="ri-notification-2-fill"></i>
                           <span class="bg-primary dots"></span>
                           </a>
                           <div class="iq-sub-dropdown">
@@ -306,8 +305,8 @@
                        </li>
                        <li class="nav-item nav-icon dropdown">
                           <a href="#" class="search-toggle iq-waves-effect text-gray rounded">
-                          <i class="ri-mail-line"></i>
-                          <span class="bg-primary dots"></span>
+                          <i class="fa fa-envelope" aria-hidden="true"></i>
+                          <span class="bg-primary count-mail"></span>
                           </a>
                           <div class="iq-sub-dropdown">
                              <div class="iq-card shadow-none m-0">
@@ -456,7 +455,7 @@
                                       <h5 class="mb-0 text-white line-height">Hello Barry Tech</h5>
                                       <span class="text-white font-size-12">Available</span>
                                    </div>
-                                   <a href="profile.html" class="iq-sub-card iq-bg-primary-hover">
+                                   <a href="/profile" class="iq-sub-card iq-bg-primary-hover">
                                       <div class="media align-items-center">
                                          <div class="rounded iq-card-icon iq-bg-primary">
                                             <i class="ri-file-user-line"></i>
@@ -467,7 +466,7 @@
                                          </div>
                                       </div>
                                    </a>
-                                   <a href="profile-edit.html" class="iq-sub-card iq-bg-primary-hover">
+                                   <a href="/profile-edit" class="iq-sub-card iq-bg-primary-hover">
                                       <div class="media align-items-center">
                                          <div class="rounded iq-card-icon iq-bg-primary">
                                             <i class="ri-profile-line"></i>
@@ -478,7 +477,7 @@
                                          </div>
                                       </div>
                                    </a>
-                                   <a href="account-setting.html" class="iq-sub-card iq-bg-primary-hover">
+                                   <a href="/account-setting" class="iq-sub-card iq-bg-primary-hover">
                                       <div class="media align-items-center">
                                          <div class="rounded iq-card-icon iq-bg-primary">
                                             <i class="ri-account-box-line"></i>
@@ -489,7 +488,7 @@
                                          </div>
                                       </div>
                                    </a>
-                                   <a href="privacy-setting.html" class="iq-sub-card iq-bg-primary-hover">
+                                   <a href="/privacy-setting" class="iq-sub-card iq-bg-primary-hover">
                                       <div class="media align-items-center">
                                          <div class="rounded iq-card-icon iq-bg-primary">
                                             <i class="ri-lock-line"></i>
@@ -501,7 +500,7 @@
                                       </div>
                                    </a>
                                    <div class="d-inline-block w-100 text-center p-3">
-                                      <a class="bg-primary iq-sign-btn" href="sign-in.html" role="button">Sign out<i class="ri-login-box-line ml-2"></i></a>
+                                      <a class="bg-primary iq-sign-btn" href="/sign-in" role="button">Sign out<i class="ri-login-box-line ml-2"></i></a>
                                    </div>
                                 </div>
                              </div>
@@ -513,220 +512,244 @@
            </div>
         </div>
         <!-- TOP Nav Bar END -->
+
         <!-- Page Content  -->
         <div id="content-page" class="content-page">
            <div class="container-fluid">
               <div class="row">
+                 <div class="col-lg-6">
+                    <div class="iq-card">
+                       <div class="iq-card-header d-flex justify-content-between">
+                          <div class="iq-header-title">
+                             <h4 class="card-title">Notifications</h4>
+                          </div>
+                       </div>
+                       <div class="iq-card-body">
+                          <p>Toasts are as flexible as you need and have very little required markup. At a minimum, we require a single element to contain your “toasted” content and strongly encourage a dismiss button.</p>
+                          <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                             <div class="toast-header">
+                                <svg class="bd-placeholder-img rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                                   <rect width="100%" height="100%" fill="#007aff"></rect>
+                                </svg>
+                                <strong class="mr-auto">Bootstrap</strong>
+                                <small>11 mins ago</small>
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                                </button>
+                             </div>
+                             <div class="toast-body">
+                                Hello, world! This is a toast message.
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="iq-card">
+                       <div class="iq-card-header d-flex justify-content-between">
+                          <div class="iq-header-title">
+                             <h4 class="card-title">Stacking</h4>
+                          </div>
+                       </div>
+                       <div class="iq-card-body">
+                          <p>When you have multiple toasts, we default to vertically stacking them in a readable manner.</p>
+                          <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                             <div class="toast-header">
+                                <svg class="bd-placeholder-img rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                                   <rect width="100%" height="100%" fill="#007aff"></rect>
+                                </svg>
+                                <strong class="mr-auto">Bootstrap</strong>
+                                <small class="text-muted">just now</small>
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                             </div>
+                             <div class="toast-body">
+                                See? Just like this.
+                             </div>
+                          </div>
+                          <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                             <div class="toast-header">
+                                <svg class="bd-placeholder-img rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                                   <rect width="100%" height="100%" fill="#007aff"></rect>
+                                </svg>
+                                <strong class="mr-auto">Bootstrap</strong>
+                                <small class="text-muted">2 seconds ago</small>
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                             </div>
+                             <div class="toast-body">
+                                Heads up, toasts will stack automatically
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="iq-card">
+                       <div class="iq-card-header d-flex justify-content-between">
+                          <div class="iq-header-title">
+                             <h4 class="card-title">Notifications horizontally and/or vertically </h4>
+                          </div>
+                       </div>
+                       <div class="iq-card-body">
+                          <p>You can also get fancy with flexbox utilities to align toasts horizontally and/or vertically.</p>
+                          <div class="p-3 bg-dark">
+                             <!-- Flexbox container for aligning the toasts -->
+                             <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center" style="min-height: 200px;">
+                                <!-- Then put toasts within -->
+                                <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                                   <div class="toast-header">
+                                      <svg class="bd-placeholder-img rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                                         <rect width="100%" height="100%" fill="#007aff"></rect>
+                                      </svg>
+                                      <strong class="mr-auto">Bootstrap</strong>
+                                      <small>11 mins ago</small>
+                                      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                      </button>
+                                   </div>
+                                   <div class="toast-body">
+                                      Hello, world! This is a toast message.
+                                   </div>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-lg-6">
+                    <div class="iq-card">
+                       <div class="iq-card-header d-flex justify-content-between">
+                          <div class="iq-header-title">
+                             <h4 class="card-title">Notifications</h4>
+                          </div>
+                       </div>
+                       <div class="iq-card-body">
+                          <p>Toasts are slightly translucent, too, so they blend over whatever they might appear over. For browsers that support the <code>backdrop-filter</code> CSS property, we’ll also attempt to blur the elements under a toast.</p>
+                          <div class="p-3 bg-dark">
+                             <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                                <div class="toast-header">
+                                   <svg class="bd-placeholder-img rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                                      <rect width="100%" height="100%" fill="#007aff"></rect>
+                                   </svg>
+                                   <strong class="mr-auto">Bootstrap</strong>
+                                   <small>11 mins ago</small>
+                                   <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                   <span aria-hidden="true">×</span>
+                                   </button>
+                                </div>
+                                <div class="toast-body">
+                                   Hello, world! This is a toast message.
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="iq-card">
+                       <div class="iq-card-header d-flex justify-content-between">
+                          <div class="iq-header-title">
+                             <h4 class="card-title">Stacking Placement</h4>
+                          </div>
+                       </div>
+                       <div class="iq-card-body">
+                          <p>Place toasts with custom CSS as you need them. The top right is often used for notifications, as is the top middle. If you’re only ever going to show one toast at a time, put the positioning styles right on the <code>.toast</code>.</p>
+                          <div class="bg-dark p-3">
+                             <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+                                <div class="toast fade show" style="position: absolute; top: 0; right: 0;">
+                                   <div class="toast-header">
+                                      <svg class="bd-placeholder-img rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                                         <rect width="100%" height="100%" fill="#007aff"></rect>
+                                      </svg>
+                                      <strong class="mr-auto">Bootstrap</strong>
+                                      <small>11 mins ago</small>
+                                      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                      </button>
+                                   </div>
+                                   <div class="toast-body">
+                                      Hello, world! This is a toast message.
+                                   </div>
+                                </div>
+                             </div>
+                          </div>
+                          <p class="mt-3">For systems that generate more notifications, consider using a wrapping element so they can easily stack.</p>
+                          <div class="bg-dark p-3 mt-3">
+                             <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+                                <!-- Position it -->
+                                <div style="position: absolute; top: 0; right: 0;">
+                                   <!-- Then put toasts within -->
+                                   <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                                      <div class="toast-header">
+                                         <svg class="bd-placeholder-img rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                                            <rect width="100%" height="100%" fill="#007aff"></rect>
+                                         </svg>
+                                         <strong class="mr-auto">Bootstrap</strong>
+                                         <small class="text-muted">just now</small>
+                                         <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                         <span aria-hidden="true">&times;</span>
+                                         </button>
+                                      </div>
+                                      <div class="toast-body">
+                                         See? Just like this.
+                                      </div>
+                                   </div>
+                                   <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                                      <div class="toast-header">
+                                         <svg class="bd-placeholder-img rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                                            <rect width="100%" height="100%" fill="#007aff"></rect>
+                                         </svg>
+                                         <strong class="mr-auto">Bootstrap</strong>
+                                         <small class="text-muted">2 seconds ago</small>
+                                         <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                         <span aria-hidden="true">&times;</span>
+                                         </button>
+                                      </div>
+                                      <div class="toast-body">
+                                         Heads up, toasts will stack automatically
+                                      </div>
+                                   </div>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
                  <div class="col-sm-12">
                     <div class="iq-card">
                        <div class="iq-card-header d-flex justify-content-between">
                           <div class="iq-header-title">
-                             <h4 class="card-title">book Lists</h4>
-                          </div>
-                          <div class="iq-card-header-toolbar d-flex align-items-center">
-                             <a href="/admin-add-book" class="btn btn-primary">Add New book</a>
+                             <h4 class="card-title">Notifications</h4>
                           </div>
                        </div>
                        <div class="iq-card-body">
-                          <div class="table-responsive">
-                             <table class="data-tables table table-striped table-bordered" style="width:100%">
-                               <thead>
-                                   <tr>
-                                       <th style="width: 3%;">No</th>
-                                       <th style="width: 12%;">Book Image</th>
-                                       <th style="width: 15%;">Book Name</th>
-                                       <th style="width: 15%;">Book Catrgory</th>
-                                       <th style="width: 15%;">Book Author</th>
-                                       <th style="width: 18%;">Book Description</th>
-                                       <th style="width: 7%;">Book Price</th>
-                                       <th style="width: 7%;">Book pdf</th>
-                                       <th style="width: 15%;">Action</th>
-                                   </tr>
-                               </thead>
-                               <tbody>
-                                   <tr>
-                                       <td>1</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/01.jpg" alt=""></td>
-                                       <td>Reading on the Worlds</td>
-                                       <td>General Books</td>
-                                       <td>Jhone Steben</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$89</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>2</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/02.jpg" alt=""></td>
-                                       <td>The Catcher in the Rye</td>
-                                       <td>History Books</td>
-                                       <td>Fritz Wold</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$89</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>3</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/03.jpg" alt=""></td>
-                                       <td>Little Black Book</td>
-                                       <td>Comic Books</td>
-                                       <td>John Klok</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$129</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>4</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/04.jpg" alt=""></td>
-                                       <td>Take On The Risk</td>
-                                       <td>General Books</td>
-                                       <td>George Strong</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$89</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>5</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/05.jpg" alt=""></td>
-                                       <td>Absteact On Background</td>
-                                       <td>Film & Photography</td>
-                                       <td>Ichae Semos</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$99</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>6</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/06.jpg" alt=""></td>
-                                       <td>Find The Wave Book</td>
-                                       <td>General Books</td>
-                                       <td>Fidel Martin</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$100</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>7</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/07.jpg" alt=""></td>
-                                       <td>See the More Story</td>
-                                       <td>Horror Story</td>
-                                       <td>Jules Boutin</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$79</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>8</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/08.jpg" alt=""></td>
-                                       <td>The Wikde Book</td>
-                                       <td> Computers & Internet</td>
-                                       <td>Kusti Franti</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$89</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>9</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/09.jpg" alt=""></td>
-                                       <td>Conversion Erik Routley</td>
-                                       <td>Sports</td>
-                                       <td>Argele Intili</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$79</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                       <td>10</td>
-                                       <td><img class="img-fluid rounded" src="images/browse-books/10.jpg" alt=""></td>
-                                       <td>The Leo Dominica</td>
-                                       <td>General Books</td>
-                                       <td>Henry Jurk</td>
-                                       <td>
-                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                       </td>
-                                       <td>$99</td>
-                                       <td><a href="/book-pdf"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>
-                                       <td>
-                                          <div class="flex align-items-center list-user-action">
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                            <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                         </div>
-                                       </td>
-                                   </tr>
-
-                               </tbody>
-                           </table>
+                          <p>Toasts are as flexible as you need and have very little required markup. At a minimum, we require a single element to contain your “toasted” content and strongly encourage a dismiss button.</p>
+                          <div class="toast fade show bg-primary text-white border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                             <div class="toast-header bg-primary text-white">
+                                <svg class="bd-placeholder-img rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                                   <rect width="100%" height="100%" fill="#fff"></rect>
+                                </svg>
+                                <strong class="mr-auto text-white">Bootstrap</strong>
+                                <small>11 mins ago</small>
+                                <button type="button" class="ml-2 mb-1 close text-white" data-dismiss="toast" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                                </button>
+                             </div>
+                             <div class="toast-body">
+                                Hello, world! This is a toast message.
+                             </div>
+                          </div>
+                          <div class="toast fade show bg-success text-white border-0 mt-3" role="alert" aria-live="assertive" aria-atomic="true">
+                             <div class="toast-header bg-success text-white">
+                                <svg class="bd-placeholder-img rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                                   <rect width="100%" height="100%" fill="#fff"></rect>
+                                </svg>
+                                <strong class="mr-auto text-white">Bootstrap</strong>
+                                <small>11 mins ago</small>
+                                <button type="button" class="ml-2 mb-1 close text-white" data-dismiss="toast" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                                </button>
+                             </div>
+                             <div class="toast-body">
+                                Hello, world! This is a toast message.
+                             </div>
                           </div>
                        </div>
                     </div>

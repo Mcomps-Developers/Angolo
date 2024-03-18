@@ -1,0 +1,34 @@
+<main>
+    <div id="loading">
+        <div id="loading-center">
+        </div>
+     </div>
+     <!-- loader END -->
+       <!-- Sign in Start -->
+       <section class="sign-in-page">
+           <div class="container p-0">
+               <div class="row no-gutters height-self-center">
+                 <div class="col-sm-12 align-self-center page-content rounded">
+                   <div class="row m-0">
+                     <div class="col-sm-12 sign-in-page-data">
+                         <div class="sign-in-from bg-primary rounded">
+                           <img src="images/user/1.jpg" alt="user-image" class="rounded">
+                           <h3 class="mt-3 mb-0 text-white">Hi ! Michael Smith</h3>
+                           <p class="text-white">Enter your password to access the admin.</p>
+                           <form action="https://templates.iqonic.design/booksto/html/sign-in.html" class="mt-4 form-text">
+                             <div class="form-group">
+                                 <label for="exampleInputEmail1">Password</label>
+                                 <input type="Password" class="form-control mb-0" id="exampleInputEmail1"  placeholder="Password">
+                             </div>
+                             <div class="d-inline-block w-100">
+                                 <button type="submit" class="btn btn-white float-left">Log In</button>
+                             </div>
+                           </form>
+                         </div>
+                       </div>
+                   </div>
+                 </div>
+               </div>
+           </div>
+       </section>
+</main>
