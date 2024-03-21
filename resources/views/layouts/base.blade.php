@@ -6,7 +6,7 @@
       <!-- Required meta tags -->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>Booksto - Responsive Bootstrap 4 Admin Dashboard Template</title>
+      <title>@yield('title')|Experts</title>
       <!-- Favicon -->
       <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" />
       <!-- Bootstrap CSS -->
@@ -36,7 +36,7 @@
                <div class="col-lg-6 text-right">
                   Copyright <span id="copyright">
 <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
-</span> <a href="#">Booksto</a> All Rights Reserved.
+</span> Powered By <a href="https://mcomps.co.ke">Mcomps.</a> All Rights Reserved.
                </div>
             </div>
          </div>
@@ -47,7 +47,7 @@
          <div class="buy-button"> <a class="color-full" href="#"><i class="fa fa-spinner fa-spin"></i></a> </div>
          <div id="right-sidebar-scrollbar" class="iq-colorbox-inner">
             <div class="clearfix color-picker">
-               <h3 class="iq-font-black">Booksto Awesome Color</h3>
+               <h3 class="iq-font-black">Angolo Experts Awesome Color</h3>
                <p>This color combo available inside whole template. You can change on your wish, Even you can create your own with limitless possibilities! </p>
                <ul class="iq-colorselect clearfix">
                   <li class="color-1 iq-colormark" data-style="color-1"></li>
