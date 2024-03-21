@@ -10,9 +10,9 @@
         <div class="iq-sidebar">
            <div class="iq-sidebar-logo d-flex justify-content-between">
               <a href="/" class="header-logo">
-                 <img src="images/logo.png" class="img-fluid rounded-normal" alt="">
+                 <img src="{{ asset('images/logo.png') }}" class="img-fluid rounded-normal" alt="">
                  <div class="logo-title">
-                    <span class="text-primary text-uppercase">Booksto</span>
+                    <span class="text-primary text-uppercase">Angolo</span>
                  </div>
               </a>
               <div class="iq-menu-bt-sidebar">
@@ -186,7 +186,7 @@
                  <div class="iq-card">
                     <div class="iq-card-body">
                        <div class="sidebarbottom-content">
-                          <div class="image"><img src="images/page-img/side-bkg.png" alt=""></div>                           
+                          <div class="image"><img src="images/page-img/side-bkg.png" alt=""></div>
                           <button type="submit" class="btn w-100 btn-primary mt-4 view-more">Become Membership</button>
                        </div>
                     </div>
@@ -206,7 +206,7 @@
                        <a href="index.html" class="header-logo">
                           <img src="images/logo.png" class="img-fluid rounded-normal" alt="">
                           <div class="logo-title">
-                             <span class="text-primary text-uppercase">Booksto</span>
+                             <span class="text-primary text-uppercase">Angolo</span>
                           </div>
                        </a>
                     </div>
@@ -507,7 +507,7 @@
            </div>
         </div>
         <!-- TOP Nav Bar END -->
-        
+
         <!-- Page Content  -->
         <div id="content-page" class="content-page">
            <div class="container-fluid">

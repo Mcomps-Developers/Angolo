@@ -1,4 +1,7 @@
 <div>
+    @section('title')
+Home
+    @endsection
     <div id="loading">
         <div id="loading-center">
         </div>
@@ -12,7 +15,7 @@
               <a href="/" class="header-logo">
                  <img src="{{ asset('images/logo.png') }}" class="img-fluid rounded-normal" alt="">
                  <div class="logo-title">
-                    <span class="text-primary text-uppercase">Booksto</span>
+                    <span class="text-primary text-uppercase">Angolo</span>
                  </div>
               </a>
               <div class="iq-menu-bt-sidebar">
@@ -206,7 +209,7 @@
                        <a href="/" class="header-logo">
                           <img src="{{ asset('images/logo.png') }}" class="img-fluid rounded-normal" alt="">
                           <div class="logo-title">
-                             <span class="text-primary text-uppercase">Booksto</span>
+                             <span class="text-primary text-uppercase">Angolo</span>
                           </div>
                        </a>
                     </div>

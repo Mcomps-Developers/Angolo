@@ -6,7 +6,7 @@
       <!-- Required meta tags -->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>@yield('title')|Experts</title>
+      <title>@yield('title')|Angolo Experts</title>
       <!-- Favicon -->
       <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" />
       <!-- Bootstrap CSS -->
