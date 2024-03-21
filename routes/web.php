@@ -67,7 +67,7 @@ Route::get('/',HomeComponent::class);
 Route::get('/book-pdf',BookPdfComponent::class);
 Route::get('/category',CategoryComponent::class);
 Route::get('/checkout',CheckoutComponent::class);
-Route::get('/book-page',BookPageComponent::class);
+Route::get('/book-page',BookPageComponent::class)->name('book.page');
 Route::get('/wishlist',WishlistComponent::class);
 Route::get('/profile',ProfileComponent::class);
 Route::get('/blank-page',BlankPageComponent::class);
@@ -127,3 +127,13 @@ Route::get('/admin-books',AdminBooksComponent::class);
 Route::get('/admin-category',AdminCategoryComponent::class);
 Route::get('/admin-dashboard',AdminDashboardComponent::class);
 
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
