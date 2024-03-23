@@ -1,4 +1,4 @@
-<x-guest-layout>
+{{-- <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
             <x-authentication-card-logo />
@@ -45,4 +45,64 @@
             </div>
         </form>
     </x-authentication-card>
+</x-guest-layout> --}}
+<x-guest-layout>
+    @section('title')
+        Login
+    @endsection
+    <div class="flex flex-col h-screen justify-center items-center">
+
+
+        <div class="max-w-sm mx-auto md:px-10 p-4 w-full">
+
+
+            <div uk -scrollspy="target: > * > *; cls: uk-animation-scale-up; delay: 100 ;repeat: true">
+
+                <!-- logo -->
+                <div class="flex justify-center mb-12"
+                    uk-scrollspy="target: > *; cls: uk-animation-scale-up; delay: 100 ;repeat: true">
+                    <img src="{{ asset('assets/images/logo.html') }}" alt=""
+                        class="w-auto h-16 shrink-0 bg-fuchsia-100 px-3 rounded-2xl p-2.5">
+                </div>
+                <x-validation-errors class="mb-4" style="color: red" />
+
+                <form method="POST" action="{{ route('login') }}" class="space-y-3"
+                    uk-scrollspy="target: > *; cls: uk-animation-scale-up; delay: 100 ;repeat: true">
+                    @csrf
+                    <input class="!w-full" id="email" name="email" type="email" autofocus=""
+                        placeholder="Email" required="">
+                    <input class="!w-full" id="email" name="password" type="password" autofocus=""
+                        placeholder="Password" required="">
+
+                    <a href="{{ route('password.request') }}" class="hidden">
+                        <div class="text-sm text-right text-gray-400 py-4"> Forgot password </div>
+                    </a>
+
+                    <button type="submit"
+                        class="font-medium w-full rounded-lg bg-slate-900 py-1.5 px-4 text-white h-[38px] active:scale-[0.97] transition-all duration-150">
+                        <span>Sign in</span> </button>
+
+                    <div class="flex gap-3 justify-center text-2xl py-5 text-slate-500">
+
+                        <a href="#"> <ion-icon name="logo-facebook"></ion-icon> </a>
+                        <a href="#"> <ion-icon name="logo-google"></ion-icon> </a>
+                        <a href="#"> <ion-icon name="logo-apple"></ion-icon> </a>
+
+                    </div>
+
+                    <div class="space-x-2 text-sm text-center text-slate-400 dark:text-white/70">
+                        <span> No account? </span>
+                        <span>—</span>
+                        <a href="{{ route('register') }}" class="text-gray-600 hover:text-gray-500">Join now</a>
+                    </div>
+
+                </form>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
 </x-guest-layout>
