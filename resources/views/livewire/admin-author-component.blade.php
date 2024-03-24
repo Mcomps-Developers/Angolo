@@ -69,7 +69,7 @@
                                                         src="{{ asset('images/user') }}/{{$item->user->profile_photo_path}}" alt="">
                                                     @else
                                                     <img class="rounded img-fluid avatar-40"
-                                                    src="{{ $item->profile_photo_url }}" alt="">
+                                                    src="{{ $item->user->profile_photo_url }}" alt="">
                                                     @endif</td>
                                                     <td>{{ $item->user->name }}</td>
                                                     <td>{{ $item->user->phone_number }}</td>
@@ -102,7 +102,7 @@
                                 </div>
                                 <div class="mt-3 row justify-content-between">
                                     <div id="user-list-page-info" class="col-md-6">
-                                        <span>Tables by Mcomps Limited</span>
+                                        <span><a href="http://mcomps.co.ke" target="_blank" rel="noopener noreferrer">Mcomps</a></span>
                                     </div>
                                     <div class="col-md-6">
                                         <nav aria-label="Page navigation example">

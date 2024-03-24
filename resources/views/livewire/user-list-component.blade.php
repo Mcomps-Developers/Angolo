@@ -97,7 +97,7 @@
                                 </div>
                                 <div class="mt-3 row justify-content-between">
                                     <div id="user-list-page-info" class="col-md-6">
-                                        <span>Tables by Mcomps Limited</span>
+                                        <span><a href="http://mcomps.co.ke" target="_blank" rel="noopener noreferrer">Mcomps</a></span>
                                     </div>
                                     <div class="col-md-6">
                                         <nav aria-label="Page navigation example">
