@@ -1,518 +1,10 @@
 <div>
-    <div id="loading">
-        <div id="loading-center">
-        </div>
-     </div>
+   @section('title')
+       My Users
+   @endsection
      <!-- loader END -->
      <!-- Wrapper Start -->
      <div class="wrapper">
-     <!-- Sidebar  -->
-        <div class="iq-sidebar">
-           <div class="iq-sidebar-logo d-flex justify-content-between">
-              <a href="/" class="header-logo">
-                 <img src="images/logo.png" class="img-fluid rounded-normal" alt="">
-                 <div class="logo-title">
-                    <span class="text-primary text-uppercase">Booksto</span>
-                 </div>
-              </a>
-              <div class="iq-menu-bt-sidebar">
-                 <div class="iq-menu-bt align-self-center">
-                    <div class="wrapper-menu">
-                       <div class="main-circle"><i class="las la-bars"></i></div>
-                    </div>
-                 </div>
-              </div>
-           </div>
-           <div id="sidebar-scrollbar">
-              <nav class="iq-sidebar-menu">
-                 <ul id="iq-sidebar-toggle" class="iq-menu">
-                    <li>
-                       <a href="#dashboard" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false"><span class="ripple rippleEffect"></span><i class="las la-home iq-arrow-left"></i><span>Shop</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                       <ul id="dashboard" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                          <li><a href="/"><i class="las la-house-damage"></i>Home Page</a></li>
-                          <li><a href="/category"><i class="ri-function-line"></i>Category Page</a></li>
-                          <li><a href="/book-page"><i class="ri-book-line"></i>Book Page</a></li>
-                          <li><a href="/book-pdf"><i class="ri-file-pdf-line"></i>Book PDF</a></li>
-                          <li><a href="/checkout"><i class="ri-checkbox-multiple-blank-line"></i>Checkout</a></li>
-                         <li><a href="/wishlist"><i class="ri-heart-line"></i>wishlist</a></li>
-                       </ul>
-                    </li>
-                    <li>
-                       <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false"><span class="ripple rippleEffect"></span><i class="ri-admin-line"></i><span>Admin</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                       <ul id="admin" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                          <li><a href="/admin-dashboard"><i class="ri-dashboard-line"></i>Dashboard</a></li>
-                          <li><a href="/admin-category"><i class="ri-list-check-2"></i>Category Lists</a></li>
-                          <li><a href="/admin-author"><i class="ri-file-user-line"></i>Author</a></li>
-                          <li><a href="/admin-books"><i class="ri-book-2-line"></i>Books</a></li>
-                       </ul>
-                    </li>
-                    <li class="active active-menu">
-                       <a href="#userinfo" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span class="ripple rippleEffect"></span><i class="las la-user-tie iq-arrow-left"></i><span>User</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                       <ul id="userinfo" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle" style="">
-                          <li><a href="/profile"><i class="las la-id-card-alt"></i>User Profile</a></li>
-                          <li><a href="/profile-edit"><i class="las la-edit"></i>User Edit</a></li>
-                          <li><a href="/add-user"><i class="las la-plus-circle"></i>User Add</a></li>
-                          <li class="active"><a href="user-list"><i class="las la-th-list"></i>User List</a></li>
-                       </ul>
-                    </li>
-                    <li>
-                       <a href="#ui-elements" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="lab la-elementor iq-arrow-left"></i><span>UI Elements</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                       <ul id="ui-elements" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                          <li class="elements">
-                             <a href="#sub-menu" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-play-circle-line"></i><span>UI Kit</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                             <ul id="sub-menu" class="iq-submenu collapse" data-parent="#ui-elements">
-                                <li><a href="/ui-colors"><i class="las la-palette"></i>colors</a></li>
-                                <li><a href="/ui-typography"><i class="las la-keyboard"></i>Typography</a></li>
-                                <li><a href="/ui-alerts"><i class="las la-tag"></i>Alerts</a></li>
-                                <li><a href="/ui-badges"><i class="lab la-atlassian"></i>Badges</a></li>
-                                <li><a href="/ui-breadcrumb"><i class="las la-bars"></i>Breadcrumb</a></li>
-                                <li><a href="/ui-buttons"><i class="las la-tablet"></i>Buttons</a></li>
-                                <li><a href="/ui-cards"><i class="las la-credit-card"></i>Cards</a></li>
-                                <li><a href="/ui-carousel"><i class="las la-film"></i>Carousel</a></li>
-                                <li><a href="/ui-embed-video"><i class="las la-video"></i>Video</a></li>
-                                <li><a href="/ui-grid"><i class="las la-border-all"></i>Grid</a></li>
-                                <li><a href="/ui-images"><i class="las la-images"></i>Images</a></li>
-                                <li><a href="/ui-list-group"><i class="las la-list"></i>list Group</a></li>
-                                <li><a href="/ui-media-object"><i class="las la-ad"></i>Media</a></li>
-                                <li><a href="/ui-modal"><i class="las la-columns"></i>Modal</a></li>
-                                <li><a href="/ui-notifications"><i class="las la-bell"></i>Notifications</a></li>
-                                <li><a href="/ui-pagination"><i class="las la-ellipsis-h"></i>Pagination</a></li>
-                                <li><a href="/ui-popovers"><i class="las la-eraser"></i>Popovers</a></li>
-                                <li><a href="/ui-progressbars"><i class="las la-hdd"></i>Progressbars</a></li>
-                                <li><a href="/ui-tabs"><i class="las la-database"></i>Tabs</a></li>
-                                <li><a href="/ui-tooltips"><i class="las la-magnet"></i>Tooltips</a></li>
-                             </ul>
-                          </li>
-                          <li class="form">
-                             <a href="#forms" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="lab la-wpforms"></i><span>Forms</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                             <ul id="forms" class="iq-submenu collapse" data-parent="#ui-elements">
-                                <li><a href="form-layout.html"><i class="las la-book"></i>Form Elements</a></li>
-                                <li><a href="form-validation.html"><i class="las la-edit"></i>Form Validation</a></li>
-                                <li><a href="form-switch.html"><i class="las la-toggle-off"></i>Form Switch</a></li>
-                                <li><a href="form-chechbox.html"><i class="las la-check-square"></i>Form Checkbox</a></li>
-                                <li><a href="form-radio.html"><i class="ri-radio-button-line"></i>Form Radio</a></li>
-                             </ul>
-                          </li>
-                          <li>
-                             <a href="#wizard-form" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-archive-drawer-line"></i><span>Forms Wizard</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                             <ul id="wizard-form" class="iq-submenu collapse" data-parent="#ui-elements">
-                                <li><a href="form-wizard.html"><i class="ri-clockwise-line"></i>Simple Wizard</a></li>
-                                <li><a href="form-wizard-validate.html"><i class="ri-clockwise-2-line"></i>Validate Wizard</a></li>
-                                <li><a href="form-wizard-vertical.html"><i class="ri-anticlockwise-line"></i>Vertical Wizard</a></li>
-                             </ul>
-                          </li>
-                          <li>
-                             <a href="#tables" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-table-line"></i><span>Table</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                             <ul id="tables" class="iq-submenu collapse" data-parent="#ui-elements">
-                                <li><a href="/tables-basic"><i class="ri-table-line"></i>Basic Tables</a></li>
-                                <li><a href="/data-table"><i class="ri-database-line"></i>Data Table</a></li>
-                                <li><a href="/table-editable"><i class="ri-refund-line"></i>Editable Table</a></li>
-                             </ul>
-                          </li>
-                          <li>
-                             <a href="#charts" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-pie-chart-box-line"></i><span>Charts</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                             <ul id="charts" class="iq-submenu collapse" data-parent="#ui-elements">
-                                <li><a href="chart-morris.html"><i class="ri-file-chart-line"></i>Morris Chart</a></li>
-                                <li><a href="chart-high.html"><i class="ri-bar-chart-line"></i>High Charts</a></li>
-                                <li><a href="chart-am.html"><i class="ri-folder-chart-line"></i>Am Charts</a></li>
-                                <li><a href="chart-apex.html"><i class="ri-folder-chart-2-line"></i>Apex Chart</a></li>
-                             </ul>
-                          </li>
-                          <li>
-                             <a href="#icons" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-list-check"></i><span>Icons</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                             <ul id="icons" class="iq-submenu collapse" data-parent="#ui-elements">
-                                <li><a href="icon-dripicons.html"><i class="ri-stack-line"></i>Dripicons</a></li>
-                                <li><a href="icon-fontawesome-5.html"><i class="ri-facebook-fill"></i>Font Awesome 5</a></li>
-                                <li><a href="icon-lineawesome.html"><i class="ri-keynote-line"></i>line Awesome</a></li>
-                                <li><a href="icon-remixicon.html"><i class="ri-remixicon-line"></i>Remixicon</a></li>
-                                <li><a href="icon-unicons.html"><i class="ri-underline"></i>unicons</a></li>
-                             </ul>
-                          </li>
-                       </ul>
-                    </li>
-                    <li>
-                       <a href="#pages" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="las la-file-alt iq-arrow-left"></i><span>Pages</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                       <ul id="pages" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                          <li>
-                             <a href="#authentication" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-pages-line"></i><span>Authentication</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                             <ul id="authentication" class="iq-submenu collapse" data-parent="#pages">
-                                <li><a href="sign-in"><i class="las la-sign-in-alt"></i>Login</a></li>
-                                <li><a href="sign-up"><i class="ri-login-circle-line"></i>Register</a></li>
-                                <li><a href="/pages-recovery"><i class="ri-record-mail-line"></i>Recover Password</a></li>
-                                <li><a href="/pages-confirm-mail"><i class="ri-file-code-line"></i>Confirm Mail</a></li>
-                                <li><a href="/pages-lock-screen"><i class="ri-lock-line"></i>Lock Screen</a></li>
-                             </ul>
-                          </li>
-                          <li>
-                             <a href="#extra-pages" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-pantone-line"></i><span>Extra Pages</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                             <ul id="extra-pages" class="iq-submenu collapse" data-parent="#pages">
-                                <li><a href="/pages-timeline"><i class="ri-map-pin-time-line"></i>Timeline</a></li>
-                                <li><a href="/pages-invoice"><i class="ri-question-answer-line"></i>Invoice</a></li>
-                                <li><a href="/blank-page"><i class="ri-invision-line"></i>Blank Page</a></li>
-                                <li><a href="/pages-error"><i class="ri-error-warning-line"></i>Error 404</a></li>
-                                <li><a href="/pages-error-500"><i class="ri-error-warning-line"></i>Error 500</a></li>
-                                <li><a href="/pages-pricing"><i class="ri-price-tag-line"></i>Pricing</a></li>
-                                <li><a href="/pages-maintenance"><i class="ri-archive-line"></i>Maintenance</a></li>
-                                <li><a href="/pages-comingsoon"><i class="ri-mastercard-line"></i>Coming Soon</a></li>
-                                <li><a href="/pages-faq"><i class="ri-compasses-line"></i>Faq</a></li>
-                             </ul>
-                          </li>
-                       </ul>
-                    </li>
-                    <li>
-                       <a href="#menu-level" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-record-circle-line iq-arrow-left"></i><span>Menu Level</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                       <ul id="menu-level" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                          <li><a href="#"><i class="ri-record-circle-line"></i>Menu 1</a></li>
-                          <li>
-                             <a href="#"><i class="ri-record-circle-line"></i>Menu 2</a>
-                             <ul>
-                                <li class="menu-level">
-                                   <a href="#sub-menus" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-play-circle-line"></i><span>Sub-menu</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                                   <ul id="sub-menus" class="iq-submenu iq-submenu-data collapse">
-                                      <li><a href="#"><i class="ri-record-circle-line"></i>Sub-menu 1</a></li>
-                                      <li><a href="#"><i class="ri-record-circle-line"></i>Sub-menu 2</a></li>
-                                      <li><a href="#"><i class="ri-record-circle-line"></i>Sub-menu 3</a></li>
-                                   </ul>
-                                </li>
-                             </ul>
-                          </li>
-                          <li><a href="#"><i class="ri-record-circle-line"></i>Menu 3</a></li>
-                          <li><a href="#"><i class="ri-record-circle-line"></i>Menu 4</a></li>
-                       </ul>
-                    </li>
-                 </ul>
-              </nav>
-              <div id="sidebar-bottom" class="p-3 position-relative">
-                 <div class="iq-card">
-                    <div class="iq-card-body">
-                       <div class="sidebarbottom-content">
-                          <div class="image"><img src="images/page-img/side-bkg.png" alt=""></div>
-                          <button type="submit" class="btn w-100 btn-primary mt-4 view-more">Become Membership</button>
-                       </div>
-                    </div>
-                 </div>
-              </div>
-           </div>
-        </div>
-        <!-- TOP Nav Bar -->
-        <div class="iq-top-navbar">
-           <div class="iq-navbar-custom">
-              <nav class="navbar navbar-expand-lg navbar-light p-0">
-                 <div class="iq-menu-bt d-flex align-items-center">
-                    <div class="wrapper-menu">
-                       <div class="main-circle"><i class="las la-bars"></i></div>
-                    </div>
-                    <div class="iq-navbar-logo d-flex justify-content-between">
-                       <a href="/" class="header-logo">
-                          <img src="images/logo.png" class="img-fluid rounded-normal" alt="">
-                          <div class="logo-title">
-                             <span class="text-primary text-uppercase">Booksto</span>
-                          </div>
-                       </a>
-                    </div>
-                 </div>
-                 <div class="navbar-breadcrumb">
-                    <h5 class="mb-0">User List</h5>
-                    <nav aria-label="breadcrumb">
-                       <ul class="breadcrumb">
-                          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                          <li class="breadcrumb-item active" aria-current="page">User List</li>
-                       </ul>
-                    </nav>
-                 </div>
-                 <div class="iq-search-bar">
-                    <form action="#" class="searchbox">
-                       <input type="text" class="text search-input" placeholder="Search Here...">
-                       <a class="search-link" href="#"><i class="ri-search-line"></i></a>
-                    </form>
-                 </div>
-                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"  aria-label="Toggle navigation">
-                 <i class="ri-menu-3-line"></i>
-                 </button>
-                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto navbar-list">
-                       <li class="nav-item nav-icon search-content">
-                          <a href="#" class="search-toggle iq-waves-effect text-gray rounded">
-                             <i class="ri-search-line"></i>
-                          </a>
-                          <form action="#" class="search-box p-0">
-                             <input type="text" class="text search-input" placeholder="Type here to search...">
-                             <a class="search-link" href="#"><i class="ri-search-line"></i></a>
-                          </form>
-                       </li>
-                       <li class="nav-item nav-icon">
-                          <a href="#" class="search-toggle iq-waves-effect text-gray rounded">
-                          <i class="ri-notification-2-fill"></i>
-                          <span class="bg-primary dots"></span>
-                          </a>
-                          <div class="iq-sub-dropdown">
-                             <div class="iq-card shadow-none m-0">
-                                <div class="iq-card-body p-0">
-                                   <div class="bg-primary p-3">
-                                      <h5 class="mb-0 text-white">All Notifications<small class="badge  badge-light float-right pt-1">4</small></h5>
-                                   </div>
-                                   <a href="#" class="iq-sub-card" >
-                                      <div class="media align-items-center">
-                                         <div class="">
-                                            <img class="avatar-40 rounded" src="images/user/01.jpg" alt="">
-                                         </div>
-                                         <div class="media-body ml-3">
-                                            <h6 class="mb-0 ">Emma Watson Barry</h6>
-                                            <small class="float-right font-size-12">Just Now</small>
-                                            <p class="mb-0">95 MB</p>
-                                         </div>
-                                      </div>
-                                   </a>
-                                   <a href="#" class="iq-sub-card" >
-                                      <div class="media align-items-center">
-                                         <div class="">
-                                            <img class="avatar-40 rounded" src="images/user/02.jpg" alt="">
-                                         </div>
-                                         <div class="media-body ml-3">
-                                            <h6 class="mb-0 ">New customer is join</h6>
-                                            <small class="float-right font-size-12">5 days ago</small>
-                                            <p class="mb-0">Cyst Barry</p>
-                                         </div>
-                                      </div>
-                                   </a>
-                                   <a href="#" class="iq-sub-card" >
-                                      <div class="media align-items-center">
-                                         <div class="">
-                                            <img class="avatar-40 rounded" src="images/user/03.jpg" alt="">
-                                         </div>
-                                         <div class="media-body ml-3">
-                                            <h6 class="mb-0 ">Two customer is left</h6>
-                                            <small class="float-right font-size-12">2 days ago</small>
-                                            <p class="mb-0">Cyst Barry</p>
-                                         </div>
-                                      </div>
-                                   </a>
-                                   <a href="#" class="iq-sub-card" >
-                                      <div class="media align-items-center">
-                                         <div class="">
-                                            <img class="avatar-40 rounded" src="images/user/04.jpg" alt="">
-                                         </div>
-                                         <div class="media-body ml-3">
-                                            <h6 class="mb-0 ">New Mail from Fenny</h6>
-                                            <small class="float-right font-size-12">3 days ago</small>
-                                            <p class="mb-0">Cyst Barry</p>
-                                         </div>
-                                      </div>
-                                   </a>
-                                </div>
-                             </div>
-                          </div>
-                       </li>
-                       <li class="nav-item nav-icon dropdown">
-                          <a href="#" class="search-toggle iq-waves-effect text-gray rounded">
-                          <i class="fa fa-envelope" aria-hidden="true"></i>
-                          <span class="bg-primary count-mail"></span>
-                          </a>
-                          <div class="iq-sub-dropdown">
-                             <div class="iq-card shadow-none m-0">
-                                <div class="iq-card-body p-0 ">
-                                   <div class="bg-primary p-3">
-                                      <h5 class="mb-0 text-white">All Messages<small class="badge  badge-light float-right pt-1">5</small></h5>
-                                   </div>
-                                   <a href="#" class="iq-sub-card">
-                                      <div class="media align-items-center">
-                                         <div class="">
-                                            <img class="avatar-40 rounded" src="images/user/01.jpg" alt="">
-                                         </div>
-                                         <div class="media-body ml-3">
-                                            <h6 class="mb-0 ">Barry Emma Watson</h6>
-                                            <small class="float-left font-size-12">13 Jun</small>
-                                         </div>
-                                      </div>
-                                   </a>
-                                   <a href="#" class="iq-sub-card">
-                                      <div class="media align-items-center">
-                                         <div class="">
-                                            <img class="avatar-40 rounded" src="images/user/02.jpg" alt="">
-                                         </div>
-                                         <div class="media-body ml-3">
-                                            <h6 class="mb-0 ">Lorem Ipsum Watson</h6>
-                                            <small class="float-left font-size-12">20 Apr</small>
-                                         </div>
-                                      </div>
-                                   </a>
-                                   <a href="#" class="iq-sub-card">
-                                      <div class="media align-items-center">
-                                         <div class="">
-                                            <img class="avatar-40 rounded" src="images/user/03.jpg" alt="">
-                                         </div>
-                                         <div class="media-body ml-3">
-                                            <h6 class="mb-0 ">Why do we use it?</h6>
-                                            <small class="float-left font-size-12">30 Jun</small>
-                                         </div>
-                                      </div>
-                                   </a>
-                                   <a href="#" class="iq-sub-card">
-                                      <div class="media align-items-center">
-                                         <div class="">
-                                            <img class="avatar-40 rounded" src="images/user/04.jpg" alt="">
-                                         </div>
-                                         <div class="media-body ml-3">
-                                            <h6 class="mb-0 ">Variations Passages</h6>
-                                            <small class="float-left font-size-12">12 Sep</small>
-                                         </div>
-                                      </div>
-                                   </a>
-                                   <a href="#" class="iq-sub-card">
-                                      <div class="media align-items-center">
-                                         <div class="">
-                                            <img class="avatar-40 rounded" src="images/user/05.jpg" alt="">
-                                         </div>
-                                         <div class="media-body ml-3">
-                                            <h6 class="mb-0 ">Lorem Ipsum generators</h6>
-                                            <small class="float-left font-size-12">5 Dec</small>
-                                         </div>
-                                      </div>
-                                   </a>
-                                </div>
-                             </div>
-                          </div>
-                       </li>
-                       <li class="nav-item nav-icon dropdown">
-                          <a href="#" class="search-toggle iq-waves-effect text-gray rounded">
-                          <i class="ri-shopping-cart-2-line"></i>
-                          <span class="badge badge-danger count-cart rounded-circle">4</span>
-                          </a>
-                          <div class="iq-sub-dropdown">
-                             <div class="iq-card shadow-none m-0">
-                                <div class="iq-card-body p-0 toggle-cart-info">
-                                   <div class="bg-primary p-3">
-                                      <h5 class="mb-0 text-white">All Carts<small class="badge  badge-light float-right pt-1">4</small></h5>
-                                   </div>
-                                   <a href="#" class="iq-sub-card">
-                                      <div class="media align-items-center">
-                                         <div class="">
-                                            <img class="rounded" src="images/cart/01.jpg" alt="">
-                                         </div>
-                                         <div class="media-body ml-3">
-                                            <h6 class="mb-0 ">Night People book</h6>
-                                            <p class="mb-0">$32</p>
-                                         </div>
-                                         <div class="float-right font-size-24 text-danger"><i class="ri-close-fill"></i></div>
-                                      </div>
-                                   </a>
-                                   <a href="#" class="iq-sub-card">
-                                      <div class="media align-items-center">
-                                         <div class="">
-                                            <img class="rounded" src="images/cart/02.jpg" alt="">
-                                         </div>
-                                         <div class="media-body ml-3">
-                                            <h6 class="mb-0 ">The Sin Eater Book</h6>
-                                            <p class="mb-0">$40</p>
-                                         </div>
-                                         <div class="float-right font-size-24 text-danger"><i class="ri-close-fill"></i></div>
-                                      </div>
-                                   </a>
-                                   <a href="#" class="iq-sub-card">
-                                      <div class="media align-items-center">
-                                         <div class="">
-                                            <img class="rounded" src="images/cart/03.jpg" alt="">
-                                         </div>
-                                         <div class="media-body ml-3">
-                                            <h6 class="mb-0 ">the Orange Tree</h6>
-                                            <p class="mb-0">$30</p>
-                                         </div>
-                                         <div class="float-right font-size-24 text-danger"><i class="ri-close-fill"></i></div>
-                                      </div>
-                                   </a>
-                                   <a href="#" class="iq-sub-card">
-                                      <div class="media align-items-center">
-                                         <div class="">
-                                            <img class="rounded" src="images/cart/04.jpg" alt="">
-                                         </div>
-                                         <div class="media-body ml-3">
-                                            <h6 class="mb-0 ">Harsh Reality book</h6>
-                                            <p class="mb-0">$25</p>
-                                         </div>
-                                         <div class="float-right font-size-24 text-danger"><i class="ri-close-fill"></i></div>
-                                      </div>
-                                   </a>
-                                   <div class="d-flex align-items-center text-center p-3">
-                                      <a class="btn btn-primary mr-2 iq-sign-btn" href="#" role="button">View Cart</a>
-                                      <a class="btn btn-primary iq-sign-btn" href="#" role="button">Shop now</a>
-                                   </div>
-                                </div>
-                             </div>
-                          </div>
-                       </li>
-                       <li class="line-height pt-3">
-                          <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center">
-                             <img src="images/user/1.jpg" class="img-fluid rounded-circle mr-3" alt="user">
-                             <div class="caption">
-                                <h6 class="mb-1 line-height">Barry Tech</h6>
-                                <p class="mb-0 text-primary">$20.32</p>
-                             </div>
-                          </a>
-                          <div class="iq-sub-dropdown iq-user-dropdown">
-                             <div class="iq-card shadow-none m-0">
-                                <div class="iq-card-body p-0 ">
-                                   <div class="bg-primary p-3">
-                                      <h5 class="mb-0 text-white line-height">Hello Barry Tech</h5>
-                                      <span class="text-white font-size-12">Available</span>
-                                   </div>
-                                   <a href="/profile" class="iq-sub-card iq-bg-primary-hover">
-                                      <div class="media align-items-center">
-                                         <div class="rounded iq-card-icon iq-bg-primary">
-                                            <i class="ri-file-user-line"></i>
-                                         </div>
-                                         <div class="media-body ml-3">
-                                            <h6 class="mb-0 ">My Profile</h6>
-                                            <p class="mb-0 font-size-12">View personal profile details.</p>
-                                         </div>
-                                      </div>
-                                   </a>
-                                   <a href="/profile-edit" class="iq-sub-card iq-bg-primary-hover">
-                                      <div class="media align-items-center">
-                                         <div class="rounded iq-card-icon iq-bg-primary">
-                                            <i class="ri-profile-line"></i>
-                                         </div>
-                                         <div class="media-body ml-3">
-                                            <h6 class="mb-0 ">Edit Profile</h6>
-                                            <p class="mb-0 font-size-12">Modify your personal details.</p>
-                                         </div>
-                                      </div>
-                                   </a>
-                                   <a href="/account-setting" class="iq-sub-card iq-bg-primary-hover">
-                                      <div class="media align-items-center">
-                                         <div class="rounded iq-card-icon iq-bg-primary">
-                                            <i class="ri-account-box-line"></i>
-                                         </div>
-                                         <div class="media-body ml-3">
-                                            <h6 class="mb-0 ">Account settings</h6>
-                                            <p class="mb-0 font-size-12">Manage your account parameters.</p>
-                                         </div>
-                                      </div>
-                                   </a>
-                                   <a href="/privacy-setting" class="iq-sub-card iq-bg-primary-hover">
-                                      <div class="media align-items-center">
-                                         <div class="rounded iq-card-icon iq-bg-primary">
-                                            <i class="ri-lock-line"></i>
-                                         </div>
-                                         <div class="media-body ml-3">
-                                            <h6 class="mb-0 ">Privacy Settings</h6>
-                                            <p class="mb-0 font-size-12">Control your privacy parameters.</p>
-                                         </div>
-                                      </div>
-                                   </a>
-                                   <div class="d-inline-block w-100 text-center p-3">
-                                      <a class="bg-primary iq-sign-btn" href="/sign-in" role="button">Sign out<i class="ri-login-box-line ml-2"></i></a>
-                                   </div>
-                                </div>
-                             </div>
-                          </div>
-                       </li>
-                    </ul>
-                 </div>
-              </nav>
-           </div>
-        </div>
-        <!-- TOP Nav Bar END -->
-
      <!-- Page Content  -->
   <div id="content-page" class="content-page">
      <div class="container-fluid">
@@ -523,6 +15,9 @@
                        <div class="iq-header-title">
                           <h4 class="card-title">User List</h4>
                        </div>
+                       <div class="iq-card-header-toolbar d-flex align-items-center">
+                        <a href="{{route('user.add')}}" class="btn btn-primary">Add New User</a>
+                     </div>
                     </div>
                     <div class="iq-card-body">
                        <div class="table-responsive">
@@ -530,14 +25,14 @@
                              <div class="col-sm-12 col-md-6">
                                 <div id="user_list_datatable_info" class="dataTables_filter">
                                    <form class="mr-3 position-relative">
-                                      <div class="form-group mb-0">
+                                      <div class="mb-0 form-group">
                                          <input type="search" class="form-control" id="exampleInputSearch" placeholder="Search" aria-controls="user-list-table">
                                       </div>
                                    </form>
                                 </div>
                              </div>
                              <div class="col-sm-12 col-md-6">
-                                <div class="user-list-files d-flex float-right">
+                                <div class="float-right user-list-files d-flex">
                                    <a class="iq-bg-primary" href="javascript:void();" >
                                       Print
                                     </a>
@@ -550,7 +45,7 @@
                                   </div>
                              </div>
                           </div>
-                          <table id="user-list-table" class="table table-striped table-bordered mt-4" role="grid" aria-describedby="user-list-page-info">
+                          <table id="user-list-table" class="table mt-4 table-striped table-bordered" role="grid" aria-describedby="user-list-page-info">
                             <thead>
                                 <tr>
                                    <th>Profile</th>
@@ -565,169 +60,35 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                   <td class="text-center"><img class="rounded img-fluid avatar-40" src="images/user/01.jpg" alt="profile"></td>
-                                   <td>Anna Sthesia</td>
-                                   <td>(760) 756 7568</td>
-                                   <td>annasthesia@gmail.com</td>
+                                @foreach ($users as $item)
+                                    <tr>
+                                   <td class="text-center"><img class="rounded img-fluid avatar-40" src="{{asset('images/user/01.jpg')}}" alt="profile"></td>
+                                   <td>{{$item->name}}</td>
+                                   <td>{{$item->phone_number}}</td>
+                                   <td>{{$item->email}}</td>
                                    <td>USA</td>
                                    <td><span class="badge iq-bg-primary">Active</span></td>
                                    <td>Acme Corporation</td>
                                    <td>2019/12/01</td>
                                    <td>
                                       <div class="flex align-items-center list-user-action">
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add" href="#"><i class="ri-user-add-line"></i></a>
                                          <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#"><i class="ri-pencil-line"></i></a>
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
+                                         <a class="iq-bg-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
                                       </div>
                                    </td>
                                 </tr>
-                                <tr>
-                                   <td class="text-center"><img class="rounded img-fluid avatar-40" src="images/user/02.jpg" alt="profile"></td>
-                                   <td>Brock Lee</td>
-                                   <td>+62 5689 458 658</td>
-                                   <td>brocklee@gmail.com</td>
-                                   <td>Indonesia</td>
-                                   <td><span class="badge iq-bg-primary">Active</span></td>
-                                   <td>Soylent Corp</td>
-                                   <td>2019/12/01</td>
-                                   <td>
-                                      <div class="flex align-items-center list-user-action">
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add" href="#"><i class="ri-user-add-line"></i></a>
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#"><i class="ri-pencil-line"></i></a>
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                      </div>
-                                   </td>
-                                </tr>
-                                <tr>
-                                   <td class="text-center"><img class="rounded img-fluid avatar-40" src="images/user/03.jpg" alt="profile"></td>
-                                   <td>Dan Druff</td>
-                                   <td>+55 6523 456 856</td>
-                                   <td>dandruff@gmail.com</td>
-                                   <td>Brazil</td>
-                                   <td><span class="badge iq-bg-warning">Pending</span></td>
-                                   <td>Umbrella Corporation</td>
-                                   <td>2019/12/01</td>
-                                   <td>
-                                      <div class="flex align-items-center list-user-action">
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add" href="#"><i class="ri-user-add-line"></i></a>
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#"><i class="ri-pencil-line"></i></a>
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                      </div>
-                                   </td>
-                                </tr>
-                                <tr>
-                                   <td class="text-center"><img class="rounded img-fluid avatar-40" src="images/user/04.jpg" alt="profile"></td>
-                                   <td>Hans Olo</td>
-                                   <td>+91 2586 253 125</td>
-                                   <td>hansolo@gmail.com</td>
-                                   <td>India</td>
-                                   <td><span class="badge iq-bg-danger">Inactive</span></td>
-                                   <td>Vehement Capital</td>
-                                   <td>2019/12/01</td>
-                                   <td>
-                                      <div class="flex align-items-center list-user-action">
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add" href="#"><i class="ri-user-add-line"></i></a>
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#"><i class="ri-pencil-line"></i></a>
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                      </div>
-                                   </td>
-                                </tr>
-                                <tr>
-                                   <td class="text-center"><img class="rounded img-fluid avatar-40" src="images/user/05.jpg" alt="profile"></td>
-                                   <td>Lynn Guini</td>
-                                   <td>+27 2563 456 589</td>
-                                   <td>lynnguini@gmail.com</td>
-                                   <td>Africa</td>
-                                   <td><span class="badge iq-bg-primary">Active</span></td>
-                                   <td>Massive Dynamic</td>
-                                   <td>2019/12/01</td>
-                                   <td>
-                                      <div class="flex align-items-center list-user-action">
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add" href="#"><i class="ri-user-add-line"></i></a>
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#"><i class="ri-pencil-line"></i></a>
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                      </div>
-                                   </td>
-                                </tr>
-                                <tr>
-                                   <td class="text-center"><img class="rounded img-fluid avatar-40" src="images/user/06.jpg" alt="profile"></td>
-                                   <td>Eric Shun</td>
-                                   <td>+55 25685 256 589</td>
-                                   <td>ericshun@gmail.com</td>
-                                   <td>Brazil</td>
-                                   <td><span class="badge iq-bg-warning">Pending</span></td>
-                                   <td>Globex Corporation</td>
-                                   <td>2019/12/01</td>
-                                   <td>
-                                      <div class="flex align-items-center list-user-action">
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add" href="#"><i class="ri-user-add-line"></i></a>
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#"><i class="ri-pencil-line"></i></a>
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                      </div>
-                                   </td>
-                                </tr>
-                                <tr>
-                                   <td class="text-center"><img class="rounded img-fluid avatar-40" src="images/user/07.jpg" alt="profile"></td>
-                                   <td>aaronottix</td>
-                                   <td>(760) 765 2658</td>
-                                   <td>budwiser@ymail.com</td>
-                                   <td>USA</td>
-                                   <td><span class="badge iq-bg-info">Hold</span></td>
-                                   <td>Acme Corporation</td>
-                                   <td>2019/12/01</td>
-                                   <td>
-                                      <div class="flex align-items-center list-user-action">
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add" href="#"><i class="ri-user-add-line"></i></a>
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#"><i class="ri-pencil-line"></i></a>
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                      </div>
-                                   </td>
-                                </tr>
-                                <tr>
-                                   <td class="text-center"><img class="rounded img-fluid avatar-40" src="images/user/08.jpg" alt="profile"></td>
-                                   <td>Marge Arita</td>
-                                   <td>+27 5625 456 589</td>
-                                   <td>margearita@gmail.com</td>
-                                   <td>Africa</td>
-                                   <td><span class="badge iq-bg-success">Complite</span></td>
-                                   <td>Vehement Capital</td>
-                                   <td>2019/12/01</td>
-                                   <td>
-                                      <div class="flex align-items-center list-user-action">
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add" href="#"><i class="ri-user-add-line"></i></a>
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#"><i class="ri-pencil-line"></i></a>
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                      </div>
-                                   </td>
-                                </tr>
-                                <tr>
-                                   <td class="text-center"><img class="rounded img-fluid avatar-40" src="images/user/09.jpg" alt="profile"></td>
-                                   <td>Bill Dabear</td>
-                                   <td>+55 2563 456 589</td>
-                                   <td>billdabear@gmail.com</td>
-                                   <td>Brazil</td>
-                                   <td><span class="badge iq-bg-primary">active</span></td>
-                                   <td>Massive Dynamic</td>
-                                   <td>2019/12/01</td>
-                                   <td>
-                                      <div class="flex align-items-center list-user-action">
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add" href="#"><i class="ri-user-add-line"></i></a>
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#"><i class="ri-pencil-line"></i></a>
-                                         <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                      </div>
-                                   </td>
-                                </tr>
+                                @endforeach
+                                
                             </tbody>
                           </table>
                        </div>
-                          <div class="row justify-content-between mt-3">
+                          <div class="mt-3 row justify-content-between">
                              <div id="user-list-page-info" class="col-md-6">
-                                <span>Showing 1 to 5 of 5 entries</span>
+                                <span>{{ $users->links('pagination::bootstrap-5') }}</span>
                              </div>
                              <div class="col-md-6">
                                 <nav aria-label="Page navigation example">
-                                   <ul class="pagination justify-content-end mb-0">
+                                   <ul class="mb-0 pagination justify-content-end">
                                       <li class="page-item disabled">
                                          <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
                                       </li>

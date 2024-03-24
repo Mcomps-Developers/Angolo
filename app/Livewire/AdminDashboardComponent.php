@@ -2,12 +2,14 @@
 
 namespace App\Livewire;
 
+use App\Models\User;
 use Livewire\Component;
 
 class AdminDashboardComponent extends Component
 {
     public function render()
     {
-        return view('livewire.admin-dashboard-component')->layout('layouts.base');
+        $users = User::where('utype','!=','sadm')->count();
+        return view('livewire.admin-dashboard-component',['users'=>$users])->layout('layouts.base');
     }
 }
