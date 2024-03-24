@@ -38,24 +38,9 @@ class CreateNewUser implements CreatesNewUsers
             'phone_number' => $input['phone_number'],
             'password' => Hash::make($input['password']),
         ]);
-        // Create associated profile based on utype
-        if ($input['utype'] === 'slr') {
-            // Create parent profile
-            ExpertProfile::create([
-                'user_id' => $user->id,
-            ]);
-            Wallet::create([
-                'user_id' => $user->id,
-            ]);
-            Social::create([
-                'user_id' => $user->id,
-            ]);
-        } elseif ($input['utype'] === 'byr') {
-            // Create teacher profile
-            Wallet::create([
-                'user_id' => $user->id,
-            ]);
-        }
+        Wallet::create([
+            'user_id' => $user->id,
+        ]);
         $user->notify(new Welcome($user));
         return $user;
     }
