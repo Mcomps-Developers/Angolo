@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Wallet;
 use App\Notifications\NewClerk;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 use Illuminate\Support\Str;
 
@@ -49,6 +50,7 @@ class AdminAddAuthorComponent extends Component
             $user->password = Hash::make($this->password);
             $user->utype = 'slr';
             $user->save();
+
             // Add Expert Profile
             try {
                 $expert = new ExpertProfile();
@@ -56,33 +58,58 @@ class AdminAddAuthorComponent extends Component
                 $expert->category_id = $this->category;
                 $expert->save();
                 $user->notify(new NewClerk($user, $this->password));
-            } catch (\Throwable $th) {
+            } catch (\Illuminate\Database\QueryException $e) {
+                Log::error('Query Exception on creating expert profile: ' . $e->getMessage());
                 notyf()
                     ->position('x', 'right')
                     ->position('y', 'top')
-                    ->addError('Error creating expert profile');
+                    ->addError('Error creating expert profile. Please try again.');
+                return redirect(request()->header('Referer'));
+            } catch (\Exception $e) {
+                Log::error('Unexpected Exception on creating expert profile: ' . $e->getMessage());
+                notyf()
+                    ->position('x', 'right')
+                    ->position('y', 'top')
+                    ->addError('An unexpected error occurred while creating expert profile. Please try again later.');
                 return redirect(request()->header('Referer'));
             }
+
             // Initialize Wallet
             try {
                 $wallet = new Wallet();
                 $wallet->user_id = $user->id;
                 $wallet->save();
-            } catch (\Throwable $th) {
+            } catch (\Exception $e) {
+                Log::error('Unexpected Exception on initializing expert wallet: ' . $e->getMessage());
                 notyf()
                     ->position('x', 'right')
                     ->position('y', 'top')
-                    ->addError('Error initializing expert wallet.');
+                    ->addError('An unexpected error occurred while initializing expert wallet. Please try again later.');
+                return redirect(request()->header('Referer'));
+            } catch (\Throwable $th) {
+                Log::error('Throwable on initializing expert wallet: ' . $th->getMessage());
+                notyf()
+                    ->position('x', 'right')
+                    ->position('y', 'top')
+                    ->addError('Error initializing expert wallet. Please try again.');
                 return redirect(request()->header('Referer'));
             }
 
             notyf()->position('x', 'right')->position('y', 'top')->addSuccess('Expert account successfully created.');
             return redirect(request()->header('Referer'));
-        } catch (\Throwable $th) {
+        } catch (\Exception $e) {
+            Log::error('Unexpected Exception on creating user account: ' . $e->getMessage());
             notyf()
                 ->position('x', 'right')
                 ->position('y', 'top')
-                ->addError('Error creating user account');
+                ->addError('An unexpected error occurred while creating user account. Please try again later.');
+            return redirect(request()->header('Referer'));
+        } catch (\Throwable $th) {
+            Log::error('Throwable on creating user account: ' . $th->getMessage());
+            notyf()
+                ->position('x', 'right')
+                ->position('y', 'top')
+                ->addError('Error creating user account. Please try again.');
             return redirect(request()->header('Referer'));
         }
     }

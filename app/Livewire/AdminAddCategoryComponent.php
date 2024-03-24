@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Category;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 use Illuminate\Support\Str;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
@@ -58,11 +59,19 @@ class AdminAddCategoryComponent extends Component
                 ->position('y', 'top')
                 ->addSuccess('Category created.');
             return redirect(request()->header('Referer'));
-        } catch (\Throwable $th) {
+        } catch (\Exception $e) {
+            Log::error('Unexpected Exception on creating category: ' . $e->getMessage());
             notyf()
                 ->position('x', 'right')
                 ->position('y', 'top')
-                ->addError('Error creating category');
+                ->addError('An unexpected error occurred while creating category. Please try again later.');
+            return redirect(request()->header('Referer'));
+        } catch (\Throwable $th) {
+            Log::error('Throwable Error on creating category: ' . $th->getMessage());
+            notyf()
+                ->position('x', 'right')
+                ->position('y', 'top')
+                ->addError('An unexpected error occurred while creating category. Please try again later.');
             return redirect(request()->header('Referer'));
         }
     }
