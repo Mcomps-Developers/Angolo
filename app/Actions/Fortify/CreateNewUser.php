@@ -6,6 +6,7 @@ use App\Models\ExpertProfile;
 use App\Models\Social;
 use App\Models\User;
 use App\Models\Wallet;
+use App\Notifications\Welcome;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
@@ -34,7 +35,7 @@ class CreateNewUser implements CreatesNewUsers
         $user = User::create([
             'name' => $input['name'],
             'email' => $input['email'],
-            'utype' => $input['utype'],
+            'utype' => 'byr',
             'phone_number' => $input['phone_number'],
             'password' => Hash::make($input['password']),
         ]);
@@ -56,7 +57,7 @@ class CreateNewUser implements CreatesNewUsers
                 'user_id' => $user->id,
             ]);
         }
-
+        $user->notify(new Welcome($user));
         return $user;
     }
 }
