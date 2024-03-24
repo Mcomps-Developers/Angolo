@@ -60,7 +60,7 @@
                                         <div class="col-5">
                                             <div class="position-relative image-overlap-shadow">
                                                 <a href="javascript:void();"><img class="rounded img-fluid w-100"
-                                                        src="{{ asset('images/categories') }}/{{ $item->icon }}" srcset="{{ asset('images/categories') }}/{{ $item->icon }}" alt=""></a>
+                                                        src="images/categories/{{ $item->icon }}" srcset="{{ asset('images/categories') }}/{{ $item->icon }}" alt=""></a>
                                                 <div class="view-book">
                                                     <a href="#!" class="btn btn-sm btn-white">Browse</a>
                                                 </div>
