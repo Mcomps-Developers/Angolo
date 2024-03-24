@@ -63,14 +63,24 @@
                                 <ul id="dashboard" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                                 @endif
                         
-                            <li class="active"><a href="/"><i class="las la-house-damage"></i>Home Page</a></li>
-                            <li><a href="/category"><i class="ri-function-line"></i>Category Page</a></li>
-                            <li><a href="/book-page"><i class="ri-book-line"></i>Book Page</a></li>
-                            <li><a href="/book-pdf"><i class="ri-file-pdf-line"></i>Book PDF</a></li>
-                            <li><a href="/checkoot"><i class="ri-checkbox-multiple-blank-line"></i>Checkout</a></li>
-                            <li><a href="/wishlist"><i class="ri-heart-line"></i>wishlist</a></li>
+                            <li class="active"><a href="/"><i class="las la-house-damage"></i>Marketplace</a></li>
+                            <li><a href="/category"><i class="ri-function-line"></i>Categories</a></li>
+                            <li><a href="/wishlist"><i class="ri-heart-line"></i>Wishlit</a></li>
                         </ul>
                     </li>
+                    @if(Auth::user()->utype==='slr')
+                    <li class="active active-menu">
+                        <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span
+                                class="ripple rippleEffect"></span><i class="ri-admin-line"></i><span>Expert Mode</span><i
+                                class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                        <ul id="admin" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
+                            <li><a href="{{route('expert.dashboard')}}"><i class="ri-dashboard-line"></i>Dashboard</a></li>
+                            <li><a href="{{route('expert.content')}}"><i class="ri-book-2-line"></i>My Content</a></li>
+                            <li><a href="{{route('expert.sales')}}"><i class="las la-wallet"></i>My Sales</a></li>
+                            <li><a href="{{route('user.profile')}}"><i class="ri-admin-line"></i>My Profile</a></li>
+                        </ul>
+                    </li>
+                    @endif
                     @if (Auth::user()->utype==='adm')
                         <li class="active active-menu">
                         <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span
@@ -120,7 +130,16 @@
                     </div>
                 </div>
                 <div class="navbar-breadcrumb">
-                    <h5 class="mb-0">Shop</h5>
+                    @if(Auth::user()->utype==='adm')
+                    <h5 class="mb-0">Admin User</h5>
+                            @elseif (Auth::user()->utype==='slr')
+                            <h5 class="mb-0">Expert</h5>
+                            @elseif (Auth::user()->utype==='sadm')
+                            <h5 class="mb-0">Super User</h5>
+                            @else
+                            <h5 class="mb-0">Angolo Experts</h5>
+                            @endif
+                    
                     <nav aria-label="breadcrumb">
                         <ul class="breadcrumb">
                             @if(Auth::user()->utype==='adm')
@@ -386,7 +405,7 @@
                                     alt="user">
                                 <div class="caption">
                                     <h6 class="mb-1 line-height">{{ Auth::user()->name }}</h6>
-                                    <p class="mb-0 text-primary">$20.32</p>
+                                    <p class="mb-0 text-primary">Ksh 20.32</p>
                                 </div>
                             </a>
                             <div class="iq-sub-dropdown iq-user-dropdown">
@@ -397,7 +416,7 @@
                                             </h5>
                                             <span class="text-white font-size-12">Available</span>
                                         </div>
-                                        <a href="{{ route('user.profile') }}"
+                                        <a href="{{ route('account.settings') }}"
                                             class="iq-sub-card iq-bg-primary-hover">
                                             <div class="media align-items-center">
                                                 <div class="rounded iq-card-icon iq-bg-primary">
@@ -405,30 +424,7 @@
                                                 </div>
                                                 <div class="ml-3 media-body">
                                                     <h6 class="mb-0 ">My Profile</h6>
-                                                    <p class="mb-0 font-size-12">View personal profile details.</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="{{ route('profile.edit') }}"
-                                            class="iq-sub-card iq-bg-primary-hover">
-                                            <div class="media align-items-center">
-                                                <div class="rounded iq-card-icon iq-bg-primary">
-                                                    <i class="ri-profile-line"></i>
-                                                </div>
-                                                <div class="ml-3 media-body">
-                                                    <h6 class="mb-0 ">Edit Profile</h6>
-                                                    <p class="mb-0 font-size-12">Modify your personal details.</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="{{route('account.settings')}}" class="iq-sub-card iq-bg-primary-hover">
-                                            <div class="media align-items-center">
-                                                <div class="rounded iq-card-icon iq-bg-primary">
-                                                    <i class="ri-account-box-line"></i>
-                                                </div>
-                                                <div class="ml-3 media-body">
-                                                    <h6 class="mb-0 ">Account settings</h6>
-                                                    <p class="mb-0 font-size-12">Manage your account parameters.</p>
+                                                    <p class="mb-0 font-size-12">My Profile.</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -444,8 +440,11 @@
                                             </div>
                                         </a>
                                         <div class="p-3 text-center d-inline-block w-100">
-                                            <a class="bg-primary iq-sign-btn" href="#!" role="button">Sign
+                                            <a class="bg-primary iq-sign-btn" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()" role="button">Sign
                                                 out<i class="ml-2 ri-login-box-line"></i></a>
+                                                <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                                                    @csrf
+                                                </form>
                                         </div>
                                     </div>
                                 </div>

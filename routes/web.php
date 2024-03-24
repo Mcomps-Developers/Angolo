@@ -18,7 +18,10 @@ use App\Livewire\BookPageComponent;
 use App\Livewire\BookPdfComponent;
 use App\Livewire\CategoryComponent;
 use App\Livewire\CheckoutComponent;
+use App\Livewire\Expert\AddNewContent;
 use App\Livewire\Expert\ExpertDashboard;
+use App\Livewire\Expert\MyContent;
+use App\Livewire\Expert\MySales;
 use App\Livewire\HomeComponent;
 use App\Livewire\PagesComingSoonComponent;
 use App\Livewire\PagesConfirmMailComponent;
@@ -105,7 +108,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/checkout', CheckoutComponent::class)->name('checkout');
     Route::get('/book-page', BookPageComponent::class)->name('book.page');
     Route::get('/wishlist', WishlistComponent::class)->name('wishlist');
-    Route::get('/profile', ProfileComponent::class)->name('user.profile');
     Route::get('/profile-edit', ProfileEditComponent::class)->name('profile.edit');
     Route::get('/acount-setting', AccountSettingComponent::class)->name('account.settings');
 });
@@ -113,6 +115,10 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 // Seller Routes
 Route::prefix('/expert')->middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified', AuthSeller::class])->group(function () {
     Route::get('dashboard', ExpertDashboard::class)->name('expert.dashboard');
+    Route::get('/expert-profile', ProfileComponent::class)->name('user.profile');
+    Route::get('/content', MyContent::class)->name('expert.content');
+    Route::get('/sales', MySales::class)->name('expert.sales');
+    Route::get('/add-content', AddNewContent::class)->name('expert.content.add');
 });
 
 // Admin Routes

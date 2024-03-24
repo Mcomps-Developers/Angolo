@@ -8,6 +8,6 @@ class ExpertDashboard extends Component
 {
     public function render()
     {
-        return view('livewire.expert.expert-dashboard');
+        return view('livewire.expert.expert-dashboard')->layout('layouts.base');
     }
 }
