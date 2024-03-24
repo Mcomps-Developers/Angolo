@@ -35,9 +35,9 @@
                                             @foreach ($categories as $item)
                                                 <tr>
                                                     <td>1</td>
-                                                    <td><img src="images/categories/{{ $item->icon }}"
+                                                    <td><img src="{{ asset('images/categories') }}/{{ $item->icon }}"
                                                             alt="" height="30px" width="30px"
-                                                            srcset="images/categories/{{ $item->icon }}">
+                                                            srcset="{{ asset('images/categories') }}/{{ $item->icon }}">
                                                     </td>
                                                     <td>{{ $item->name }}</td>
                                                     <td>
