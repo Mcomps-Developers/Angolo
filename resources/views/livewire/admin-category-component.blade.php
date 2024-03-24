@@ -13,7 +13,7 @@
                         <div class="iq-card">
                             <div class="iq-card-header d-flex justify-content-between">
                                 <div class="iq-header-title">
-                                    <h4 class="card-title">Category Lists</h4>
+                                    <h4 class="card-title">Categories</h4>
                                 </div>
                                 <div class="iq-card-header-toolbar d-flex align-items-center">
                                     <a href="{{ route('category.add') }}" class="btn btn-primary">Add New Category</a>

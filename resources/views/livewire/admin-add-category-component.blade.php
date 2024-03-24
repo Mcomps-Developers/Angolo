@@ -1,6 +1,6 @@
 <main>
     @section('title')
-        Crate Category
+        Create Category
     @endsection
     <!-- loader END -->
     <!-- Wrapper Start -->
@@ -13,7 +13,7 @@
                         <div class="iq-card">
                             <div class="iq-card-header d-flex justify-content-between">
                                 <div class="iq-header-title">
-                                    <h4 class="card-title">Add Category</h4>
+                                    <h4 class="card-title">New Category</h4>
                                 </div>
                             </div>
                             <div class="iq-card-body">
