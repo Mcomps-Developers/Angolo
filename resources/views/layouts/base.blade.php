@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>@yield('title')|Angolo Experts</title>
+    <title>@yield('title') | Angolo Expert</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" />
     <!-- Bootstrap CSS -->
@@ -32,7 +32,7 @@
             <a href="/" class="header-logo">
                 <img src="{{ asset('images/logo.png') }}" class="img-fluid rounded-normal" alt="">
                 <div class="logo-title">
-                    <span class="text-primary text-uppercase">Angolo</span>
+                    <span class="text-primary text-uppercase">Angolo Expert</span>
                 </div>
             </a>
             <div class="iq-menu-bt-sidebar">
@@ -46,55 +46,60 @@
         <div id="sidebar-scrollbar">
             <nav class="iq-sidebar-menu">
                 <ul id="iq-sidebar-toggle" class="iq-menu">
-                    @if (Auth::user()->utype==='byr')
-                    <li class="active active-menu">
-                        <a href="#dashboard" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span
-                            class="ripple rippleEffect"></span><i
-                            class="las la-home iq-arrow-left"></i><span>Shop</span><i
-                            class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                    @if (Auth::user()->utype === 'byr')
+                        <li class="active active-menu">
+                            <a href="#dashboard" class="iq-waves-effect" data-toggle="collapse"
+                                aria-expanded="true"><span class="ripple rippleEffect"></span><i
+                                    class="las la-home iq-arrow-left"></i><span>Home</span><i
+                                    class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                             <ul id="dashboard" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
-                    @else
-                    <li>
+                            @else
+                                <li>
 
-                        <a href="#dashboard" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false"><span
-                                class="ripple rippleEffect"></span><i
-                                class="las la-home iq-arrow-left"></i><span>Shop</span><i
-                                class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                                <ul id="dashboard" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                                @endif
+                                    <a href="#dashboard" class="iq-waves-effect" data-toggle="collapse"
+                                        aria-expanded="false"><span class="ripple rippleEffect"></span><i
+                                            class="las la-home iq-arrow-left"></i><span>Shop</span><i
+                                            class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                                    <ul id="dashboard" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                    @endif
 
-                            <li class="active"><a href="/"><i class="las la-house-damage"></i>Marketplace</a></li>
-                            <li><a href="/category"><i class="ri-function-line"></i>Categories</a></li>
-                            <li><a href="/wishlist"><i class="ri-heart-line"></i>Wishlit</a></li>
-                        </ul>
-                    </li>
-                    @if(Auth::user()->utype==='slr')
+                    <li class="active"><a href="/"><i class="las la-business"></i>Shop</a></li>
+                    <li><a href="/category"><i class="ri-function-line"></i>Categories</a></li>
+                    <li><a href="/wishlist"><i class="ri-heart-line"></i>Wishlit</a></li>
+                </ul>
+                </li>
+                @if (Auth::user()->utype === 'slr')
                     <li class="active active-menu">
                         <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span
-                                class="ripple rippleEffect"></span><i class="ri-admin-line"></i><span>Expert Mode</span><i
-                                class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                                class="ripple rippleEffect"></span><i class="ri-admin-line"></i><span>Expert
+                                Mode</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul id="admin" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
-                            <li><a href="{{route('expert.dashboard')}}"><i class="ri-dashboard-line"></i>Dashboard</a></li>
-                            <li><a href="{{route('expert.content')}}"><i class="ri-book-2-line"></i>My Content</a></li>
-                            <li><a href="{{route('expert.sales')}}"><i class="las la-wallet"></i>My Sales</a></li>
-                            <li><a href="{{route('user.profile')}}"><i class="ri-admin-line"></i>My Profile</a></li>
+                            <li><a href="{{ route('expert.dashboard') }}"><i class="ri-dashboard-line"></i>Dashboard</a>
+                            </li>
+                            <li><a href="{{ route('expert.content') }}"><i class="ri-book-2-line"></i>My Content</a>
+                            </li>
+                            <li><a href="{{ route('expert.sales') }}"><i class="las la-wallet"></i>My Sales</a></li>
+                            <li><a href="{{ route('user.profile') }}"><i class="ri-admin-line"></i>My Profile</a></li>
                         </ul>
                     </li>
-                    @endif
-                    @if (Auth::user()->utype==='adm')
-                        <li class="active active-menu">
+                @endif
+                @if (Auth::user()->utype === 'adm')
+                    <li class="active active-menu">
                         <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span
                                 class="ripple rippleEffect"></span><i class="ri-admin-line"></i><span>Admin</span><i
                                 class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul id="admin" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
-                            <li><a href="{{route('admin.dashboard')}}"><i class="ri-dashboard-line"></i>Dashboard</a></li>
-                            <li><a href="{{route('admin.categories')}}"><i class="ri-list-check-2"></i>Categories</a></li>
-                            <li><a href="{{route('admin.experts')}}"><i class="ri-file-user-line"></i>Experts</a></li>
-                            <li><a href="{{route('admin.content')}}"><i class="ri-book-2-line"></i>Content</a></li>
-                            <li><a href="{{route('users')}}"><i class="las la-th-list"></i>Users</a></li>
+                            <li><a href="{{ route('admin.dashboard') }}"><i class="ri-dashboard-line"></i>Dashboard</a>
+                            </li>
+                            <li><a href="{{ route('admin.categories') }}"><i class="ri-list-check-2"></i>Categories</a>
+                            </li>
+                            <li><a href="{{ route('admin.experts') }}"><i class="ri-file-user-line"></i>Experts</a>
+                            </li>
+                            <li><a href="{{ route('admin.content') }}"><i class="ri-book-2-line"></i>Content</a></li>
+                            <li><a href="{{ route('users') }}"><i class="las la-th-list"></i>Users</a></li>
                         </ul>
                     </li>
-                    @endif
+                @endif
                 </ul>
             </nav>
             <div id="sidebar-bottom" class="p-3 position-relative">
@@ -130,26 +135,29 @@
                     </div>
                 </div>
                 <div class="navbar-breadcrumb">
-                    @if(Auth::user()->utype==='adm')
-                    <h5 class="mb-0">Admin User</h5>
-                            @elseif (Auth::user()->utype==='slr')
-                            <h5 class="mb-0">Expert</h5>
-                            @elseif (Auth::user()->utype==='sadm')
-                            <h5 class="mb-0">Super User</h5>
-                            @else
-                            <h5 class="mb-0">Angolo Experts</h5>
-                            @endif
+                    @if (Auth::user()->utype === 'adm')
+                        <h5 class="mb-0">Admin User</h5>
+                    @elseif (Auth::user()->utype === 'slr')
+                        <h5 class="mb-0">Expert</h5>
+                    @elseif (Auth::user()->utype === 'sadm')
+                        <h5 class="mb-0">Super User</h5>
+                    @else
+                        <h5 class="mb-0">Angolo Experts</h5>
+                    @endif
 
                     <nav aria-label="breadcrumb">
                         <ul class="breadcrumb">
-                            @if(Auth::user()->utype==='adm')
-                            <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
-                            @elseif (Auth::user()->utype==='slr')
-                            <li class="breadcrumb-item"><a href="{{route('expert.dashboard')}}">Dashboard</a></li>
-                            @elseif (Auth::user()->utype==='sadm')
-                            <li class="breadcrumb-item"><a href="{{route('super.dashboard')}}">Dashboard</a></li>
+                            @if (Auth::user()->utype === 'adm')
+                                <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a>
+                                </li>
+                            @elseif (Auth::user()->utype === 'slr')
+                                <li class="breadcrumb-item"><a href="{{ route('expert.dashboard') }}">Dashboard</a>
+                                </li>
+                            @elseif (Auth::user()->utype === 'sadm')
+                                <li class="breadcrumb-item"><a href="{{ route('super.dashboard') }}">Dashboard</a>
+                                </li>
                             @else
-                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                <li class="breadcrumb-item"><a href="/">Home</a></li>
                             @endif
                             <li class="breadcrumb-item active" aria-current="page">@yield('title')</li>
                         </ul>
@@ -405,7 +413,7 @@
                                     alt="user">
                                 <div class="caption">
                                     <h6 class="mb-1 line-height">{{ Auth::user()->name }}</h6>
-                                    <p class="mb-0 text-primary">Ksh {{Auth::user()->wallet->balance}}</p>
+                                    <p class="mb-0 text-primary">Ksh {{ Auth::user()->wallet->balance }}</p>
                                 </div>
                             </a>
                             <div class="iq-sub-dropdown iq-user-dropdown">
@@ -440,11 +448,13 @@
                                             </div>
                                         </a>
                                         <div class="p-3 text-center d-inline-block w-100">
-                                            <a class="bg-primary iq-sign-btn" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()" role="button">Sign
+                                            <a class="bg-primary iq-sign-btn" href="{{ route('logout') }}"
+                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit()"
+                                                role="button">Sign
                                                 out<i class="ml-2 ri-login-box-line"></i></a>
-                                                <form id="logout-form" method="POST" action="{{ route('logout') }}">
-                                                    @csrf
-                                                </form>
+                                            <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                                                @csrf
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -474,7 +484,7 @@
                         <script>
                             document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
                         </script>
-                         Angolo Experts. All Rights Reserved.
+                        Angolo Experts. All Rights Reserved.
                     </span> Powered By <a href="https://mcomps.co.ke"><b>Mcomps</b></a>
                 </div>
             </div>

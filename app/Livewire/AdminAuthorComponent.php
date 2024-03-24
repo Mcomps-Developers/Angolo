@@ -2,12 +2,17 @@
 
 namespace App\Livewire;
 
+use App\Models\ExpertProfile;
+use App\Models\User;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class AdminAuthorComponent extends Component
 {
+    use WithPagination;
     public function render()
     {
-        return view('livewire.admin-author-component')->layout('layouts.base');
+        $experts = ExpertProfile::orderBy('created_at')->paginate(10);
+        return view('livewire.admin-author-component',['experts'=>$experts])->layout('layouts.base');
     }
 }

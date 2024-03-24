@@ -24,7 +24,15 @@ class AdminAddCategoryComponent extends Component
 
     public function generateSlug()
     {
-        $this->slug = Str::slug($this->category_name);
+        try {
+            $this->slug = Str::slug($this->category_name);
+        } catch (\Throwable $th) {
+            notyf()
+                ->position('x', 'right')
+                ->position('y', 'top')
+                ->addError('Error generating category slug');
+            return redirect(request()->header('Referer'));
+        }
     }
 
     public function updated($fields)
@@ -36,19 +44,27 @@ class AdminAddCategoryComponent extends Component
     {
         $this->validate();
         $this->generateSlug();
-        $category = new Category();
-        $category->name = $this->category_name;
-        $category->description = $this->category_description;
-        $category->slug = $this->slug;
-        $imageName = Carbon::now()->timestamp . '.' . $this->icon->extension();
-        $this->icon->storeAs('images/categories', $imageName);
-        $category->icon = $imageName;
-        $category->save();
-        notyf()
-            ->position('x', 'right')
-            ->position('y', 'top')
-            ->addSuccess('Category created.');
-            return redirect()->route('admin.categories');
+        try {
+            $category = new Category();
+            $category->name = $this->category_name;
+            $category->description = $this->category_description;
+            $category->slug = $this->slug;
+            $imageName = Carbon::now()->timestamp . '.' . $this->icon->extension();
+            $this->icon->storeAs('images/categories', $imageName);
+            $category->icon = $imageName;
+            $category->save();
+            notyf()
+                ->position('x', 'right')
+                ->position('y', 'top')
+                ->addSuccess('Category created.');
+            return redirect(request()->header('Referer'));
+        } catch (\Throwable $th) {
+            notyf()
+                ->position('x', 'right')
+                ->position('y', 'top')
+                ->addError('Error creating category');
+            return redirect(request()->header('Referer'));
+        }
     }
 
     public function render()
