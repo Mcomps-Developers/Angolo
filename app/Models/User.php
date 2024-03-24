@@ -63,4 +63,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function wallet()
+    {
+        return $this->hasOne(Wallet::class, 'user_id');
+    }
 }

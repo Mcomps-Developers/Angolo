@@ -47,7 +47,7 @@
             <nav class="iq-sidebar-menu">
                 <ul id="iq-sidebar-toggle" class="iq-menu">
                     @if (Auth::user()->utype==='byr')
-                    <li class="active active-menu">  
+                    <li class="active active-menu">
                         <a href="#dashboard" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span
                             class="ripple rippleEffect"></span><i
                             class="las la-home iq-arrow-left"></i><span>Shop</span><i
@@ -55,14 +55,14 @@
                             <ul id="dashboard" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
                     @else
                     <li>
-                        
+
                         <a href="#dashboard" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false"><span
                                 class="ripple rippleEffect"></span><i
                                 class="las la-home iq-arrow-left"></i><span>Shop</span><i
                                 class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                                 <ul id="dashboard" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                                 @endif
-                        
+
                             <li class="active"><a href="/"><i class="las la-house-damage"></i>Marketplace</a></li>
                             <li><a href="/category"><i class="ri-function-line"></i>Categories</a></li>
                             <li><a href="/wishlist"><i class="ri-heart-line"></i>Wishlit</a></li>
@@ -139,7 +139,7 @@
                             @else
                             <h5 class="mb-0">Angolo Experts</h5>
                             @endif
-                    
+
                     <nav aria-label="breadcrumb">
                         <ul class="breadcrumb">
                             @if(Auth::user()->utype==='adm')
@@ -405,7 +405,7 @@
                                     alt="user">
                                 <div class="caption">
                                     <h6 class="mb-1 line-height">{{ Auth::user()->name }}</h6>
-                                    <p class="mb-0 text-primary">Ksh 20.32</p>
+                                    <p class="mb-0 text-primary">Ksh {{Auth::user()->wallet->balance}}</p>
                                 </div>
                             </a>
                             <div class="iq-sub-dropdown iq-user-dropdown">
@@ -414,7 +414,7 @@
                                         <div class="p-3 bg-primary">
                                             <h5 class="mb-0 text-white line-height">Hello {{ Auth::user()->name }}
                                             </h5>
-                                            <span class="text-white font-size-12">Available</span>
+                                            <span class="text-white font-size-12">Online</span>
                                         </div>
                                         <a href="{{ route('account.settings') }}"
                                             class="iq-sub-card iq-bg-primary-hover">
@@ -474,7 +474,7 @@
                         <script>
                             document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
                         </script>
-                         Angolo Experts. All Rights Reserved. 
+                         Angolo Experts. All Rights Reserved.
                     </span> Powered By <a href="https://mcomps.co.ke"><b>Mcomps</b></a>
                 </div>
             </div>

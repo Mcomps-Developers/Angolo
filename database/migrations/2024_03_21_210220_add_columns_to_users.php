@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('phone_number')->unique();
-            $table->enum('utype',['adm','slr','byr','sadm']);
+            $table->enum('utype',['adm','slr','byr','sadm'])->default('byr');
         });
     }
 
