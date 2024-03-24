@@ -41,6 +41,7 @@
 
                     </div>
                 </div>
+                @if($categories->count()>0)
                 <div class="col-lg-12" style="margin-top: 30px;">
                     <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                         <div class="iq-card-header d-flex justify-content-between align-items-center position-relative">
@@ -53,108 +54,32 @@
                         </div>
                         <div class="iq-card-body single-similar-contens">
                             <ul id="single-similar-slider" class="p-0 mb-0 list-inline row">
-                                <li class="col-md-3">
+                                @foreach ($categories as $item)
+                                    <li class="col-md-3">
                                     <div class="row align-items-center">
                                         <div class="col-5">
                                             <div class="position-relative image-overlap-shadow">
                                                 <a href="javascript:void();"><img class="rounded img-fluid w-100"
-                                                        src="images/similar-books/01.jpg" alt=""></a>
+                                                        src="{{ asset('images/categories') }}/{{ $item->icon }}" srcset="{{ asset('images/categories') }}/{{ $item->icon }}" alt=""></a>
                                                 <div class="view-book">
-                                                    <a href="{{ route('book.page') }}" class="btn btn-sm btn-white">Browse</a>
+                                                    <a href="#!" class="btn btn-sm btn-white">Browse</a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="pl-0 col-7">
-                                            <h6 class="mb-2">Category description</h6>
+                                            <h6 class="mb-2">{{$item->name}}</h6>
                                             <p class="text-body">0 : Items</p>
-                                            <a href="#" class="text-dark" tabindex="-1">Browse<i
+                                            <a href="#!" class="text-dark" tabindex="-1">Browse<i
                                                     class="ri-arrow-right-s-line"></i></a>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="col-md-3">
-                                    <div class="row align-items-center">
-                                        <div class="col-5">
-                                            <div class="position-relative image-overlap-shadow">
-                                                <a href="javascript:void();"><img class="rounded img-fluid w-100"
-                                                        src="images/similar-books/02.jpg" alt=""></a>
-                                                <div class="view-book">
-                                                    <a href="{{ route('book.page') }}" class="btn btn-sm btn-white">Browse</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="pl-0 col-7">
-                                            <h6 class="mb-2">Category Name</h6>
-                                            <p class="text-body">0 : Items</p>
-                                            <a href="#" class="text-dark" tabindex="-1">Browse<i
-                                                    class="ri-arrow-right-s-line"></i></a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="col-md-3">
-                                    <div class="row align-items-center">
-                                        <div class="col-5">
-                                            <div class="position-relative image-overlap-shadow">
-                                                <a href="javascript:void();"><img class="rounded img-fluid w-100"
-                                                        src="images/similar-books/03.jpg" alt=""></a>
-                                                <div class="view-book">
-                                                    <a href="{{ route('book.page') }}"
-                                                        class="btn btn-sm btn-white">Browse</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="pl-0 col-7">
-                                            <h6 class="mb-2">Category name</h6>
-                                            <p class="text-body">0 : Items</p>
-                                            <a href="#" class="text-dark" tabindex="-1">Browse<i
-                                                    class="ri-arrow-right-s-line"></i></a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="col-md-3">
-                                    <div class="row align-items-center">
-                                        <div class="col-5">
-                                            <div class="position-relative image-overlap-shadow">
-                                                <a href="javascript:void();"><img class="rounded img-fluid w-100"
-                                                        src="images/similar-books/04.jpg" alt=""></a>
-                                                <div class="view-book">
-                                                    <a href="{{ route('book.page') }}"
-                                                        class="btn btn-sm btn-white">Browse</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="pl-0 col-7">
-                                            <h6 class="mb-2">Category Name</h6>
-                                            <p class="text-body">0 : Items</p>
-                                            <a href="#" class="text-dark" tabindex="-1">Browse<i
-                                                    class="ri-arrow-right-s-line"></i></a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="col-md-3">
-                                    <div class="row align-items-center">
-                                        <div class="col-5">
-                                            <div class="position-relative image-overlap-shadow">
-                                                <a href="javascript:void();"><img class="rounded img-fluid w-100"
-                                                        src="images/similar-books/05.jpg" alt=""></a>
-                                                <div class="view-book">
-                                                    <a href="{{ route('book.page') }}"
-                                                        class="btn btn-sm btn-white">Browse</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="pl-0 col-7">
-                                            <h6 class="mb-2">Category Name</h6>
-                                            <p class="text-body">0 : Items</p>
-                                            <a href="#" class="text-dark" tabindex="-1">Browse<i
-                                                    class="ri-arrow-right-s-line"></i></a>
-                                        </div>
-                                    </div>
-                                </li>
+                                @endforeach                                
                             </ul>
                         </div>
                     </div>
                 </div>
+                @endif
                 <div class="col-lg-12">
                     <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                         <div
