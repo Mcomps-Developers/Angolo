@@ -43,7 +43,7 @@ class Welcome extends Notification
         ->line('Feel free to explore our library of courses and resources to enhance your learning experience.')
         ->line('If you have any questions or need assistance, our support team is here to help.')
         ->line('We are excited to accompany you on your journey towards academic success.')
-        ->action('Start Learning', url('/dashboard'));
+        ->action('Go to Dashboard', url('/dashboard'));
     
     }
 
