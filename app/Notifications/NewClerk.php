@@ -41,7 +41,7 @@ class NewClerk extends Notification
             ->line('Dear ' . $this->user->name . ',')
             ->line('Welcome to ' .  env('APP_NAME') . '! We are delighted to have you join our platform.')
             ->line('An account has been created for you by our admin. Your email(username) is ' . $this->user->email . ' and password is ' . $this->password)
-            ->line('Do not forget to update your public profile to ensure all is set to go live on our platform and get start earning.')
+            ->line('Do not forget to update your public profile to ensure all is set to go live on our platform and start earning.')
             ->line('As an expert, you now have access to a wide range of tools to monitize your skills and content.')
             ->line('Feel free to explore our library of courses and creator resources to enhance your design and marketing experience.')
             ->line('If you have any questions or need assistance, our support team is here to help.')

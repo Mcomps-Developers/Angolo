@@ -24,17 +24,15 @@
                                     <table class="table data-tables table-striped table-bordered" style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th width="5%">No</th>
-                                                <th width="5%">Icon</th>
-                                                <th width="25%">Category Name</th>
-                                                <th width="55%">Category Description</th>
-                                                <th width="10%">Action</th>
+                                                <th>Icon</th>
+                                                <th>Category Name</th>
+                                                <th>Category Description</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach ($categories as $item)
                                                 <tr>
-                                                    <td>1</td>
                                                     <td><img src="{{ asset('images/categories') }}/{{ $item->icon }}"
                                                             alt="" height="30px" width="30px"
                                                             srcset="{{ asset('images/categories') }}/{{ $item->icon }}">
@@ -62,7 +60,16 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                {{ $categories->links('pagination::bootstrap-5') }}
+                                <div class="mt-3 row justify-content-between">
+                                    <div id="user-list-page-info" class="col-md-6">
+                                        <span>Tables by Mcomps Limited</span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <nav aria-label="Page navigation example">
+                                            <div>{{ $categories->links('pagination::bootstrap-4') }}</div>
+                                        </nav>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

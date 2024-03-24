@@ -97,23 +97,11 @@
                                 </div>
                                 <div class="mt-3 row justify-content-between">
                                     <div id="user-list-page-info" class="col-md-6">
-                                        <span>{{ $experts->links('pagination::bootstrap-5') }}</span>
+                                        <span>Tables by Mcomps Limited</span>
                                     </div>
                                     <div class="col-md-6">
                                         <nav aria-label="Page navigation example">
-                                            <ul class="mb-0 pagination justify-content-end">
-                                                <li class="page-item disabled">
-                                                    <a class="page-link" href="#" tabindex="-1"
-                                                        aria-disabled="true">Previous</a>
-                                                </li>
-                                                <li class="page-item active"><a class="page-link" href="#">1</a>
-                                                </li>
-                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#">Next</a>
-                                                </li>
-                                            </ul>
+                                            <div>{{ $experts->links('pagination::bootstrap-4') }}</div>
                                         </nav>
                                     </div>
                                 </div>
