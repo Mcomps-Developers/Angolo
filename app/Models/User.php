@@ -68,4 +68,8 @@ class User extends Authenticatable
     {
         return $this->hasOne(Wallet::class, 'user_id');
     }
+    public function social()
+    {
+        return $this->hasOne(Social::class, 'user_id');
+    }
 }

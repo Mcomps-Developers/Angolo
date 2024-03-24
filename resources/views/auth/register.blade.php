@@ -76,7 +76,11 @@
                 <x-validation-errors class="mb-4" style="color: red" />
                 <form method="POST" action="{{ route('register') }}" class="space-y-3">
                     @csrf
-                    <input type="hidden" name="utype" value="byr">
+                    <select name="" id="" class="!w-full" name="utype">
+                        <option value="">-Join as-</option>
+                        <option value="byr">Student</option>
+                        <option value="slr">Expert</option>
+                    </select>
                     <input class="!w-full" id="username" name="name" type="text" autofocus=""
                         placeholder="Full Name">
                     <input class="!w-full" id="name" name="email" type="email" autofocus=""

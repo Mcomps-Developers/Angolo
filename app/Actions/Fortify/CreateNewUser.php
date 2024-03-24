@@ -2,7 +2,10 @@
 
 namespace App\Actions\Fortify;
 
+use App\Models\ExpertProfile;
+use App\Models\Social;
 use App\Models\User;
+use App\Models\Wallet;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
@@ -27,12 +30,32 @@ class CreateNewUser implements CreatesNewUsers
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ])->validate();
 
-        return User::create([
+        $user = User::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'utype' => $input['utype'],
             'phone_number' => $input['phone_number'],
             'password' => Hash::make($input['password']),
         ]);
+        // Create associated profile based on utype
+        if ($input['utype'] === 'slr') {
+            // Create parent profile
+            ExpertProfile::create([
+                'user_id' => $user->id,
+            ]);
+            Wallet::create([
+                'user_id' => $user->id,
+            ]);
+            Social::create([
+                'user_id' => $user->id,
+            ]);
+        } elseif ($input['utype'] === 'byr') {
+            // Create teacher profile
+            Wallet::create([
+                'user_id' => $user->id,
+            ]);
+        }
+
+        return $user;
     }
 }

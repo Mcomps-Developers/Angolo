@@ -11,4 +11,7 @@ class Social extends Model
     public function user(){
         return $this->belongsTo(User::class,'user_id');
     }
+    protected $filable=[
+        'user_id',
+    ];
 }
