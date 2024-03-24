@@ -44,7 +44,7 @@ class AdminAddAuthorComponent extends Component
         $this->generatePassword();
         try {
             $user = new User();
-            $user->name = $this->name();
+            $user->name = $this->name;
             $user->email = $this->email;
             $user->phone_number = $this->phone_number;
             $user->password = Hash::make($this->password);
