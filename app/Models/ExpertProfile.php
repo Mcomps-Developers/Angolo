@@ -13,7 +13,7 @@ class ExpertProfile extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    protected $filable = [
+    protected $fillable = [
         'user_id',
     ];
 }
