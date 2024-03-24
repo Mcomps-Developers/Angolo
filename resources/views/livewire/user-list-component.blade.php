@@ -62,8 +62,16 @@
                                         <tbody>
                                             @foreach ($users as $item)
                                                 <tr>
-                                                    <td class="text-center"><img class="rounded img-fluid avatar-40"
-                                                            src="{{ asset('images/user/01.jpg') }}" alt="profile"></td>
+                                                    <td class="text-center">
+                                                        @if ($item->profile_phot_path)
+                                                            <img class="rounded img-fluid avatar-40"
+                                                            src="{{ asset('images/user') }}/{{$item->profile_photo_path}}" alt="">
+                                                        @else
+                                                        <img class="rounded img-fluid avatar-40"
+                                                        src="{{ $item->profile_photo_url }}" alt="">
+                                                        @endif
+                                                        
+                                                        </td>
                                                     <td>{{ $item->name }}</td>
                                                     <td>{{ $item->phone_number }}</td>
                                                     <td>{{ $item->email }}</td>
