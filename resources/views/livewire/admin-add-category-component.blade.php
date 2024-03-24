@@ -38,9 +38,9 @@
                                         <br>
                                         @if ($icon)
                                             <img src="{{ $icon->temporaryUrl() }}" width="70px" height="100px"
-                                                style="margin:3px;" />
+                                                style="margin-top:15px;" />
                                         @endif
-                                        <span wire:loading wire:target='icon'>Uploading icon...</span>
+                                        <span wire:loading wire:target='icon' style="margin-top: 15px;">Uploading icon...</span>
                                     </div>
                                     <div class="form-group">
                                         <label>Category Description:</label>
