@@ -12,4 +12,7 @@ class Purchase extends Model
     public function customer(){
         return $this->belongsTo(User::class,'user_id');
     }
+    public function content(){
+        return $this->belongsTo(Content::class,'content_id');
+    }
 }

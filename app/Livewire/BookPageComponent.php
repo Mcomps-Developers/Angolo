@@ -4,7 +4,9 @@ namespace App\Livewire;
 
 use App\Models\Content;
 use App\Models\Purchase;
+use App\Models\User;
 use App\Models\Wallet;
+use App\Notifications\PublisherPurchaseNotification;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Livewire\Component;
@@ -60,6 +62,18 @@ class BookPageComponent extends Component
                         ->position('y', 'top')
                         ->addError('An error occurred while updating wallet balance. Please try again later.');
                     return redirect(request()->header('Referer'));
+                }
+                // Top up publisher wallet
+                try {
+                    $publisher = User::findOrFail($content->user_id);
+                    $publisherWallet = Wallet::where('user_id', $publisher->id);
+                    $currentBalance = $publisherWallet->balance;
+                    $amountToAdd = env('PUBLISHER_RATE') * $price;
+                    $publisherWallet->balance = $currentBalance + $amountToAdd;
+                    $publisherWallet->save();
+                    $publisher->notify(new PublisherPurchaseNotification($publisher, $purchase, $publisherWallet,$amountToAdd, $price));
+                } catch (\Throwable $th) {
+                    //throw $th;
                 }
                 $purchase->save();
                 notyf()
