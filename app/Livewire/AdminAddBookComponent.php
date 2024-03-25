@@ -37,7 +37,7 @@ class AdminAddBookComponent extends Component
         'description' => 'required|string|max:1000',
         'attachment' => 'required|mimes:pdf,doc,docx,mp3,mp4,txt,ppt,pptx,xls,xlsx|max:5120',
         'status' => 'required',
-        'discount_price' => 'reuired|numeric|min:10',
+        'discount_price' => 'required|numeric|min:10',
     ];
 
     public function updated($fields)
