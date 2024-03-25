@@ -66,7 +66,7 @@ class BookPageComponent extends Component
                 // Top up publisher wallet
                 try {
                     $publisher = User::findOrFail($content->user_id);
-                    $publisherWallet = Wallet::where('user_id', $publisher->id);
+                    $publisherWallet = Wallet::where('user_id', $publisher->id)->first();
                     $currentBalance = $publisherWallet->balance;
                     $amountToAdd = env('PUBLISHER_RATE') * $price;
                     $publisherWallet->balance = $currentBalance + $amountToAdd;
