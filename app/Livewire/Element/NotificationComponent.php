@@ -26,4 +26,3 @@ class NotificationComponent extends Component
         auth()->user()->notifications()->where('id', $notificationId)->delete();
     }
 }
-}
