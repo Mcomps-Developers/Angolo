@@ -123,10 +123,11 @@
                                         <label>Description:</label>
                                         <textarea id="description" class="form-control" columns="2" rows="4" wire:model.live='description'
                                             placeholder="Briefly describe your content."></textarea>
-                                        @error('description')
+                                        
+                                    </div>
+                                    @error('description')
                                             <p class="text text-danger" style="margin-top: 20px;">{{ $message }}</p>
                                         @enderror
-                                    </div>
 
                                     <div class="form-group">
                                         <label>Publication:</label>

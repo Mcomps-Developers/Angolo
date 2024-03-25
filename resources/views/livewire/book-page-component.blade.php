@@ -9,11 +9,11 @@
                 <div class="col-sm-12">
                     <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                         <div class="iq-card-header d-flex justify-content-between align-items-center">
-                            <h4 class="mb-0 card-title">Deatiled View</h4>
+                            <h4 class="mb-0 card-title">{{ $content->title }}</h4>
                         </div>
                         <div class="pb-0 iq-card-body">
                             <div class="description-contens align-items-top row">
-                                <div class="col-md-6">
+                                <div class="col-md-6" wire:ignore>
                                     <div class="iq-card-transparent iq-card-block iq-card-stretch iq-card-height">
                                         <div class="p-0 iq-card-body">
                                             <div class="row align-items-center">
@@ -26,12 +26,14 @@
                                                                     class="rounded img-fluid w-100" alt="">
                                                             </a>
                                                         </li>
-                                                        <li>
-                                                            <a href="javascript:void(0);">
-                                                                <img src="{{ asset('images/book-dec/02.jpg') }}"
-                                                                    class="rounded img-fluid w-100" alt="">
-                                                            </a>
-                                                        </li>
+                                                        @foreach (explode(',', $content->cover_images) as $filename)
+                                                            <li>
+                                                                <a href="javascript:void(0);">
+                                                                    <img src="{{ asset('images/coverImages/' . $filename) }}"
+                                                                        class="rounded img-fluid w-100" alt="">
+                                                                </a>
+                                                            </li>
+                                                        @endforeach
                                                     </ul>
                                                 </div>
                                                 <div class="col-9">
@@ -39,10 +41,18 @@
                                                         class="p-0 m-0 list-inline d-flex align-items-center">
                                                         <li>
                                                             <a href="javascript:void(0);">
-                                                                <img src="{{ asset('images/book-dec/01.jpg') }}"
+                                                                <img src="{{ asset('images/thumbnails') }}/{{ $content->thumbnail }}"
                                                                     class="rounded img-fluid w-100" alt="">
                                                             </a>
                                                         </li>
+                                                        @foreach (explode(',', $content->cover_images) as $filename)
+                                                            <li>
+                                                                <a href="javascript:void(0);">
+                                                                    <img src="{{ asset('images/coverImages/' . $filename) }}"
+                                                                        class="rounded img-fluid w-100" alt="">
+                                                                </a>
+                                                            </li>
+                                                        @endforeach
                                                     </ul>
                                                 </div>
                                             </div>
@@ -77,17 +87,26 @@
                                             <span
                                                 class="pb-4 mb-4 text-dark iq-border-bottom d-block">{!! $content->description !!}</span>
                                             <div class="mb-4 text-primary">Published by <span
-                                                    class="text-body">{{ $content->publisher->name }}</span></div>
-                                            <div class="mb-4 d-flex align-items-center">
-                                                <a href="#" class="mr-2 btn btn-primary view-more">Add To Cart</a>
-                                                <a href="#!" class="mr-2 btn btn-primary view-more">Read
-                                                    Sample</a>
+                                                    class="text-body">{{ $content->publisher->name }}</span>
+                                                <hr>
+                                                <p class="text-body"><strong>Choose payment mode to buy content</strong>
+                                                </p>
                                             </div>
-                                            <div class="mb-3">
-                                                <a href="#" class="text-center text-body"><span
-                                                        class="mr-2 avatar-30 rounded-circle bg-primary d-inline-block"><i
-                                                            class="ri-heart-fill"></i></span><span>Add to
-                                                        Wishlist</span></a>
+                                            <div class="mb-4 d-flex align-items-center">
+                                                @if ($content->on_sale)
+                                                    <a href="#!" class="mr-2 btn btn-info view-more"
+                                                        wire:click.prevent='payWithWallet({{ $content->discount_price }})'>
+                                                    @else
+                                                        <a href="#!" class="mr-2 btn btn-info view-more"
+                                                            wire:click.prevent='payWithWallet({{ $content->regular_price }})'>
+                                                @endif
+                                                <i class="ri-wallet-fill"></i> <span wire:loading.remove
+                                                    wire:target='payWithWallet'> Use Wallet</span> <span wire:loading
+                                                    wire:target='payWithWallet'>Processing...</span></a>
+                                                <a href="#" class="mr-2 btn btn-primary view-more"><i
+                                                        class="ri-mobile-phone"></i> MPESA</a> OR &nbsp;
+                                                <a href="#!" class="mr-2 btn btn-warning view-more"><i
+                                                        class="ri-heart-fill"></i> Add to Wishlist</a>
                                             </div>
                                             <div class="iq-social d-flex align-items-center">
                                                 <h5 class="mr-2">Share:</h5>

@@ -34,9 +34,10 @@ class AdminAddBookComponent extends Component
         'category' => 'required',
         'regular_price' => 'required|numeric|min:20',
         'thumbnail' => 'required|mimes:png,jpg,jpeg|max:2048',
-        'description' => 'required|string|max:300',
+        'description' => 'required|string|max:1000',
         'attachment' => 'required|mimes:pdf,doc,docx,mp3,mp4,txt,ppt,pptx,xls,xlsx|max:5120',
         'status' => 'required',
+        'discount_price' => 'reuired|numeric|min:10',
     ];
 
     public function updated($fields)
@@ -55,11 +56,6 @@ class AdminAddBookComponent extends Component
     }
     public function addContent()
     {
-        if ($this->discount_price) {
-            $this->validate([
-                'discount_price' => 'numeric|min:10',
-            ]);
-        }
 
         if ($this->cover_images) {
             $this->validate([
