@@ -104,9 +104,9 @@ Route::get('/dashboard', function () {
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/', HomeComponent::class)->name('buyer.dashboard');
     Route::get('/book-pdf', BookPdfComponent::class)->name('book.pdf');
-    Route::get('/category', CategoryComponent::class)->name('category');
+    Route::get('/category/{slug}', CategoryComponent::class)->name('category');
     Route::get('/checkout', CheckoutComponent::class)->name('checkout');
-    Route::get('/book-page', BookPageComponent::class)->name('book.page');
+    Route::get('/content/{reference}/{slug}', BookPageComponent::class)->name('content.details');
     Route::get('/wishlist', WishlistComponent::class)->name('wishlist');
     Route::get('/profile-edit', ProfileEditComponent::class)->name('profile.edit');
     Route::get('/acount-setting', AccountSettingComponent::class)->name('account.settings');

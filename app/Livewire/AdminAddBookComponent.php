@@ -35,7 +35,7 @@ class AdminAddBookComponent extends Component
         'regular_price' => 'required|numeric|min:20',
         'thumbnail' => 'required|mimes:png,jpg,jpeg|max:2048',
         'description' => 'required|string|max:300',
-        'attachment' => 'required|mimes:pdf|max:10240',
+        'attachment' => 'required|mimes:pdf,doc,docx,mp3,mp4,txt,ppt,pptx,xls,xlsx|max:5120',
         'status' => 'required',
     ];
 
@@ -63,7 +63,7 @@ class AdminAddBookComponent extends Component
 
         if ($this->cover_images) {
             $this->validate([
-                'cover_images.*' => 'mimes:png,jpg,jpeg|max:5120',
+                'cover_images.*' => 'mimes:png,jpg,jpeg|max:2048',
             ]);
         }
         $this->validate();

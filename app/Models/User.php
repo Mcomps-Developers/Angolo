@@ -73,4 +73,8 @@ class User extends Authenticatable
     {
         return $this->hasOne(Social::class, 'user_id');
     }
+
+    public function publications(){
+        return $this->hasMany(Content::class,'user_id');
+    }
 }
