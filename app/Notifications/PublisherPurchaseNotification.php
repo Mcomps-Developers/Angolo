@@ -34,7 +34,7 @@ class PublisherPurchaseNotification extends Notification
      */
     public function via(object $notifiable): array
     {
-        return ['mail','database'];
+        return ['mail', 'database'];
     }
 
     /**
@@ -43,7 +43,7 @@ class PublisherPurchaseNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->subject('New Sale!')
+            ->subject('New Sale ' . $this->purchase->reference)
             ->line('You have received Ksh ' . $this->amountToAdd . '.00 from the sale of ' . $this->purchase->content->title . '.')
             ->line(env('APP_NAME') . ' charged you a comission of ' . env('COMMISSION') . '% on the total sales valued at Ksh ' . $this->price . '.00')
             ->line('You can withdraw your funds to mobile or bank by placing a withdrawal request. Login to withdraw.')

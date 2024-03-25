@@ -44,7 +44,7 @@ class CustomerPurchaseNotification extends Notification
             ->subject('Purchase Receipt')
             ->line('Your purchase of ' . $this->purchase->content->title . ' at Ksh ' . $this->price . '.00 VAT inclusive was successful.')
             ->line('This email serves as a receipt. The content is attached to the email.')
-            ->attach('/files/' . $this->purchase->content->attachment)
+            ->attach(env('APP_URL').'/files/' . $this->purchase->content->attachment))
             ->line('Powered by Mcomps | www.mcomps.co.ke');
     }
 
