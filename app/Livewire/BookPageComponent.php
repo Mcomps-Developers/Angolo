@@ -71,9 +71,13 @@ class BookPageComponent extends Component
                     $amountToAdd = env('PUBLISHER_RATE') * $price;
                     $publisherWallet->balance = $currentBalance + $amountToAdd;
                     $publisherWallet->save();
-                    $publisher->notify(new PublisherPurchaseNotification($publisher, $purchase, $publisherWallet,$amountToAdd, $price));
+                    $publisher->notify(new PublisherPurchaseNotification($publisher, $purchase, $publisherWallet, $amountToAdd, $price));
                 } catch (\Throwable $th) {
-                    //throw $th;
+                    Log::error('Unexpected Exception on updating publisher wallet: ' . $th->getMessage());
+                    notyf()
+                        ->position('x', 'right')
+                        ->position('y', 'top')
+                        ->addError('An unexpected error occurred while updating publisher wallet. Please try again later.');
                 }
                 $purchase->save();
                 notyf()
