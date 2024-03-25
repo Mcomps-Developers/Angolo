@@ -88,7 +88,7 @@ class AdminAddBookComponent extends Component
 
             // Attachment
             $file = Carbon::now()->timestamp . '.' . $this->attachment->extension();
-            $this->attachment->storeAs('images/attachments', $file);
+            $this->attachment->storeAs('files/attachments', $file);
             $content->attachment = $file;
 
             if ($this->cover_images) {
