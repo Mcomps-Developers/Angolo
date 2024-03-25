@@ -59,7 +59,9 @@ class PublisherPurchaseNotification extends Notification
     public function toArray(object $notifiable): array
     {
         return [
-            //
+            'title'   => 'New Sale Ksh ' . $this->amountToAdd,
+            'message' => 'We sold content for you',
+            'identity' => 'publisher_sale',
         ];
     }
 }

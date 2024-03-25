@@ -190,7 +190,7 @@
                                 <i class="ri-notification-2-line"></i>
                                 <span class="bg-primary dots"></span>
                             </a>
-                            @livewire('elements.notification-component')
+                            @livewire('element.notification-component')
                         </li>
                         <li class="pt-3 line-height">
                             <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center">
