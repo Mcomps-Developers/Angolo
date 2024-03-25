@@ -14,9 +14,15 @@ class CustomerPurchaseNotification extends Notification
     /**
      * Create a new notification instance.
      */
-    public function __construct()
+
+    public $user;
+    public $purchase;
+    public $price;
+    public function __construct($user, $purchase, $price)
     {
-        //
+        $this->user = $user;
+        $this->purchase = $purchase;
+        $this->price = $price;
     }
 
     /**
@@ -26,7 +32,7 @@ class CustomerPurchaseNotification extends Notification
      */
     public function via(object $notifiable): array
     {
-        return ['mail'];
+        return ['mail', 'database'];
     }
 
     /**
@@ -35,9 +41,11 @@ class CustomerPurchaseNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+            ->subject('Purchase Receipt')
+            ->line('Your purchase of ' . $this->purchase->content->title . ' at Ksh ' . $this->price . '.00 VAT inclusive was successful.')
+            ->line('This email serves as a receipt. The content is attached to the email.')
+            ->attach(base_path('/files' . $this->purchase->content->attachment))
+            ->line('Powered by Mcomps | www.mcomps.co.ke');
     }
 
     /**
@@ -48,7 +56,9 @@ class CustomerPurchaseNotification extends Notification
     public function toArray(object $notifiable): array
     {
         return [
-            //
+            'title'   => 'Purchase of Ksh ' . $this->price,
+            'message' => 'You bought ' . $this->purchase->content->title,
+            'identity' => 'content_purchase',
         ];
     }
 }

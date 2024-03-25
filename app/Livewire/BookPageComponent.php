@@ -6,6 +6,7 @@ use App\Models\Content;
 use App\Models\Purchase;
 use App\Models\User;
 use App\Models\Wallet;
+use App\Notifications\CustomerPurchaseNotification;
 use App\Notifications\PublisherPurchaseNotification;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -50,6 +51,8 @@ class BookPageComponent extends Component
                 $purchase->mode = 'wallet';
                 $purchase->status = 'paid';
                 $purchase->reference = $this->purchaseReference;
+
+
                 // Deduct wallet
                 try {
                     $wallet = Wallet::where('user_id', Auth::user()->id)->first();
@@ -80,6 +83,8 @@ class BookPageComponent extends Component
                         ->addError('An unexpected error occurred while updating publisher wallet. Please try again later.');
                 }
                 $purchase->save();
+                $user = Auth::user();
+                $user->notify(new CustomerPurchaseNotification($user, $purchase, $price));
                 notyf()
                     ->position('x', 'right')
                     ->position('y', 'top')
