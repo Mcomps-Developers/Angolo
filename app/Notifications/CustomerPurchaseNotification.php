@@ -41,10 +41,10 @@ class CustomerPurchaseNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->subject('Purchase Receipt')
-            ->line('Your purchase of ' . $this->purchase->content->title . ' at Ksh ' . $this->price . '.00 VAT inclusive was successful.')
-            ->line('This email serves as a receipt. The content is attached to the email.')
-            ->attach(env('APP_URL').'/files/attachments/' . $this->purchase->content->attachment)
+            ->subject('Purchase Receipt ' . $this->purchase->reference)
+            ->line('Your purchase of ' . $this->purchase->content->title . ' with reference ' . $this->purchase->reference . ' at Ksh ' . $this->price . '.00 VAT inclusive was successful.')
+            ->line('This email serves as a receipt. The content is attached to the email. Download to consume.')
+            ->attach(env('APP_URL') . '/files/attachments/' . $this->purchase->content->attachment)
             ->line('Powered by Mcomps | www.mcomps.co.ke');
     }
 

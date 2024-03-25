@@ -75,12 +75,19 @@ class BookPageComponent extends Component
                     $publisherWallet->balance = $currentBalance + $amountToAdd;
                     $publisherWallet->save();
                     $publisher->notify(new PublisherPurchaseNotification($publisher, $purchase, $publisherWallet, $amountToAdd, $price));
+                } catch (\Exception $e) {
+                    Log::error('Unexpected Exception on updating attachment: ' . $e->getMessage());
+                    notyf()
+                        ->position('x', 'right')
+                        ->position('y', 'top')
+                        ->addError('An error occurred while purchasing content. Please try again later.');
+                    return redirect(request()->header('Referer'));
                 } catch (\Throwable $th) {
                     Log::error('Unexpected Exception on updating publisher wallet: ' . $th->getMessage());
                     notyf()
                         ->position('x', 'right')
                         ->position('y', 'top')
-                        ->addError('An unexpected error occurred while updating publisher wallet. Please try again later.');
+                        ->addError('An unexpected error occurred. Please try again later.');
                 }
                 $purchase->save();
                 $user = Auth::user();
@@ -95,14 +102,14 @@ class BookPageComponent extends Component
                 notyf()
                     ->position('x', 'right')
                     ->position('y', 'top')
-                    ->addError('An unexpected error occurred while purchasing content. Please try again later.');
+                    ->addError('An unexpected error occurred. Please try again later.');
                 return redirect(request()->header('Referer'));
             } catch (\Throwable $th) {
                 Log::error('Throwable Error on creating pruchase: ' . $th->getMessage());
                 notyf()
                     ->position('x', 'right')
                     ->position('y', 'top')
-                    ->addError('A throwable error occurred while purchasing content. Please try again later.');
+                    ->addError('A throwable error occurred. Please try again later.');
                 return redirect(request()->header('Referer'));
             }
         }
