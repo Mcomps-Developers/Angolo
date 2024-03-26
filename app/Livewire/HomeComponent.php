@@ -18,7 +18,11 @@ class HomeComponent extends Component
         $recentContent = Content::orderByDesc('created_at')->where('status', 'published')->limit(10)->get();
         $experts = User::orderBy('name')->where('utype', 'slr')->get();
         $myPurchases = Purchase::orderByDesc('created_at')->where('user_id', Auth::user()->id)->get();
-        $nowTrending = Purchase::limit(10)->get();
+        $nowTrending = Purchase::select('content_id', DB::raw('COUNT(*) as purchase_count'))
+            ->groupBy('content_id')
+            ->orderByDesc('purchase_count')
+            ->limit(10)
+            ->get();
         return view('livewire.home-component', ['categories' => $categories, 'nowTrending' => $nowTrending, 'myPurchases' => $myPurchases, 'recentContent' => $recentContent, 'experts' => $experts])->layout('layouts.base');
     }
 }

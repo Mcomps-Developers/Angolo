@@ -120,7 +120,7 @@
                                                     <div class="mb-2">
                                                         <h6 class="mb-1">{{ $item->title }}</h6>
                                                         <p class="mb-1 font-size-13 line-height">
-                                                            {{ $item->publisher->name }}</p>
+                                                            By {{ $item->publisher->name }} | <strong>{{ $item->tag->name }}</strong></p>
                                                         <div class="d-block">
                                                             <span class="font-size-13 text-warning">
                                                                 <i class="fa fa-star"></i>
@@ -222,8 +222,8 @@
                                                 </div>
                                                 <div class="col-7">
                                                     <h5 class="mb-2">{{ $item->content->title }}</h5>
-                                                    <p class="mb-2">Published by
-                                                        {{ $item->content->publisher->name }}
+                                                    <p class="mb-2">By
+                                                        {{ $item->content->publisher->name }} | <strong>{{ $item->content->tag->name }}</strong>
                                                     <p>
                                                     <div
                                                         class="d-flex justify-content-between align-items-center text-dark font-size-13">
@@ -280,7 +280,7 @@
                                                     <div class="mb-2">
                                                         <h6 class="mb-1">{{ $item->content->title }}</h6>
                                                         <p class="mb-1 font-size-13 line-height">
-                                                            {{ $item->content->publisher->name }}</p>
+                                                            By {{ $item->content->publisher->name }}| <strong>{{ $item->content->tag->name }}</strong></p>
                                                         <div class="d-block">
                                                             <span class="font-size-13 text-warning">
                                                                 <i class="fa fa-star"></i>
