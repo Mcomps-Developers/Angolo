@@ -8,6 +8,7 @@ use App\Models\ExpertProfile;
 use App\Models\Purchase;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class HomeComponent extends Component
