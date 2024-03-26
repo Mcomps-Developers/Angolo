@@ -28,7 +28,7 @@
                                         <label>Content Category:</label>
                                         <select class="form-control" id="exampleFormControlSelect1"
                                             wire:model.live='category'>
-                                            <option selected="" >Select Category</option>
+                                            <option selected="">Select Category</option>
                                             @foreach ($categories as $item)
                                                 <option value="{{ $item->id }}">{{ $item->name }}</option>
                                             @endforeach
@@ -38,10 +38,35 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
+                                        <label>Content Tag:</label>
+                                        <select class="form-control" id="exampleFormControlSelect1"
+                                            wire:model.live='tag'>
+                                            <option selected="">Select Tag</option>
+                                            @foreach ($tags as $item)
+                                                <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('tag')
+                                            <p class="text text-danger" style="margin-top: 20px;">{{ $message }}</p>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Sell at Discount:</label>
+                                        <select class="form-control" id="exampleFormControlSelect1"
+                                            wire:model.live='on_offer'>
+                                            <option selected="">Select</option>
+                                            <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                        @error('on_offer')
+                                            <p class="text text-danger" style="margin-top: 20px;">{{ $message }}</p>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
                                         <label>Publishing Expert:</label>
                                         <select class="form-control" id="exampleFormControlSelect2"
                                             wire:model.live='expert'>
-                                            <option selected="" >Publishing Expert</option>
+                                            <option selected="">Publishing Expert</option>
                                             <option value="{{ Auth::user()->id }}">Myself</option>
                                             @foreach ($experts as $item)
                                                 <option value="{{ $item->id }}">{{ $item->name }}</option>
@@ -58,7 +83,8 @@
                                                 accept="image/png, image/jpeg, image/jpg" wire:model.live='thumbnail'>
                                             <label class="custom-file-label">Choose file</label>
                                             @error('thumbnail')
-                                                <p class="text text-danger" style="margin-top: 20px;">{{ $message }}</p>
+                                                <p class="text text-danger" style="margin-top: 20px;">{{ $message }}
+                                                </p>
                                             @enderror
                                         </div>
                                         <br>
@@ -78,7 +104,8 @@
                                                 wire:model.live='cover_images'>
                                             <label class="custom-file-label">Choose file</label>
                                             @error('cover_images')
-                                                <p class="text text-danger" style="margin-top: 20px;">{{ $message }}</p>
+                                                <p class="text text-danger" style="margin-top: 20px;">{{ $message }}
+                                                </p>
                                             @enderror
                                         </div>
                                         <br>
@@ -95,10 +122,12 @@
                                     <div class="form-group">
                                         <label>Attach Content:</label>
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" wire:model.live='attachment'>
+                                            <input type="file" class="custom-file-input"
+                                                wire:model.live='attachment'>
                                             <label class="custom-file-label">Choose file</label>
                                             @error('attachment')
-                                                <p class="text text-danger" style="margin-top: 20px;">{{ $message }}</p>
+                                                <p class="text text-danger" style="margin-top: 20px;">{{ $message }}
+                                                </p>
                                             @enderror
                                         </div>
                                         <br>
@@ -123,17 +152,17 @@
                                         <label>Description:</label>
                                         <textarea id="description" class="form-control" columns="2" rows="4" wire:model.live='description'
                                             placeholder="Briefly describe your content."></textarea>
-                                        
+
                                     </div>
                                     @error('description')
-                                            <p class="text text-danger" style="margin-top: 20px;">{{ $message }}</p>
-                                        @enderror
+                                        <p class="text text-danger" style="margin-top: 20px;">{{ $message }}</p>
+                                    @enderror
 
                                     <div class="form-group">
                                         <label>Publication:</label>
                                         <select class="form-control" id="exampleFormControlSelect2"
                                             wire:model.live='status'>
-                                            <option >Select status</option>
+                                            <option>Select status</option>
                                             <option value="published">Published</option>
                                             <option value="review">Review</option>
                                             <option value="witheld">Witheld</option>
@@ -144,9 +173,9 @@
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary"><span wire:loading.remove
-                                            wire:target='addContent'>Create</span> <span wire:loading
-                                            wire:target='addContent' class="spinner-border spinner-border-sm"
-                                            role="status" aria-hidden="true"></button>
+                                                wire:target='addContent'>Create</span> <span wire:loading
+                                                wire:target='addContent' class="spinner-border spinner-border-sm"
+                                                role="status" aria-hidden="true"></button>
                                         <button type="reset" class="btn btn-danger">Reset</button>
                                     </div>
                                 </form>

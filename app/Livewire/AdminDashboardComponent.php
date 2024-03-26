@@ -15,7 +15,7 @@ class AdminDashboardComponent extends Component
         $users = User::where('utype', '!=', 'sadm')->count();
         $recentPurchases = Purchase::orderByDesc('created_at')->limit(10)->get();
         $purchases = Purchase::whereMonth('created_at', Carbon::now()->month)->where('status', 'paid')->count();
-        $content = Content::where('status', 'published')->count();
+        $content = Content::where('status', 'published')->count(); 
         $earnings = Purchase::whereMonth('created_at', Carbon::now()->month)->where('status', 'paid')->sum('amount');
         $dailyPurchases = Purchase::all();
         return view('livewire.admin-dashboard-component', ['users' => $users,'dailyPurchases'=>$dailyPurchases,'purchases'=>$purchases, 'recentPurchases' => $recentPurchases,'earnings'=>$earnings, 'content' => $content])->layout('layouts.base');

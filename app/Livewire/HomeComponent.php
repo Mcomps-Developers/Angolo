@@ -5,7 +5,9 @@ namespace App\Livewire;
 use App\Models\Category;
 use App\Models\Content;
 use App\Models\ExpertProfile;
+use App\Models\Purchase;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class HomeComponent extends Component
@@ -15,6 +17,8 @@ class HomeComponent extends Component
         $categories = Category::orderBy('name')->get();
         $recentContent = Content::orderByDesc('created_at')->where('status', 'published')->limit(10)->get();
         $experts = User::orderBy('name')->where('utype', 'slr')->get();
-        return view('livewire.home-component', ['categories' => $categories, 'recentContent' => $recentContent, 'experts' => $experts])->layout('layouts.base');
+        $myPurchases = Purchase::orderByDesc('created_at')->where('user_id', Auth::user()->id)->get();
+        $nowTrending = Purchase::limit(10)->get();
+        return view('livewire.home-component', ['categories' => $categories, 'nowTrending' => $nowTrending, 'myPurchases' => $myPurchases, 'recentContent' => $recentContent, 'experts' => $experts])->layout('layouts.base');
     }
 }

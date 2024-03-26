@@ -5,6 +5,8 @@ use App\Http\Middleware\AuthBuyer;
 use App\Http\Middleware\AuthSeller;
 use App\Http\Middleware\AuthSuperAdmin;
 use App\Livewire\AccountSettingComponent;
+use App\Livewire\Admin\AddTag;
+use App\Livewire\Admin\ManageTags;
 use App\Livewire\AdminAddAuthorComponent;
 use App\Livewire\AdminAddUserComponent;
 use App\Livewire\AdminAuthorComponent;
@@ -101,9 +103,10 @@ Route::get('/dashboard', function () {
 // All users Routes
 
 // Buyer Routes
+
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/', HomeComponent::class)->name('buyer.dashboard');
-    Route::get('/book-pdf', BookPdfComponent::class)->name('book.pdf');
+    Route::get('/view/{reference}', BookPdfComponent::class)->name('content.view');
     Route::get('/category/{slug}', CategoryComponent::class)->name('category');
     Route::get('/checkout', CheckoutComponent::class)->name('checkout');
     Route::get('/content/{reference}/{slug}', BookPageComponent::class)->name('content.details');
@@ -132,6 +135,8 @@ Route::prefix('/admin')->middleware(['auth:sanctum', config('jetstream.auth_sess
     Route::get('/categories', AdminCategoryComponent::class)->name('admin.categories');
     Route::get('/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
     Route::get('/users', UserListComponent::class)->name('users');
+    Route::get('/tags',ManageTags::class)->name('admin.tags');
+    Route::get('/add-tag',AddTag::class)->name('tag.add');
 });
 
 // Super Admin Routes

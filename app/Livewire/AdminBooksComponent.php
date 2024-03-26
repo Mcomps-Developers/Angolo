@@ -26,14 +26,14 @@ class AdminBooksComponent extends Component
             notyf()
                 ->position('x', 'right')
                 ->position('y', 'top')
-                ->addError('An unexpected error occurred while deleting content. Please try again later.');
+                ->addError('Something unexpected occured. Please try again later.');
             return redirect(request()->header('Referer'));
         } catch (\Throwable $th) {
             Log::error('Throwable Error on deleting content: ' . $th->getMessage());
             notyf()
                 ->position('x', 'right')
                 ->position('y', 'top')
-                ->addError('An unexpected error occurred while deleting content. Please try again later.');
+                ->addError('Something unexpected occured. Please try again later.');
             return redirect(request()->header('Referer'));
         }
     }

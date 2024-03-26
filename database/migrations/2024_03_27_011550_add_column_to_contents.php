@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('contents', function (Blueprint $table) {
-            $table->boolean('on_sale')->default(true);
+            $table->unsignedInteger('tag_id');
+            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
         });
     }
 

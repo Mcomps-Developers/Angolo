@@ -32,7 +32,7 @@
             <a href="/" class="header-logo">
                 <img src="{{ asset('images/logo.png') }}" class="img-fluid rounded-normal" alt="">
                 <div class="logo-title">
-                    <span class="text-primary text-uppercase">Angolo Expert</span>
+                    <span class="text-primary text-uppercase">Angolo</span>
                 </div>
             </a>
             <div class="iq-menu-bt-sidebar">
@@ -50,56 +50,70 @@
                         <li class="active active-menu">
                             <a href="#dashboard" class="iq-waves-effect" data-toggle="collapse"
                                 aria-expanded="true"><span class="ripple rippleEffect"></span><i
-                                    class="las la-home iq-arrow-left"></i><span>Home</span><i
+                                    class="las la-bars iq-arrow-left"></i><span>Menu</span><i
                                     class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                             <ul id="dashboard" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
-                            @else
-                                <li>
+                                <li class="active"><a href="/"><i class="las la-house-damage"></i>Home</a></li>
+                                <li><a href="#!"><i class="ri-function-line"></i>Categories</a></li>
+                                <li><a href="{{route('wishlist')}}"><i class="ri-heart-line"></i>Wishlit</a></li>
+                            </ul>
+                        </li>
+                    @else
+                        <li>
 
-                                    <a href="#dashboard" class="iq-waves-effect" data-toggle="collapse"
-                                        aria-expanded="false"><span class="ripple rippleEffect"></span><i
-                                            class="las la-home iq-arrow-left"></i><span>Shop</span><i
-                                            class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                                    <ul id="dashboard" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                            <a href="#dashboard" class="iq-waves-effect" data-toggle="collapse"
+                                aria-expanded="false"><span class="ripple rippleEffect"></span><i
+                                    class="las la-home iq-arrow-left"></i><span>Shop</span><i
+                                    class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                            <ul id="dashboard" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                <li class="active"><a href="/"><i class="las la-house-damage"></i>Home</a></li>
+                                <li><a href="#!"><i class="ri-function-line"></i>Categories</a></li>
+                                <li><a href="{{route('wishlist')}}"><i class="ri-heart-line"></i>Wishlit</a></li>
+                            </ul>
+                        </li>
                     @endif
 
-                    <li class="active"><a href="/"><i class="las la-business"></i>Shop</a></li>
-                    <li><a href="/category"><i class="ri-function-line"></i>Categories</a></li>
-                    <li><a href="/wishlist"><i class="ri-heart-line"></i>Wishlit</a></li>
-                </ul>
-                </li>
-                @if (Auth::user()->utype === 'slr')
-                    <li class="active active-menu">
-                        <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span
-                                class="ripple rippleEffect"></span><i class="ri-admin-line"></i><span>Expert
-                                Mode</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                        <ul id="admin" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
-                            <li><a href="{{ route('expert.dashboard') }}"><i class="ri-dashboard-line"></i>Dashboard</a>
-                            </li>
-                            <li><a href="{{ route('expert.content') }}"><i class="ri-book-2-line"></i>My Content</a>
-                            </li>
-                            <li><a href="{{ route('expert.sales') }}"><i class="las la-wallet"></i>My Sales</a></li>
-                            <li><a href="{{ route('user.profile') }}"><i class="ri-admin-line"></i>My Profile</a></li>
-                        </ul>
-                    </li>
-                @endif
-                @if (Auth::user()->utype === 'adm')
-                    <li class="active active-menu">
-                        <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span
-                                class="ripple rippleEffect"></span><i class="ri-admin-line"></i><span>Admin</span><i
-                                class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                        <ul id="admin" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
-                            <li><a href="{{ route('admin.dashboard') }}"><i class="ri-dashboard-line"></i>Dashboard</a>
-                            </li>
-                            <li><a href="{{ route('admin.categories') }}"><i class="ri-list-check-2"></i>Categories</a>
-                            </li>
-                            <li><a href="{{ route('admin.experts') }}"><i class="ri-file-user-line"></i>Experts</a>
-                            </li>
-                            <li><a href="{{ route('admin.content') }}"><i class="ri-book-2-line"></i>Content</a></li>
-                            <li><a href="{{ route('users') }}"><i class="las la-th-list"></i>Users</a></li>
-                        </ul>
-                    </li>
-                @endif
+                    @if (Auth::user()->utype === 'slr')
+                        <li class="active active-menu">
+                            <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span
+                                    class="ripple rippleEffect"></span><i class="ri-admin-line"></i><span>Expert
+                                    Mode</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                            <ul id="admin" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
+                                <li><a href="{{ route('expert.dashboard') }}"><i
+                                            class="ri-dashboard-line"></i>Dashboard</a>
+                                </li>
+                                <li><a href="{{ route('expert.content') }}"><i class="ri-book-2-line"></i>My Content</a>
+                                </li>
+                                {{-- <li><a href="{{ route('expert.sales') }}"><i class="las la-wallet"></i>My Sales</a></li>
+                                <li><a href="{{ route('user.profile') }}"><i class="ri-admin-line"></i>My Profile</a> --}}
+                                </li>
+                            </ul>
+                        </li>
+                    @endif
+                    @if (Auth::user()->utype === 'adm')
+                        <li class="active active-menu">
+                            <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span
+                                    class="ripple rippleEffect"></span><i class="ri-admin-line"></i><span>Admin</span><i
+                                    class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                            <ul id="admin" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
+                                <li><a href="{{ route('admin.dashboard') }}"><i
+                                            class="ri-dashboard-line"></i>Dashboard</a>
+                                </li>
+                                <li><a href="{{ route('admin.categories') }}"><i
+                                            class="ri-list-check-2"></i>Categories</a>
+                                </li>
+                                <li><a href="{{ route('admin.tags') }}"><i
+                                    class="ri-list-check"></i>Tags</a>
+                        </li>
+                                <li><a href="{{ route('admin.experts') }}"><i
+                                            class="ri-file-user-line"></i>Experts</a>
+                                </li>
+                                <li><a href="{{ route('admin.content') }}"><i class="ri-book-2-line"></i>Content</a>
+                                </li>
+                                <li><a href="{{ route('users') }}"><i class="las la-th-list"></i>Users</a></li>
+                            </ul>
+                        </li>
+                    @endif
                 </ul>
             </nav>
             <div id="sidebar-bottom" class="p-3 position-relative">
@@ -331,7 +345,8 @@
     <script src="{{ asset('js/chart-custom.js') }}"></script>
     <!-- Custom JavaScript -->
     <script src="{{ asset('js/custom.js') }}"></script>
-    <script src="https://cdn.tiny.cloud/1/bgdq7g4g6ayln7vwvep8a0v2fxye8wj7oi8o0gbtvamslur1/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/bgdq7g4g6ayln7vwvep8a0v2fxye8wj7oi8o0gbtvamslur1/tinymce/7/tinymce.min.js"
+        referrerpolicy="origin"></script>
     @livewireScripts
     </body>
 

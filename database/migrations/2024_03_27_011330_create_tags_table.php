@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('contents', function (Blueprint $table) {
-            $table->boolean('on_sale')->default(true);
+        Schema::create('tags', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->unique();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -21,8 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('contents', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('tags');
     }
 };

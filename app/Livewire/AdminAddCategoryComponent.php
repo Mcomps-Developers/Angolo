@@ -64,14 +64,14 @@ class AdminAddCategoryComponent extends Component
             notyf()
                 ->position('x', 'right')
                 ->position('y', 'top')
-                ->addError('An unexpected error occurred while creating category. Please try again later.');
+                ->addError('Unexpected error occurred. Please try again later.');
             return redirect(request()->header('Referer'));
         } catch (\Throwable $th) {
             Log::error('Throwable Error on creating category: ' . $th->getMessage());
             notyf()
                 ->position('x', 'right')
                 ->position('y', 'top')
-                ->addError('An unexpected error occurred while creating category. Please try again later.');
+                ->addError('Unexpected error occurred. Please try again later.');
             return redirect(request()->header('Referer'));
         }
     }

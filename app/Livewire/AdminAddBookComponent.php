@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Category;
 use App\Models\Content;
+use App\Models\Tag;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
@@ -27,6 +28,8 @@ class AdminAddBookComponent extends Component
     public $status;
     private $reference;
     private $slug;
+    public $on_offer;
+    public $tag;
 
     protected $rules = [
         'title' => 'required|string|max:60',
@@ -38,6 +41,8 @@ class AdminAddBookComponent extends Component
         'attachment' => 'required|mimes:pdf,doc,docx,mp3,mp4,txt,ppt,pptx,xls,xlsx|max:5120',
         'status' => 'required',
         'discount_price' => 'required|numeric|min:10',
+        'tag' => 'required',
+        'on_offer' => 'required',
     ];
 
     public function updated($fields)
@@ -68,6 +73,8 @@ class AdminAddBookComponent extends Component
         try {
             $content = new Content();
             $content->title = $this->title;
+            $content->tag_id = $this->tag;
+            $content->on_sale = $this->on_offer;
             $content->description = $this->description;
             $content->user_id = $this->expert;
             $content->category_id = $this->category;
@@ -109,14 +116,14 @@ class AdminAddBookComponent extends Component
             notyf()
                 ->position('x', 'right')
                 ->position('y', 'top')
-                ->addError('An unexpected error occurred while creating content. Please try again later.');
+                ->addError('Something unexpected occurred. Please try again later.');
             return redirect(request()->header('Referer'));
         } catch (\Throwable $th) {
             Log::error('Throwable Error on creating content: ' . $th->getMessage());
             notyf()
                 ->position('x', 'right')
                 ->position('y', 'top')
-                ->addError('A throwable error occurred while creating content. Please try again later.');
+                ->addError('Something unexpected occurred. Please try again later.');
             return redirect(request()->header('Referer'));
         }
     }
@@ -125,6 +132,7 @@ class AdminAddBookComponent extends Component
     {
         $experts = User::orderBy('name')->where('utype', 'slr')->get();
         $categories = Category::orderBy('name')->get();
-        return view('livewire.admin-add-book-component', ['experts' => $experts, 'categories' => $categories])->layout('layouts.base');
+        $tags=Tag::orderBy('name')->get();
+        return view('livewire.admin-add-book-component', ['experts' => $experts,'tags'=>$tags, 'categories' => $categories])->layout('layouts.base');
     }
 }

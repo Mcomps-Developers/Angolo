@@ -37,7 +37,7 @@
                                             {{ $content/1000 }}
                                         </span>K
                                         @else 
-                                        {{ $content }} 
+                                        {{ $content }}
                                             @endif</h2>
                                         <h5 class="">Content</h5>
                                     </div>
@@ -59,10 +59,10 @@
                                             @elseif ($earnings>999)
                                             {{ $earnings/1000 }}
                                         </span>K
-                                        @else 
-                                        {{ $earnings }} 
+                                        @else
+                                        {{ $earnings }}
                                             @endif
-                                            
+
                                         </h2>
                                         <h5 class="">Sales (Ksh)</h5>
                                         <small>This month Only</small>
@@ -84,10 +84,10 @@
                                             @elseif ($purchases>999)
                                             {{ $purchases/1000 }}
                                         </span>K
-                                        @else 
-                                        {{ $purchases }} 
+                                        @else
+                                        {{ $purchases }}
                                             @endif
-                                            
+
                                         </h2>
                                         <h5 class="">Purchases</h5>
                                         <small>Successful this month</small>
@@ -212,6 +212,7 @@
                                                 <th scope="col">Client</th>
                                                 <th scope="col">Date</th>
                                                 <th scope="col">Ref#</th>
+                                                <th scope="col">Product</th>
                                                 <th scope="col">Amount</th>
                                                 <th scope="col">Status</th>
                                                 <th scope="col">Action</th>
@@ -224,6 +225,7 @@
                                                     <td>{{ $item->customer->name }}</td>
                                                     <td>{{ date('d/m/Y',strtotime($item->created_at)) }}</td>
                                                     <td style="text-transform:uppercase;">{{$item->reference}}</td>
+                                                    <td><a href="{{ route('content.details',['reference'=>$item->content->reference,'slug'=>$item->content->slug]) }}" target="_/blank">{{ $item->content->title }}</a></td>
                                                     <td>Ksh {{ $item->amount }}</td>
                                                     <td>
                                                         @if($item->status=='cancelled')
