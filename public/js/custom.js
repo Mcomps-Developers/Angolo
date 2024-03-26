@@ -39,13 +39,13 @@ Index Of Script
 Index Of Script
 ----------------------------------------------*/
 
-(function(jQuery) {
+(function (jQuery) {
 
 
 
     "use strict";
 
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
 
         /*---------------------------------------------------------------------
         Tooltip
@@ -73,8 +73,8 @@ Index Of Script
                     break;
             }
         }
-        
-        
+
+
 
 
         /*---------------------------------------------------------------------
@@ -92,7 +92,7 @@ Index Of Script
             },
             image: {
                 tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-                titleSrc: function(item) {
+                titleSrc: function (item) {
                     return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
                 }
             }
@@ -110,7 +110,7 @@ Index Of Script
         /*---------------------------------------------------------------------
         Ripple Effect
         -----------------------------------------------------------------------*/
-        jQuery(document).on('click', ".iq-waves-effect", function(e) {
+        jQuery(document).on('click', ".iq-waves-effect", function (e) {
             // Remove any old one
             jQuery('.ripple').remove();
             // Setup
@@ -144,15 +144,15 @@ Index Of Script
             }).addClass("rippleEffect");
         });
 
-       /*---------------------------------------------------------------------
-        Sidebar Widget
-        -----------------------------------------------------------------------*/
-       
-        jQuery(document).on("click", '.iq-menu > li > a', function() {
+        /*---------------------------------------------------------------------
+         Sidebar Widget
+         -----------------------------------------------------------------------*/
+
+        jQuery(document).on("click", '.iq-menu > li > a', function () {
             jQuery('.iq-menu > li > a').parent().removeClass('active');
             jQuery(this).parent().addClass('active');
         });
-        
+
 
 
         /*---------------------------------------------------------------------
@@ -160,25 +160,25 @@ Index Of Script
         -----------------------------------------------------------------------*/
         jQuery('.iq-accordion .iq-accordion-block .accordion-details').hide();
         jQuery('.iq-accordion .iq-accordion-block:first').addClass('accordion-active').children().slideDown('slow');
-        jQuery(document).on("click", '.iq-accordion .iq-accordion-block', function() {
+        jQuery(document).on("click", '.iq-accordion .iq-accordion-block', function () {
             if (jQuery(this).children('div.accordion-details ').is(':hidden')) {
                 jQuery('.iq-accordion .iq-accordion-block').removeClass('accordion-active').children('div.accordion-details ').slideUp('slow');
                 jQuery(this).toggleClass('accordion-active').children('div.accordion-details ').slideDown('slow');
             }
         });
-        
+
         /*---------------------------------------------------------------------
         Page Loader
         -----------------------------------------------------------------------*/
         jQuery("#load").fadeOut();
         jQuery("#loading").delay().fadeOut("");
 
-        
 
-       /*---------------------------------------------------------------------
-       Owl Carousel
-       -----------------------------------------------------------------------*/
-        jQuery('.owl-carousel').each(function() {
+
+        /*---------------------------------------------------------------------
+        Owl Carousel
+        -----------------------------------------------------------------------*/
+        jQuery('.owl-carousel').each(function () {
             let jQuerycarousel = jQuery(this);
             jQuerycarousel.owlCarousel({
                 items: jQuerycarousel.data("items"),
@@ -228,7 +228,7 @@ Index Of Script
         /*---------------------------------------------------------------------
         Search input
         -----------------------------------------------------------------------*/
-        jQuery(document).on('click', function(e) {
+        jQuery(document).on('click', function (e) {
             let myTargetElement = e.target;
             let selector, mainElement;
             if (jQuery(myTargetElement).hasClass('search-toggle') || jQuery(myTargetElement).parent().hasClass('search-toggle') || jQuery(myTargetElement).parent().parent().hasClass('search-toggle')) {
@@ -251,7 +251,7 @@ Index Of Script
                 mainElement.toggleClass('active');
 
                 e.preventDefault();
-            } else if (jQuery(myTargetElement).is('.search-input')) {} else {
+            } else if (jQuery(myTargetElement).is('.search-input')) { } else {
                 jQuery('.navbar-list li').removeClass('iq-show');
                 jQuery('.navbar-list li .search-toggle').removeClass('active');
             }
@@ -310,230 +310,300 @@ Index Of Script
         });
 
         $('#newrealease-slider').slick({
-          dots: false,
-          arrows: false,
-          infinite: true,
-          speed: 300,
-          centerMode: true,
-          centerPadding: false,
-          variableWidth: true ,
-          infinite: true,
-          focusOnSelect: true,
-          autoplay: false,
-          slidesToShow: 7,
-          slidesToScroll: 1,
-          
-          
+            dots: false,
+            arrows: false,
+            infinite: true,
+            speed: 300,
+            centerMode: true,
+            centerPadding: false,
+            variableWidth: true,
+            infinite: true,
+            focusOnSelect: true,
+            autoplay: false,
+            slidesToShow: 7,
+            slidesToScroll: 1,
+
+
         });
 
-       $("#newrealease-slider .slick-active.slick-center").prev('.slick-active').addClass('temp');
+        $("#newrealease-slider .slick-active.slick-center").prev('.slick-active').addClass('temp');
         $("#newrealease-slider .slick-active.temp").prev().addClass('temp-1');
         $("#newrealease-slider .slick-active.temp-1").prev().addClass('temp-2');
 
-         $("#newrealease-slider .slick-active.slick-center").next('.slick-active').addClass('temp-next');
+        $("#newrealease-slider .slick-active.slick-center").next('.slick-active').addClass('temp-next');
         $("#newrealease-slider .slick-active.temp-next").next().addClass('temp-next-1');
         $("#newrealease-slider .slick-active.temp-next-1").next().addClass('temp-next-2');
 
-         $("#newrealease-slider").on("afterChange", function (){
-          var slick_index = $(".slick-active.slick-center").data('slick-index');
-          
-          $('#newrealease-slider .slick-active[data-slick-index="'+(slick_index-1)+'"]').addClass('temp');
-          $('#newrealease-slider .slick-active[data-slick-index="'+(slick_index-2)+'"]').addClass('temp-1');
-          $('#newrealease-slider .slick-active[data-slick-index="'+(slick_index-3)+'"]').addClass('temp-2');
+        $("#newrealease-slider").on("afterChange", function () {
+            var slick_index = $(".slick-active.slick-center").data('slick-index');
 
-          $('#newrealease-slider .slick-active[data-slick-index="'+(parseInt(slick_index+1))+'"]').addClass('temp-next');
-          $('#newrealease-slider .slick-active[data-slick-index="'+(parseInt(slick_index+2))+'"]').addClass('temp-next-1');
-          $('#newrealease-slider .slick-active[data-slick-index="'+(parseInt(slick_index+3))+'"]').addClass('temp-next-2');
+            $('#newrealease-slider .slick-active[data-slick-index="' + (slick_index - 1) + '"]').addClass('temp');
+            $('#newrealease-slider .slick-active[data-slick-index="' + (slick_index - 2) + '"]').addClass('temp-1');
+            $('#newrealease-slider .slick-active[data-slick-index="' + (slick_index - 3) + '"]').addClass('temp-2');
+
+            $('#newrealease-slider .slick-active[data-slick-index="' + (parseInt(slick_index + 1)) + '"]').addClass('temp-next');
+            $('#newrealease-slider .slick-active[data-slick-index="' + (parseInt(slick_index + 2)) + '"]').addClass('temp-next-1');
+            $('#newrealease-slider .slick-active[data-slick-index="' + (parseInt(slick_index + 3)) + '"]').addClass('temp-next-2');
 
 
         });
 
-        $("#newrealease-slider").on("beforeChange", function (){
-          var slick_index = $(".slick-active.slick-center").data('slick-index');
-          
-          $('#newrealease-slider .slick-active[data-slick-index="'+(slick_index-1)+'"]').removeClass('temp');
-          $('#newrealease-slider .slick-active[data-slick-index="'+(slick_index-2)+'"]').removeClass('temp-1');
-          $('#newrealease-slider .slick-active[data-slick-index="'+(slick_index-3)+'"]').removeClass('temp-2');
+        $("#newrealease-slider").on("beforeChange", function () {
+            var slick_index = $(".slick-active.slick-center").data('slick-index');
 
-          $('#newrealease-slider .slick-active[data-slick-index="'+(parseInt(slick_index+1))+'"]').removeClass('temp-next');
-          $('#newrealease-slider .slick-active[data-slick-index="'+(parseInt(slick_index+2))+'"]').removeClass('temp-next-1');
-          $('#newrealease-slider .slick-active[data-slick-index="'+(parseInt(slick_index+3))+'"]').removeClass('temp-next-2');
+            $('#newrealease-slider .slick-active[data-slick-index="' + (slick_index - 1) + '"]').removeClass('temp');
+            $('#newrealease-slider .slick-active[data-slick-index="' + (slick_index - 2) + '"]').removeClass('temp-1');
+            $('#newrealease-slider .slick-active[data-slick-index="' + (slick_index - 3) + '"]').removeClass('temp-2');
+
+            $('#newrealease-slider .slick-active[data-slick-index="' + (parseInt(slick_index + 1)) + '"]').removeClass('temp-next');
+            $('#newrealease-slider .slick-active[data-slick-index="' + (parseInt(slick_index + 2)) + '"]').removeClass('temp-next-1');
+            $('#newrealease-slider .slick-active[data-slick-index="' + (parseInt(slick_index + 3)) + '"]').removeClass('temp-next-2');
 
         });
 
         $('#favorites-slider').slick({
-          dots: false,
-          arrows: false,
-          infinite: true,
-          speed: 300,
-          centerMode: false,
-          autoplay: true,
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          responsive: [
-            {
-              breakpoint: 1024,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                infinite: true,
-              }
-            },
-            {
-              breakpoint: 992,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1
-              }
-            },
-            {
-              breakpoint: 767,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-              }
-            }
-          ]
+            dots: false,
+            arrows: false,
+            infinite: true,
+            speed: 300,
+            centerMode: false,
+            autoplay: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        infinite: true,
+                    }
+                },
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+        $('#favorite-blogs-slider').slick({
+            dots: false,
+            arrows: false,
+            infinite: true,
+            speed: 300,
+            centerMode: false,
+            autoplay: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        infinite: true,
+                    }
+                },
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
         });
 
         $('#similar-slider').slick({
-          dots: false,
-          arrows: false,
-          infinite: true,
-          speed: 300,
-          centerMode: false,
-          autoplay: true,
-          slidesToShow: 4,
-          slidesToScroll: 1,
-          responsive: [
-            {
-              breakpoint: 1024,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                infinite: true,
-              }
-            },
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1
-              }
-            },
-            {
-              breakpoint: 576,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-              }
-            }
-          ]
+            dots: false,
+            arrows: false,
+            infinite: true,
+            speed: 300,
+            centerMode: false,
+            autoplay: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        infinite: true,
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
         });
 
         $('#single-similar-slider').slick({
-          dots: false,
-          arrows: false,
-          infinite: true,
-          speed: 300,
-          centerMode: false,
-          autoplay: true,
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          responsive: [
-            {
-              breakpoint: 1024,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                infinite: true,
-              }
-            },
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1
-              }
-            },
-            {
-              breakpoint: 576,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-              }
-            }
-          ]
+            dots: false,
+            arrows: false,
+            infinite: true,
+            speed: 300,
+            centerMode: false,
+            autoplay: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        infinite: true,
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
         });
 
         $('#trendy-slider').slick({
-          dots: false,
-          arrows: false,
-          infinite: true,
-          speed: 300,
-          centerMode: false,
-          autoplay: true,
-          slidesToShow: 4,
-          slidesToScroll: 1,
-          responsive: [
-            {
-              breakpoint: 1024,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                infinite: true,
-              }
-            },
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1
-              }
-            },
-            {
-              breakpoint: 576,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-              }
-            }
-          ]
+            dots: false,
+            arrows: false,
+            infinite: true,
+            speed: 300,
+            centerMode: false,
+            autoplay: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        infinite: true,
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
         });
 
+        $('#trending-products-slider').slick({
+            dots: false,
+            arrows: false,
+            infinite: true,
+            speed: 300,
+            centerMode: false,
+            autoplay: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        infinite: true,
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+
+
         $('#description-slider').slick({
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-          fade: true,
-          asNavFor: '#description-slider-nav'
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: true,
+            asNavFor: '#description-slider-nav'
         });
 
         $('#description-slider-nav').slick({
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          asNavFor: '#description-slider',
-          dots: false,
-          arrows: false,
-          infinite: true,
-          vertical: true,
-          centerMode: false,
-          focusOnSelect: true
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            asNavFor: '#description-slider',
+            dots: false,
+            arrows: false,
+            infinite: true,
+            vertical: true,
+            centerMode: false,
+            focusOnSelect: true
         });
 
 
         /*---------------------------------------------------------------------
         Progress Bar
         -----------------------------------------------------------------------*/
-        jQuery('.iq-progress-bar > span').each(function() {
+        jQuery('.iq-progress-bar > span').each(function () {
             let progressBar = jQuery(this);
             let width = jQuery(this).data('percent');
             progressBar.css({
                 'transition': 'width 2s'
             });
 
-            setTimeout(function() {
-                progressBar.appear(function() {
+            setTimeout(function () {
+                progressBar.appear(function () {
                     progressBar.css('width', width + '%');
                 });
             }, 100);
@@ -543,14 +613,14 @@ Index Of Script
         /*---------------------------------------------------------------------
         Page Menu
         -----------------------------------------------------------------------*/
-        jQuery(document).on('click', '.wrapper-menu', function() {
+        jQuery(document).on('click', '.wrapper-menu', function () {
             jQuery(this).toggleClass('open');
         });
 
-        jQuery(document).on('click', ".wrapper-menu", function() {
+        jQuery(document).on('click', ".wrapper-menu", function () {
             jQuery("body").toggleClass("sidebar-main");
         });
-        
+
 
 
         /*---------------------------------------------------------------------
@@ -566,18 +636,18 @@ Index Of Script
         wow.init();
 
 
-        
+
         /*---------------------------------------------------------------------
         Form Validation
         -----------------------------------------------------------------------*/
 
         // Example starter JavaScript for disabling form submissions if there are invalid fields
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             // Fetch all the forms we want to apply custom Bootstrap validation styles to
             var forms = document.getElementsByClassName('needs-validation');
             // Loop over them and prevent submission
-            var validation = Array.prototype.filter.call(forms, function(form) {
-                form.addEventListener('submit', function(event) {
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
                     if (form.checkValidity() === false) {
                         event.preventDefault();
                         event.stopPropagation();
@@ -590,8 +660,8 @@ Index Of Script
         /*---------------------------------------------------------------------
         Sidebar Widget
         -----------------------------------------------------------------------*/
-        jQuery(document).ready(function() {
-            jQuery().on('click', '.todo-task-lists li', function() {
+        jQuery(document).ready(function () {
+            jQuery().on('click', '.todo-task-lists li', function () {
                 if (jQuery(this).find('input:checkbox[name=todo-check]').is(":checked")) {
 
                     jQuery(this).find('input:checkbox[name=todo-check]').attr("checked", false);
@@ -600,11 +670,11 @@ Index Of Script
                     jQuery(this).find('input:checkbox[name=todo-check]').attr("checked", true);
                     jQuery(this).addClass('active-task');
                 }
-               
+
             });
         });
 
-       
+
 
         /*------------------------------------------------------------------
         Flatpicker
@@ -614,25 +684,24 @@ Index Of Script
                 inline: true
             });
         }
-        
+
         /*---------------------------------------------------------------------
            Scroll up menu
         -----------------------------------------------------------------------*/
         var position = $(window).scrollTop();
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             var scroll = $(window).scrollTop();
             //  console.log(scroll);
-            
-            if(scroll < position) {
-                 $('.tab-menu-horizontal').addClass('menu-up');
-                 $('.tab-menu-horizontal').removeClass('menu-down');
-            } 
+
+            if (scroll < position) {
+                $('.tab-menu-horizontal').addClass('menu-up');
+                $('.tab-menu-horizontal').removeClass('menu-down');
+            }
             else {
                 $('.tab-menu-horizontal').addClass('menu-down');
                 $('.tab-menu-horizontal').removeClass('menu-up');
             }
-            if(scroll == 0)
-            {
+            if (scroll == 0) {
                 $('.tab-menu-horizontal').removeClass('menu-up');
                 $('.tab-menu-horizontal').removeClass('menu-down');
             }
@@ -644,54 +713,49 @@ Index Of Script
            checkout
         -----------------------------------------------------------------------*/
 
-        jQuery(document).ready(function(){
-            jQuery('#place-order').click(function(){
+        jQuery(document).ready(function () {
+            jQuery('#place-order').click(function () {
                 jQuery('#cart').removeClass('show');
                 jQuery('#address').addClass('show');
             });
-            jQuery('#deliver-address').click(function(){
+            jQuery('#deliver-address').click(function () {
                 jQuery('#address').removeClass('show');
                 jQuery('#payment').addClass('show');
             });
         });
 
-         /*---------------------------------------------------------------------
-           Datatables
-        -----------------------------------------------------------------------*/
-        if(jQuery('.data-tables').length)
-        {
-          $('.data-tables').DataTable();
+        /*---------------------------------------------------------------------
+          Datatables
+       -----------------------------------------------------------------------*/
+        if (jQuery('.data-tables').length) {
+            $('.data-tables').DataTable();
         }
 
         /*---------------------------------------------------------------------
         Button 
         -----------------------------------------------------------------------*/
 
-        jQuery('.qty-btn').on('click',function(){
-          var id = jQuery(this).attr('id');
+        jQuery('.qty-btn').on('click', function () {
+            var id = jQuery(this).attr('id');
 
-          var val = parseInt(jQuery('#quantity').val());
+            var val = parseInt(jQuery('#quantity').val());
 
-          if(id == 'btn-minus')
-          {
-            if(val != 0)
-            {
-              jQuery('#quantity').val(val-1);
+            if (id == 'btn-minus') {
+                if (val != 0) {
+                    jQuery('#quantity').val(val - 1);
+                }
+                else {
+                    jQuery('#quantity').val(0);
+                }
+
             }
-            else
-            {
-              jQuery('#quantity').val(0);
+            else {
+                jQuery('#quantity').val(val + 1);
             }
-
-          }
-          else
-          {
-            jQuery('#quantity').val(val+1);
-          }
         });
 
 
-        
+
     });
 
 })(jQuery);

@@ -5,7 +5,7 @@
     <div id="content-page" class="content-page">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12" style="margin-bottom: 30px;">
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 @if ($categories->count() > 0)
-                    <div class="col-lg-12" style="margin-top: 30px;">
+                    <div class="col-lg-12">
                         <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                             <div
                                 class="iq-card-header d-flex justify-content-between align-items-center position-relative">
@@ -171,7 +171,7 @@
                                 </div>
                             </div>
                             <div class="iq-card-body trendy-contens">
-                                <ul id="trendy-slider" class="p-0 mb-0 list-inline row">
+                                <ul id="trending-products-slider" class="p-0 mb-0 list-inline row">
                                     @foreach ($nowTrending as $item)
                                         <li class="col-md-3">
                                             <div class="d-flex align-items-center">
@@ -278,7 +278,7 @@
                                 </div>
                             </div>
                             <div class="iq-card-body favorites-contens">
-                                <ul id="favorites-slider" class="p-0 mb-0 list-inline row">
+                                <ul id="favorite-blogs-slider" class="p-0 mb-0 list-inline row">
                                     @foreach ($myPurchases as $item)
                                         <li class="col-md-4">
                                             <div class="d-flex align-items-center">
