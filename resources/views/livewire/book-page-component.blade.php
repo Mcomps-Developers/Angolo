@@ -116,7 +116,7 @@
                                                                 data-currency="KES" data-email="{{ Auth::user()->email }}"
                                                                 data-first_name="{{ Auth::user()->name }}"
                                                                 data-last_name="NA"
-                                                                data-phone_number="{{ Auth::user()->phone }}"
+                                                                data-phone_number="{{ Auth::user()->phone_number }}"
                                                                 data-api_ref="{{ $content->reference }}"
                                                                 data-country="KE"><i class="ri-mobile-phone"></i>
                                                                 Global Pay</button>
@@ -127,42 +127,22 @@
                                                                 data-currency="KES" data-email="{{ Auth::user()->email }}"
                                                                 data-first_name="{{ Auth::user()->name }}"
                                                                 data-last_name="NA"
-                                                                data-phone_number="{{ Auth::user()->phone }}"
+                                                                data-phone_number="{{ Auth::user()->phone_number }}"
                                                                 data-api_ref="{{ $content->reference }}"
                                                                 data-country="KE"><i class="ri-mobile-phone"></i>
                                                                 Global Pay</button>
                                                         @endif
                                                     @else
-                                                    <a href="{{ route('login', ['redirect' => Request::path()]) }}" class="mr-2 btn btn-primary view-more">
-                                                        <i class="ri-user-lock"></i> Login to buy
-                                                    </a>
+                                                        <a href="{{ route('login', ['redirect' => Request::path()]) }}"
+                                                            class="mr-2 btn btn-primary view-more">
+                                                            <i class="ri-user-lock"></i> Login to buy
+                                                        </a>
                                                     @endauth
                                                 @endif
 
                                                 OR &nbsp;
-                                                {{-- @php
-                                                    $witems = Cart::instance('wishlist')->content()->pluck('id');
-                                                @endphp
-                                                @if ($witems->contains($book->id))
-                                                    @if ($content->on_sale)
-                                                        <a href="#!" class="mr-2 btn btn-warning view-more"
-                                                            wire:click.prevent="addToWishlist({{ $content->id }},'{{ $content->name }}',{{ $content->dicount_price }})"><i
-                                                                class="ri-heart-fill"></i> <span wire:loading.remove
-                                                                wire:target='addToWishlist'>Add to Wishlist</span> <span
-                                                                wire:loading
-                                                                wire:target='addToWishlist'>Adding...</span></a>
-                                                    @else
-                                                        <a href="#!" class="mr-2 btn btn-warning view-more"
-                                                            wire:click.prevent="addToWishlist({{ $content->id }},'{{ $content->name }}',{{ $content->regular_price }})"><i
-                                                                class="ri-heart-fill"></i> <span wire:loading.remove
-                                                                wire:target='addToWishlist'>Add to Wishlist</span>
-                                                            <span wire:loading
-                                                                wire:target='addToWishlist'>Adding...</span></a>
-                                                    @endif
-                                                @else --}}
-                                                    <a href="#!" class="mr-2 btn btn-warning view-more"><i
-                                                            class="ri-heart-fill"></i> Add to Wishlist</a>
-                                                {{-- @endif --}}
+                                                <a href="#!" class="mr-2 btn btn-warning view-more"><i
+                                                        class="ri-heart-fill"></i> Add to Wishlist</a>
                                             </div>
                                             <div class="iq-social d-flex align-items-center">
                                                 <h5 class="mr-2">Share:</h5>
@@ -271,43 +251,43 @@
     </div>
 </main>
 {{-- @script --}}
-    <script src="https://unpkg.com/intasend-inlinejs-sdk@3.0.4/build/intasend-inline.js"></script>
-    <script>
-        new window.IntaSend({
-                publicAPIKey: '{{ env('INTASEND_PUB_KEY') }}',
-                live: true
+<script src="https://unpkg.com/intasend-inlinejs-sdk@3.0.4/build/intasend-inline.js"></script>
+<script>
+    new window.IntaSend({
+            publicAPIKey: '{{ env('INTASEND_PUB_KEY') }}',
+            live: true
+        })
+        .on("COMPLETE", (results) => {
+            saveTransactionToController(results);
+        })
+        .on("FAILED", (results) => {
+            saveTransactionToController(results);
+        });
+
+    function saveTransactionToController(results) {
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        const url = '{{ route('save.transaction') }}';
+        fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': csrfToken
+                },
+                body: JSON.stringify({
+                    results: results
+                })
             })
-            .on("COMPLETE", (results) => {
-                saveTransactionToController(results);
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
             })
-            .on("FAILED", (results) => {
-                saveTransactionToController(results);
-            });
-    
-        function saveTransactionToController(results) {
-            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-            const url = '{{ route("save.transaction") }}'; // Assuming you have a named route for saving transactions
-            fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': csrfToken
-                    },
-                    body: JSON.stringify({
-                        results: results
-                    })
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    window.location.href = '{{ route("user.dashboard") }}'; // Redirect to dashboard after successful transaction
-                })
-                .catch(error => console.error('Error saving transaction:', error.message));
-        }
-    </script>
-    
+            .then(data => {
+                window.location.href = '{{ route('user.dashboard') }}';
+            })
+            .catch(error => console.error('Error saving transaction:', error.message));
+    }
+</script>
+
 {{-- @endscript --}}

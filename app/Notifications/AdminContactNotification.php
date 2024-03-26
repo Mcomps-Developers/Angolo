@@ -36,7 +36,7 @@ class AdminContactNotification extends Notification
     {
         return (new MailMessage)
             ->subject('Contact Message ' . $this->message->ticket_id)
-            ->line('You have a new message from' . $this->message->full_name)
+            ->line('You have a new message from ' . $this->message->full_name)
             ->line('Message Details:')
             ->line('Service Ticket: ' . $this->message->ticket_id)
             ->line('Phone Number: ' . $this->message->phone_number)
