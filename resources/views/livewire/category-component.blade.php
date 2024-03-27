@@ -10,8 +10,8 @@
                     <div class="col-lg-12">
                         <div class="mb-0 iq-card-transparent">
                             <div class="text-center d-block">
-                                <h2 class="mb-3">Search for content in {{ $categoryName }}</h2>
-                                <div class="w-100 iq-search-filter">
+                                <h2 class="mb-3">Content in {{ $categoryName }}</h2>
+                                {{-- <div class="w-100 iq-search-filter">
                                     <ul class="p-0 m-0 list-inline row justify-content-center search-menu-options">
                                         <li class="search-menu-opt">
                                             <div class="iq-dropdown">
@@ -19,11 +19,10 @@
                                                     <select class="bg-white border-0 form-control form-search-control"
                                                         id="exampleFormControlSelect1">
                                                         <option selected="">All</option>
-                                                        <option>A Books</option>
-                                                        <option>the Sun</option>
-                                                        <option>Harsh book</option>
-                                                        <option>People book</option>
-                                                        <option>the Fog</option>
+                                                        @foreach ($tags as $item)
+                                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                                        @endforeach
+                                                        
                                                     </select>
                                                 </div>
                                             </div>
@@ -33,7 +32,7 @@
                                                 <div class="mb-0 form-group">
                                                     <select class="bg-white border-0 form-control form-search-control"
                                                         id="exampleFormControlSelect2">
-                                                        <option selected="">Genres</option>
+                                                        <option selected="">Categories</option>
                                                         <option>General</option>
                                                         <option>History</option>
                                                         <option>Horror</option>
@@ -67,11 +66,6 @@
                                                         id="exampleFormControlSelect4">
                                                         <option selected="">Author</option>
                                                         <option>Milesiy Yor</option>
-                                                        <option>Ira Membrit</option>
-                                                        <option>Anna Mull</option>
-                                                        <option>John Smith</option>
-                                                        <option>David King</option>
-                                                        <option>Kusti Franti</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -89,7 +83,7 @@
                                             </div>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
 

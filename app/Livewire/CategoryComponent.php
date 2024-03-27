@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Category;
 use App\Models\Content;
+use App\Models\Tag;
 use Livewire\Component;
 
 class CategoryComponent extends Component
@@ -17,8 +18,9 @@ class CategoryComponent extends Component
     public function render()
     {
         $category = Category::where('slug', $this->slug)->first();
-        $categoryName=$category->name;
+        $categoryName = $category->name;
         $products = Content::orderBy('title')->where('category_id', $category->id)->get();
-        return view('livewire.category-component',['products'=>$products,'categoryName'=>$categoryName])->layout('layouts.base');
+        $tags = Tag::orderBy('name')->get();
+        return view('livewire.category-component', ['products' => $products, 'categoryName' => $categoryName, 'tags' => $tags])->layout('layouts.base');
     }
 }
