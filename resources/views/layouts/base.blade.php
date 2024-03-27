@@ -49,8 +49,10 @@
     }
 
     .loader-icon {
-        width: 2vw;
-        height: 2vw;
+        width: 3vw;
+        /* Adjusted circle size */
+        height: 3vw;
+        /* Adjusted circle size */
         border-radius: 50%;
         margin: 2vw;
         background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
@@ -416,6 +418,13 @@
     <script src="{{ asset('js/chart-custom.js') }}"></script>
     <!-- Custom JavaScript -->
     <script src="{{ asset('js/custom.js') }}"></script>
+    <script>
+        window.addEventListener("load", function () {
+    var preloader = document.querySelector(".loader-bg");
+    preloader.style.display = "none";
+});
+
+    </script>
     <script src="https://cdn.tiny.cloud/1/bgdq7g4g6ayln7vwvep8a0v2fxye8wj7oi8o0gbtvamslur1/tinymce/7/tinymce.min.js"
         referrerpolicy="origin"></script>
     @livewireScripts
