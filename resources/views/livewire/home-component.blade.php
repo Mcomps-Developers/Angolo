@@ -88,7 +88,77 @@
                         </div>
                     </div>
                 @endif
-                @if ($recentContent->count() > 0)
+                @if ($nowTrending->count() > 3)
+                    <div class="col-lg-12">
+                        <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                            <div
+                                class="mb-0 iq-card-header d-flex justify-content-between align-items-center position-relative trendy-detail">
+                                <div class="iq-header-title">
+                                    <h4 class="mb-0 card-title">Trending Now</h4>
+                                </div>
+                                <div class="iq-card-header-toolbar d-flex align-items-center">
+                                    <a href="#!" class="btn btn-sm btn-primary view-more">View More</a>
+                                </div>
+                            </div>
+                            <div class="iq-card-body trendy-contens">
+                                <ul id="trendy-slider" class="p-0 mb-0 list-inline row">
+                                    @foreach ($nowTrending as $item)
+                                        <li class="col-md-3">
+                                            <div class="d-flex align-items-center">
+                                                <div class="p-0 col-5 position-relative image-overlap-shadow">
+                                                    <a
+                                                        href="{{ route('content.details', ['reference' => $item->contennt->reference, 'slug' => $item->contennt->slug]) }}"><img
+                                                            class="rounded img-fluid w-100"
+                                                            src="{{ asset('images/thumbnails') }}/{{ $item->contennt->thumbnail }}"
+                                                            alt=""></a>
+                                                    <div class="view-book">
+                                                        <a href="{{ route('content.details', ['reference' => $item->contennt->reference, 'slug' => $item->contennt->slug]) }}"
+                                                            class="btn btn-sm btn-white">Details</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-7">
+                                                    <div class="mb-2">
+                                                        <h6 class="mb-1">{{ $item->contennt->title }}</h6>
+                                                        <p class="mb-1 font-size-13 line-height">
+                                                            By {{ $item->contennt->publisher->name }} |
+                                                            <strong>{{ $item->contennt->tag->name }}</strong>
+                                                        </p>
+                                                        <div class="d-block">
+                                                            <span class="font-size-13 text-warning">
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="price d-flex align-items-center">
+                                                        @if ($item->contennt->on_sale)
+                                                            <span class="pr-1 old-price">Ksh
+                                                                {{ $item->contennt->regular_price }}</span>
+                                                            <h6><b>Ksh {{ $item->contennt->discount_price }}</b></h6>
+                                                        @else
+                                                            <h6><b>Ksh {{ $item->contennt->regular_price }}</b></h6>
+                                                        @endif
+
+                                                    </div>
+                                                    <div class="iq-product-action">
+                                                        <a href="javascript:void();"><i
+                                                                class="ri-shopping-cart-2-fill text-primary"></i></a>
+                                                        <a href="javascript:void();" class="ml-2"><i
+                                                                class="ri-heart-fill text-danger"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    @endforeach
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                @elseif ($recentContent->count() > 0)
                     <div class="col-lg-12">
                         <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                             <div
@@ -121,7 +191,8 @@
                                                         <h6 class="mb-1">{{ $item->title }}</h6>
                                                         <p class="mb-1 font-size-13 line-height">
                                                             By {{ $item->publisher->name }} |
-                                                            <strong>{{ $item->tag->name }}</strong></p>
+                                                            <strong>{{ $item->tag->name }}</strong>
+                                                        </p>
                                                         <div class="d-block">
                                                             <span class="font-size-13 text-warning">
                                                                 <i class="fa fa-star"></i>
@@ -158,75 +229,7 @@
                         </div>
                     </div>
                 @endif
-                {{-- @if ($nowTrending->count() > 0)
-                    <div class="col-lg-12">
-                        <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
-                            <div
-                                class="mb-0 iq-card-header d-flex justify-content-between align-items-center position-relative trendy-detail">
-                                <div class="iq-header-title">
-                                    <h4 class="mb-0 card-title">Trending Now </h4>
-                                </div>
-                                <div class="iq-card-header-toolbar d-flex align-items-center">
-                                    <a href="#!" class="btn btn-sm btn-primary view-more">View More</a>
-                                </div>
-                            </div>
-                            <div class="iq-card-body trendy-contens">
-                                <ul id="trending-products-slider" class="p-0 mb-0 list-inline row">
-                                    @foreach ($nowTrending as $item)
-                                        <li class="col-md-3">
-                                            <div class="d-flex align-items-center">
-                                                <div class="p-0 col-5 position-relative image-overlap-shadow">
-                                                    <a
-                                                        href="{{ route('content.details', ['reference' => $item->content->reference, 'slug' => $item->content->slug]) }}"><img
-                                                            class="rounded img-fluid w-100"
-                                                            src="{{ asset('images/thumbnails') }}/{{ $item->content->thumbnail }}"
-                                                            alt=""></a>
-                                                    <div class="view-book">
-                                                        <a href="{{ route('content.details', ['reference' => $item->content->reference, 'slug' => $item->content->slug]) }}"
-                                                            class="btn btn-sm btn-white">Details</a>
-                                                    </div>
-                                                </div>
-                                                <div class="col-7">
-                                                    <div class="mb-2">
-                                                        <h6 class="mb-1">{{ $item->content->title }}</h6>
-                                                        <p class="mb-1 font-size-13 line-height">
-                                                            By {{ $item->content->publisher->name }}|
-                                                            <strong>{{ $item->content->tag->name }}</strong></p>
-                                                        <div class="d-block">
-                                                            <span class="font-size-13 text-warning">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="price d-flex align-items-center">
-                                                        @if ($item->content->on_sale)
-                                                            <span class="pr-1 old-price">Ksh
-                                                                {{ $item->content->regular_price }}</span>
-                                                            <h6><b>Ksh {{ $item->content->discount_price }}</b></h6>
-                                                        @else
-                                                            <h6><b>Ksh {{ $item->content->regular_price }}</b></h6>
-                                                        @endif
 
-                                                    </div>
-                                                    <div class="iq-product-action">
-                                                        <a href="javascript:void();"><i
-                                                                class="ri-shopping-cart-2-fill text-primary"></i></a>
-                                                        <a href="javascript:void();" class="ml-2"><i
-                                                                class="ri-heart-fill text-danger"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                @endif --}}
                 @if ($experts->count() > 0)
                     <div class="col-lg-12">
                         <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
