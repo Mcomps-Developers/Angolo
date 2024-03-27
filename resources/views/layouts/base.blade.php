@@ -19,58 +19,79 @@
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     @livewireStyles
 </head>
-<div id="pre-loading">
-    <div id="loading-center">
-        <div class="wave" id="wave1"></div>
-        <div class="wave" id="wave2"></div>
-        <div class="wave" id="wave3"></div>
-        <div class="wave" id="wave4"></div>
-        <div class="wave" id="wave5"></div>
+{{-- Preloader --}}
+<div class="loader-bg">
+    <div class="loader-track">
+        <div class="loader-icon"></div>
+        <div class="loader-icon circle yellow"></div>
+        <div class="loader-icon circle red"></div>
+        <div class="loader-icon circle blue"></div>
+        <div class="loader-icon circle violet"></div>
     </div>
 </div>
+{{-- Preloader stylesheet --}}
 <style>
-    #pre-loading {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff; /* Background color of the preloader */
-    z-index: 9999; /* Ensure it's on top of other elements */
-}
-
-#loading-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.wave {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-color: #007bff; /* Primary color */
-    border-radius: 50%;
-    margin: 0 5px;
-    animation: wave 1s ease-in-out infinite;
-}
-
-@keyframes wave {
-    0%, 100% {
-        transform: scale(1);
+    .loader-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
     }
-    50% {
-        transform: scale(1.5);
+
+    .loader-track {
+        display: flex;
     }
-}
 
-#wave1 { animation-delay: 0.2s; }
-#wave2 { animation-delay: 0.4s; }
-#wave3 { animation-delay: 0.6s; }
-#wave4 { animation-delay: 0.8s; }
-#wave5 { animation-delay: 1s; }
+    .loader-icon {
+        width: 2vw;
+        height: 2vw;
+        border-radius: 50%;
+        margin: 2vw;
+        background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+        animation: bounce 1.5s 0.5s linear infinite;
+    }
 
+    .circle.yellow {
+        background: #feb60a;
+    }
+
+    .circle.red {
+        background: #ff0062;
+        animation-delay: 0.1s;
+    }
+
+    .circle.blue {
+        background: #00dbf9;
+        animation-delay: 0.2s;
+    }
+
+    .circle.violet {
+        background: #da00f7;
+        animation-delay: 0.8s;
+    }
+
+    @keyframes bounce {
+
+        0%,
+        50%,
+        100% {
+            transform: scale(1);
+        }
+
+        25% {
+            transform: scale(0.6);
+        }
+
+        75% {
+            transform: scale(1.1);
+        }
+    }
 </style>
 
 
@@ -104,8 +125,9 @@
                             <ul id="dashboard" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
                                 <li class="active"><a href="/"><i class="las la-house-damage"></i>Home</a></li>
                                 <li><a href="#!"><i class="ri-function-line"></i>Categories</a></li>
-                                <li><a href="{{route('wishlist')}}"><i class="ri-heart-line"></i>Wishlit</a></li>
-                                <li><a href="{{route('user.purchases')}}"><i class="ri-dashboard"></i>Dashboard</a></li>
+                                <li><a href="{{ route('wishlist') }}"><i class="ri-heart-line"></i>Wishlit</a></li>
+                                <li><a href="{{ route('user.purchases') }}"><i class="ri-dashboard"></i>Dashboard</a>
+                                </li>
                             </ul>
                         </li>
                     @else
@@ -118,7 +140,7 @@
                             <ul id="dashboard" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                                 <li class="active"><a href="/"><i class="las la-house-damage"></i>Home</a></li>
                                 <li><a href="#!"><i class="ri-function-line"></i>Categories</a></li>
-                                <li><a href="{{route('wishlist')}}"><i class="ri-heart-line"></i>Wishlit</a></li>
+                                <li><a href="{{ route('wishlist') }}"><i class="ri-heart-line"></i>Wishlit</a></li>
                             </ul>
                         </li>
                     @endif
@@ -132,38 +154,37 @@
                                 <li><a href="{{ route('expert.dashboard') }}"><i
                                             class="ri-dashboard-line"></i>Dashboard</a>
                                 </li>
-                                <li><a href="{{ route('expert.content') }}"><i class="ri-book-2-line"></i>My Content</a>
+                                <li><a href="{{ route('expert.content') }}"><i class="ri-book-2-line"></i>My
+                                        Content</a>
                                 </li>
                                 {{-- <li><a href="{{ route('expert.sales') }}"><i class="las la-wallet"></i>My Sales</a></li>
                                 <li><a href="{{ route('user.profile') }}"><i class="ri-admin-line"></i>My Profile</a> --}}
-                                </li>
-                            </ul>
                         </li>
-                    @endif
-                    @if (Auth::user()->utype === 'adm')
-                        <li class="active active-menu">
-                            <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span
-                                    class="ripple rippleEffect"></span><i class="ri-admin-line"></i><span>Admin</span><i
-                                    class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                            <ul id="admin" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
-                                <li><a href="{{ route('admin.dashboard') }}"><i
-                                            class="ri-dashboard-line"></i>Dashboard</a>
-                                </li>
-                                <li><a href="{{ route('admin.categories') }}"><i
-                                            class="ri-list-check-2"></i>Categories</a>
-                                </li>
-                                <li><a href="{{ route('admin.tags') }}"><i
-                                    class="ri-list-check"></i>Tags</a>
-                        </li>
-                                <li><a href="{{ route('admin.experts') }}"><i
-                                            class="ri-file-user-line"></i>Experts</a>
-                                </li>
-                                <li><a href="{{ route('admin.content') }}"><i class="ri-book-2-line"></i>Content</a>
-                                </li>
-                                <li><a href="{{ route('users') }}"><i class="las la-th-list"></i>Users</a></li>
-                            </ul>
-                        </li>
-                    @endif
+                </ul>
+                </li>
+                @endif
+                @if (Auth::user()->utype === 'adm')
+                    <li class="active active-menu">
+                        <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span
+                                class="ripple rippleEffect"></span><i class="ri-admin-line"></i><span>Admin</span><i
+                                class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                        <ul id="admin" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
+                            <li><a href="{{ route('admin.dashboard') }}"><i
+                                        class="ri-dashboard-line"></i>Dashboard</a>
+                            </li>
+                            <li><a href="{{ route('admin.categories') }}"><i
+                                        class="ri-list-check-2"></i>Categories</a>
+                            </li>
+                            <li><a href="{{ route('admin.tags') }}"><i class="ri-list-check"></i>Tags</a>
+                            </li>
+                            <li><a href="{{ route('admin.experts') }}"><i class="ri-file-user-line"></i>Experts</a>
+                            </li>
+                            <li><a href="{{ route('admin.content') }}"><i class="ri-book-2-line"></i>Content</a>
+                            </li>
+                            <li><a href="{{ route('users') }}"><i class="las la-th-list"></i>Users</a></li>
+                        </ul>
+                    </li>
+                @endif
                 </ul>
             </nav>
             <div id="sidebar-bottom" class="p-3 position-relative">
