@@ -3,6 +3,7 @@
 namespace App\Livewire\User;
 
 use App\Models\Purchase;
+use App\Models\Wallet;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -15,6 +16,7 @@ class MyPurchases extends Component
     {
         $myPurchases = Purchase::whereMonth('created_at', Carbon::now()->month)->where('user_id', Auth::user()->id)->where('status', 'paid')->get();
         $purchases = Purchase::whereMonth('created_at', Carbon::now()->month)->where('user_id', Auth::user()->id)->where('status', 'paid')->sum('amount');
-        return view('livewire.user.my-purchases', ['myPurchases' => $myPurchases, 'purchases' => $purchases])->layout('layouts.base');
+        $wallet = Wallet::where('user_id', Auth::user()->id)->first();
+        return view('livewire.user.my-purchases', ['myPurchases' => $myPurchases, 'wallet' => $wallet, 'purchases' => $purchases])->layout('layouts.base');
     }
 }
