@@ -38,64 +38,6 @@
                         <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                             <div class="iq-card-body">
                                 <div class="d-flex align-items-center">
-                                    <div class="rounded-circle iq-card-icon bg-danger"><i class="ri-book-line"></i>
-                                    </div>
-                                    <div class="ml-3 text-left">
-                                        <h2 class="mb-0"><span class="counter">
-                                                @if ($content > 999999)
-                                                    {{ $content / 1000000 }}
-                                            </span>M
-                                        @elseif ($content > 999)
-                                            {{ $content / 1000 }}
-                                            </span>K
-                                        @else
-                                            {{ $content }}
-                                            @endif
-                                        </h2>
-                                        <h5 class="">Content Posted</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
-                            <div class="iq-card-body">
-                                <div class="d-flex align-items-center">
-                                    <div class="rounded-circle iq-card-icon bg-warning"><i
-                                            class="ri-shopping-cart-2-line"></i></div>
-                                    <div class="ml-3 text-left">
-                                        <h2 class="mb-0">
-                                            <span class="counter">
-                                                <h2 class="mb-0">
-                                                    <span class="counter">
-                                                        @php
-                                                            $totalAmount = $earnings->sum('amount');
-                                                            $earningsAfterMultiplier = $totalAmount * 0.7;
-
-                                                            if ($earningsAfterMultiplier > 999999) {
-                                                                echo round($earningsAfterMultiplier / 1000000, 2) . 'M'; // rounding to 2 decimal places
-                                                            } elseif ($earningsAfterMultiplier > 999) {
-                                                                echo round($earningsAfterMultiplier / 1000, 2) . 'K'; // rounding to 2 decimal places
-                                                            } else {
-                                                                echo $earningsAfterMultiplier;
-                                                            }
-                                                        @endphp
-                                                    </span>
-                                                </h2>
-                                            </span>
-                                        </h2>
-                                        <h5 class="">Earnings (Ksh)</h5>
-                                        <small>This month Only</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
-                            <div class="iq-card-body">
-                                <div class="d-flex align-items-center">
                                     <div class="rounded-circle iq-card-icon bg-info"><i class="ri-radar-line"></i></div>
                                     <div class="ml-3 text-left">
                                         <h2 class="mb-0"><span class="counter">

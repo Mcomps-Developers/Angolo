@@ -65,6 +65,7 @@ use App\Livewire\UiProgressbarsComponent;
 use App\Livewire\UiTabsComponent;
 use App\Livewire\UiTooltipsComponent;
 use App\Livewire\UiTypographyComponent;
+use App\Livewire\User\MyPurchases;
 use App\Livewire\UserListComponent;
 use App\Livewire\WishlistComponent;
 use Illuminate\Support\Facades\Auth;
@@ -113,6 +114,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/wishlist', WishlistComponent::class)->name('wishlist');
     Route::get('/profile-edit', ProfileEditComponent::class)->name('profile.edit');
     Route::get('/acount-setting', AccountSettingComponent::class)->name('account.settings');
+    Route::get('/account/dashboard',MyPurchases::class)->name('user.purchases');
 });
 
 // Seller Routes

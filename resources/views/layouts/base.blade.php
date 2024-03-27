@@ -56,6 +56,7 @@
                                 <li class="active"><a href="/"><i class="las la-house-damage"></i>Home</a></li>
                                 <li><a href="#!"><i class="ri-function-line"></i>Categories</a></li>
                                 <li><a href="{{route('wishlist')}}"><i class="ri-heart-line"></i>Wishlit</a></li>
+                                <li><a href="{{route('user.purchases')}}"><i class="ri-heart-line"></i>Dashboard</a></li>
                             </ul>
                         </li>
                     @else
