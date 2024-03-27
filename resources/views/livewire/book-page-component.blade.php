@@ -103,8 +103,28 @@
                                                 <i class="ri-wallet-fill"></i> <span wire:loading.remove
                                                     wire:target='payWithWallet'> Use Wallet</span> <span wire:loading
                                                     wire:target='payWithWallet'>Processing...</span></a>
-                                                <a href="#" class="mr-2 btn btn-primary view-more"><i
-                                                        class="ri-mobile-phone"></i> MPESA</a> OR &nbsp;
+
+                                                {{-- Mpesa/Card --}}
+                                                @if ($content->on_sale)
+                                                    <a href="#!"
+                                                        class="mr-2 btn btn-primary view-more intaSendPayButton"
+                                                        data-amount="{{ $content->discount_price }}"
+                                                        data-currency="KES" data-email="{{ Auth::user()->email }}"
+                                                        data-first_name="{{ Auth::user()->name }}" data-last_name="NA"
+                                                        data-phone_number="{{ Auth::user()->phone }}"
+                                                        data-api_ref="{{ $content->reference }}" data-country="KE"><i
+                                                            class="ri-mobile-phone"></i> MPESA</a>
+                                                @else
+                                                    <a href="#"
+                                                        class="mr-2 btn btn-primary view-more intaSendPayButton"
+                                                        data-amount="{{ $content->regular_price }}" data-currency="KES"
+                                                        data-email="{{ Auth::user()->email }}"
+                                                        data-first_name="{{ Auth::user()->name }}" data-last_name="NA"
+                                                        data-phone_number="{{ Auth::user()->phone }}"
+                                                        data-api_ref="{{ $content->reference }}" data-country="KE"><i
+                                                            class="ri-mobile-phone"></i> MPESA</a>
+                                                @endif
+                                                OR &nbsp;
                                                 <a href="#!" class="mr-2 btn btn-warning view-more"><i
                                                         class="ri-heart-fill"></i> Add to Wishlist</a>
                                             </div>
@@ -214,3 +234,46 @@
     </div>
     </div>
 </main>
+@script
+    <script src="https://unpkg.com/intasend-inlinejs-sdk@3.0.4/build/intasend-inline.js"></script>
+    <script>
+        new window.IntaSend({
+                publicAPIKey: @env('INTASEND_PUB_KEY'),
+                live: true
+            })
+            .on("COMPLETE", (results) => {
+                // console.log("Success", results);
+                saveTransactionToController(results);
+            })
+            .on("FAILED", (results) => {
+                // console.log("Failed", results);
+                saveTransactionToController(results);
+            });
+
+        function saveTransactionToController(results) {
+            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+            const url = 'https://angolo.mcomps.co.ke/save-transaction';
+            fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': csrfToken
+                    },
+                    body: JSON.stringify({
+                        results: results
+                    })
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // console.log('Data: ', data);
+                    window.location.href = 'https://angolo.mcomps.co.ke/dashboard';
+                })
+                .catch(error => console.error('Error saving transaction:', error));
+        }
+    </script>
+@endscript

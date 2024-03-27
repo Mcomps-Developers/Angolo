@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SaveTransaction;
 use App\Http\Middleware\AuthAdmin;
 use App\Http\Middleware\AuthBuyer;
 use App\Http\Middleware\AuthSeller;
@@ -183,4 +184,9 @@ Route::prefix('/super/admin')->middleware(['auth:sanctum', config('jetstream.aut
     Route::get('/pages-error', PagesErrorComponent::class);
     Route::get('/pages-confirm-mail', PagesConfirmMailComponent::class);
     Route::get('/pages-coming-soon', PagesComingSoonComponent::class);
+});
+
+// Dump Routes
+Route::middleware(['auth:sanctum', config('jetstream.auth_session')])->group(function () {
+    Route::post('/save-transaction', [SaveTransaction::class, 'saveTransaction'])->name('save.transaction');
 });
