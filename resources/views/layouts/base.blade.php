@@ -19,10 +19,59 @@
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     @livewireStyles
 </head>
-<div id="loading">
+<div id="pre-loading">
     <div id="loading-center">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+        <div class="wave" id="wave5"></div>
     </div>
 </div>
+<style>
+    #pre-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff; /* Background color of the preloader */
+    z-index: 9999; /* Ensure it's on top of other elements */
+}
+
+#loading-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wave {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #007bff; /* Primary color */
+    border-radius: 50%;
+    margin: 0 5px;
+    animation: wave 1s ease-in-out infinite;
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+}
+
+#wave1 { animation-delay: 0.2s; }
+#wave2 { animation-delay: 0.4s; }
+#wave3 { animation-delay: 0.6s; }
+#wave4 { animation-delay: 0.8s; }
+#wave5 { animation-delay: 1s; }
+
+</style>
 
 
 <div class="wrapper">
