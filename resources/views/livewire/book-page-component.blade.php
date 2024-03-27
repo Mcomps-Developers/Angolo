@@ -106,23 +106,23 @@
 
                                                 {{-- Mpesa/Card --}}
                                                 @if ($content->on_sale)
-                                                    <a href="#!"
+                                                    <button type="button"
                                                         class="mr-2 btn btn-primary view-more intaSendPayButton"
                                                         data-amount="{{ $content->discount_price }}"
                                                         data-currency="KES" data-email="{{ Auth::user()->email }}"
                                                         data-first_name="{{ Auth::user()->name }}" data-last_name="NA"
                                                         data-phone_number="{{ Auth::user()->phone }}"
                                                         data-api_ref="{{ $content->reference }}" data-country="KE"><i
-                                                            class="ri-mobile-phone"></i> MPESA</a>
+                                                            class="ri-mobile-phone"></i> MPESA</button>
                                                 @else
-                                                    <a href="#"
+                                                    <button type="#!"
                                                         class="mr-2 btn btn-primary view-more intaSendPayButton"
                                                         data-amount="{{ $content->regular_price }}" data-currency="KES"
                                                         data-email="{{ Auth::user()->email }}"
                                                         data-first_name="{{ Auth::user()->name }}" data-last_name="NA"
                                                         data-phone_number="{{ Auth::user()->phone }}"
                                                         data-api_ref="{{ $content->reference }}" data-country="KE"><i
-                                                            class="ri-mobile-phone"></i> MPESA</a>
+                                                            class="ri-mobile-phone"></i> MPESA</button>
                                                 @endif
                                                 OR &nbsp;
                                                 <a href="#!" class="mr-2 btn btn-warning view-more"><i
