@@ -457,6 +457,16 @@ body.sidebar-main .content-page { margin-left: 80px; }
 #favorites-slider h5, .browse-bookcontent h6, .search-bookcontent h6, #similar-slider h6, #trendy-slider h6 { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
 #favorites-slider p, .browse-bookcontent p, .search-bookcontent p, #similar-slider p, #trendy-slider p { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; }
 
+#favorites-slider h5, .browse-bookcontent h6, .search-bookcontent h6, #similar-slider h6, #trending-products-slider h6 { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+#favorites-slider p, .browse-bookcontent p, .search-bookcontent p, #similar-slider p, #trending-products-slider p { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; }
+
+#favorite-blogs-slider h5, .browse-bookcontent h6, .search-bookcontent h6, #similar-slider h6, #trendy-slider h6 { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+#favorite-blogs-slider p, .browse-bookcontent p, .search-bookcontent p, #similar-slider p, #trendy-slider p { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; }
+
+#favorite-blogs-slider h5, .browse-bookcontent h6, .search-bookcontent h6, #similar-slider h6, #trending-products-slider h6 { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+#favorite-blogs-slider p, .browse-bookcontent p, .search-bookcontent p, #similar-slider p, #trending-products-slider p { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; }
+
+
 /*-----------------*/
 #newrealease-slider.slick-initialized .slick-slide { opacity: 0; }
 #newrealease-slider .item.slick-slide.slick-active {opacity: 1;}

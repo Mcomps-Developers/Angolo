@@ -171,7 +171,7 @@
                                 </div>
                             </div>
                             <div class="iq-card-body trendy-contens">
-                                <ul id="single-similar-slider" class="p-0 mb-0 list-inline row">
+                                <ul id="trending-products-slider" class="p-0 mb-0 list-inline row">
                                     @foreach ($nowTrending as $item)
                                         <li class="col-md-3">
                                             <div class="d-flex align-items-center">
@@ -278,7 +278,7 @@
                                 </div>
                             </div>
                             <div class="iq-card-body favorites-contens">
-                                <ul id="newrealease-slider" class="p-0 mb-0 list-inline row">
+                                <ul id="favorite-blogs-slider" class="p-0 mb-0 list-inline row">
                                     @foreach ($myPurchases as $item)
                                         <li class="col-md-4">
                                             <div class="d-flex align-items-center">
