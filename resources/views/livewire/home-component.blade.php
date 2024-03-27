@@ -158,7 +158,7 @@
                         </div>
                     </div>
                 @endif
-                @if ($nowTrending->count() > 0)
+                {{-- @if ($nowTrending->count() > 0)
                     <div class="col-lg-12">
                         <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                             <div
@@ -226,7 +226,7 @@
                             </div>
                         </div>
                     </div>
-                @endif
+                @endif --}}
                 @if ($experts->count() > 0)
                     <div class="col-lg-12">
                         <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
