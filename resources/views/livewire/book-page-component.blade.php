@@ -238,43 +238,39 @@
     <script src="https://unpkg.com/intasend-inlinejs-sdk@3.0.4/build/intasend-inline.js"></script>
     <script>
         new window.IntaSend({
-                    publicAPIKey: @env('INTASEND_PUB_KEY')
-                        ,
-                        live: true
-                    })
-                .on("COMPLETE", (results) => {
-                    // console.log("Success", results);
-                    saveTransactionToController(results);
-                })
-                .on("FAILED", (results) => {
-                    // console.log("Failed", results);
-                    saveTransactionToController(results);
-                });
+            publicAPIKey: '{{ env('INTASEND_PUB_KEY') }}',
+            live: true
+        })
+        .on("COMPLETE", (results) => {
+            saveTransactionToController(results);
+        })
+        .on("FAILED", (results) => {
+            saveTransactionToController(results);
+        });
 
-                function saveTransactionToController(results) {
-                    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-                    const url = 'https://angolo.mcomps.co.ke/save-transaction';
-                    fetch(url, {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'X-CSRF-TOKEN': csrfToken
-                            },
-                            body: JSON.stringify({
-                                results: results
-                            })
-                        })
-                        .then(response => {
-                            if (!response.ok) {
-                                throw new Error('Network response was not ok');
-                            }
-                            return response.json();
-                        })
-                        .then(data => {
-                            // console.log('Data: ', data);
-                            window.location.href = 'https://angolo.mcomps.co.ke/dashboard';
-                        })
-                        .catch(error => console.error('Error saving transaction:', error));
+        function saveTransactionToController(results) {
+            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+            const url = 'https://angolo.mcomps.co.ke/save-transaction';
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': csrfToken
+                },
+                body: JSON.stringify({
+                    results: results
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
                 }
+                return response.json();
+            })
+            .then(data => {
+                window.location.href = 'https://angolo.mcomps.co.ke/dashboard';
+            })
+            .catch(error => console.error('Error saving transaction:', error));
+        }
     </script>
 @endscript
