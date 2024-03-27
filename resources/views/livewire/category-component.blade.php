@@ -10,7 +10,7 @@
                     <div class="col-lg-12">
                         <div class="mb-0 iq-card-transparent">
                             <div class="text-center d-block">
-                                <h2 class="mb-3">Content in {{ $categoryName }}</h2>
+                                <h2 class="mb-3"> {{ $categoryName }}</h2>
                                 {{-- <div class="w-100 iq-search-filter">
                                     <ul class="p-0 m-0 list-inline row justify-content-center search-menu-options">
                                         <li class="search-menu-opt">
@@ -111,7 +111,7 @@
                                                             <div class="mb-2">
                                                                 <h6 class="mb-1">{{ $item->title }}</h6>
                                                                 <p class="mb-1 font-size-13 line-height">
-                                                                    {{ $item->publisher->name }}
+                                                                    {{ $item->publisher->name }} | <strong>{{ $item->tag->name }}</strong>
                                                                 </p>
                                                                 <div class="d-block">
                                                                     <span class="font-size-13 text-warning">
