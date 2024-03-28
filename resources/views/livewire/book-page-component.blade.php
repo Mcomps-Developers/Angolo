@@ -133,8 +133,9 @@
                                                                 MPESA</button>
                                                         @endif
                                                     @else
-                                                        <a href="#!" class="mr-2 btn btn-primary view-more"><i
-                                                                class="ri-user-lock"></i> Login to buy</a>
+                                                    <a href="{{ route('login', ['redirect' => Request::path()]) }}" class="mr-2 btn btn-primary view-more">
+                                                        <i class="ri-user-lock"></i> Login to buy
+                                                    </a>
                                                     @endauth
                                                 @endif
 
