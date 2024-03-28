@@ -230,7 +230,7 @@
                     </div>
                 @endif
 
-                @if ($experts->count() > 0)
+                {{-- @if ($experts->count() > 0)
                     <div class="col-lg-12">
                         <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                             <div class="mb-0 iq-card-header d-flex justify-content-between">
@@ -266,7 +266,7 @@
                             </div>
                         </div>
                     </div>
-                @endif
+                @endif --}}
 
                 {{-- @if ($myPurchases->count() > 0)
                     <div class="col-lg-12">
