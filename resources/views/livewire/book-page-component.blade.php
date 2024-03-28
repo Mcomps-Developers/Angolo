@@ -270,7 +270,7 @@
     </div>
     </div>
 </main>
-@script
+{{-- @script --}}
     <script src="https://unpkg.com/intasend-inlinejs-sdk@3.0.4/build/intasend-inline.js"></script>
     <script>
         new window.IntaSend({
@@ -310,4 +310,4 @@
         }
     </script>
     
-@endscript
+{{-- @endscript --}}
