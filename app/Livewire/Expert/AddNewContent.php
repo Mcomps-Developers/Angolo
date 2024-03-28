@@ -36,7 +36,7 @@ class AddNewContent extends Component
         'regular_price' => 'required|numeric|min:20',
         'thumbnail' => 'required|mimes:png,jpg,jpeg|max:2048',
         'description' => 'required|string|max:1000',
-        'attachment' => 'required|mimes:pdf,doc,docx,mp3,mp4,txt,ppt,pptx,xls,xlsx|max:5120',
+        'attachment.*' => 'required|mimes:pdf,doc,docx,mp3,mp4,txt,ppt,pptx,xls,xlsx|max:5120',
         'status' => 'required',
         'discount_price' => 'required|numeric|min:10',
         'tag' => 'required',
@@ -87,11 +87,16 @@ class AddNewContent extends Component
             $this->thumbnail->storeAs('images/thumbnails', $imageName);
             $content->thumbnail = $imageName;
 
-            // Attachment
-            $file = Carbon::now()->timestamp . '.' . $this->attachment->extension();
-            $this->attachment->storeAs('files/attachments', $file);
-            $content->attachment = $file;
-
+            // Attachments
+            if ($this->attachment) {
+                $attachments = [];
+                foreach ($this->attachment as $key => $file) {
+                    $file = Carbon::now()->timestamp . '.' . $this->attachment->extension();
+                    $this->attachment->storeAs('files/attachments', $file);
+                    $attachments[] = $file;
+                    $content->attachment = implode(",", $attachments);
+                }
+            }
             if ($this->cover_images) {
                 $coverImages = [];
                 foreach ($this->cover_images as $key => $image) {

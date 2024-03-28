@@ -89,10 +89,16 @@ class AdminAddBookComponent extends Component
             $this->thumbnail->storeAs('images/thumbnails', $imageName);
             $content->thumbnail = $imageName;
 
-            // Attachment
-            $file = Carbon::now()->timestamp . '.' . $this->attachment->extension();
-            $this->attachment->storeAs('files/attachments', $file);
-            $content->attachment = $file;
+            // Attachments
+            if ($this->attachment) {
+                $attachments = [];
+                foreach ($this->attachment as $key => $file) {
+                    $file = Carbon::now()->timestamp . '.' . $this->attachment->extension();
+                    $this->attachment->storeAs('files/attachments', $file);
+                    $attachments[] = $file;
+                    $content->attachment = implode(",", $attachments);
+                }
+            }
 
             if ($this->cover_images) {
                 $coverImages = [];

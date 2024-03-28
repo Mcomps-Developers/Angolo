@@ -119,7 +119,7 @@
                                                                 data-phone_number="{{ Auth::user()->phone }}"
                                                                 data-api_ref="{{ $content->reference }}"
                                                                 data-country="KE"><i class="ri-mobile-phone"></i>
-                                                                Global</button>
+                                                                Global Pay</button>
                                                         @else
                                                             <button type="submit"
                                                                 class="mr-2 btn btn-primary view-more intaSendPayButton"
@@ -130,7 +130,7 @@
                                                                 data-phone_number="{{ Auth::user()->phone }}"
                                                                 data-api_ref="{{ $content->reference }}"
                                                                 data-country="KE"><i class="ri-mobile-phone"></i>
-                                                                Global</button>
+                                                                Global Pay</button>
                                                         @endif
                                                     @else
                                                     <a href="{{ route('login', ['redirect' => Request::path()]) }}" class="mr-2 btn btn-primary view-more">

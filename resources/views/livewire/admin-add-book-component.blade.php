@@ -122,7 +122,7 @@
                                     <div class="form-group">
                                         <label>Attach Content:</label>
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input"
+                                            <input type="file" class="custom-file-input" multiple
                                                 wire:model.live='attachment'>
                                             <label class="custom-file-label">Choose file</label>
                                             @error('attachment')
