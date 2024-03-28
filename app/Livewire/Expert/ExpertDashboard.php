@@ -17,7 +17,7 @@ class ExpertDashboard extends Component
     {
         $content = Content::where('status', 'published')->count();
         $purchases = Purchase::whereMonth('created_at', Carbon::now()->month)->where('user_id', Auth::user()->id)->where('status', 'paid')->sum('amount');
-        $myPurchases = Purchase::whereMonth('created_at', Carbon::now()->month)->where('user_id', Auth::user()->id)->where('status', 'paid')->get();
+        $myPurchases = Purchase::whereMonth('created_at', Carbon::now()->month)->where('user_id', Auth::user()->id)->where('status', 'paid')->paginate(10);
         $userId = Auth::id();
         $earnings = Purchase::whereMonth('created_at', Carbon::now()->month)
             ->where('status', 'paid')

@@ -11,7 +11,7 @@
                                     class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                             <ul id="dashboard" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
                                 <li class="active"><a href="/"><i class="las la-house-damage"></i>Home</a></li>
-                                <li><a href="{{ route('wishlist') }}"><i class="ri-heart-line"></i>Wishlist</a></li>
+                                {{-- <li><a href="{{ route('wishlist') }}"><i class="ri-heart-line"></i>Wishlist</a></li> --}}
                                 <li><a href="{{ route('user.purchases') }}"><i class="ri-function-line"></i>My Dashboard</a>
                                 </li>
                                 <li class="active"><a href="#!"><i class="ri-list-check-2"></i> Tags</a></li>
@@ -110,7 +110,7 @@
                                 class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul id="dashboard" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
                             <li><a href="/"><i class="las la-house-damage"></i>Home</a></li>
-                            <li><a href="{{ route('wishlist') }}"><i class="ri-heart-line"></i>Wishlist</a></li>
+                            {{-- <li><a href="{{ route('wishlist') }}"><i class="ri-heart-line"></i>Wishlist</a></li> --}}
                             @if ($tags->count() > 0)
                                 <li class="active"><a href="#!"><i class="ri-list-check-2"></i> Tags</a></li>
                                 @foreach ($tags as $item)
