@@ -110,7 +110,7 @@
                                                         {{-- Mpesa/Card --}}
 
                                                         @if ($content->on_sale)
-                                                            <button type="button"
+                                                            <button type="submit"
                                                                 class="mr-2 btn btn-primary view-more intaSendPayButton"
                                                                 data-amount="{{ $content->discount_price }}"
                                                                 data-currency="KES" data-email="{{ Auth::user()->email }}"
@@ -119,9 +119,9 @@
                                                                 data-phone_number="{{ Auth::user()->phone }}"
                                                                 data-api_ref="{{ $content->reference }}"
                                                                 data-country="KE"><i class="ri-mobile-phone"></i>
-                                                                MPESA</button>
+                                                                Global</button>
                                                         @else
-                                                            <button type="#!"
+                                                            <button type="submit"
                                                                 class="mr-2 btn btn-primary view-more intaSendPayButton"
                                                                 data-amount="{{ $content->regular_price }}"
                                                                 data-currency="KES" data-email="{{ Auth::user()->email }}"
@@ -130,7 +130,7 @@
                                                                 data-phone_number="{{ Auth::user()->phone }}"
                                                                 data-api_ref="{{ $content->reference }}"
                                                                 data-country="KE"><i class="ri-mobile-phone"></i>
-                                                                MPESA</button>
+                                                                Global</button>
                                                         @endif
                                                     @else
                                                     <a href="{{ route('login', ['redirect' => Request::path()]) }}" class="mr-2 btn btn-primary view-more">
@@ -283,10 +283,10 @@
             .on("FAILED", (results) => {
                 saveTransactionToController(results);
             });
-
+    
         function saveTransactionToController(results) {
             const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-            const url = 'https://angolo.mcomps.co.ke/save-transaction';
+            const url = '{{ route("save.transaction") }}'; // Assuming you have a named route for saving transactions
             fetch(url, {
                     method: 'POST',
                     headers: {
@@ -304,9 +304,10 @@
                     return response.json();
                 })
                 .then(data => {
-                    window.location.href = 'https://angolo.mcomps.co.ke/dashboard';
+                    window.location.href = '{{ route("dashboard") }}'; // Redirect to dashboard after successful transaction
                 })
-                .catch(error => console.error('Error saving transaction:', error));
+                .catch(error => console.error('Error saving transaction:', error.message));
         }
     </script>
+    
 @endscript
