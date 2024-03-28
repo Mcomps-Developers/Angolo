@@ -26,6 +26,8 @@ use App\Livewire\Expert\ExpertDashboard;
 use App\Livewire\Expert\MyContent;
 use App\Livewire\Expert\MySales;
 use App\Livewire\HomeComponent;
+use App\Livewire\Pages\BlogDetails;
+use App\Livewire\Pages\ContentPerTag;
 use App\Livewire\PagesComingSoonComponent;
 use App\Livewire\PagesConfirmMailComponent;
 use App\Livewire\PagesError500Component;
@@ -89,9 +91,9 @@ Route::get('/dashboard', function () {
             case 'adm':
                 return redirect()->route('admin.dashboard');
                 break;
-                // case 'sadm':
-                //     return redirect()->route('admin.dashboard');
-                //     break;
+            case 'sadm':
+                return redirect()->route('super.dashboard');
+                break;
             default:
                 // If user type is not recognized, redirect to default dashboard
                 abort(403);
@@ -105,17 +107,20 @@ Route::get('/dashboard', function () {
 // All users Routes
 
 // Buyer Routes
+Route::get('/', HomeComponent::class)->name('buyer.dashboard');
+Route::get('/content/{reference}/{slug}', BookPageComponent::class)->name('content.details');
+Route::get('/wishlist', WishlistComponent::class)->name('wishlist');
+Route::get('/category/{slug}', CategoryComponent::class)->name('category');
+Route::get('blogs/{reference}/{slug}', BlogDetails::class)->name('blog.details');
 
+// Authenticated user
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
-    Route::get('/', HomeComponent::class)->name('buyer.dashboard');
     Route::get('/view/{reference}', BookPdfComponent::class)->name('content.view');
-    Route::get('/category/{slug}', CategoryComponent::class)->name('category');
     Route::get('/checkout', CheckoutComponent::class)->name('checkout');
-    Route::get('/content/{reference}/{slug}', BookPageComponent::class)->name('content.details');
-    Route::get('/wishlist', WishlistComponent::class)->name('wishlist');
     Route::get('/profile-edit', ProfileEditComponent::class)->name('profile.edit');
     Route::get('/acount-setting', AccountSettingComponent::class)->name('account.settings');
-    Route::get('/account/dashboard',MyPurchases::class)->name('user.purchases');
+    Route::get('/account/dashboard', MyPurchases::class)->name('user.purchases');
+    Route::get('/tags/{name}', ContentPerTag::class)->name('tag.content');
 });
 
 // Seller Routes
@@ -138,8 +143,8 @@ Route::prefix('/admin')->middleware(['auth:sanctum', config('jetstream.auth_sess
     Route::get('/categories', AdminCategoryComponent::class)->name('admin.categories');
     Route::get('/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
     Route::get('/users', UserListComponent::class)->name('users');
-    Route::get('/tags',ManageTags::class)->name('admin.tags');
-    Route::get('/add-tag',AddTag::class)->name('tag.add');
+    Route::get('/tags', ManageTags::class)->name('admin.tags');
+    Route::get('/add-tag', AddTag::class)->name('tag.add');
 });
 
 // Super Admin Routes

@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 use Illuminate\Support\Str;
+// use Cart;
 
 class BookPageComponent extends Component
 {
@@ -114,6 +115,15 @@ class BookPageComponent extends Component
             }
         }
     }
+
+    // public function addToWishlist($book_id, $name, $book_price)
+    // {
+    //     Cart::instance('wishlist')->add($book_id, $name, 1, $book_price)->associate('App\Models\Book');
+    //     notyf()
+    //                 ->position('x', 'right')
+    //                 ->position('y', 'top')
+    //                 ->addSuccess('Added to wishlist');
+    // }
     public function render()
     {
         $content = Content::where('reference', $this->reference)->first();

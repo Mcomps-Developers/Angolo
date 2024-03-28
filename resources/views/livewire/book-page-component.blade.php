@@ -93,40 +93,75 @@
                                                 </p>
                                             </div>
                                             <div class="mb-4 d-flex align-items-center">
-                                                @if ($content->on_sale)
-                                                    <a href="#!" class="mr-2 btn btn-info view-more"
-                                                        wire:click.prevent='payWithWallet({{ $content->discount_price }})'>
-                                                    @else
-                                                        <a href="#!" class="mr-2 btn btn-info view-more"
-                                                            wire:click.prevent='payWithWallet({{ $content->regular_price }})'>
-                                                @endif
-                                                <i class="ri-wallet-fill"></i> <span wire:loading.remove
-                                                    wire:target='payWithWallet'> Use Wallet</span> <span wire:loading
-                                                    wire:target='payWithWallet'>Processing...</span></a>
+                                                @if (Route::has('login'))
+                                                    @auth
+                                                        @if ($content->on_sale)
+                                                            <a href="#!" class="mr-2 btn btn-info view-more"
+                                                                wire:click.prevent='payWithWallet({{ $content->discount_price }})'>
+                                                            @else
+                                                                <a href="#!" class="mr-2 btn btn-info view-more"
+                                                                    wire:click.prevent='payWithWallet({{ $content->regular_price }})'>
+                                                        @endif
+                                                        <i class="ri-wallet-fill"></i> <span wire:loading.remove
+                                                            wire:target='payWithWallet'> Use Wallet</span> <span
+                                                            wire:loading
+                                                            wire:target='payWithWallet'>Processing...</span></a>
 
-                                                {{-- Mpesa/Card --}}
-                                                @if ($content->on_sale)
-                                                    <button type="button"
-                                                        class="mr-2 btn btn-primary view-more intaSendPayButton"
-                                                        data-amount="{{ $content->discount_price }}"
-                                                        data-currency="KES" data-email="{{ Auth::user()->email }}"
-                                                        data-first_name="{{ Auth::user()->name }}" data-last_name="NA"
-                                                        data-phone_number="{{ Auth::user()->phone }}"
-                                                        data-api_ref="{{ $content->reference }}" data-country="KE"><i
-                                                            class="ri-mobile-phone"></i> MPESA</button>
-                                                @else
-                                                    <button type="#!"
-                                                        class="mr-2 btn btn-primary view-more intaSendPayButton"
-                                                        data-amount="{{ $content->regular_price }}" data-currency="KES"
-                                                        data-email="{{ Auth::user()->email }}"
-                                                        data-first_name="{{ Auth::user()->name }}" data-last_name="NA"
-                                                        data-phone_number="{{ Auth::user()->phone }}"
-                                                        data-api_ref="{{ $content->reference }}" data-country="KE"><i
-                                                            class="ri-mobile-phone"></i> MPESA</button>
+                                                        {{-- Mpesa/Card --}}
+
+                                                        @if ($content->on_sale)
+                                                            <button type="button"
+                                                                class="mr-2 btn btn-primary view-more intaSendPayButton"
+                                                                data-amount="{{ $content->discount_price }}"
+                                                                data-currency="KES" data-email="{{ Auth::user()->email }}"
+                                                                data-first_name="{{ Auth::user()->name }}"
+                                                                data-last_name="NA"
+                                                                data-phone_number="{{ Auth::user()->phone }}"
+                                                                data-api_ref="{{ $content->reference }}"
+                                                                data-country="KE"><i class="ri-mobile-phone"></i>
+                                                                MPESA</button>
+                                                        @else
+                                                            <button type="#!"
+                                                                class="mr-2 btn btn-primary view-more intaSendPayButton"
+                                                                data-amount="{{ $content->regular_price }}"
+                                                                data-currency="KES" data-email="{{ Auth::user()->email }}"
+                                                                data-first_name="{{ Auth::user()->name }}"
+                                                                data-last_name="NA"
+                                                                data-phone_number="{{ Auth::user()->phone }}"
+                                                                data-api_ref="{{ $content->reference }}"
+                                                                data-country="KE"><i class="ri-mobile-phone"></i>
+                                                                MPESA</button>
+                                                        @endif
+                                                    @else
+                                                        <a href="#!" class="mr-2 btn btn-primary view-more"><i
+                                                                class="ri-user-lock"></i> Login to buy</a>
+                                                    @endauth
                                                 @endif
+
                                                 OR &nbsp;
-                                                <a href="#!" class="mr-2 btn btn-warning view-more"><i
-                                                        class="ri-heart-fill"></i> Add to Wishlist</a>
+                                                {{-- @php
+                                                    $witems = Cart::instance('wishlist')->content()->pluck('id');
+                                                @endphp
+                                                @if ($witems->contains($book->id))
+                                                    @if ($content->on_sale)
+                                                        <a href="#!" class="mr-2 btn btn-warning view-more"
+                                                            wire:click.prevent="addToWishlist({{ $content->id }},'{{ $content->name }}',{{ $content->dicount_price }})"><i
+                                                                class="ri-heart-fill"></i> <span wire:loading.remove
+                                                                wire:target='addToWishlist'>Add to Wishlist</span> <span
+                                                                wire:loading
+                                                                wire:target='addToWishlist'>Adding...</span></a>
+                                                    @else
+                                                        <a href="#!" class="mr-2 btn btn-warning view-more"
+                                                            wire:click.prevent="addToWishlist({{ $content->id }},'{{ $content->name }}',{{ $content->regular_price }})"><i
+                                                                class="ri-heart-fill"></i> <span wire:loading.remove
+                                                                wire:target='addToWishlist'>Add to Wishlist</span>
+                                                            <span wire:loading
+                                                                wire:target='addToWishlist'>Adding...</span></a>
+                                                    @endif
+                                                @else --}}
+                                                    <a href="#!" class="mr-2 btn btn-warning view-more"><i
+                                                            class="ri-heart-fill"></i> Add to Wishlist</a>
+                                                {{-- @endif --}}
                                             </div>
                                             <div class="iq-social d-flex align-items-center">
                                                 <h5 class="mr-2">Share:</h5>
@@ -143,13 +178,13 @@
                                                     </li>
                                                     <li>
                                                         <a href="#"
-                                                            class="mr-2 avatar-40 rounded-circle bg-primary youtube"><i
-                                                                class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                                            class="mr-2 avatar-40 rounded-circle bg-success whatsapp"><i
+                                                                class="fa fa-whatsapp" aria-hidden="true"></i></a>
                                                     </li>
                                                     <li>
                                                         <a href="#"
-                                                            class="avatar-40 rounded-circle bg-primary pinterest"><i
-                                                                class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+                                                            class="avatar-40 rounded-circle bg-danger instagram"><i
+                                                                class="fa fa-instagram" aria-hidden="true"></i></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -238,39 +273,39 @@
     <script src="https://unpkg.com/intasend-inlinejs-sdk@3.0.4/build/intasend-inline.js"></script>
     <script>
         new window.IntaSend({
-            publicAPIKey: '{{ env('INTASEND_PUB_KEY') }}',
-            live: true
-        })
-        .on("COMPLETE", (results) => {
-            saveTransactionToController(results);
-        })
-        .on("FAILED", (results) => {
-            saveTransactionToController(results);
-        });
+                publicAPIKey: '{{ env('INTASEND_PUB_KEY') }}',
+                live: true
+            })
+            .on("COMPLETE", (results) => {
+                saveTransactionToController(results);
+            })
+            .on("FAILED", (results) => {
+                saveTransactionToController(results);
+            });
 
         function saveTransactionToController(results) {
             const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
             const url = 'https://angolo.mcomps.co.ke/save-transaction';
             fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': csrfToken
-                },
-                body: JSON.stringify({
-                    results: results
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': csrfToken
+                    },
+                    body: JSON.stringify({
+                        results: results
+                    })
                 })
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                window.location.href = 'https://angolo.mcomps.co.ke/dashboard';
-            })
-            .catch(error => console.error('Error saving transaction:', error));
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    window.location.href = 'https://angolo.mcomps.co.ke/dashboard';
+                })
+                .catch(error => console.error('Error saving transaction:', error));
         }
     </script>
 @endscript

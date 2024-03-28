@@ -2,15 +2,22 @@
 
 namespace App\Livewire\Element;
 
+use Illuminate\Database\Eloquent\Collection;
 use Livewire\Component;
 
 class NotificationComponent extends Component
 {
+
+
     public function render()
-    {
-        $user = auth()->user();
-        $notifications = $user->notifications;
-        return view('livewire.element.notification-component',['notifications'=>$notifications]);
+    { $user = auth()->user();
+        if ($user) {
+            $notifications = $user->notifications;
+        } else {
+            $notifications = 0;
+        }
+
+        return view('livewire.element.notification-component', ['notifications' => $notifications]);
     }
 
     public function markNotificationAsRead($notificationId)

@@ -11,7 +11,7 @@
 
     <!-- title and description-->
     <title>@yield('title')</title>
-    <meta name="description" content="Angolo Experts Limited">
+    <meta name="description" content="Angolo Expert Limited">
 
     <!-- css files -->
     <link rel="stylesheet" href="{{ asset('assets/css/tailwind.css') }}">
