@@ -304,7 +304,7 @@
                     return response.json();
                 })
                 .then(data => {
-                    window.location.href = '{{ route("dashboard") }}'; // Redirect to dashboard after successful transaction
+                    window.location.href = '{{ route("user.dashboard") }}'; // Redirect to dashboard after successful transaction
                 })
                 .catch(error => console.error('Error saving transaction:', error.message));
         }
