@@ -28,7 +28,7 @@
                                             @endif
                                         </h2>
                                         <h5 class="">Wallet Bal (Ksh)</h5>
-                                        <small><a href="#!" class="btn btn-success"> Top up</a></small><small><a href="#!" class="btn btn-warning"> Withdraw</a></small>
+                                        <small style="margin-right: 15px;"><a href="#!" class="btn btn-success"> Top up</a></small><small><a href="#!" class="btn btn-warning"> Withdraw</a></small>
                                     </div>
                                 </div>
                             </div>
