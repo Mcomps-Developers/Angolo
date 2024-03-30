@@ -122,7 +122,8 @@
                                     <div class="form-group">
                                         <label>Attach Content:</label>
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" multiple wire:model.live='attachment'>
+                                            <input type="file" class="custom-file-input" multiple
+                                                wire:model.live='attachment'>
                                             <label class="custom-file-label">Choose file</label>
                                             @error('attachment')
                                                 <p class="text text-danger" style="margin-top: 20px;">{{ $message }}
@@ -132,6 +133,14 @@
                                         <br>
                                         <span wire:loading wire:target='attachment' style="margin-top: 15px;">Uploading
                                             attachment...</span>
+                                        @if ($attachment)
+                                            <p>Uploaded Items:</p>
+                                            <ul>
+                                                @foreach ($attachment as $file)
+                                                    <li>{{ $file->getClientOriginalName() }}</li>
+                                                @endforeach
+                                            </ul>
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label>Regular Price (Ksh):</label>
