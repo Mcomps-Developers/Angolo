@@ -7,7 +7,7 @@
                         class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                 <ul id="dashboard" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
                     <li class="active"><a href="/"><i class="las la-house-damage"></i>Home</a></li>
-                    <li class="active"><a href="/"><i class="ri-list-check"></i>All Products</a></li>
+                    <li class="active"><a href="{{ route('products.all') }}"><i class="ri-list-check"></i>All Products</a></li>
                     @if (Route::has('login'))
                         @auth
                             @if (Auth::user()->utype === 'byr')

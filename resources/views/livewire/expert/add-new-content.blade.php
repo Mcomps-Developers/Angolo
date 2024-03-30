@@ -115,6 +115,14 @@
                                                 <p class="text text-danger" style="margin-top: 20px;">{{ $message }}
                                                 </p>
                                             @enderror
+                                            @if ($attachment)
+                                                <p style="margin-top: 15px;">Uploaded Items:</p>
+                                                <ul>
+                                                    @foreach ($attachment as $file)
+                                                        <li>{{ $file->getClientOriginalName() }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            @endif
                                         </div>
                                         <br>
                                         <span wire:loading wire:target='attachment' style="margin-top: 15px;">Uploading

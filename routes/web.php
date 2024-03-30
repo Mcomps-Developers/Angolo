@@ -26,6 +26,7 @@ use App\Livewire\Expert\ExpertDashboard;
 use App\Livewire\Expert\MyContent;
 use App\Livewire\Expert\MySales;
 use App\Livewire\HomeComponent;
+use App\Livewire\Pages\AllProducts;
 use App\Livewire\Pages\BlogDetails;
 use App\Livewire\Pages\ContentPerTag;
 use App\Livewire\PagesComingSoonComponent;
@@ -112,6 +113,7 @@ Route::get('/content/{reference}/{slug}', BookPageComponent::class)->name('conte
 Route::get('/wishlist', WishlistComponent::class)->name('wishlist');
 Route::get('/category/{slug}', CategoryComponent::class)->name('category');
 Route::get('blogs/{reference}/{slug}', BlogDetails::class)->name('blog.details');
+Route::get('/all-products',AllProducts::class)->name('products.all');
 
 // Authenticated user
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {

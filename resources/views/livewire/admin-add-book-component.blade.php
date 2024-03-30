@@ -134,7 +134,7 @@
                                         <span wire:loading wire:target='attachment' style="margin-top: 15px;">Uploading
                                             attachment...</span>
                                         @if ($attachment)
-                                            <p>Uploaded Items:</p>
+                                            <p style="margin-top: 15px;">Uploaded Items:</p>
                                             <ul>
                                                 @foreach ($attachment as $file)
                                                     <li>{{ $file->getClientOriginalName() }}</li>
