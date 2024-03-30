@@ -28,7 +28,7 @@
                                         <label>Content Category:</label>
                                         <select class="form-control" id="exampleFormControlSelect1"
                                             wire:model.live='category'>
-                                            <option selected="" >Select Category</option>
+                                            <option selected="">Select Category</option>
                                             @foreach ($categories as $item)
                                                 <option value="{{ $item->id }}">{{ $item->name }}</option>
                                             @endforeach
@@ -41,7 +41,7 @@
                                         <label>Content Tag:</label>
                                         <select class="form-control" id="exampleFormControlSelect1"
                                             wire:model.live='tag'>
-                                            <option selected="" >Select Tag</option>
+                                            <option selected="">Select Tag</option>
                                             @foreach ($tags as $item)
                                                 <option value="{{ $item->id }}">{{ $item->name }}</option>
                                             @endforeach
@@ -54,7 +54,7 @@
                                         <label>Sell at Discount:</label>
                                         <select class="form-control" id="exampleFormControlSelect1"
                                             wire:model.live='on_offer'>
-                                            <option selected="" >Select</option>
+                                            <option selected="">Select</option>
                                             <option value="1">Yes</option>
                                             <option value="0">No</option>
                                         </select>
@@ -69,12 +69,13 @@
                                                 accept="image/png, image/jpeg, image/jpg" wire:model.live='thumbnail'>
                                             <label class="custom-file-label">Choose file</label>
                                             @error('thumbnail')
-                                                <p class="text text-danger" style="margin-top: 20px;">{{ $message }}</p>
+                                                <p class="text text-danger" style="margin-top: 20px;">{{ $message }}
+                                                </p>
                                             @enderror
                                         </div>
                                         <br>
                                         @if ($thumbnail)
-                                            <p>Preview</p>
+                                            <p style="margin-top:20px;">Preview</p>
                                             <img src="{{ $thumbnail->temporaryUrl() }}" width="70px" height="100px"
                                                 style="margin-top:15px;" />
                                         @endif
@@ -89,12 +90,13 @@
                                                 wire:model.live='cover_images'>
                                             <label class="custom-file-label">Choose file</label>
                                             @error('cover_images')
-                                                <p class="text text-danger" style="margin-top: 20px;">{{ $message }}</p>
+                                                <p class="text text-danger" style="margin-top: 20px;">{{ $message }}
+                                                </p>
                                             @enderror
                                         </div>
                                         <br>
                                         @if ($cover_images)
-                                            <p>Preview</p>
+                                            <p style="margin-top:20px;">Preview</p>
                                             @foreach ($cover_images as $image)
                                                 <img src="{{ $image->temporaryUrl() }}" width="70px" height="100px"
                                                     style="margin-top:20px;" />
@@ -106,10 +108,12 @@
                                     <div class="form-group">
                                         <label>Attach Content:</label>
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" wire:model.live='attachment'>
+                                            <input type="file" class="custom-file-input" wire:model.live='attachment'
+                                                multiple>
                                             <label class="custom-file-label">Choose file</label>
                                             @error('attachment')
-                                                <p class="text text-danger" style="margin-top: 20px;">{{ $message }}</p>
+                                                <p class="text text-danger" style="margin-top: 20px;">{{ $message }}
+                                                </p>
                                             @enderror
                                         </div>
                                         <br>
@@ -137,14 +141,14 @@
 
                                     </div>
                                     @error('description')
-                                            <p class="text text-danger" style="margin-top: 20px;">{{ $message }}</p>
-                                        @enderror
+                                        <p class="text text-danger" style="margin-top: 20px;">{{ $message }}</p>
+                                    @enderror
 
                                     <div class="form-group">
                                         <label>Publication:</label>
                                         <select class="form-control" id="exampleFormControlSelect2"
                                             wire:model.live='status'>
-                                            <option >Select status</option>
+                                            <option>Select status</option>
                                             <option value="published">Published</option>
                                             <option value="review">Review</option>
                                             <option value="witheld">Witheld</option>
@@ -155,9 +159,9 @@
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary"><span wire:loading.remove
-                                            wire:target='addContent'>Create</span> <span wire:loading
-                                            wire:target='addContent' class="spinner-border spinner-border-sm"
-                                            role="status" aria-hidden="true"></button>
+                                                wire:target='addContent'>Create</span> <span wire:loading
+                                                wire:target='addContent' class="spinner-border spinner-border-sm"
+                                                role="status" aria-hidden="true"></button>
                                         <button type="reset" class="btn btn-danger">Reset</button>
                                     </div>
                                 </form>

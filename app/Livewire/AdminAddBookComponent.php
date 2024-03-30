@@ -38,7 +38,7 @@ class AdminAddBookComponent extends Component
         'regular_price' => 'required|numeric|min:20',
         'thumbnail' => 'required|mimes:png,jpg,jpeg|max:2048',
         'description' => 'required|string|max:1000',
-        'attachment' => 'required|mimes:pdf,doc,docx,mp3,mp4,txt,ppt,pptx,xls,xlsx|max:5120',
+        'attachment.*' => 'required|mimes:pdf,doc,docx,mp3,mp4,txt,ppt,pptx,xls,xlsx|max:5120',
         'status' => 'required',
         'discount_price' => 'required|numeric|min:10',
         'tag' => 'required',
@@ -93,11 +93,11 @@ class AdminAddBookComponent extends Component
             if ($this->attachment) {
                 $attachments = [];
                 foreach ($this->attachment as $key => $file) {
-                    $file = Carbon::now()->timestamp . '.' . $this->attachment->extension();
-                    $this->attachment->storeAs('files/attachments', $file);
-                    $attachments[] = $file;
-                    $content->attachment = implode(",", $attachments);
+                    $fileName = Carbon::now()->timestamp . random_int(1, 9999) . '.' . $file->extension();
+                    $file->storeAs('images/attachments', $fileName);
+                    $attachments[] = $fileName;
                 }
+                $content->attachment = implode(",", $attachments);
             }
 
             if ($this->cover_images) {
@@ -138,7 +138,7 @@ class AdminAddBookComponent extends Component
     {
         $experts = User::orderBy('name')->where('utype', 'slr')->get();
         $categories = Category::orderBy('name')->get();
-        $tags=Tag::orderBy('name')->get();
-        return view('livewire.admin-add-book-component', ['experts' => $experts,'tags'=>$tags, 'categories' => $categories])->layout('layouts.base');
+        $tags = Tag::orderBy('name')->get();
+        return view('livewire.admin-add-book-component', ['experts' => $experts, 'tags' => $tags, 'categories' => $categories])->layout('layouts.base');
     }
 }

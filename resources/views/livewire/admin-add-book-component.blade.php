@@ -89,7 +89,7 @@
                                         </div>
                                         <br>
                                         @if ($thumbnail)
-                                            <p>Preview</p>
+                                            <p style="margin-top:20px;">Preview</p>
                                             <img src="{{ $thumbnail->temporaryUrl() }}" width="70px" height="100px"
                                                 style="margin-top:15px;" />
                                         @endif
@@ -110,7 +110,7 @@
                                         </div>
                                         <br>
                                         @if ($cover_images)
-                                            <p>Preview</p>
+                                            <p style="margin-top:20px;">Preview</p>
                                             @foreach ($cover_images as $image)
                                                 <img src="{{ $image->temporaryUrl() }}" width="70px" height="100px"
                                                     style="margin-top:20px;" />
@@ -122,8 +122,7 @@
                                     <div class="form-group">
                                         <label>Attach Content:</label>
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" multiple
-                                                wire:model.live='attachment'>
+                                            <input type="file" class="custom-file-input" multiple wire:model.live='attachment'>
                                             <label class="custom-file-label">Choose file</label>
                                             @error('attachment')
                                                 <p class="text text-danger" style="margin-top: 20px;">{{ $message }}

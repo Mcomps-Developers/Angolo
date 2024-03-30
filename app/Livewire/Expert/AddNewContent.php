@@ -91,12 +91,14 @@ class AddNewContent extends Component
             if ($this->attachment) {
                 $attachments = [];
                 foreach ($this->attachment as $key => $file) {
-                    $file = Carbon::now()->timestamp . '.' . $this->attachment->extension();
-                    $this->attachment->storeAs('files/attachments', $file);
-                    $attachments[] = $file;
-                    $content->attachment = implode(",", $attachments);
+                    $fileName = Carbon::now()->timestamp . random_int(1, 9999) . '.' . $file->extension();
+                    $file->storeAs('images/attachments', $fileName);
+                    $attachments[] = $fileName;
                 }
+                $content->attachment = implode(",", $attachments);
             }
+
+            // Cover Images
             if ($this->cover_images) {
                 $coverImages = [];
                 foreach ($this->cover_images as $key => $image) {
