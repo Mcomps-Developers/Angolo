@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sliders', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->date('from');
-            $table->date('to');
-            $table->string('link');
-            $table->string('title');
-            $table->string('image');
-            $table->text('description')->nullable();
+            $table->string('ticket_id')->unique();
+            $table->string('full_name');
+            $table->string('subject');
+            $table->string('email');
+            $table->string('phone_number');
+            $table->enum('priority', ['Normal', 'High', 'Highest'])->default('Normal');
+            $table->text('message');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sliders');
+        Schema::dropIfExists('contacts');
     }
 };

@@ -249,7 +249,7 @@
                                                     <span class="text-white font-size-12">Online</span>
 
                                                 </div>
-                                                <a href="{{ route('account.settings') }}"
+                                                <a href="{{ route('profile.edit') }}"
                                                     class="iq-sub-card iq-bg-primary-hover">
                                                     <div class="media align-items-center">
                                                         <div class="rounded iq-card-icon iq-bg-primary">

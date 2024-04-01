@@ -3,11 +3,12 @@
         <ul id="iq-sidebar-toggle" class="iq-menu">
             <li class="active active-menu">
                 <a href="#dashboard" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span
-                        class="ripple rippleEffect"></span><i class="las la-bars iq-arrow-left"></i><span>Main Menu</span><i
-                        class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                        class="ripple rippleEffect"></span><i class="las la-bars iq-arrow-left"></i><span>Main
+                        Menu</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                 <ul id="dashboard" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
                     <li class="active"><a href="/"><i class="las la-house-damage"></i>Home</a></li>
-                    <li class="active"><a href="{{ route('products.all') }}"><i class="ri-list-check"></i>All Products</a></li>
+                    <li class="active"><a href="{{ route('products.all') }}"><i class="ri-list-check"></i>All
+                            Products</a></li>
                     @if (Route::has('login'))
                         @auth
                             @if (Auth::user()->utype === 'byr')
@@ -21,8 +22,7 @@
             </li>
             <li class="active-menu">
                 <a href="#categories" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false"><span
-                        class="ripple rippleEffect"></span><i
-                        class="las la-th-list"></i><span>Categories</span><i
+                        class="ripple rippleEffect"></span><i class="las la-th-list"></i><span>Categories</span><i
                         class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                 <ul id="categories" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                     @if ($tags->count() > 0)
@@ -52,6 +52,10 @@
                     @endif
                 </ul>
             </li>
+            <li class="active-menu">
+                <a href="{{route('contact')}}" class="iq-waves-effect"><span
+                        class="ripple rippleEffect"></span><i class="fa fa-send"></i><span>Contact us</span></a>
+            </li>
             @if (Route::has('login'))
                 @auth
                     @if (Auth::user()->utype === 'slr')
@@ -73,8 +77,8 @@
                     @if (Auth::user()->utype === 'adm')
                         <li class="active active-menu">
                             <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span
-                                    class="ripple rippleEffect"></span><i class="ri-admin-line"></i><span>Admin Mode</span><i
-                                    class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                                    class="ripple rippleEffect"></span><i class="ri-admin-line"></i><span>Admin
+                                    Mode</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                             <ul id="admin" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
                                 <li><a href="{{ route('admin.dashboard') }}"><i class="ri-dashboard-line"></i>Dashboard</a>
                                 </li>
@@ -85,6 +89,8 @@
                                 <li><a href="{{ route('admin.experts') }}"><i class="ri-file-user-line"></i>Experts</a>
                                 </li>
                                 <li><a href="{{ route('admin.content') }}"><i class="ri-book-2-line"></i>Content</a>
+                                <li><a href="{{ route('sliders') }}"><i class="fa fa-photo"></i>Sliders</a>
+                                <li><a href="{{ route('admin.content') }}"><i class="ri-book-2-line"></i>Blogs</a>
                                 </li>
                                 <li><a href="{{ route('users') }}"><i class="las la-th-list"></i>Users</a></li>
                             </ul>

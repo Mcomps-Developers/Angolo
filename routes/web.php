@@ -7,7 +7,10 @@ use App\Http\Middleware\AuthSeller;
 use App\Http\Middleware\AuthSuperAdmin;
 use App\Livewire\AccountSettingComponent;
 use App\Livewire\Admin\AddTag;
+use App\Livewire\Admin\BlogsComponent;
+use App\Livewire\Admin\HomeSlider;
 use App\Livewire\Admin\ManageTags;
+use App\Livewire\Admin\NewSlider;
 use App\Livewire\AdminAddAuthorComponent;
 use App\Livewire\AdminAddUserComponent;
 use App\Livewire\AdminAuthorComponent;
@@ -28,6 +31,7 @@ use App\Livewire\Expert\MySales;
 use App\Livewire\HomeComponent;
 use App\Livewire\Pages\AllProducts;
 use App\Livewire\Pages\BlogDetails;
+use App\Livewire\Pages\ContactUs;
 use App\Livewire\Pages\ContentPerTag;
 use App\Livewire\PagesComingSoonComponent;
 use App\Livewire\PagesConfirmMailComponent;
@@ -113,7 +117,9 @@ Route::get('/content/{reference}/{slug}', BookPageComponent::class)->name('conte
 Route::get('/wishlist', WishlistComponent::class)->name('wishlist');
 Route::get('/category/{slug}', CategoryComponent::class)->name('category');
 Route::get('blogs/{reference}/{slug}', BlogDetails::class)->name('blog.details');
-Route::get('/all-products',AllProducts::class)->name('products.all');
+Route::get('/all-products', AllProducts::class)->name('products.all');
+Route::get('/tags/{name}', ContentPerTag::class)->name('tag.content');
+Route::get('/contact',ContactUs::class)->name('contact');
 
 // Authenticated user
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
@@ -122,7 +128,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/profile-edit', ProfileEditComponent::class)->name('profile.edit');
     Route::get('/acount-setting', AccountSettingComponent::class)->name('account.settings');
     Route::get('/account/dashboard', MyPurchases::class)->name('user.purchases');
-    Route::get('/tags/{name}', ContentPerTag::class)->name('tag.content');
 });
 
 // Seller Routes
@@ -147,6 +152,9 @@ Route::prefix('/admin')->middleware(['auth:sanctum', config('jetstream.auth_sess
     Route::get('/users', UserListComponent::class)->name('users');
     Route::get('/tags', ManageTags::class)->name('admin.tags');
     Route::get('/add-tag', AddTag::class)->name('tag.add');
+    Route::get('/sliders', HomeSlider::class)->name('sliders');
+    Route::get('/new-slider', NewSlider::class)->name('slider.add');
+    Route::get('/blogs', BlogsComponent::class)->name('blogs');
 });
 
 // Super Admin Routes

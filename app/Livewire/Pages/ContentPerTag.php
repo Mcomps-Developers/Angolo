@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Pages;
 
+use App\Models\Blog;
 use App\Models\Content;
 use App\Models\Tag;
 use Livewire\Component;
@@ -18,6 +19,7 @@ class ContentPerTag extends Component
     {
         $tag = Tag::where('name', $this->name)->first();
         $products = Content::orderBy('title')->where('tag_id', $tag->id)->get();
-        return view('livewire.pages.content-per-tag', ['tag' => $tag, 'products' => $products])->layout('layouts.base');
+        $blogs = Blog::where('tag_id', $tag->id)->limit(10)->get();
+        return view('livewire.pages.content-per-tag', ['tag' => $tag,'blogs'=>$blogs, 'products' => $products])->layout('layouts.base');
     }
 }

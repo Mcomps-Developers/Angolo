@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Content;
 use App\Models\Tag;
@@ -21,6 +22,7 @@ class CategoryComponent extends Component
         $categoryName = $category->name;
         $products = Content::orderBy('title')->where('category_id', $category->id)->get();
         $tags = Tag::orderBy('name')->get();
-        return view('livewire.category-component', ['products' => $products, 'categoryName' => $categoryName, 'tags' => $tags])->layout('layouts.base');
+        $blogs = Blog::where('category_id', $category->id)->limit(10)->get();
+        return view('livewire.category-component', ['products' => $products, 'blogs' => $blogs, 'categoryName' => $categoryName, 'tags' => $tags])->layout('layouts.base');
     }
 }

@@ -11,7 +11,7 @@ class AllProducts extends Component
     use WithPagination;
     public function render()
     {
-        $products = Content::where('status', 'published')->paginate(10);
+        $products = Content::orderByDesc('created_at')->where('status', 'published')->paginate(10);
         return view('livewire.pages.all-products', ['products' => $products])->layout('layouts.base');
     }
 }

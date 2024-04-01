@@ -22,7 +22,7 @@
                                                         @foreach ($tags as $item)
                                                             <option value="{{ $item->id }}">{{ $item->name }}</option>
                                                         @endforeach
-                                                        
+
                                                     </select>
                                                 </div>
                                             </div>
@@ -132,12 +132,12 @@
                                                                     <h6><b>Ksh {{ $item->regular_price }}</b></h6>
                                                                 @endif
                                                             </div>
-                                                            <div class="iq-product-action">
+                                                            {{-- <div class="iq-product-action">
                                                                 <a href="javascript:void();"><i
                                                                         class="ri-shopping-cart-2-fill text-primary"></i></a>
                                                                 <a href="javascript:void();" class="ml-2"><i
                                                                         class="ri-heart-fill text-danger"></i></a>
-                                                            </div>
+                                                            </div> --}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -161,110 +161,36 @@
                             </div>
                             <div class="iq-card-body favorites-contens">
                                 <ul id="favorites-slider" class="p-0 mb-0 list-inline row">
-                                    <li class="col-md-3">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="p-0 col-5 position-relative">
-                                                <a href="javascript:void();">
-                                                    <img src="{{ asset('images/favorite/05.jpg') }}"
-                                                        class="rounded img-fluid w-100" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="col-7">
-                                                <h5 class="mb-2">Every Book is a new Wonderful Travel..</h5>
-                                                <p class="mb-2">Author : Pedro Araez</p>
-                                                <div
-                                                    class="d-flex justify-content-between align-items-center text-dark font-size-13">
-                                                    <span>Read </span>
-                                                    <span class="mr-4">78 times</span>
+                                    @foreach ($blogs as $item)
+                                        <li class="col-md-3">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="p-0 col-5 position-relative">
+                                                    <a href="javascript:void();">
+                                                        <img src="{{ asset('images/blogs') }}/{{ $item->thumbnail }}"
+                                                            class="rounded img-fluid w-100" alt="">
+                                                    </a>
                                                 </div>
-                                                <div class="iq-progress-bar-linear d-inline-block w-100">
-                                                    <div class="iq-progress-bar iq-bg-primary">
-                                                        <span class="bg-primary" data-percent="78"></span>
+                                                <div class="col-7">
+                                                    <h5 class="mb-2">{{ $item->title }}</h5>
+                                                    <p class="mb-2">Author : {{ $item->author->name }}</p>
+                                                    <div
+                                                        class="d-flex justify-content-between align-items-center text-dark font-size-13">
+                                                        <span>Read </span>
+                                                        <span class="mr-4">{{ $item->views }} times</span>
                                                     </div>
-                                                </div>
-                                                <a href="#" class="text-dark">Read Now<i
-                                                        class="ri-arrow-right-s-line"></i></a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="col-md-3">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="p-0 col-5 position-relative">
-                                                <a href="javascript:void();">
-                                                    <img src="{{ asset('images/favorite/06.jpg') }}"
-                                                        class="rounded img-fluid w-100" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="col-7">
-                                                <h5 class="mb-2">Casey Christie night book into find...</h5>
-                                                <p class="mb-2">Author : Michael klock</p>
-                                                <div
-                                                    class="d-flex justify-content-between align-items-center text-dark font-size-13">
-                                                    <span>Read</span>
-                                                    <span class="mr-4">78 times</span>
-                                                </div>
-                                                <div class="iq-progress-bar-linear d-inline-block w-100">
-                                                    <div class="iq-progress-bar iq-bg-danger">
-                                                        <span class="bg-danger" data-percent="78"></span>
+                                                    <div class="iq-progress-bar-linear d-inline-block w-100">
+                                                        <div class="iq-progress-bar iq-bg-success">
+                                                            <span class="bg-success"
+                                                                data-percent="{{ $item->views }}"></span>
+                                                        </div>
                                                     </div>
+                                                    <a href="{{ route('blog.details', ['reference' => $item->reference, 'slug' => $item->slug]) }}"
+                                                        class="text-dark">Read Now<i
+                                                            class="ri-arrow-right-s-line"></i></a>
                                                 </div>
-                                                <a href="#" class="text-dark">Read Now<i
-                                                        class="ri-arrow-right-s-line"></i></a>
                                             </div>
-                                        </div>
-                                    </li>
-                                    <li class="col-md-3">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="p-0 col-5 position-relative">
-                                                <a href="javascript:void();">
-                                                    <img src="{{ asset('images/favorite/07.jpg') }}"
-                                                        class="rounded img-fluid w-100" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="col-7">
-                                                <h5 class="mb-2">The Secret to English Busy People..</h5>
-                                                <p class="mb-2">Author : Daniel Ace</p>
-                                                <div
-                                                    class="d-flex justify-content-between align-items-center text-dark font-size-13">
-                                                    <span>Read </span>
-                                                    <span class="mr-4">78 times</span>
-                                                </div>
-                                                <div class="iq-progress-bar-linear d-inline-block w-100">
-                                                    <div class="iq-progress-bar iq-bg-info">
-                                                        <span class="bg-info" data-percent="78"></span>
-                                                    </div>
-                                                </div>
-                                                <a href="#" class="text-dark">Read Now<i
-                                                        class="ri-arrow-right-s-line"></i></a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="col-md-3">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="p-0 col-5 position-relative">
-                                                <a href="javascript:void();">
-                                                    <img src="{{ asset('images/favorite/08.jpg') }}"
-                                                        class="rounded img-fluid w-100" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="col-7">
-                                                <h5 class="mb-2">The adventures of Robins books...</h5>
-                                                <p class="mb-2">Author : Luka Afton</p>
-                                                <div
-                                                    class="d-flex justify-content-between align-items-center text-dark font-size-13">
-                                                    <span>Read </span>
-                                                    <span class="mr-4">78 times</span>
-                                                </div>
-                                                <div class="iq-progress-bar-linear d-inline-block w-100">
-                                                    <div class="iq-progress-bar iq-bg-success">
-                                                        <span class="bg-success" data-percent="78"></span>
-                                                    </div>
-                                                </div>
-                                                <a href="#" class="text-dark">Read Now<i
-                                                        class="ri-arrow-right-s-line"></i></a>
-                                            </div>
-                                        </div>
-                                    </li>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>

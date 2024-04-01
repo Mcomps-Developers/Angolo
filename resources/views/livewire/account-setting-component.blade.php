@@ -21,13 +21,14 @@
                                 <div class="acc-edit">
                                     <form>
                                         <div class="form-group">
-                                            <label for="uname">User Name:</label>
-                                            <input type="text" class="form-control" id="uname" value="Barry@01">
+                                            <label for="uname">Full Name:</label>
+                                            <input type="text" class="form-control" id="uname"
+                                                value="{{ Auth::user()->name }}">
                                         </div>
                                         <div class="form-group">
                                             <label for="email">Email Id:</label>
                                             <input type="email" class="form-control" id="email"
-                                                value="Barryjohn@gmail.com">
+                                                value="{{ Auth::user()->email }}">
                                         </div>
                                         <div class="form-group">
                                             <label for="altemail">Alternate Email:</label>
