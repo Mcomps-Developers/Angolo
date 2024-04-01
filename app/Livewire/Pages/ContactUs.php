@@ -30,7 +30,7 @@ class ContactUs extends Component
 
     public function updated($fields)
     {
-        $this->validate($fields);
+        $this->validateOnly($fields);
     }
 
     public function generateTicket()
@@ -40,8 +40,9 @@ class ContactUs extends Component
 
     public function sendMessage()
     {
-        $this->generateTicket();
+
         $this->validate();
+        $this->generateTicket();
         try {
             $message = new Contact();
             $message->full_name = $this->full_name;

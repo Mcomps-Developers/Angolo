@@ -59,7 +59,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="message">Message:</label>
-                                                    <textarea name="" id="message" class="form-control" cols="30" rows="2" wire:model='message'></textarea>
+                                                    <textarea name="" id="message" class="form-control" cols="30" rows="2" wire:model.live='message'></textarea>
 
                                                     @error('message')
                                                         <p style="color: red; margin-top:15px;">{{ $message }}</p>
