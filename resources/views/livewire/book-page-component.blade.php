@@ -149,19 +149,27 @@
                                                 <ul class="p-0 mb-0 list-inline d-flex align-items-center">
                                                     <li>
                                                         <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('content.details', ['reference' => $content->reference, 'slug' => $content->slug]) }}&quote=Check+out+this+amazing+content!+{{ urlencode($content->title) }}%0AVisit+link+below+for+more+details:+{{ route('content.details', ['reference' => $content->reference, 'slug' => $content->slug]) }}"
-                                                            class="mr-2 avatar-40 rounded-circle bg-primary facebook" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                            class="mr-2 avatar-40 rounded-circle bg-primary facebook"
+                                                            target="_blank"><i class="fa fa-facebook"
+                                                                aria-hidden="true"></i></a>
                                                     </li>
                                                     <li>
                                                         <a href="https://twitter.com/intent/tweet?url={{ route('content.details', ['reference' => $content->reference, 'slug' => $content->slug]) }}&text=Check+out+this+amazing+content!+{{ urlencode($content->title) }}%0AVisit+link+below+for+more+details:+{{ route('content.details', ['reference' => $content->reference, 'slug' => $content->slug]) }}&hashtags=Education,OnlineLearning,SkillDevelopment,LifelongLearning"
-                                                            class="mr-2 avatar-40 rounded-circle bg-primary twitter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                            class="mr-2 avatar-40 rounded-circle bg-primary twitter"
+                                                            target="_blank"><i class="fa fa-twitter"
+                                                                aria-hidden="true"></i></a>
                                                     </li>
                                                     <li>
                                                         <a href="whatsapp://send?text=Check+out+this+amazing+content!+{{ urlencode($content->title) }}%0AVisit+link+below+for+more+details:+{{ route('content.details', ['reference' => $content->reference, 'slug' => $content->slug]) }}"
-                                                            class="mr-2 avatar-40 rounded-circle bg-success whatsapp" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                                                            class="mr-2 avatar-40 rounded-circle bg-success whatsapp"
+                                                            target="_blank"><i class="fa fa-whatsapp"
+                                                                aria-hidden="true"></i></a>
                                                     </li>
                                                     <li>
                                                         <a href="https://www.instagram.com/?url={{ route('content.details', ['reference' => $content->reference, 'slug' => $content->slug]) }}&title=Check+out+this+amazing+content!*+{{ urlencode($content->title) }}*%0AVisit+link+below+for+more+details:+{{ route('content.details', ['reference' => $content->reference, 'slug' => $content->slug]) }}"
-                                                            class="avatar-40 rounded-circle bg-danger instagram" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                            class="avatar-40 rounded-circle bg-danger instagram"
+                                                            target="_blank"><i class="fa fa-instagram"
+                                                                aria-hidden="true"></i></a>
                                                     </li>
                                                 </ul>
 
@@ -251,19 +259,22 @@
 <script src="https://unpkg.com/intasend-inlinejs-sdk@3.0.4/build/intasend-inline.js"></script>
 <script>
     new window.IntaSend({
-            publicAPIKey: '{{ env('INTASEND_PUB_KEY') }}',
+        publicAPIKey: '{{ env('INTASEND_PUB_KEY') }}',
             live: true
         })
         .on("COMPLETE", (results) => {
+            // console.log("Success", results);
             saveTransactionToController(results);
         })
         .on("FAILED", (results) => {
+            // console.log("Failed", results);
             saveTransactionToController(results);
-        });
+        })
+        .on("IN-PROGRESS", (results) => console.log("Payment in progress status", results));
 
     function saveTransactionToController(results) {
         const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-        const url = '{{ route('save.transaction') }}';
+        const url = 'https://angolo.mcomps.co.ke/save-transaction';
         fetch(url, {
                 method: 'POST',
                 headers: {
@@ -281,9 +292,10 @@
                 return response.json();
             })
             .then(data => {
-                window.location.href = '{{ route('user.dashboard') }}';
+                // console.log('Data: ', data);
+                window.location.href = 'https://angolo.mcomps.co.ke/dashboard';
             })
-            .catch(error => console.error('Error saving transaction:', error.message));
+            .catch(error => console.error('Error saving transaction:', error));
     }
 </script>
 
