@@ -351,18 +351,11 @@
             .then(data => {
                 console.log('Response data:', data); // Log the response data
 
-                // Check if the transaction was successfully saved
-                if (data.success) {
-                    // Redirect to the dashboard
-                    window.location.href = 'https://angolo.mcomps.co.ke/dashboard';
-                } else {
-                    // Handle the case where the transaction was not saved successfully
-                    console.error('Error saving transaction:', data.error || 'Unknown error');
-                    // Optionally, display an error message to the user
-                    // and provide them with an option to retry the transaction
-                }
+                // Reload the current page
+                window.location.reload();
             })
             .catch(error => console.error('Error saving transaction:', error));
+
     }
 </script>
 
