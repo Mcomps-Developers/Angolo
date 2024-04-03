@@ -4,7 +4,7 @@
         Join us
     @endsection
     <section class="sign-in-page">
-        <div class="container p-0" style="max-width: 90vw;">
+        <div class="container p-0" >
             <div class="row no-gutters height-self-center">
                 <div class="rounded col-sm-12 align-self-center page-content">
                     <div class="m-0 row">

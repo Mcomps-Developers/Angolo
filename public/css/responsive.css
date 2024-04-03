@@ -124,15 +124,17 @@ NOTE: This file contains the styling for responsive Template.
 	body.iq-page-menu-horizontal .wrapper-menu { color: var(--iq-white); }
 }
 @media(max-width:1199px) {
-	.an-img-two { display: none; }
-	.iq-booking-no li .iq-seat { width: 35px; height: 45px; }
-	.iq-booking-no li { width: 4.7%; }
-	.iq-email-to-list { overflow-x: scroll; }
-	.iq-email-to-list ul li { margin: 0 5px 0 0; }
-	.iq-email-to-list .justify-content-between { float: left; width: 900px; }
-	.sign-in-detail { padding: 100px 50px; }
-	.sign-in-page { height: 100%; }
+    .an-img-two { display: none; } /* Hide element with class 'an-img-two' */
+    .iq-booking-no li .iq-seat { width: 35px; height: 45px; } /* Set width and height for elements with class 'iq-seat' */
+    .iq-booking-no li { width: 4.7%; } /* Set width for elements with class 'iq-booking-no li' */
+    .iq-email-to-list { overflow-x: scroll; } /* Allow horizontal scrolling for elements with class 'iq-email-to-list' */
+    .iq-email-to-list ul li { margin: 0 5px 0 0; } /* Adjust margin for list items within elements with class 'iq-email-to-list' */
+    .iq-email-to-list .justify-content-between { float: left; width: 900px; } /* Adjust width for elements with class 'justify-content-between' */
+    .sign-in-detail { padding: 100px 50px; } /* Adjust padding for elements with class 'sign-in-detail' */
+    .sign-in-page { height: 100%; } /* Set height to 100% for elements with class 'sign-in-page' */
 }
+
+
 @media(max-width:1024px) {
 	h5 {font-size: 1.00em;}
 	h6 {font-size: 0.9em;}
@@ -242,9 +244,10 @@ NOTE: This file contains the styling for responsive Template.
 	.iq-error h1.text-in-box { font-size: 5em; }
 	.header-for-bg .title-on-header h2 { font-size: 18px; }
 	.right-sidebar-mini { top: 125px; }
-	.sign-in-page .col-md-6 { margin: 0px; }
-	.sign-in-page { height: 100%; padding: 30px 15px; }
-	.sign-in-page .height-self-center { height: 100%; }
+	.sign-in-page .col-md-6 { margin: 0px; } /* Remove margin for elements with class 'col-md-6' within elements with class 'sign-in-page' */
+.sign-in-page { height: 100%; padding: 30px 15px; } /* Adjust padding and height for elements with class 'sign-in-page' */
+.sign-in-page .height-self-center { height: 100%; } /* Set height to 100% for elements with class 'height-self-center' within elements with class 'sign-in-page' */
+
 	body.top-tab-horizontal .iq-top-navbar, body.body.top-tab-horizontal.sidebar-main .iq-top-navbar { padding-bottom: 0px; }
 	.iq-page-menu-horizontal .iq-top-navbar, body.iq-page-menu-horizontal.sidebar-main .iq-top-navbar { padding-bottom: 0 }
 	.overlay-container { display: none; }
