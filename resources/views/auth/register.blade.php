@@ -37,7 +37,7 @@
                                                 </select>
                                             </div>
                                             <!-- Phone Number Input -->
-                                            <input type="numeric" name="phone_number" class="mb-0 form-control"
+                                            <input type="number" name="phone_number" class="mb-0 form-control"
                                                 id="exampleInputEmail2" placeholder="Start with 7 or 1 xxx xxx xxx"
                                                 >
                                         </div>
