@@ -42,10 +42,6 @@ class SaveTransaction extends Controller
             $transaction->save();
             if ($transaction->state === 'COMPLETE') {
                 $this->createPurchase($transaction);
-                notyf()
-                    ->position('x', 'right')
-                    ->position('y', 'top')
-                    ->addSuccess('Transaction was successful.');
             } else {
                 notyf()
                     ->position('x', 'right')
