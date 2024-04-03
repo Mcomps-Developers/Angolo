@@ -40,14 +40,12 @@ class SaveTransaction extends Controller
             $transaction->failed_reason = $results['failed_reason'];
             $transaction->user_id = Auth::user()->id;
             $transaction->save();
-            if ($transaction->state === 'COMPLETE') {
-                if ($transaction->api_ref === 'content_purchase') {
-                    $this->createPurchase($transaction);
-                    notyf()
-                        ->position('x', 'right')
-                        ->position('y', 'top')
-                        ->addSuccess('Transaction was successful.');
-                }
+            if ($transaction->state === 'FAILED') {
+                $this->createPurchase($transaction);
+                notyf()
+                    ->position('x', 'right')
+                    ->position('y', 'top')
+                    ->addSuccess('Transaction was successful.');
             } else {
                 notyf()
                     ->position('x', 'right')
