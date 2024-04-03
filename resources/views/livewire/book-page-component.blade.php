@@ -148,7 +148,7 @@
                                                 <h5 class="mr-2">Share:</h5>
                                                 <ul class="p-0 mb-0 list-inline d-flex align-items-center">
                                                     <li>
-                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('content.details', ['reference' => $content->reference, 'slug' => $content->slug]) }}&quote=Check+out+this+amazing+educational+content%21+{{ urlencode($content->title) }}%0A{{ urlencode($content->description) }}%0AVisit+link+below+for+more+details:%0A{{ route('content.details', ['reference' => $content->reference, 'slug' => $content->slug]) }}"
+                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('content.details', ['reference' => $content->reference, 'slug' => $content->slug]) }}&quote=Check+out+this+amazing+educational+content!+{{ urlencode($content->title) }}%0A{{ urlencode($content->description) }}%0AVisit+link+below+for+more+details:+{{ route('content.details', ['reference' => $content->reference, 'slug' => $content->slug]) }}"
                                                             class="mr-2 avatar-40 rounded-circle bg-primary facebook" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                                                     </li>
                                                     <li>
@@ -164,6 +164,7 @@
                                                             class="avatar-40 rounded-circle bg-danger instagram" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                                                     </li>
                                                 </ul>
+
                                             </div>
                                         </div>
                                     </div>
