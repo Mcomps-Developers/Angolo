@@ -99,14 +99,14 @@ class SaveTransaction extends Controller
                 notyf()
                     ->position('x', 'right')
                     ->position('y', 'top')
-                    ->addError('An error occurred while purchasing content. Please try again later.');
+                    ->addError('An error occurred. Please try again later.');
                 return redirect(request()->header('Referer'));
             } catch (\Throwable $th) {
                 Log::error('Unexpected Exception on updating publisher wallet: ' . $th->getMessage());
                 notyf()
                     ->position('x', 'right')
                     ->position('y', 'top')
-                    ->addError('An unexpected error occurred. Please try again later.');
+                    ->addError('An error occurred. Please try again later.');
             }
             $purchase->save();
             $user = Auth::user();
