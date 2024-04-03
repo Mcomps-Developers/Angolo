@@ -337,6 +337,11 @@
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
+                // Check if the response body is empty
+                if (response.headers.get('Content-Length') === '0') {
+                    // Response body is empty, return an empty object
+                    return {};
+                }
                 // Log the response body
                 return response.text().then(text => {
                     console.log('Response body:', text);
@@ -352,13 +357,12 @@
                     window.location.href = 'https://angolo.mcomps.co.ke/dashboard';
                 } else {
                     // Handle the case where the transaction was not saved successfully
-                    console.error('Error saving transaction:', data.error);
+                    console.error('Error saving transaction:', data.error || 'Unknown error');
                     // Optionally, display an error message to the user
                     // and provide them with an option to retry the transaction
                 }
             })
             .catch(error => console.error('Error saving transaction:', error));
-
     }
 </script>
 
