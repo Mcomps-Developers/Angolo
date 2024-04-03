@@ -27,12 +27,12 @@
     </div>
     <!-- loader END -->
     <!-- Sign in Start -->
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-    <div style="max-width: 90%; text-align: center;">
-        {{ $slot }}
+    <div style="display: flex; justify-content: center;  height: 100vh;">
+        <div style="max-width: 100%; text-align: center;">
+            {{ $slot }}
+        </div>
     </div>
-</div>
-<!-- Sign in END -->
+    <!-- Sign in END -->
 
 
 
