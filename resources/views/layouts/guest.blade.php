@@ -27,10 +27,13 @@
     </div>
     <!-- loader END -->
     <!-- Sign in Start -->
-    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div style="max-width: 90%; text-align: center;">
         {{ $slot }}
     </div>
-    <!-- Sign in END -->
+</div>
+<!-- Sign in END -->
+
 
 
     <!-- Optional JavaScript -->
