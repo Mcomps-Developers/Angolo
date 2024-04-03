@@ -91,6 +91,7 @@ class SaveTransaction extends Controller
                 $amountToAdd = env('PUBLISHER_RATE') * $transaction->value;
                 $publisherWallet->balance = $currentBalance + $amountToAdd;
                 $publisherWallet->save();
+                $price = $transaction->value;
                 $publisher->notify(new PublisherPurchaseNotification($publisher, $purchase, $publisherWallet, $amountToAdd, $price));
             } catch (\Exception $e) {
                 Log::error('Unexpected Exception on updating attachment: ' . $e->getMessage());
