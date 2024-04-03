@@ -16,6 +16,7 @@
     <!-- Style CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     @livewireStyles
 </head>
 <div id="loading">

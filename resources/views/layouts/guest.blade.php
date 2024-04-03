@@ -27,8 +27,11 @@
     </div>
     <!-- loader END -->
     <!-- Sign in Start -->
-    {{ $slot }}
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+        {{ $slot }}
+    </div>
     <!-- Sign in END -->
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
