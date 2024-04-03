@@ -15,25 +15,22 @@
                                 <form class="mt-4 form-text" method="POST" action="{{ route('register') }}">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Your Full Name</label>
                                         <input type="email" name="name" class="mb-0 form-control"
                                             id="exampleInputEmail1" placeholder="Your Full Name"
                                             style="background-color:black">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail2">Email address</label>
                                         <input type="email" name="email" class="mb-0 form-control"
                                             id="exampleInputEmail2" placeholder="Enter email"
                                             style="background-color:black">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail2">Phone Number</label>
                                         <div class="input-group">
                                             <!-- Country Code Dropdown -->
                                             <div class="input-group-prepend">
                                                 <select class="custom-select form-control" name="country_code" id="countryCode"
                                                     style="background-color:black">
-                                                    <option value="">Code</option>
+                                                    <option value="">Country Code</option>
                                                     <option value="254">+254</option>
                                                     <option value="255">+255</option>
                                                     <option value="256">+256</option>
@@ -46,13 +43,11 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Password</label>
                                         <input type="password" name="password" class="mb-0 form-control"
                                             id="exampleInputPassword1" placeholder="Password"
                                             style="background-color:black">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Confirm Password</label>
                                         <input type="password" name="password_confirmation" class="mb-0 form-control"
                                             id="exampleInputPassword1" placeholder="Confirm Password"
                                             style="background-color:black">

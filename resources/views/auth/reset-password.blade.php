@@ -1,7 +1,7 @@
 
 <x-guest-layout>
     @section('title')
-        Join us
+        Reset Password
     @endsection
     <section class="sign-in-page">
         <div class="container p-0" >
@@ -17,19 +17,16 @@
                                 @csrf
                                 <input type="hidden" name="token" value="{{ $request->route('token') }}">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail2">Email address</label>
                                         <input type="email" name="email" class="mb-0 form-control"
                                             id="exampleInputEmail2" placeholder="Enter email" :value="old('email', $request->email)" required autofocus autocomplete="username"
                                             style="background-color:black">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">New Password</label>
                                         <input type="password" name="password" class="mb-0 form-control"
-                                            id="exampleInputPassword1" placeholder="Password"
+                                            id="exampleInputPassword1" placeholder="New Password"
                                             style="background-color:black">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Confirm Password</label>
                                         <input type="password" name="password_confirmation" class="mb-0 form-control"
                                             id="exampleInputPassword1" placeholder="Confirm Password"
                                             style="background-color:black">

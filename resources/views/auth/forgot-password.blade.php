@@ -24,9 +24,8 @@
                                 <form class="mt-4 form-text" method="POST" action="{{ route('password.email') }}">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Email Address</label>
                                         <input type="email" name="email" class="mb-0 form-control"
-                                            id="exampleInputEmail1" placeholder="Enter Email Address"
+                                            id="exampleInputEmail1" placeholder="Email Address"
                                             style="background-color: black">
                                     </div>
                                     <div class="text-center sign-info">

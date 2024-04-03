@@ -15,12 +15,10 @@
                                 <form class="mt-4 form-text" method="POST" action="{{ route('login') }}">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Email Address</label>
                                         <input type="email" name="email" class="mb-0 form-control"
-                                            id="exampleInputEmail1" placeholder="Enter Email Address" style="background-color: black">
+                                            id="exampleInputEmail1" placeholder="Email Address" style="background-color: black">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Password</label>
                                         <a href="{{ route('password.request') }}" class="float-right text-dark">Forgot
                                             password?</a>
                                         <input type="password" name="password" class="mb-0 form-control"
