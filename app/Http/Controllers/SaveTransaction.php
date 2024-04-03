@@ -43,10 +43,22 @@ class SaveTransaction extends Controller
             if ($transaction->state === 'COMPLETE') {
                 if ($transaction->api_ref === 'content_purchase') {
                     $this->createPurchase($transaction);
+                    notyf()
+                        ->position('x', 'right')
+                        ->position('y', 'top')
+                        ->addSuccess('Transaction was successful.');
                 }
+            } else {
+                notyf()
+                    ->position('x', 'right')
+                    ->position('y', 'top')
+                    ->addError('Transaction failed.');
             }
-            Log::info('Exiting try block of recordTransaction');
         } catch (\Exception $e) {
+            notyf()
+                ->position('x', 'right')
+                ->position('y', 'top')
+                ->addError('An error occurred. Please try again later.');
             Log::error('Error saving transaction: ' . $e->getMessage());
         }
     }
