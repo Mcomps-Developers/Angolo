@@ -160,45 +160,6 @@ Route::prefix('/admin')->middleware(['auth:sanctum', config('jetstream.auth_sess
 // Super Admin Routes
 Route::prefix('/super/admin')->middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified', AuthSuperAdmin::class])->group(function () {
     Route::get('dashboard', SuperAdminDashboard::class)->name('super.dashboard');
-    Route::get('/blank-page', BlankPageComponent::class);
-    Route::get('/pages-timeline', PagesTimelineComponent::class);
-
-    Route::get('/ui-typography', UiTypographyComponent::class);
-    Route::get('/ui-tooltips', UiTooltipsComponent::class);
-    Route::get('/ui-tabs', UiTabsComponent::class);
-    Route::get('/ui-progressbars', UiProgressbarsComponent::class);
-    Route::get('/ui-popovers', UiPopoversComponent::class);
-    Route::get('/ui-pagination', UiPaginationComponent::class);
-    Route::get('/ui-notifications', UiNotificationsComponent::class);
-    Route::get('/ui-modal', UiModalComponent::class);
-    Route::get('/ui-media', UiMediaObjectComponent::class);
-    Route::get('/ui-list-group', UiListGroupComponent::class);
-    Route::get('/ui-images', UiImagesComponent::class);
-    Route::get('/ui-grid', UiGridComponent::class);
-    Route::get('/ui-embed-video', UiEmbedVideoComponent::class);
-    Route::get('/ui-colors', UiColorsComponent::class);
-    Route::get('/ui-carousel', UiCarouselComponent::class);
-    Route::get('/ui-cards', UiCardsComponent::class);
-    Route::get('/ui-buttons', UiButtonsComponent::class);
-    Route::get('/ui-bread-crump', UiBreadCrumpComponent::class);
-    Route::get('/ui-badges', UiBadgesComponent::class);
-    Route::get('/ui-alerts', UiAlertsComponent::class);
-    Route::get('/terms-of-service', TermsOfServiceComponent::class);
-    Route::get('/tables-basic', TablesBasicComponent::class);
-    Route::get('/table-editable', TableEditableComponent::class);
-    Route::get('/sign-up', SignUpComponent::class);
-    Route::get('/sign-in', SignInComponent::class);
-    Route::get('/pages-recovery', PagesRecoveryComponent::class);
-    Route::get('/pages-pricing', PagesPricingComponent::class);
-    Route::get('/pages-pricing-one', PagesPricingOneComponent::class);
-    Route::get('/pages-maintenance', PagesMaintenanceComponent::class);
-    Route::get('/pages-lock-screen', PagesLockScreenComponent::class);
-    Route::get('/pages-invoice', PagesInvoiceComponent::class);
-    Route::get('/pages-faq', PagesFaqComponent::class);
-    Route::get('/pages-error500', PagesError500Component::class);
-    Route::get('/pages-error', PagesErrorComponent::class);
-    Route::get('/pages-confirm-mail', PagesConfirmMailComponent::class);
-    Route::get('/pages-coming-soon', PagesComingSoonComponent::class);
 });
 
 // Dump Routes
