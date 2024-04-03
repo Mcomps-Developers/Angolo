@@ -15,21 +15,21 @@
                                 <form class="mt-4 form-text" method="POST" action="{{ route('register') }}">
                                     @csrf
                                     <div class="form-group">
-                                        <input type="email" name="name" class="mb-0 form-control"
+                                        <input type="text" name="name" class="mb-0 form-control"
                                             id="exampleInputEmail1" placeholder="Your Full Name"
-                                            style="background-color:black">
+                                            >
                                     </div>
                                     <div class="form-group">
                                         <input type="email" name="email" class="mb-0 form-control"
                                             id="exampleInputEmail2" placeholder="Enter email"
-                                            style="background-color:black">
+                                            >
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group">
                                             <!-- Country Code Dropdown -->
                                             <div class="input-group-prepend">
                                                 <select class="custom-select form-control" name="country_code" id="countryCode"
-                                                    style="background-color:black">
+                                                    >
                                                     <option value="">Country Code</option>
                                                     <option value="254">+254</option>
                                                     <option value="255">+255</option>
@@ -39,18 +39,18 @@
                                             <!-- Phone Number Input -->
                                             <input type="numeric" name="phone_number" class="mb-0 form-control"
                                                 id="exampleInputEmail2" placeholder="Start with 7 or 1 xxx xxx xxx"
-                                                style="background-color:black">
+                                                >
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <input type="password" name="password" class="mb-0 form-control"
                                             id="exampleInputPassword1" placeholder="Password"
-                                            style="background-color:black">
+                                            >
                                     </div>
                                     <div class="form-group">
                                         <input type="password" name="password_confirmation" class="mb-0 form-control"
                                             id="exampleInputPassword1" placeholder="Confirm Password"
-                                            style="background-color:black">
+                                            >
                                     </div>
                                     <div class="d-inline-block w-100">
                                         <div class="pt-1 mt-2 custom-control custom-checkbox d-inline-block">

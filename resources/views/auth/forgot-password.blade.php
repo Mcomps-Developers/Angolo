@@ -26,7 +26,7 @@
                                     <div class="form-group">
                                         <input type="email" name="email" class="mb-0 form-control"
                                             id="exampleInputEmail1" placeholder="Email Address"
-                                            style="background-color: black">
+                                            >
                                     </div>
                                     <div class="text-center sign-info">
                                         <button type="submit" class="mb-2 btn btn-white d-block w-100">Request Reset

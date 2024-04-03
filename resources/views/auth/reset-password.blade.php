@@ -19,17 +19,17 @@
                                     <div class="form-group">
                                         <input type="email" name="email" class="mb-0 form-control"
                                             id="exampleInputEmail2" placeholder="Enter email" :value="old('email', $request->email)" required autofocus autocomplete="username"
-                                            style="background-color:black">
+                                            >
                                     </div>
                                     <div class="form-group">
                                         <input type="password" name="password" class="mb-0 form-control"
                                             id="exampleInputPassword1" placeholder="New Password"
-                                            style="background-color:black">
+                                            >
                                     </div>
                                     <div class="form-group">
                                         <input type="password" name="password_confirmation" class="mb-0 form-control"
                                             id="exampleInputPassword1" placeholder="Confirm Password"
-                                            style="background-color:black">
+                                            >
                                     </div>
                                     <div class="text-center sign-info">
                                         <button type="submit" class="mb-2 btn btn-white d-block w-100">Reset Passowrd</button>
