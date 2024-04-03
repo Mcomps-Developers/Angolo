@@ -19,83 +19,10 @@
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     @livewireStyles
 </head>
-{{-- Preloader --}}
-<div class="loader-bg">
-    <div class="loader-track">
-        <div class="loader-icon"></div>
-        <div class="loader-icon circle yellow"></div>
-        <div class="loader-icon circle red"></div>
-        <div class="loader-icon circle blue"></div>
-        <div class="loader-icon circle violet"></div>
+<div id="loading">
+    <div id="loading-center">
     </div>
 </div>
-{{-- Preloader stylesheet --}}
-<style>
-    .loader-bg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.9);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-    }
-
-    .loader-track {
-        display: flex;
-    }
-
-    .loader-icon {
-        width: 3vw;
-        /* Adjusted circle size */
-        height: 3vw;
-        /* Adjusted circle size */
-        border-radius: 50%;
-        margin: 2vw;
-        background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
-        animation: bounce 1.5s 0.5s linear infinite;
-    }
-
-    .circle.yellow {
-        background: #feb60a;
-    }
-
-    .circle.red {
-        background: #ff0062;
-        animation-delay: 0.1s;
-    }
-
-    .circle.blue {
-        background: #00dbf9;
-        animation-delay: 0.2s;
-    }
-
-    .circle.violet {
-        background: #da00f7;
-        animation-delay: 0.8s;
-    }
-
-    @keyframes bounce {
-
-        0%,
-        50%,
-        100% {
-            transform: scale(1);
-        }
-
-        25% {
-            transform: scale(0.6);
-        }
-
-        75% {
-            transform: scale(1.1);
-        }
-    }
-</style>
-
 
 <div class="wrapper">
     <!-- Sidebar  -->

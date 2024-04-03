@@ -1,114 +1,81 @@
-{{-- <x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
-
-        <x-validation-errors class="mb-4" />
-
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-
-            <div>
-                <x-label for="name" value="{{ __('Name') }}" />
-                <x-input id="name" class="block w-full mt-1" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            </div>
-
-            <div class="mt-4">
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block w-full mt-1" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            </div>
-
-            <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block w-full mt-1" type="password" name="password" required autocomplete="new-password" />
-            </div>
-
-            <div class="mt-4">
-                <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-input id="password_confirmation" class="block w-full mt-1" type="password" name="password_confirmation" required autocomplete="new-password" />
-            </div>
-
-            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                <div class="mt-4">
-                    <x-label for="terms">
-                        <div class="flex items-center">
-                            <x-checkbox name="terms" id="terms" required />
-
-                            <div class="ms-2">
-                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="text-sm text-gray-600 underline rounded-md hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Terms of Service').'</a>',
-                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="text-sm text-gray-600 underline rounded-md hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Privacy Policy').'</a>',
-                                ]) !!}
-                            </div>
-                        </div>
-                    </x-label>
-                </div>
-            @endif
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="text-sm text-gray-600 underline rounded-md hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ms-4">
-                    {{ __('Register') }}
-                </x-button>
-            </div>
-        </form>
-    </x-authentication-card>
-</x-guest-layout> --}}
 <x-guest-layout>
     @section('title')
         Join us
     @endsection
-    <div class="flex flex-col items-center justify-center h-screen">
-
-
-        <div class="w-full max-w-sm p-4 mx-auto md:px-10">
-
-            <div>
-                <!-- logo -->
-                <div class="flex justify-center mb-12">
-                    <img src="{{ asset('assets/images/logo.html') }}" alt=""
-                        class="w-auto h-16 shrink-0 bg-fuchsia-100 px-3 rounded-2xl p-2.5">
-                </div>
-                <x-validation-errors class="mb-4" style="color: red" />
-                <form method="POST" action="{{ route('register') }}" class="space-y-3">
-                    @csrf
-                    {{-- <select name="utype" id="" class="!w-full">
-                        <option value="">-Join as-</option>
-                        <option value="byr">Student</option>
-                        <option value="slr">Expert</option>
-                    </select> --}}
-                    <input class="!w-full" id="username" name="name" type="text" autofocus=""
-                        placeholder="Full Name">
-                    <input class="!w-full" id="name" name="email" type="email" autofocus=""
-                        placeholder="Email">
-                    <input class="!w-full" id="phone_number" name="phone_number" type="text" autofocus=""
-                        placeholder="Phone Number">
-                    <input class="!w-full" id="password" name="password" type="password" autofocus=""
-                        placeholder="Password">
-                    <input class="!w-full" id="password" name="password_confirmation" type="password" autofocus=""
-                        placeholder="Confirm Password">
-
-                    <button type="submit"
-                        class="font-medium w-full rounded-lg bg-slate-900 py-1.5 px-4 text-white h-[38px] active:scale-[0.97] transition-all duration-150">
-                        <span>Get Started</span> </button>
-
-                    <div class="space-x-2 text-sm text-center text-slate-400 dark:text-white/70">
-                        <span> You have account? </span>
-                        <span>—</span>
-                        <a href="{{ route('login') }}" class="text-gray-600 hover:text-gray-500">Login</a>
+    <section class="sign-in-page">
+        <div class="container p-0">
+            <div class="row no-gutters height-self-center">
+                <div class="rounded col-sm-12 align-self-center page-content">
+                    <div class="m-0 row">
+                        <div class="col-sm-12 sign-in-page-data">
+                            <div class="rounded sign-in-from bg-primary">
+                                <h3 class="mb-0 text-center text-white">Sign Up</h3>
+                                <p class="text-center text-white">Create an account to get full access.</p>
+                                <x-validation-errors class="mb-4" style="color: red" />
+                                <form class="mt-4 form-text" method="POST" action="{{ route('register') }}">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Your Full Name</label>
+                                        <input type="email" name="name" class="mb-0 form-control"
+                                            id="exampleInputEmail1" placeholder="Your Full Name"
+                                            style="background-color:black">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail2">Email address</label>
+                                        <input type="email" name="email" class="mb-0 form-control"
+                                            id="exampleInputEmail2" placeholder="Enter email"
+                                            style="background-color:black">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail2">Phone Number</label>
+                                        <div class="input-group">
+                                            <!-- Country Code Dropdown -->
+                                            <div class="input-group-prepend">
+                                                <select class="custom-select form-control" name="country_code" id="countryCode"
+                                                    style="background-color:black">
+                                                    <option value="">Code</option>
+                                                    <option value="254">+254</option>
+                                                    <option value="255">+255</option>
+                                                    <option value="256">+256</option>
+                                                </select>
+                                            </div>
+                                            <!-- Phone Number Input -->
+                                            <input type="numeric" name="phone_number" class="mb-0 form-control"
+                                                id="exampleInputEmail2" placeholder="Start with 7 or 1 xxx xxx xxx"
+                                                style="background-color:black">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Password</label>
+                                        <input type="password" name="password" class="mb-0 form-control"
+                                            id="exampleInputPassword1" placeholder="Password"
+                                            style="background-color:black">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Confirm Password</label>
+                                        <input type="password" name="password_confirmation" class="mb-0 form-control"
+                                            id="exampleInputPassword1" placeholder="Confirm Password"
+                                            style="background-color:black">
+                                    </div>
+                                    <div class="d-inline-block w-100">
+                                        <div class="pt-1 mt-2 custom-control custom-checkbox d-inline-block">
+                                            <input type="checkbox" name="terms" class="custom-control-input"
+                                                id="customCheck1">
+                                            <label class="custom-control-label" for="customCheck1">I accept <a
+                                                    href="#" class="text-light">Terms and Conditions</a></label>
+                                        </div>
+                                    </div>
+                                    <div class="text-center sign-info">
+                                        <button type="submit" class="mb-2 btn btn-white d-block w-100">Sign Up</button>
+                                        <span class="text-dark d-inline-block line-height-2">Already Have Account ? <a
+                                                href="{{ route('login') }}" class="text-white">Log In</a></span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-
-                </form>
-
-
+                </div>
             </div>
-
-
         </div>
-
-    </div>
+    </section>
 </x-guest-layout>

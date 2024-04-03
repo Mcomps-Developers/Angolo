@@ -53,7 +53,6 @@ class BookPageComponent extends Component
                 $purchase->status = 'paid';
                 $purchase->reference = $this->purchaseReference;
 
-
                 // Deduct wallet
                 try {
                     $wallet = Wallet::where('user_id', Auth::user()->id)->first();
@@ -116,14 +115,6 @@ class BookPageComponent extends Component
         }
     }
 
-    // public function addToWishlist($book_id, $name, $book_price)
-    // {
-    //     Cart::instance('wishlist')->add($book_id, $name, 1, $book_price)->associate('App\Models\Book');
-    //     notyf()
-    //                 ->position('x', 'right')
-    //                 ->position('y', 'top')
-    //                 ->addSuccess('Added to wishlist');
-    // }
     public function render()
     {
         $content = Content::where('reference', $this->reference)->first();
