@@ -45,6 +45,7 @@ class SaveTransaction extends Controller
                     $this->createPurchase($transaction);
                 }
             }
+            Log::info('Exiting try block of recordTransaction');
         } catch (\Exception $e) {
             Log::error('Error saving transaction: ' . $e->getMessage());
         }

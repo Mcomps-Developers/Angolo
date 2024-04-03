@@ -313,33 +313,38 @@
         })
         .on("IN-PROGRESS", (results) => console.log("Payment in progress status", results));
 
-    function saveTransactionToController(results) {
-        console.log('Results:', results); // Log the results
+        function saveTransactionToController(results) {
+    console.log('Results:', results); // Log the results
 
-        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-        const url = 'https://angolo.mcomps.co.ke/save-transaction';
-        fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': csrfToken
-                },
-                body: JSON.stringify({
-                    results: results
-                })
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log('Response data:', data); // Log the response data
-                window.location.href = 'https://angolo.mcomps.co.ke/dashboard';
-            })
-            .catch(error => console.error('Error saving transaction:', error)); // Log any errors
-    }
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    const url = 'https://angolo.mcomps.co.ke/save-transaction';
+
+    console.log('Sending request to:', url); // Log the URL being requested
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': csrfToken
+        },
+        body: JSON.stringify({
+            results: results
+        })
+    })
+    .then(response => {
+        console.log('Response received:', response); // Log the response received
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Response data:', data); // Log the response data
+        window.location.href = 'https://angolo.mcomps.co.ke/dashboard';
+    })
+    .catch(error => console.error('Error saving transaction:', error)); // Log any errors
+}
 </script>
 
 {{-- @endscript --}}
