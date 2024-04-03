@@ -148,24 +148,20 @@
                                                 <h5 class="mr-2">Share:</h5>
                                                 <ul class="p-0 mb-0 list-inline d-flex align-items-center">
                                                     <li>
-                                                        <a href="#"
-                                                            class="mr-2 avatar-40 rounded-circle bg-primary facebook"><i
-                                                                class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('content.details', ['reference' => $content->reference, 'slug' => $content->slug]) }}&quote=Check+out+this+amazing+educational+content+platform%21+Dive+into+a+world+of+knowledge+with+a+wide+range+of+courses+on+various+subjects.%0A%0AGain+valuable+insights%2C+enhance+your+skills%2C+and+unlock+new+opportunities.+Learn+at+your+own+pace+from+expert+instructors.%0A%0AExplore+our+courses+now%3A+{{ route('content.details', ['reference' => $content->reference, 'slug' => $content->slug]) }}"
+                                                            class="mr-2 avatar-40 rounded-circle bg-primary facebook" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                                                     </li>
                                                     <li>
-                                                        <a href="#"
-                                                            class="mr-2 avatar-40 rounded-circle bg-primary twitter"><i
-                                                                class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                        <a href="https://twitter.com/intent/tweet?url={{ route('content.details', ['reference' => $content->reference, 'slug' => $content->slug]) }}&text=Check+out+this+amazing+educational+content+platform%21+Dive+into+a+world+of+knowledge+with+a+wide+range+of+courses+on+various+subjects.+Gain+valuable+insights%2C+enhance+your+skills%2C+and+unlock+new+opportunities.+Learn+at+your+own+pace+from+expert+instructors.+Explore+our+courses+now%3A+{{ route('content.details', ['reference' => $content->reference, 'slug' => $content->slug]) }}&hashtags=Education,OnlineLearning,SkillDevelopment,LifelongLearning"
+                                                            class="mr-2 avatar-40 rounded-circle bg-primary twitter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                                                     </li>
                                                     <li>
-                                                        <a href="#"
-                                                            class="mr-2 avatar-40 rounded-circle bg-success whatsapp"><i
-                                                                class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                                                        <a href="whatsapp://send?text=Check+out+this+amazing+educational+content+platform!+Dive+into+a+world+of+knowledge+with+a+wide+range+of+courses+on+various+subjects.+Gain+valuable+insights%2C+enhance+your+skills%2C+and+unlock+new+opportunities.+Learn+at+your+own+pace+from+expert+instructors.+Explore+our+courses+now:+{{ route('content.details', ['reference' => $content->reference, 'slug' => $content->slug]) }}"
+                                                            class="mr-2 avatar-40 rounded-circle bg-success whatsapp" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
                                                     </li>
                                                     <li>
-                                                        <a href="#"
-                                                            class="avatar-40 rounded-circle bg-danger instagram"><i
-                                                                class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                        <a href="https://www.instagram.com/?url={{ route('content.details', ['reference' => $content->reference, 'slug' => $content->slug]) }}&title=Check+out+this+amazing+educational+content+platform!+Dive+into+a+world+of+knowledge+with+a+wide+range+of+courses+on+various+subjects.+Gain+valuable+insights%2C+enhance+your+skills%2C+and+unlock+new+opportunities.+Learn+at+your+own+pace+from+expert+instructors.+Explore+our+courses+now:+{{ route('content.details', ['reference' => $content->reference, 'slug' => $content->slug]) }}"
+                                                            class="avatar-40 rounded-circle bg-danger instagram" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                                                     </li>
                                                 </ul>
                                             </div>
