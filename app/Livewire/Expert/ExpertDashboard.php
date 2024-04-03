@@ -28,7 +28,7 @@ class ExpertDashboard extends Component
         $transactions = Purchase::orderByDesc('created_at')->whereHas('content', function ($query) use ($userId) {
             $query->where('user_id', $userId);
         })
-            ->paginate(10);
+            ->paginate(10); 
         $wallet = Wallet::where('user_id', $userId)->first();
         return view('livewire.expert.expert-dashboard', ['content' => $content,'myPurchases'=>$myPurchases, 'wallet' => $wallet, 'transactions' => $transactions, 'purchases' => $purchases, 'earnings' => $earnings])->layout('layouts.base');
     }

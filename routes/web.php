@@ -119,7 +119,7 @@ Route::get('/category/{slug}', CategoryComponent::class)->name('category');
 Route::get('blogs/{reference}/{slug}', BlogDetails::class)->name('blog.details');
 Route::get('/all-products', AllProducts::class)->name('products.all');
 Route::get('/tags/{name}', ContentPerTag::class)->name('tag.content');
-Route::get('/contact',ContactUs::class)->name('contact');
+Route::get('/contact', ContactUs::class)->name('contact');
 
 // Authenticated user
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
