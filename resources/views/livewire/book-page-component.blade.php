@@ -257,7 +257,7 @@
 </main>
 {{-- @script --}}
 <script src="https://unpkg.com/intasend-inlinejs-sdk@3.0.4/build/intasend-inline.js"></script>
-<script>
+{{-- <script>
     new window.IntaSend({
         publicAPIKey: '{{ env('INTASEND_PUB_KEY') }}',
             live: true
@@ -294,6 +294,47 @@
             .then(data => {
                 // console.log('Data: ', data);
                 window.location.href = 'https://angolo.mcomps.co.ke/dashboard';
+            })
+            .catch(error => console.error('Error saving transaction:', error));
+    }
+</script> --}}
+<script>
+    new window.IntaSend({
+            publicAPIKey: "ISPubKey_live_7f35b3a9-6644-4aab-8305-7b2947f4059a",
+            live: true
+        })
+        .on("COMPLETE", (results) => {
+            // console.log("Success", results);
+            saveTransactionToController(results);
+        })
+        .on("FAILED", (results) => {
+            // console.log("Failed", results);
+            saveTransactionToController(results);
+        })
+        .on("IN-PROGRESS", (results) => console.log("Payment in progress status", results));
+
+    function saveTransactionToController(results) {
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        const url = 'https://app.studybuddy.co.ke/save-transaction';
+        fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': csrfToken
+                },
+                body: JSON.stringify({
+                    results: results
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // console.log('Data: ', data);
+                window.location.href = 'https://app.studybuddy.co.ke/dashboard';
             })
             .catch(error => console.error('Error saving transaction:', error));
     }
