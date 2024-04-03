@@ -314,6 +314,8 @@
         .on("IN-PROGRESS", (results) => console.log("Payment in progress status", results));
 
     function saveTransactionToController(results) {
+        console.log('Results:', results); // Log the results
+
         const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
         const url = 'https://angolo.mcomps.co.ke/save-transaction';
         fetch(url, {
@@ -333,10 +335,10 @@
                 return response.json();
             })
             .then(data => {
-                // console.log('Data: ', data);
+                console.log('Response data:', data); // Log the response data
                 window.location.href = 'https://angolo.mcomps.co.ke/dashboard';
             })
-            .catch(error => console.error('Error saving transaction:', error));
+            .catch(error => console.error('Error saving transaction:', error)); // Log any errors
     }
 </script>
 
