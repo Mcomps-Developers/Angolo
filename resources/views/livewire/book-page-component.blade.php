@@ -315,7 +315,7 @@
 
     function saveTransactionToController(results) {
         const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-        const url = 'https://app.studybuddy.co.ke/save-transaction';
+        const url = 'https://angolo.mcomps.co.ke/save-transaction';
         fetch(url, {
                 method: 'POST',
                 headers: {
@@ -334,7 +334,7 @@
             })
             .then(data => {
                 // console.log('Data: ', data);
-                window.location.href = 'https://app.studybuddy.co.ke/dashboard';
+                window.location.href = 'https://angolo.mcomps.co.ke/dashboard';
             })
             .catch(error => console.error('Error saving transaction:', error));
     }
