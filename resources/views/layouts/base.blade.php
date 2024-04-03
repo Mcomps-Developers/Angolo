@@ -16,12 +16,6 @@
     <!-- Style CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
-    <meta property="og:title" content="@yield('og_title', config('app.name'))">
-    <meta property="og:description" content="@yield('og_description', 'Default description')">
-    <meta property="og:image" content="@yield('og_image', url('/default-image.jpg'))">
-    <meta property="og:url" content="@yield('og_url', url()->current())">
-    <meta property="og:type" content="Get Learning Platform">
     @livewireStyles
 </head>
 <div id="loading">
