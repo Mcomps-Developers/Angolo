@@ -308,7 +308,7 @@
             preloader.style.display = "none";
         });
     </script>
-    <script src="https://cdn.tiny.cloud/1/bgdq7g4g6ayln7vwvep8a0v2fxye8wj7oi8o0gbtvamslur1/tinymce/7/tinymce.min.js"
+    <script src="https://cdn.tiny.cloud/1/pdov4xcmnreq2uxhpc4xszzus9qtsp88oke8twqeh6d55zmx/tinymce/7/tinymce.min.js"
         referrerpolicy="origin"></script>
     @livewireScripts
     </body>

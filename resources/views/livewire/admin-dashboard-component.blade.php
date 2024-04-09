@@ -30,15 +30,17 @@
                                     <div class="rounded-circle iq-card-icon bg-danger"><i class="ri-book-line"></i>
                                     </div>
                                     <div class="ml-3 text-left">
-                                        <h2 class="mb-0"><span class="counter">@if ($content>999999)
-                                            {{ $content/1000000 }}
-                                        </span>M
-                                            @elseif ($content>999)
-                                            {{ $content/1000 }}
-                                        </span>K
-                                        @else 
-                                        {{ $content }}
-                                            @endif</h2>
+                                        <h2 class="mb-0"><span class="counter">
+                                                @if ($content > 999999)
+                                                    {{ $content / 1000000 }}
+                                            </span>M
+                                        @elseif ($content > 999)
+                                            {{ $content / 1000 }}
+                                            </span>K
+                                        @else
+                                            {{ $content }}
+                                            @endif
+                                        </h2>
                                         <h5 class="">Content</h5>
                                     </div>
                                 </div>
@@ -53,14 +55,14 @@
                                             class="ri-shopping-cart-2-line"></i></div>
                                     <div class="ml-3 text-left">
                                         <h2 class="mb-0"><span class="counter">
-                                            @if ($earnings>999999)
-                                            {{ $earnings/1000000 }}
-                                        </span>M
-                                            @elseif ($earnings>999)
-                                            {{ $earnings/1000 }}
-                                        </span>K
+                                                @if ($earnings > 999999)
+                                                    {{ $earnings / 1000000 }}
+                                            </span>M
+                                        @elseif ($earnings > 999)
+                                            {{ $earnings / 1000 }}
+                                            </span>K
                                         @else
-                                        {{ $earnings }}
+                                            {{ $earnings }}
                                             @endif
 
                                         </h2>
@@ -78,14 +80,14 @@
                                     <div class="rounded-circle iq-card-icon bg-info"><i class="ri-radar-line"></i></div>
                                     <div class="ml-3 text-left">
                                         <h2 class="mb-0"><span class="counter">
-                                            @if ($purchases>999999)
-                                            {{ $purchases/1000000 }}
-                                        </span>M
-                                            @elseif ($purchases>999)
-                                            {{ $purchases/1000 }}
-                                        </span>K
+                                                @if ($purchases > 999999)
+                                                    {{ $purchases / 1000000 }}
+                                            </span>M
+                                        @elseif ($purchases > 999)
+                                            {{ $purchases / 1000 }}
+                                            </span>K
                                         @else
-                                        {{ $purchases }}
+                                            {{ $purchases }}
                                             @endif
 
                                         </h2>
@@ -104,7 +106,7 @@
                                 </div>
                             </div>
                             <div class="iq-card-body">
-                                <div id="iq-sale-chart"></div>
+                                <div id="dailySalesReport"></div>
                             </div>
                         </div>
                     </div>
@@ -223,17 +225,18 @@
                                             @foreach ($recentPurchases as $item)
                                                 <tr>
                                                     <td>{{ $item->customer->name }}</td>
-                                                    <td>{{ date('d/m/Y',strtotime($item->created_at)) }}</td>
-                                                    <td style="text-transform:uppercase;">{{$item->reference}}</td>
-                                                    <td><a href="{{ route('content.details',['reference'=>$item->content->reference,'slug'=>$item->content->slug]) }}" target="_/blank">{{ $item->content->title }}</a></td>
+                                                    <td>{{ date('d/m/Y', strtotime($item->created_at)) }}</td>
+                                                    <td style="text-transform:uppercase;">{{ $item->reference }}</td>
+                                                    <td><a href="{{ route('content.details', ['reference' => $item->content->reference, 'slug' => $item->content->slug]) }}"
+                                                            target="_/blank">{{ $item->content->title }}</a></td>
                                                     <td>Ksh {{ $item->amount }}</td>
                                                     <td>
-                                                        @if($item->status=='cancelled')
-                                                        <div class="badge badge-pill badge-danger">Cancelled</div>
-                                                        @elseif ($item->status==='pending')
-                                                        <div class="badge badge-pill badge-info">Pending</div>
+                                                        @if ($item->status == 'cancelled')
+                                                            <div class="badge badge-pill badge-danger">Cancelled</div>
+                                                        @elseif ($item->status === 'pending')
+                                                            <div class="badge badge-pill badge-info">Pending</div>
                                                         @else
-                                                        <div class="badge badge-pill badge-success">Paid</div>
+                                                            <div class="badge badge-pill badge-success">Paid</div>
                                                         @endif
                                                     </td>
                                                     <td></td>
@@ -252,73 +255,72 @@
     </div>
 </main>
 @script
-<script>
-    @if($dailyPurchases->isNotEmpty())
-        var purchases = [];
-        var data = [];
+    <script>
+        @if ($dailyPurchases->isNotEmpty())
+            var purchases = [];
+            var data = [];
 
-        @foreach($dailyPurchases as $purchase)
-            purchases.push('{{ $purchase->created_at->format("D") }}');
-            data.push('{{ $purchase->amount }}');
-        @endforeach
+            @foreach ($dailyPurchases as $purchase)
+                purchases.push('{{ $purchase->created_at->format('D') }}');
+                data.push('{{ $purchase->amount }}');
+            @endforeach
 
-        var options = {
-            series: [{
-                name: 'Total Sales',
-                data: data
-            }],
-            chart: {
-                type: 'bar'
-            },
-            colors:['#0dd6b8'],
-            plotOptions: {
-                bar: {
-                    horizontal: false,
-                    columnWidth: '45%',
-                    endingShape: 'rounded'
+            var options = {
+                series: [{
+                    name: 'Total Sales',
+                    data: data
+                }],
+                chart: {
+                    type: 'bar'
                 },
-            },
-            dataLabels: {
-                enabled: false
-            },
-            stroke: {
-                show: true,
-                width: 2,
-                colors: ['transparent']
-            },
-            xaxis: {
-                categories: purchases
-            },
-            yaxis: {
-                title: {
-                    text: ''
+                colors: ['#0dd6b8'],
+                plotOptions: {
+                    bar: {
+                        horizontal: false,
+                        columnWidth: '45%',
+                        endingShape: 'rounded'
+                    },
                 },
-                labels: {
-                    offsetX: -20,
-                    offsetY: 0
+                dataLabels: {
+                    enabled: false
                 },
-            },
-            grid: {
-                padding: {
-                    left: -5,
-                    right: 0
-                }
-            },
-            fill: {
-                opacity: 1
-            },
-            tooltip: {
-                y: {
-                    formatter: function (val) {
-                        return "$ " + val + " thousands"
+                stroke: {
+                    show: true,
+                    width: 2,
+                    colors: ['transparent']
+                },
+                xaxis: {
+                    categories: purchases
+                },
+                yaxis: {
+                    title: {
+                        text: ''
+                    },
+                    labels: {
+                        offsetX: -20,
+                        offsetY: 0
+                    },
+                },
+                grid: {
+                    padding: {
+                        left: -5,
+                        right: 0
+                    }
+                },
+                fill: {
+                    opacity: 1
+                },
+                tooltip: {
+                    y: {
+                        formatter: function(val) {
+                            return "$ " + val + " thousands"
+                        }
                     }
                 }
-            }
-        };
+            };
 
-        var chart = new ApexCharts(document.querySelector("#iq-sale-chart"), options);
-        chart.render();
-    @endif
-</script>
-
+            var chart = new ApexCharts(document.querySelector("#dailySalesReport"), options);
+            chart.render();
+        @endif
+    </script>
 @endscript

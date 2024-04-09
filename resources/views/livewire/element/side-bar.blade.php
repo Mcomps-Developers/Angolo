@@ -92,6 +92,7 @@
                                 <li><a href="{{ route('sliders') }}"><i class="fa fa-photo"></i>Sliders</a>
                                 <li><a href="{{ route('admin.content') }}"><i class="ri-book-2-line"></i>Blogs</a>
                                 </li>
+                                <li><a href="">Update Page Sections</a></li>
                                 <li><a href="{{ route('users') }}"><i class="las la-th-list"></i>Users</a></li>
                             </ul>
                         </li>
