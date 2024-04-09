@@ -53,8 +53,8 @@
                 </ul>
             </li>
             <li class="active-menu">
-                <a href="{{route('contact')}}" class="iq-waves-effect"><span
-                        class="ripple rippleEffect"></span><i class="fa fa-send"></i><span>Contact us</span></a>
+                <a href="{{ route('contact') }}" class="iq-waves-effect"><span class="ripple rippleEffect"></span><i
+                        class="fa fa-send"></i><span>Contact us</span></a>
             </li>
             @if (Route::has('login'))
                 @auth
@@ -86,13 +86,14 @@
                                 </li>
                                 <li><a href="{{ route('admin.tags') }}"><i class="ri-list-check"></i>Tags</a>
                                 </li>
+                                <li><a href="{{ route('admin.content') }}"><i class="ri-book-2-line"></i>Blogs</a>
+                                </li>
                                 <li><a href="{{ route('admin.experts') }}"><i class="ri-file-user-line"></i>Experts</a>
                                 </li>
                                 <li><a href="{{ route('admin.content') }}"><i class="ri-book-2-line"></i>Content</a>
                                 <li><a href="{{ route('sliders') }}"><i class="fa fa-photo"></i>Sliders</a>
-                                <li><a href="{{ route('admin.content') }}"><i class="ri-book-2-line"></i>Blogs</a>
-                                </li>
-                                <li><a href="">Update Page Sections</a></li>
+
+                                <li><a href=""><i></i> Update Page Sections</a></li>
                                 <li><a href="{{ route('users') }}"><i class="las la-th-list"></i>Users</a></li>
                             </ul>
                         </li>
