@@ -3,7 +3,7 @@
         Login
     @endsection
     <section class="sign-in-page">
-        <div class="container p-0" >
+        <div class="container p-0">
             <div class="row no-gutters height-self-center">
                 <div class="rounded col-sm-12 align-self-center page-content">
                     <div class="m-0 row">
@@ -26,7 +26,8 @@
                                     </div>
                                     <div class="d-inline-block w-100">
                                         <div class="pt-1 mt-2 custom-control custom-checkbox d-inline-block">
-                                            <input type="checkbox" name="remember" class="custom-control-input" id="customCheck1">
+                                            <input type="checkbox" name="remember" class="custom-control-input"
+                                                id="customCheck1">
                                             <label class="custom-control-label" for="customCheck1">Remember Me</label>
                                         </div>
                                     </div>

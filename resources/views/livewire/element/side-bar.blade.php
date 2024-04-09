@@ -84,22 +84,27 @@
                                 </li>
                                 <li><a href="{{ route('admin.categories') }}"><i class="ri-list-check-2"></i>Categories</a>
                                 </li>
-                                <li><a href="{{ route('admin.tags') }}"><i class="ri-list-check"></i>Tags</a>
-                                </li>
-                                <li><a href="{{ route('admin.content') }}"><i class="ri-book-2-line"></i>Blogs</a>
-                                </li>
-                                <li><a href="{{ route('admin.experts') }}"><i class="ri-file-user-line"></i>Experts</a>
-                                </li>
-                                <li><a href="{{ route('admin.content') }}"><i class="ri-book-2-line"></i>Content</a>
-                                <li><a href="{{ route('sliders') }}"><i class="fa fa-photo"></i>Sliders</a>
-
-                                <li><a href=""><i></i> Update Page Sections</a></li>
-                                <li><a href="{{ route('users') }}"><i class="las la-th-list"></i>Users</a></li>
-                            </ul>
                         </li>
-                    @endif
-                @endauth
+                        <li><a href="{{ route('admin.tags') }}"><i class="ri-list-check"></i>Tags</a>
+                        </li>
+                        <li><a href="{{ route('admin.experts') }}"><i class="ri-file-user-line"></i>Experts</a>
+                        </li>
+                        <li><a href="{{ route('admin.content') }}"><i class="ri-book-2-line"></i>Content</a>
+                        <li><a href="{{ route('sliders') }}"><i class="fa fa-photo"></i>Sliders</a>
+
+            </ul>
+            </li>
+            <li class="active active-menu">
+                <a href="#admin" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span
+                        class="ripple rippleEffect"></span><i class="ri-admin-line"></i><span>More Items</span><i
+                        class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+            <li><a href="{{ route('admin.blogs') }}"><i class="ri-book-2-line"></i>Blogs</a>
+            <li><a href="{{ route('pages.content') }}"><i></i> Update Page Sections</a></li>
+            <li><a href="{{ route('users') }}"><i class="las la-th-list"></i>Users</a></li>
+            </li>
             @endif
+        @endauth
+        @endif
         </ul>
     </nav>
 </div>
