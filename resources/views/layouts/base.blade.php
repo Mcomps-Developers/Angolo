@@ -232,8 +232,10 @@
             <div class="row">
                 <div class="col-lg-6">
                     <ul class="mb-0 list-inline">
-                        <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
-                        <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
+                        <li class="list-inline-item"><a href="#!" data-toggle="modal" data-target="#termsPolicies">Terms and Policies</a></li>
+                        <div class="modal fade" id="termsPolicies" tabindex="-1" role="dialog" aria-labelledby="termsPoliciesTitle" aria-hidden="true">
+                            @livewire('private-policy')
+                        </div>
                     </ul>
                 </div>
                 <div class="text-right col-lg-6">
