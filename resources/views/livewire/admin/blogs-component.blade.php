@@ -1,3 +1,80 @@
-<div>
-    {{-- Close your eyes. Count to one. That is how long forever feels. --}}
-</div>
+<main>
+    @section('title')
+        Blogs
+    @endsection
+    <!-- loader END -->
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+        <!-- Page Content  -->
+        <div id="content-page" class="content-page">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="iq-card">
+                            <div class="iq-card-header d-flex justify-content-between">
+                                <div class="iq-header-title">
+                                    <h4 class="card-title">My Blogs</h4>
+                                </div>
+                                <div class="iq-card-header-toolbar d-flex align-items-center">
+                                    <a href="{{ route('blog.new') }}" class="btn btn-primary">Add New Blog</a>
+                                </div>
+                            </div>
+                            <div class="iq-card-body">
+                                <div class="table-responsive">
+                                    <table class="table data-tables table-striped table-bordered" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Title</th>
+                                                <th>Category</th>
+                                                <th>Tags</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($blogs as $item)
+                                                <tr>
+                                                    <td>{{ $item->name }}</td>
+                                                    <td>
+                                                        <p class="mb-0">{{ $item->category->name }}</p>
+                                                    </td>
+                                                    <td><label
+                                                            class="label label-primary">{{ $item->tag->name }},</label>
+                                                        {{ $item->tags }}</td>
+                                                    <td>
+                                                        <div class="flex align-items-center list-user-action">
+                                                            <a class="bg-primary" data-toggle="tooltip"
+                                                                data-placement="top" title=""
+                                                                data-original-title="Edit" href="#!"><i
+                                                                    class="ri-pencil-line"></i></a>
+                                                            <a class="bg-danger" data-toggle="tooltip"
+                                                                data-placement="top" title=""
+                                                                data-original-title="Delete Blog" href="#!"
+                                                                wire:confirm='Are you sure you want to delete this blog permanently?'
+                                                                wire:click.prevent='deleteBlog({{ $item->id }})'><i
+                                                                    class="ri-delete-bin-line"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="mt-3 row justify-content-between">
+                                    <div id="user-list-page-info" class="col-md-6">
+                                        <span><a href="http://mcomps.co.ke" target="_blank"
+                                                rel="noopener noreferrer">Mcomps Tables</a></span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <nav aria-label="Page navigation example">
+                                            <div>{{ $blogs->links('pagination::bootstrap-4') }}</div>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

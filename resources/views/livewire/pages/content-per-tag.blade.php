@@ -93,7 +93,7 @@
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div class="p-0 col-5 position-relative">
                                                     <a href="javascript:void();">
-                                                        <img src="{{ asset('images/blogs') }}/{{ $item->thumbnail }}"
+                                                        <img src="{{ asset('images/blogs/thumbnails') }}/{{ $item->thumbnail }}"
                                                             class="rounded img-fluid w-100" alt="">
                                                     </a>
                                                 </div>

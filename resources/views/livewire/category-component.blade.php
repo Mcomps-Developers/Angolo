@@ -132,12 +132,6 @@
                                                                     <h6><b>Ksh {{ $item->regular_price }}</b></h6>
                                                                 @endif
                                                             </div>
-                                                            {{-- <div class="iq-product-action">
-                                                                <a href="javascript:void();"><i
-                                                                        class="ri-shopping-cart-2-fill text-primary"></i></a>
-                                                                <a href="javascript:void();" class="ml-2"><i
-                                                                        class="ri-heart-fill text-danger"></i></a>
-                                                            </div> --}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -166,7 +160,7 @@
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div class="p-0 col-5 position-relative">
                                                     <a href="javascript:void();">
-                                                        <img src="{{ asset('images/blogs') }}/{{ $item->thumbnail }}"
+                                                        <img src="{{ asset('images/blogs/thumbnails') }}/{{ $item->thumbnail }}"
                                                             class="rounded img-fluid w-100" alt="">
                                                     </a>
                                                 </div>

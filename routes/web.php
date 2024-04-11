@@ -11,6 +11,7 @@ use App\Livewire\Admin\BlogsComponent;
 use App\Livewire\Admin\HomeSlider;
 use App\Livewire\Admin\ManageTags;
 use App\Livewire\Admin\ModifyComponent;
+use App\Livewire\Admin\NewBlog;
 use App\Livewire\Admin\NewSlider;
 use App\Livewire\AdminAddAuthorComponent;
 use App\Livewire\AdminAddUserComponent;
@@ -156,6 +157,7 @@ Route::prefix('/admin')->middleware(['auth:sanctum', config('jetstream.auth_sess
     Route::get('/sliders', HomeSlider::class)->name('sliders');
     Route::get('/new-slider', NewSlider::class)->name('slider.add');
     Route::get('/blogs', BlogsComponent::class)->name('admin.blogs');
+    Route::get('/add-blog', NewBlog::class)->name('blog.new');
     Route::get('/pages/modifications', ModifyComponent::class)->name('pages.content');
 });
 
