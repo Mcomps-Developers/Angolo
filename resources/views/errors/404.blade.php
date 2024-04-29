@@ -1,4 +1,4 @@
-<!doctype html>
+-<!doctype html>
 <html lang="en">
 
 <head>
@@ -30,12 +30,12 @@
     <div class="wrapper">
         <div class="container p-0">
             <div class="row no-gutters height-self-center">
-                <div class="col-sm-12 text-center align-self-center">
+                <div class="text-center col-sm-12 align-self-center">
                     <div class="iq-error position-relative">
                         <img src="{{ asset('images/error/404.png') }}" class="img-fluid iq-error-img" alt="">
-                        <h2 class="mb-0 mt-4">Oops! This Page is Not Found.</h2>
+                        <h2 class="mt-4 mb-0">Oops! This Page is Not Found.</h2>
                         <p>The requested page dose not exist.</p>
-                        <a class="btn btn-primary mt-3" href="/"><i class="ri-home-4-line"></i>Back to Home</a>
+                        <a class="mt-3 btn btn-primary" href="/"><i class="ri-home-4-line"></i>Back to Home</a>
                     </div>
                 </div>
             </div>

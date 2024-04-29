@@ -132,30 +132,6 @@
                                 <p>This is a sample advertisement. You can place your advertisement here.</p>
                             </div>
                         </div>
-                        <!-- Portrait Advertisement Section -->
-                        <div class="advertisement portrait-ad">
-
-                            <div class="ad-content">
-                                <h5>Advertisement</h5>
-                                <div class="close-advertisement">&times;</div>
-                                <img src="https://placehold.co/300x400/EEE/31343C" alt="Advertisement Image"
-                                    class="img-fluid">
-                                <p>This is a sample portrait advertisement. You can place your advertisement
-                                    here.</p>
-                            </div>
-                        </div>
-                        <!-- Portrait Advertisement Section -->
-                        <div class="advertisement portrait-ad">
-
-                            <div class="ad-content">
-                                <h5>Advertisement</h5>
-                                <div class="close-advertisement">&times;</div>
-                                <img src="https://placehold.co/300x800/EEE/31343C" alt="Advertisement Image"
-                                    class="img-fluid">
-                                <p>This is a sample portrait advertisement. You can place your advertisement
-                                    here.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

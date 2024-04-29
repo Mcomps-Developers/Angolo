@@ -28,18 +28,31 @@ class NewBlog extends Component
     public $more_tags;
 
     protected $rules = [
-        'title' => 'required|string|max:60',
+        'title' => 'required|string|max:255',
         'category' => 'required',
         'thumbnail' => 'required|mimes:png,jpg,jpeg|max:2048',
-        'featured_image' => 'required|mimes:png,jpg,jpeg|max:2048',
+        // 'featured_image' => 'required|mimes:png,jpg,jpeg|max:2048',
         'blog_content' => 'required|string',
         'tag' => 'required',
     ];
+
+    public function addBlof()
+    {
+        if ($this->featured_image) {
+            $this->rules['featured_image'] = 'required|mimes:png,jpg,jpeg|max:2048';
+        }
+
+        // Validate all fields
+        $this->validate();
+
+    }
+
 
     public function updated($fields)
     {
         $this->validateOnly($fields);
     }
+
     private function generateReference()
     {
         do {
@@ -71,9 +84,17 @@ class NewBlog extends Component
             $this->thumbnail->storeAs('images/blogs/thumbnails', $imageName);
             $blog->thumbnail = $imageName;
             // Cover Image
-            $imageName = Carbon::now()->timestamp . '.' . $this->featured_image->extension();
-            $this->featured_image->storeAs('images/blogs/featured_images', $imageName);
-            $blog->featured_image = $imageName;
+            // $imageName = Carbon::now()->timestamp . '.' . $this->featured_image->extension();
+            // $this->featured_image->storeAs('images/blogs/featured_images', $imageName);
+            // $blog->featured_image = $imageName;
+
+            if($this->featured_image){
+                $imageName = Carbon::now()->timestamp . '.' . $this->featured_image->extension();
+                            $this->featured_image->storeAs('images/blogs/featured_images', $imageName);
+                            $blog->featured_image = $imageName;
+                }else{
+                $blog->featured_image = null.png;
+                }
 
             $blog->save();
 

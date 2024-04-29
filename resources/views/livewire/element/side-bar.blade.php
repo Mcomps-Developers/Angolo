@@ -6,8 +6,8 @@
                         class="ripple rippleEffect"></span><i class="las la-bars iq-arrow-left"></i><span>Main
                         Menu</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                 <ul id="dashboard" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
-                    <li class="active"><a href="/"><i class="las la-house-damage"></i>Home</a></li>
-                    <li class="active"><a href="{{ route('products.all') }}"><i class="ri-list-check"></i>All
+                    <li class="active"><a href="/"><i class="las la-home"></i>Home</a></li>
+                    <li class="active"><a href="{{ route('products.all') }}"><i class="las la-search"></i>Search
                             Products</a></li>
                     @if (Route::has('login'))
                         @auth
@@ -99,6 +99,8 @@
                         class="ripple rippleEffect"></span><i class="ri-admin-line"></i><span>More on Admin</span><i
                         class="ri-arrow-right-s-line iq-arrow-right"></i></a>
             <li><a href="{{ route('admin.blogs') }}"><i class="ri-book-2-line"></i>Blogs</a>
+            <li><a href="{{ route('blog.categories') }}"><i class="ri-book-2-line"></i>Blog Categories</a>
+            <li><a href="{{ route('blog.tags') }}"><i class="ri-book-2-line"></i>Blog Tags</a>
             <li><a href="{{ route('pages.content') }}"><i class="ri-book-2-line"></i> Update Page Sections</a></li>
             <li><a href="{{ route('users') }}"><i class="las la-th-list"></i>Users</a></li>
             </li>

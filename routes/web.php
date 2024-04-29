@@ -7,7 +7,9 @@ use App\Http\Middleware\AuthSeller;
 use App\Http\Middleware\AuthSuperAdmin;
 use App\Livewire\AccountSettingComponent;
 use App\Livewire\Admin\AddTag;
+use App\Livewire\Admin\Blogcategories;
 use App\Livewire\Admin\BlogsComponent;
+use App\Livewire\Admin\Blogtags;
 use App\Livewire\Admin\HomeSlider;
 use App\Livewire\Admin\ManageTags;
 use App\Livewire\Admin\ModifyComponent;
@@ -159,6 +161,8 @@ Route::prefix('/admin')->middleware(['auth:sanctum', config('jetstream.auth_sess
     Route::get('/blogs', BlogsComponent::class)->name('admin.blogs');
     Route::get('/add-blog', NewBlog::class)->name('blog.new');
     Route::get('/pages/modifications', ModifyComponent::class)->name('pages.content');
+    Route::get('/blog-categories',Blogcategories::class)->name('blog.categories');
+    Route::get('/blog-tags',Blogtags::class)->name('blog.tags');
 });
 
 // Super Admin Routes
