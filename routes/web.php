@@ -70,17 +70,13 @@ Route::get('/dashboard', function () {
                 return redirect()->route('super.dashboard');
                 break;
             default:
-                // If user type is not recognized, redirect to default dashboard
                 abort(403);
                 break;
         }
     } else {
-        // If user is not authenticated, redirect to login
         return redirect('/login');
     }
 })->name('user.dashboard');
-// All users Routes
-
 // Buyer Routes
 Route::get('/', HomeComponent::class)->name('buyer.dashboard');
 Route::get('/about-us',AboutComponent::class)->name('about.us');
@@ -92,7 +88,7 @@ Route::get('/all-products', AllProducts::class)->name('products.all');
 Route::get('/tags/{name}', ContentPerTag::class)->name('tag.content');
 Route::get('/blogs', DisplayBlogs::class)->name('display.blogs');
 Route::get('/contact', ContactUs::class)->name('contact');
-Route::get('/blogs/categories/{slug}',BlogsPerCategory::class)->name('blogs.per.category');
+Route::get('/blogs/{slug}',BlogsPerCategory::class)->name('blogs.per.category');
 
 // Authenticated user
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {

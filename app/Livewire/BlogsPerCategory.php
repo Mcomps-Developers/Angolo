@@ -19,7 +19,7 @@ class BlogsPerCategory extends Component
     {
         $category = blogcategory::where('slug', $this->slug)->first();
         $blogs = Blog::orderByDesc('created_at')->where('category_id', $category->id)->paginate(10);
-
-        return view('livewire.blogs-per-category', ['blogs' => $blogs, 'category' => $category])->layout('layouts.base');
+        $categories = blogcategory::orderBy('name')->limit(20)->get();
+        return view('livewire.blogs-per-category', ['blogs' => $blogs, 'category' => $category,'categories'=>$categories])->layout('layouts.base');
     }
 }

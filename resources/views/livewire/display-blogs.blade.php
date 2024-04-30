@@ -13,7 +13,7 @@
                                     class="card-img-top" alt="#">
                                 <div class="iq-card-body">
                                     <h4 class="card-title"><a
-                                            href="{{ route('blog.details', ['reference' => $item->reference, 'slug' => $item->slug]) }}">{{ $item->title }}</a>
+                                            href="{{ route('blog.details', ['reference' => $item->reference, 'slug' => $item->slug]) }}">{{ $item->title }} <i class="fa fa-external-link"></i></a>
                                     </h4>
 
                                     {{-- <div class="card-text">{!! strlen($item->content) > 80 ? substr($item->content, 0, 80) . '...' : $item->content !!}</div> --}}
@@ -33,7 +33,6 @@
                 {{ $blogs->links('pagination::bootstrap-5') }}
             </div>
             <div class="col-md-4">
-                <!-- Related Blogs section remains unchanged -->
                 <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                     <div class="iq-card-header d-flex justify-content-between align-items-center">
                         <h5 class="mb-0 card-title text-secondary">Categories</h5>

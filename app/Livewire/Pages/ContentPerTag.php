@@ -19,6 +19,6 @@ class ContentPerTag extends Component
     {
         $tag = Tag::where('name', $this->name)->first();
         $products = Content::orderBy('title')->where('tag_id', $tag->id)->get();
-        return view('livewire.pages.content-per-tag', ['tag' => $tag,'blogs'=>$blogs, 'products' => $products])->layout('layouts.base');
+        return view('livewire.pages.content-per-tag', ['tag' => $tag, 'products' => $products])->layout('layouts.base');
     }
 }

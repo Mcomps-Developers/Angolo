@@ -11,7 +11,7 @@
                             <div class="iq-card iq-card-block iq-card-stretch iq-card-height iq-mb-3">
                                 <img src="{{ asset('images/blogs/thumbnails') }}/{{ $item->thumbnail }}" height="180px" class="card-img-top" alt="#">
                                 <div class="iq-card-body">
-                                    <h4 class="card-title"><a href="{{ route('blog.details', ['reference' => $item->reference, 'slug' => $item->slug]) }}">{{ $item->title }}</a></h4>
+                                    <h4 class="card-title"><a href="{{ route('blog.details', ['reference' => $item->reference, 'slug' => $item->slug]) }}">{{ $item->title }} <i class="fa fa-external-link"></i></a></h4>
                                     
                                     {{-- <div class="card-text">{!! strlen($item->content) > 80 ? substr($item->content, 0, 80) . '...' : $item->content !!}</div> --}}
                                     <a href="{{ route('blog.details', ['reference' => $item->reference, 'slug' => $item->slug]) }}" class="btn btn-primary btn-block">Read Now</a>
@@ -29,10 +29,11 @@
                 <!-- Related Blogs section remains unchanged -->
                 <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                     <div class="iq-card-header d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0 card-title text-secondary">Categories</h5>
+                        <h5 class="mb-0 card-title text-secondary">Other Categories</h5>
                     </div>
                     <div class="pb-0 iq-card-body" style="height: relative">
                         @foreach ($categories as $item)
+                        @if ($item->id != $category->id)
                             <div class="mb-3">
                                 <a href="{{ route('blogs.per.category', ['slug' => $item->slug]) }}" class="text-body">
                                     <h5 class="mb-2"><span class="text-primary"><i
@@ -41,6 +42,7 @@
                                     </h5>
                                 </a>
                             </div>
+                        @endif
                         @endforeach
                     </div>
                 </div>

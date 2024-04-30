@@ -48,7 +48,7 @@
             </li>
             <li class="">
                 <a href="{{ route('display.blogs') }}" class="iq-waves-effect"><span
-                        class="ripple rippleEffect"></span><i class="ri-book-open-line"></i><span>Blog</span></a>
+                        class="ripple rippleEffect"></span><i class="ri-book-open-line"></i><span>Blogs</span></a>
             </li>
             <li class="">
                 <a href="{{ route('contact') }}" class="iq-waves-effect"><span class="ripple rippleEffect"></span><i
@@ -95,9 +95,9 @@
                                     class="ripple rippleEffect"></span><i class="ri-admin-line"></i><span>Admin
                                     Blog</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                             <ul id="more" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                                <li><a href="{{ route('admin.blogs') }}"><i class="ri-book-2-line"></i>Blogs</a>
-                                <li><a href="{{ route('blog.categories') }}"><i class="ri-list-check-2"></i> Tags</a>
-                                <li><a href="{{ route('blog.tags') }}"><i class="ri-list-check-2"></i>Blog Tags</a>
+                                <li><a href="{{ route('admin.blogs') }}"><i class="ri-book-2-line"></i>All Blogs</a>
+                                <li><a href="{{ route('blog.categories') }}"><i class="ri-list-check-2"></i>Categories</a>
+                                <li><a href="{{ route('blog.tags') }}"><i class="ri-list-check-2"></i>Tags</a>
                                 </li>
                             </ul>
                         </li>

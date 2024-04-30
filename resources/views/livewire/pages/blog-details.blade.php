@@ -130,7 +130,7 @@
                         <hr>
                         @foreach ($categories as $item)
                             <div class="mb-3">
-                                <a href="#" class="text-body">
+                                <a href="{{ route('blogs.per.category', ['slug' => $item->slug]) }}" class="text-body">
                                     <h5 class="mb-2"><span class="text-primary"><i
                                                 class="fa fa-check-circle f12"></i></span> {{ $item->name }}
                                         ({{ $item->blogs->count() }})
