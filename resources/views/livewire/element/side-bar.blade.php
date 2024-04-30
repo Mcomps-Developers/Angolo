@@ -19,15 +19,14 @@
                         class="ripple rippleEffect"></span><i class="las la-th-list"></i><span>Categories</span><i
                         class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                 <ul id="categories" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                    @if ($tags->count() > 0)
-                        @if ($categories->count() > 0)
-                            @foreach ($categories as $item)
-                                <li><a href="{{ route('category', ['slug' => $item->slug]) }}"><i
-                                            class="fa fa-chevron-right"
-                                            style="font-family: sans-serif;font-size:9px"></i>{{ $item->name }}</a>
-                                </li>
-                            @endforeach
-                        @endif
+                    ($tags->count() > 0)
+                    @if ($categories->count() > 0)
+                        @foreach ($categories as $item)
+                            <li><a href="{{ route('category', ['slug' => $item->slug]) }}"><i
+                                        class="fa fa-chevron-right"
+                                        style="font-family: sans-serif;font-size:9px"></i>{{ $item->name }}</a>
+                            </li>
+                        @endforeach
                     @endif
                 </ul>
             </li>
@@ -96,7 +95,8 @@
                                     Blog</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                             <ul id="more" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                                 <li><a href="{{ route('admin.blogs') }}"><i class="ri-book-2-line"></i>All Blogs</a>
-                                <li><a href="{{ route('blog.categories') }}"><i class="ri-list-check-2"></i>Categories</a>
+                                <li><a href="{{ route('blog.categories') }}"><i
+                                            class="ri-list-check-2"></i>Categories</a>
                                 <li><a href="{{ route('blog.tags') }}"><i class="ri-list-check-2"></i>Tags</a>
                                 </li>
                             </ul>
