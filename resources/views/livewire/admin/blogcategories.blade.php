@@ -16,7 +16,7 @@
                                     <h4 class="card-title">Blog Categories</h4>
                                 </div>
                                 <div class="iq-card-header-toolbar d-flex align-items-center">
-                                    <a href="{{ route('category.add') }}" class="btn btn-primary">Add New Category</a>
+                                    <a href="{{ route('blog.category.add') }}" class="btn btn-primary">Add New Category</a>
                                 </div>
                             </div>
                             <div class="iq-card-body">

@@ -12,10 +12,10 @@
                     <div class="pb-0 iq-card-body">
                         <div class="mb-3">
                             <!-- Featured Image -->
-                            <img src="{{ asset('images/blogs/featured_images') }}/{{ $blog->featured_image }}"
+                            <img src="{{ asset('images/blogs/thumbnails') }}/{{ $blog->thumbnail }}"
                                 class="mb-3 img-fluid" alt="Featured Image">
                         </div>
-                        <h2 class="mb-3 card-title">{{ $blog->title }}</h2>
+                        <h3 class="mb-3 card-title">{{ $blog->title }}</h3>
                         <!-- Add details below the title -->
                         <div class="blog-details">
                             <div class="mr-2 btn-group" role="group" aria-label="Blog Details">
@@ -89,8 +89,8 @@
                                 alt="Author Photo" width="64">
                             <div class="media-body">
                                 <h5 class="mt-0 mb-1">{{ $blog->author->name }}</h5>
-                                <p class="mb-1">Thank you for reading my blog. I'm a seasoned blog writer and academic
-                                    content creator for all levels.</p>
+                                {{-- <p class="mb-1">Thank you for reading my blog. I'm a seasoned blog writer and academic
+                                    content creator for all levels.</p> --}}
                                 <p class="mb-0">Follow me on:
                                     <a href="{{ $blog->author->facebook_url }}" class="mr-1"
                                         target="_blank">Facebook</a>
@@ -108,30 +108,36 @@
                 <!-- Related Blogs section remains unchanged -->
                 <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                     <div class="iq-card-header d-flex justify-content-between align-items-center">
-                        <h4 class="mb-0 card-title">Related Blogs</h4>
+                        <h5 class="mb-0 card-title text-secondary">Related Blogs</h5>
                     </div>
                     <div class="pb-0 iq-card-body" style="height: relative">
                         <!-- Add related blogs here -->
                         @foreach ($relatedBlogs as $item)
+                            @if ($item->id != $blog->id)
+                                <div class="mb-3">
+                                    <a href="{{ route('blog.details', ['reference' => $item->reference, 'slug' => $item->slug]) }}"
+                                        class="text-body">
+                                        <h5 class="mb-2">
+                                            <span class="text-secondary"><i class="fa fa-check-circle f12"></i></span>
+                                            {{ strlen(strip_tags($item->title)) > 100 ? substr($item->title, 0, 10) . '...' : $item->title }}
+                                        </h5>
+                                    </a>
+                                </div>
+                            @endif
+                        @endforeach
+                        <hr>
+                        <h5 class="text-secondary">Categories</h5>
+                        <hr>
+                        @foreach ($categories as $item)
                             <div class="mb-3">
                                 <a href="#" class="text-body">
-                                    <h5 class="mb-2">{{ $item->title }}</h5>
+                                    <h5 class="mb-2"><span class="text-primary"><i
+                                                class="fa fa-check-circle f12"></i></span> {{ $item->name }}
+                                        ({{ $item->blogs->count() }})
+                                    </h5>
                                 </a>
-                                <p class="text-muted">{!! strlen(strip_tags($item->content)) > 100 ? substr($item->content, 0, 10) . '...' : $item->content !!}</p>
                             </div>
                         @endforeach
-                        <!-- Add more related blogs as needed -->
-                        <!-- Advertisement Section -->
-                        <div class="advertisement">
-
-                            <div class="ad-content">
-                                <h5>Advertisement</h5>
-                                <div class="close-advertisement">&times;</div>
-                                <img src="https://placehold.co/600x400/EEE/31343C" alt="Advertisement Image"
-                                    class="img-fluid">
-                                <p>This is a sample advertisement. You can place your advertisement here.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -9,6 +9,7 @@ use Livewire\Component;
 class ModifyComponent extends Component
 {
     public $content;
+    public $about_content;
     public function mount()
     {
         $terms_and_policies = Policy::first();
@@ -17,6 +18,7 @@ class ModifyComponent extends Component
 
     protected $rules = [
         'content' => 'required',
+        'about_content'=>'required',
     ];
 
     public function updated($fields)
@@ -29,6 +31,7 @@ class ModifyComponent extends Component
         try {
             $terms_and_policies = Policy::first();
             $terms_and_policies->content = $this->content;
+            $terms_and_policies->about_content = $this->about_content;
             $terms_and_policies->save();
             notyf()
                 ->position('x', 'right')

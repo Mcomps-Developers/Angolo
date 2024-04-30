@@ -33,7 +33,7 @@
                                         <tbody>
                                             @foreach ($blogs as $item)
                                                 <tr>
-                                                    <td>{{ $item->name }}</td>
+                                                    <td>{{ $item->title }}</td>
                                                     <td>
                                                         <p class="mb-0">{{ $item->category->name }}</p>
                                                     </td>

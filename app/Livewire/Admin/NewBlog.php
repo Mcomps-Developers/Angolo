@@ -3,6 +3,8 @@
 namespace App\Livewire\Admin;
 
 use App\Models\Blog;
+use App\Models\blogcategory;
+use App\Models\blogtag;
 use App\Models\Category;
 use App\Models\Tag;
 use Carbon\Carbon;
@@ -93,7 +95,7 @@ class NewBlog extends Component
                             $this->featured_image->storeAs('images/blogs/featured_images', $imageName);
                             $blog->featured_image = $imageName;
                 }else{
-                $blog->featured_image = null.png;
+                $blog->featured_image = 'null.png';
                 }
 
             $blog->save();
@@ -121,8 +123,8 @@ class NewBlog extends Component
     }
     public function render()
     {
-        $categories = Category::orderBy('name')->get();
-        $tags = Tag::orderBy('name')->get();
+        $categories = blogcategory::orderBy('name')->get();
+        $tags = blogtag::orderBy('name')->get();
         return view('livewire.admin.new-blog', ['categories' => $categories, 'tags' => $tags])->layout('layouts.base');
     }
 }

@@ -2,10 +2,12 @@
 
 use App\Http\Controllers\SaveTransaction;
 use App\Http\Middleware\AuthAdmin;
-use App\Http\Middleware\AuthBuyer;
 use App\Http\Middleware\AuthSeller;
 use App\Http\Middleware\AuthSuperAdmin;
+use App\Livewire\AboutComponent;
 use App\Livewire\AccountSettingComponent;
+use App\Livewire\Admin\AddBlogCategory;
+use App\Livewire\Admin\AddBlogTag;
 use App\Livewire\Admin\AddTag;
 use App\Livewire\Admin\Blogcategories;
 use App\Livewire\Admin\BlogsComponent;
@@ -23,11 +25,12 @@ use App\Livewire\AdminBooksComponent;
 use App\Livewire\AdminAddCategoryComponent;
 use App\Livewire\AdminAddBookComponent;
 use App\Livewire\AdminDashboardComponent;
-use App\Livewire\BlankPageComponent;
+use App\Livewire\BlogsPerCategory;
 use App\Livewire\BookPageComponent;
 use App\Livewire\BookPdfComponent;
 use App\Livewire\CategoryComponent;
 use App\Livewire\CheckoutComponent;
+use App\Livewire\DisplayBlogs;
 use App\Livewire\Expert\AddNewContent;
 use App\Livewire\Expert\ExpertDashboard;
 use App\Livewire\Expert\MyContent;
@@ -37,46 +40,9 @@ use App\Livewire\Pages\AllProducts;
 use App\Livewire\Pages\BlogDetails;
 use App\Livewire\Pages\ContactUs;
 use App\Livewire\Pages\ContentPerTag;
-use App\Livewire\PagesComingSoonComponent;
-use App\Livewire\PagesConfirmMailComponent;
-use App\Livewire\PagesError500Component;
-use App\Livewire\PagesErrorComponent;
-use App\Livewire\PagesFaqComponent;
-use App\Livewire\PagesInvoiceComponent;
-use App\Livewire\PagesLockScreenComponent;
-use App\Livewire\PagesMaintenanceComponent;
-use App\Livewire\PagesPricingComponent;
-use App\Livewire\PagesPricingOneComponent;
-use App\Livewire\PagesRecoveryComponent;
-use App\Livewire\PagesTimelineComponent;
 use App\Livewire\ProfileComponent;
 use App\Livewire\ProfileEditComponent;
-use App\Livewire\SignInComponent;
-use App\Livewire\SignUpComponent;
 use App\Livewire\Super\SuperAdminDashboard;
-use App\Livewire\TableEditableComponent;
-use App\Livewire\TablesBasicComponent;
-use App\Livewire\TermsOfServiceComponent;
-use App\Livewire\UiAlertsComponent;
-use App\Livewire\UiBadgesComponent;
-use App\Livewire\UiBreadCrumpComponent;
-use App\Livewire\UiButtonsComponent;
-use App\Livewire\UiCardsComponent;
-use App\Livewire\UiCarouselComponent;
-use App\Livewire\UiColorsComponent;
-use App\Livewire\UiEmbedVideoComponent;
-use App\Livewire\UiGridComponent;
-use App\Livewire\UiImagesComponent;
-use App\Livewire\UiListGroupComponent;
-use App\Livewire\UiMediaObjectComponent;
-use App\Livewire\UiModalComponent;
-use App\Livewire\UiNotificationsComponent;
-use App\Livewire\UiPaginationComponent;
-use App\Livewire\UiPopoversComponent;
-use App\Livewire\UiProgressbarsComponent;
-use App\Livewire\UiTabsComponent;
-use App\Livewire\UiTooltipsComponent;
-use App\Livewire\UiTypographyComponent;
 use App\Livewire\User\MyPurchases;
 use App\Livewire\UserListComponent;
 use App\Livewire\WishlistComponent;
@@ -117,13 +83,16 @@ Route::get('/dashboard', function () {
 
 // Buyer Routes
 Route::get('/', HomeComponent::class)->name('buyer.dashboard');
+Route::get('/about-us',AboutComponent::class)->name('about.us');
 Route::get('/content/{reference}/{slug}', BookPageComponent::class)->name('content.details');
 Route::get('/wishlist', WishlistComponent::class)->name('wishlist');
 Route::get('/category/{slug}', CategoryComponent::class)->name('category');
 Route::get('blogs/{reference}/{slug}', BlogDetails::class)->name('blog.details');
 Route::get('/all-products', AllProducts::class)->name('products.all');
 Route::get('/tags/{name}', ContentPerTag::class)->name('tag.content');
+Route::get('/blogs', DisplayBlogs::class)->name('display.blogs');
 Route::get('/contact', ContactUs::class)->name('contact');
+Route::get('/blogs/categories/{slug}',BlogsPerCategory::class)->name('blogs.per.category');
 
 // Authenticated user
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
@@ -161,8 +130,10 @@ Route::prefix('/admin')->middleware(['auth:sanctum', config('jetstream.auth_sess
     Route::get('/blogs', BlogsComponent::class)->name('admin.blogs');
     Route::get('/add-blog', NewBlog::class)->name('blog.new');
     Route::get('/pages/modifications', ModifyComponent::class)->name('pages.content');
-    Route::get('/blog-categories',Blogcategories::class)->name('blog.categories');
-    Route::get('/blog-tags',Blogtags::class)->name('blog.tags');
+    Route::get('/blog-categories', Blogcategories::class)->name('blog.categories');
+    Route::get('/blog-tags', Blogtags::class)->name('blog.tags');
+    Route::get('/add-blog-category', AddBlogCategory::class)->name('blog.category.add');
+    Route::get('/add-blog-tag', AddBlogTag::class)->name('blog.add.tag');
 });
 
 // Super Admin Routes

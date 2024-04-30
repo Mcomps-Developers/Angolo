@@ -22,7 +22,6 @@ class CategoryComponent extends Component
         $categoryName = $category->name;
         $products = Content::orderBy('title')->where('category_id', $category->id)->get();
         $tags = Tag::orderBy('name')->get();
-        $blogs = Blog::where('category_id', $category->id)->limit(10)->get();
         return view('livewire.category-component', ['products' => $products, 'blogs' => $blogs, 'categoryName' => $categoryName, 'tags' => $tags])->layout('layouts.base');
     }
 }

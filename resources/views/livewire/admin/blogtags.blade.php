@@ -1,6 +1,6 @@
 <main>
     @section('title')
-        Content Tags
+        Blog Tags
     @endsection
     <!-- loader END -->
     <!-- Wrapper Start -->
@@ -13,10 +13,10 @@
                         <div class="iq-card">
                             <div class="iq-card-header d-flex justify-content-between">
                                 <div class="iq-header-title">
-                                    <h4 class="card-title">Tags</h4>
+                                    <h4 class="card-title">Blog Tags</h4>
                                 </div>
                                 <div class="iq-card-header-toolbar d-flex align-items-center">
-                                    <a href="{{ route('blog.tags') }}" class="btn btn-primary">Add New Tag</a>
+                                    <a href="{{ route('blog.add.tag') }}" class="btn btn-primary">Add New Blog Tag</a>
                                 </div>
                             </div>
                             <div class="iq-card-body">
@@ -24,7 +24,7 @@
                                     <table class="table data-tables table-striped table-bordered" style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th>Tag Name</th>
+                                                <th>Blog Tag Name</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>

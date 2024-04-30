@@ -3,6 +3,7 @@
 namespace App\Livewire\Pages;
 
 use App\Models\Blog;
+use App\Models\blogcategory;
 use Livewire\Component;
 
 class BlogDetails extends Component
@@ -21,6 +22,7 @@ class BlogDetails extends Component
         $blog->views += 1;
         $blog->save();
         $relatedBlogs = Blog::orderByDesc('created_at')->where('category_id', $blog->category_id)->orWhere('tag_id', $blog->tag_id)->limit(10)->get();
-        return view('livewire.pages.blog-details', ['blog' => $blog,'relatedBlogs'=>$relatedBlogs])->layout('layouts.base');
+        $categories = blogcategory::orderBy('name')->limit(10)->get();
+        return view('livewire.pages.blog-details', ['categories' => $categories, 'blog' => $blog, 'relatedBlogs' => $relatedBlogs])->layout('layouts.base');
     }
 }
