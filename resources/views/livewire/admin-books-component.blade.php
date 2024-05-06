@@ -54,7 +54,8 @@
                                                         <div class="flex align-items-center list-user-action">
                                                             <a class="bg-primary" data-toggle="tooltip"
                                                                 data-placement="top" title=""
-                                                                data-original-title="Edit" href="admin-add-book.html"><i
+                                                                data-original-title="Edit"
+                                                                href="{{ route('content.edit', ['item_id' => $item->id]) }}"><i
                                                                     class="ri-pencil-line"></i></a>
                                                             <a class="bg-danger" data-toggle="tooltip"
                                                                 data-placement="top" title=""

@@ -12,6 +12,7 @@ use App\Livewire\Admin\AddTag;
 use App\Livewire\Admin\Blogcategories;
 use App\Livewire\Admin\BlogsComponent;
 use App\Livewire\Admin\Blogtags;
+use App\Livewire\Admin\EditContent;
 use App\Livewire\Admin\HomeSlider;
 use App\Livewire\Admin\ManageTags;
 use App\Livewire\Admin\ModifyComponent;
@@ -115,6 +116,7 @@ Route::prefix('/admin')->middleware(['auth:sanctum', config('jetstream.auth_sess
     Route::get('/add-user', AdminAddUserComponent::class)->name('user.add');
     Route::get('/add-expert', AdminAddAuthorComponent::class)->name('expert.add');
     Route::get('/add-content', AdminAddBookComponent::class)->name('content.add');
+    Route::get('/edit-content/{item_id}',EditContent::class)->name('content.edit');
     Route::get('/add-category', AdminAddCategoryComponent::class)->name('category.add');
     Route::get('/experts', AdminAuthorComponent::class)->name('admin.experts');
     Route::get('/content', AdminBooksComponent::class)->name('admin.content');
