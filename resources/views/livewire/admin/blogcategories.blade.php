@@ -16,7 +16,8 @@
                                     <h4 class="card-title">Blog Categories</h4>
                                 </div>
                                 <div class="iq-card-header-toolbar d-flex align-items-center">
-                                    <a href="{{ route('blog.category.add') }}" class="btn btn-primary">Add New Category</a>
+                                    <a href="{{ route('blog.category.add') }}" class="btn btn-primary">Add New
+                                        Category</a>
                                 </div>
                             </div>
                             <div class="iq-card-body">
@@ -24,19 +25,14 @@
                                     <table class="table data-tables table-striped table-bordered" style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th>Icon</th>
-                                                <th>Category Name</th>
-                                                <th>Category Description</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach ($categories as $item)
                                                 <tr>
-                                                    <td><img src="{{ asset('images/categories') }}/{{ $item->icon }}"
-                                                            alt="" height="30px" width="30px"
-                                                            srcset="{{ asset('images/categories') }}/{{ $item->icon }}">
-                                                    </td>
                                                     <td>{{ $item->name }}</td>
                                                     <td>
                                                         <p class="mb-0">{{ $item->description }}</p>
@@ -62,7 +58,8 @@
                                 </div>
                                 <div class="mt-3 row justify-content-between">
                                     <div id="user-list-page-info" class="col-md-6">
-                                        <span><a href="http://mcomps.co.ke" target="_blank" rel="noopener noreferrer">Mcomps Tables</a></span>
+                                        <span><a href="http://mcomps.co.ke" target="_blank"
+                                                rel="noopener noreferrer">Mcomps Tables</a></span>
                                     </div>
                                     <div class="col-md-6">
                                         <nav aria-label="Page navigation example">
@@ -78,4 +75,3 @@
         </div>
     </div>
 </main>
-

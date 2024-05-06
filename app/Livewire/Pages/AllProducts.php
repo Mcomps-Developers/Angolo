@@ -9,6 +9,12 @@ use Livewire\WithPagination;
 class AllProducts extends Component
 {
     use WithPagination;
+    public $value;
+    public function searchProduct()
+    {
+        $value=$this->value;
+        return redirect()->route('search.results', $value);
+    }
     public function render()
     {
         $products = Content::orderByDesc('created_at')->where('status', 'published')->paginate(10);

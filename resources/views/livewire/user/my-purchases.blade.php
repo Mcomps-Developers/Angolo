@@ -9,7 +9,7 @@
         <div id="content-page" class="content-page">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-lg-6">
                         <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                             <div class="iq-card-body">
                                 <div class="d-flex align-items-center">
@@ -34,7 +34,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-lg-6">
                         <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                             <div class="iq-card-body">
                                 <div class="d-flex align-items-center">
@@ -64,27 +64,6 @@
                             <div class="iq-card-header d-flex justify-content-between">
                                 <div class="iq-header-title">
                                     <h4 class="card-title">My Purchases</h4>
-                                </div>
-                                <div class="iq-card-header-toolbar d-flex align-items-center">
-                                    <div class="dropdown">
-                                        <span class="dropdown-toggle text-primary" id="dropdownMenuButton5"
-                                            data-toggle="dropdown">
-                                            <i class="ri-more-fill"></i>
-                                        </span>
-                                        <div class="dropdown-menu dropdown-menu-right"
-                                            aria-labelledby="dropdownMenuButton5">
-                                            <a class="dropdown-item" href="#"><i
-                                                    class="mr-2 ri-eye-fill"></i>View</a>
-                                            <a class="dropdown-item" href="#"><i
-                                                    class="mr-2 ri-delete-bin-6-fill"></i>Delete</a>
-                                            <a class="dropdown-item" href="#"><i
-                                                    class="mr-2 ri-pencil-fill"></i>Edit</a>
-                                            <a class="dropdown-item" href="#"><i
-                                                    class="mr-2 ri-printer-fill"></i>Print</a>
-                                            <a class="dropdown-item" href="#"><i
-                                                    class="mr-2 ri-file-download-fill"></i>Download</a>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="iq-card-body">

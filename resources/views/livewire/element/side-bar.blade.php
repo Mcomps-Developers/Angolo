@@ -20,15 +20,15 @@
                         class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                 <ul id="categories" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
 
-                        @if ($categories->count() > 0)
-                            @foreach ($categories as $item)
-                                <li><a href="{{ route('category', ['slug' => $item->slug]) }}"><i
-                                            class="fa fa-chevron-right"
-                                            style="font-family: sans-serif;font-size:9px"></i>{{ $item->name }}</a>
-                                </li>
-                            @endforeach
-                        @endif
-            
+                    @if ($categories->count() > 0)
+                        @foreach ($categories as $item)
+                            <li><a href="{{ route('category', ['slug' => $item->slug]) }}"><i
+                                        class="fa fa-chevron-right"
+                                        style="font-family: sans-serif;font-size:9px"></i>{{ $item->name }}</a>
+                            </li>
+                        @endforeach
+                    @endif
+
                 </ul>
             </li>
             <li class="">
@@ -96,9 +96,8 @@
                                     Blog</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                             <ul id="more" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                                 <li><a href="{{ route('admin.blogs') }}"><i class="ri-book-2-line"></i>All Blogs</a>
-                                <li><a href="{{ route('blog.categories') }}"><i class="ri-list-check-2"></i>Categories</a>
-                                <li><a href="{{ route('blog.tags') }}"><i class="ri-list-check-2"></i>Tags</a>
-                                </li>
+                                <li><a href="{{ route('blog.categories') }}"><i
+                                            class="ri-list-check-2"></i>Categories</a></li>
                             </ul>
                         </li>
                         <li><a href="{{ route('pages.content') }}"><i class="ri-book-2-line"></i> Update Page
@@ -106,6 +105,24 @@
                         <li><a href="{{ route('users') }}"><i class="las la-th-list"></i>Users</a></li>
                         </li>
                     @endif
+                @endauth
+            @endif
+            @if (Route::has('login'))
+                @auth
+                <li><a href="{{ route('profile.edit') }}" class="dropdown-item"><i
+                    class="fa fa-user"></i> My Profile</a>
+                <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                    @csrf
+                </form>
+            </li>
+                    <li><a href="{{ route('logout') }}" class="dropdown-item"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit()"><i
+                            class="fa fa-lock"></i> Sign
+                            Out</a>
+                        <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                            @csrf
+                        </form>
+                    </li>
                 @endauth
             @endif
         </ul>

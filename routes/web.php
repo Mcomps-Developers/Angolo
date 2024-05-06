@@ -40,6 +40,7 @@ use App\Livewire\Pages\AllProducts;
 use App\Livewire\Pages\BlogDetails;
 use App\Livewire\Pages\ContactUs;
 use App\Livewire\Pages\ContentPerTag;
+use App\Livewire\Pages\SearchResults;
 use App\Livewire\ProfileComponent;
 use App\Livewire\ProfileEditComponent;
 use App\Livewire\Super\SuperAdminDashboard;
@@ -79,7 +80,7 @@ Route::get('/dashboard', function () {
 })->name('user.dashboard');
 // Buyer Routes
 Route::get('/', HomeComponent::class)->name('buyer.dashboard');
-Route::get('/about-us',AboutComponent::class)->name('about.us');
+Route::get('/about-us', AboutComponent::class)->name('about.us');
 Route::get('/content/{reference}/{slug}', BookPageComponent::class)->name('content.details');
 Route::get('/wishlist', WishlistComponent::class)->name('wishlist');
 Route::get('/category/{slug}', CategoryComponent::class)->name('category');
@@ -88,7 +89,8 @@ Route::get('/all-products', AllProducts::class)->name('products.all');
 Route::get('/tags/{name}', ContentPerTag::class)->name('tag.content');
 Route::get('/blogs', DisplayBlogs::class)->name('display.blogs');
 Route::get('/contact', ContactUs::class)->name('contact');
-Route::get('/blogs/{slug}',BlogsPerCategory::class)->name('blogs.per.category');
+Route::get('/blogs/{slug}', BlogsPerCategory::class)->name('blogs.per.category');
+Route::get('/search/{value}', SearchResults::class)->name('search.results');
 
 // Authenticated user
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {

@@ -38,19 +38,6 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <label>Main Tag:</label>
-                                        <select class="form-control" id="exampleFormControlSelect1"
-                                            wire:model.live='tag'>
-                                            <option selected="">Select Main Tag</option>
-                                            @foreach ($tags as $item)
-                                                <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                            @endforeach
-                                        </select>
-                                        @error('tag')
-                                            <p class="text text-danger" style="margin-top: 20px;">{{ $message }}</p>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group">
                                         <label>Thumbnail:</label>
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input"
@@ -64,32 +51,11 @@
                                         <br>
                                         @if ($thumbnail)
                                             <p style="margin-top:20px;">Preview</p>
-                                            <img src="{{ $thumbnail->temporaryUrl() }}" width="70px" height="100px"
+                                            <img src="{{ $thumbnail->temporaryUrl() }}" width="100px" height="100px"
                                                 style="margin-top:15px;" />
                                         @endif
                                         <span wire:loading wire:target='thumbnail' style="margin-top: 20px;">Uploading
                                             thumbnail...</span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Featured Image:</label>
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input"
-                                                accept="image/png, image/jpeg, image/jpg"
-                                                wire:model.live='featured_image'>
-                                            <label class="custom-file-label">Choose file</label>
-                                            @error('featured_image')
-                                                <p class="text text-danger" style="margin-top: 20px;">{{ $message }}
-                                                </p>
-                                            @enderror
-                                        </div>
-                                        <br>
-                                        @if ($featured_image)
-                                            <p style="margin-top:20px;">Preview</p>
-                                            <img src="{{ $featured_image->temporaryUrl() }}" width="250px"
-                                                height="100px" style="margin-top:15px;" />
-                                        @endif
-                                        <span wire:loading wire:target='featured_image'
-                                            style="margin-top: 15px;">Uploading featured image...</span>
                                     </div>
                                     <div class="form-group" wire:ignore>
                                         <label>Blog Details:</label>

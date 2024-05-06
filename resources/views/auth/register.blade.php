@@ -3,7 +3,7 @@
         Join us
     @endsection
     <section class="sign-in-page">
-        <div class="container p-0" >
+        <div class="container p-0">
             <div class="row no-gutters height-self-center">
                 <div class="rounded col-sm-12 align-self-center page-content">
                     <div class="m-0 row">
@@ -16,44 +16,29 @@
                                     @csrf
                                     <div class="form-group">
                                         <input type="text" name="name" class="mb-0 form-control"
-                                            id="exampleInputEmail1" placeholder="Your Full Name"
-                                            >
+                                            id="exampleInputEmail1" placeholder="Your Full Name" style="color: black">
                                     </div>
                                     <div class="form-group">
                                         <input type="email" name="email" class="mb-0 form-control"
-                                            id="exampleInputEmail2" placeholder="Enter email"
-                                            >
+                                            id="exampleInputEmail2" placeholder="Enter email" style="color: black">
                                     </div>
                                     <div class="form-group">
-                                        <div class="input-group">
-                                            <!-- Country Code Dropdown -->
-                                            <div class="input-group-prepend">
-                                                <select class="custom-select form-control" name="country_code" id="countryCode"
-                                                    >
-                                                    <option value="">Country Code</option>
-                                                    <option value="254">+254</option>
-                                                    <option value="255">+255</option>
-                                                    <option value="256">+256</option>
-                                                </select>
-                                            </div>
-                                            <!-- Phone Number Input -->
-                                            <input type="tel" name="phone_number" class="mb-0 form-control" id="exampleInputEmail2" placeholder="Start with 7 or 1 xxxxxxxx" minlength="9" maxlength="9" required>
-                                        </div>
+                                        <input type="tel" name="phone_number" class="mb-0 form-control"
+                                            id="exampleInputEmail2" placeholder="Phone eg 254712345678" minlength="12"
+                                            maxlength="12" style="color: black">
                                     </div>
                                     <div class="form-group">
                                         <input type="password" name="password" class="mb-0 form-control"
-                                            id="exampleInputPassword1" placeholder="Password"
-                                            >
+                                            id="exampleInputPassword1" placeholder="Password" style="color: black">
                                     </div>
                                     <div class="form-group">
                                         <input type="password" name="password_confirmation" class="mb-0 form-control"
-                                            id="exampleInputPassword1" placeholder="Confirm Password"
-                                            >
+                                            id="exampleInputPassword1" placeholder="Confirm Password" style="color: black">
                                     </div>
                                     <div class="d-inline-block w-100">
                                         <div class="pt-1 mt-2 custom-control custom-checkbox d-inline-block">
                                             <input type="checkbox" name="terms" class="custom-control-input"
-                                                id="customCheck1">
+                                                id="customCheck1" style="color: black">
                                             <label class="custom-control-label" for="customCheck1">I accept <a
                                                     href="#" class="text-light">Terms and Conditions</a></label>
                                         </div>

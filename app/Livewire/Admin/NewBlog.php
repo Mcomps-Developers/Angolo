@@ -26,16 +26,13 @@ class NewBlog extends Component
     public $status;
     private $reference;
     private $slug;
-    public $tag;
     public $more_tags;
 
     protected $rules = [
         'title' => 'required|string|max:255',
         'category' => 'required',
         'thumbnail' => 'required|mimes:png,jpg,jpeg|max:2048',
-        // 'featured_image' => 'required|mimes:png,jpg,jpeg|max:2048',
         'blog_content' => 'required|string',
-        'tag' => 'required',
     ];
 
     public function addBlof()
@@ -73,7 +70,6 @@ class NewBlog extends Component
         try {
             $blog = new Blog();
             $blog->title = $this->title;
-            $blog->tag_id = $this->tag;
             $blog->content = $this->blog_content;
             $blog->category_id = $this->category;
             $blog->slug = $this->slug;
@@ -85,18 +81,7 @@ class NewBlog extends Component
             $imageName = Carbon::now()->timestamp . '.' . $this->thumbnail->extension();
             $this->thumbnail->storeAs('images/blogs/thumbnails', $imageName);
             $blog->thumbnail = $imageName;
-            // Cover Image
-            // $imageName = Carbon::now()->timestamp . '.' . $this->featured_image->extension();
-            // $this->featured_image->storeAs('images/blogs/featured_images', $imageName);
-            // $blog->featured_image = $imageName;
-
-            if($this->featured_image){
-                $imageName = Carbon::now()->timestamp . '.' . $this->featured_image->extension();
-                            $this->featured_image->storeAs('images/blogs/featured_images', $imageName);
-                            $blog->featured_image = $imageName;
-                }else{
-                $blog->featured_image = 'null.png';
-                }
+            $blog->featured_image = 'null.png';
 
             $blog->save();
 
@@ -124,7 +109,6 @@ class NewBlog extends Component
     public function render()
     {
         $categories = blogcategory::orderBy('name')->get();
-        $tags = blogtag::orderBy('name')->get();
-        return view('livewire.admin.new-blog', ['categories' => $categories, 'tags' => $tags])->layout('layouts.base');
+        return view('livewire.admin.new-blog', ['categories' => $categories])->layout('layouts.base');
     }
 }

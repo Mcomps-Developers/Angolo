@@ -108,6 +108,8 @@ class AdminAddBookComponent extends Component
                     $coverImages[] = $imageName;
                 }
                 $content->cover_images = implode(",", $coverImages);
+            } else {
+                $content->cover_images = $this->thumbnail;
             }
 
             $content->save();
@@ -138,7 +140,7 @@ class AdminAddBookComponent extends Component
     {
         $experts = User::orderBy('name')->where('utype', 'slr')->get();
         $categories = Category::orderBy('name')->get();
-        $tags = Tag::orderBy('name')->get(); 
+        $tags = Tag::orderBy('name')->get();
         return view('livewire.admin-add-book-component', ['experts' => $experts, 'tags' => $tags, 'categories' => $categories])->layout('layouts.base');
     }
 }

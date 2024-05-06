@@ -13,13 +13,11 @@ class AddBlogCategory extends Component
 {
     use WithFileUploads;
     public $category_name;
-    public $icon;
     public $category_description;
     public $slug;
 
     protected $rules = [
         'category_name' => 'required|unique:categories,name',
-        'icon' => 'required',
         'category_description' => 'required|max:255',
     ];
 
@@ -50,9 +48,7 @@ class AddBlogCategory extends Component
             $category->name = $this->category_name;
             $category->description = $this->category_description;
             $category->slug = $this->slug;
-            $imageName = Carbon::now()->timestamp . '.' . $this->icon->extension();
-            $this->icon->storeAs('images/categories', $imageName);
-            $category->icon = $imageName;
+            $category->icon = 123;
             $category->save();
             notyf()
                 ->position('x', 'right')

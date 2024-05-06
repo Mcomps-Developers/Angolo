@@ -40,13 +40,6 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <label>Slider Link:</label>
-                                        <input type="url" class="form-control" wire:model.live='link'>
-                                        @error('link')
-                                            <p class="text text-danger">{{ $message }}</p>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group">
                                         <label>Slider Image:</label>
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input"
@@ -55,8 +48,11 @@
                                             @error('image')
                                                 <p class="text text-danger">{{ $message }}</p>
                                             @enderror
+
                                         </div>
                                         <br>
+                                        <small style="margin-top: 10px"><i class="fa fa-info-circle text-info"></i> Image will be resized to
+                                            <b>800x300</b></small>
                                         @if ($image)
                                             <img src="{{ $image->temporaryUrl() }}" width="200px" height="70px"
                                                 style="margin-top:15px;" />

@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Intervention\Image\Laravel\Facades\Image;
 
 class NewSlider extends Component
 {
@@ -16,14 +17,12 @@ class NewSlider extends Component
     public $description;
     public $from;
     public $to;
-    public $link;
 
     protected $rules = [
         'title' => 'required',
         'image' => 'required',
         'from' => 'required',
         'to' => 'required',
-        'link' => 'required|url',
     ];
 
     public function updated($fields)
@@ -38,12 +37,17 @@ class NewSlider extends Component
             $slider = new Slider();
             $slider->title = $this->title;
             $slider->description = $this->description;
-            $slider->link = $this->link;
+            $slider->link = env('APP_URL');
             $slider->from = $this->from;
             $slider->to = $this->to;
-            $imageName = Carbon::now()->timestamp . '.' . $this->image->extension();
-            $this->image->storeAs('images/sliders', $imageName);
-            $slider->image = $imageName;
+
+            if ($this->image) {
+                $imageName = Carbon::now()->addMinutes(2)->timestamp . '.' . $this->image->extension();
+                $resizedImage = Image::read($this->image->getRealPath())->resize(800, 300);
+                $destinationPath = base_path('images/sliders');
+                $resizedImage->save($destinationPath . '/' . $imageName);
+                $slider->image = $imageName;
+            }
             $slider->save();
             notyf()
                 ->position('x', 'right')

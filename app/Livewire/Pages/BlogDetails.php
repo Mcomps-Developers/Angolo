@@ -21,7 +21,7 @@ class BlogDetails extends Component
         $blog = Blog::where('reference', $this->reference)->first();
         $blog->views += 1;
         $blog->save();
-        $relatedBlogs = Blog::orderByDesc('created_at')->where('category_id', $blog->category_id)->orWhere('tag_id', $blog->tag_id)->limit(10)->get();
+        $relatedBlogs = Blog::orderByDesc('created_at')->where('id', '!=', $blog->id)->orWhere('tag_id', $blog->tag_id)->limit(10)->get();
         $categories = blogcategory::orderBy('name')->limit(10)->get();
         return view('livewire.pages.blog-details', ['categories' => $categories, 'blog' => $blog, 'relatedBlogs' => $relatedBlogs])->layout('layouts.base');
     }

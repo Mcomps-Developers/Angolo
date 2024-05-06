@@ -26,25 +26,9 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <label>Category Icon:</label>
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input"
-                                                accept="application/jpg, application/png" wire:model.live="icon">
-                                            <label class="custom-file-label">Choose icon</label>
-                                            @error('icon')
-                                                <p class="text text-danger">{{ $message }}</p>
-                                            @enderror
-                                        </div>
-                                        <br>
-                                        @if ($icon)
-                                            <img src="{{ $icon->temporaryUrl() }}" width="70px" height="100px"
-                                                style="margin-top:15px;" />
-                                        @endif
-                                        <span wire:loading wire:target='icon' style="margin-top: 15px;">Uploading icon...</span>
-                                    </div>
-                                    <div class="form-group">
                                         <label>Category Description:</label>
-                                        <textarea class="form-control" columns="2" rows="4" wire:model.live='category_description'></textarea>
+                                        <textarea class="form-control" placeholder="Describe what your category will entail." columns="2" rows="4"
+                                            wire:model.live='category_description'></textarea>
                                         @error('category_description')
                                             <p class="text text-danger">{{ $message }}</p>
                                         @enderror

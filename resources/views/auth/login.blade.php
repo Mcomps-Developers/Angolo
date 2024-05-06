@@ -16,13 +16,13 @@
                                     @csrf
                                     <div class="form-group">
                                         <input type="email" name="email" class="mb-0 form-control"
-                                            id="exampleInputEmail1" placeholder="Email Address">
+                                            id="exampleInputEmail1" placeholder="Email Address" style="color: black">
                                     </div>
                                     <div class="form-group">
                                         <a href="{{ route('password.request') }}" class="float-right text-dark">Forgot
                                             password?</a>
                                         <input type="password" name="password" class="mb-0 form-control"
-                                            id="exampleInputPassword1" placeholder="Password">
+                                            id="exampleInputPassword1" placeholder="Password" style="color: black">
                                     </div>
                                     <div class="d-inline-block w-100">
                                         <div class="pt-1 mt-2 custom-control custom-checkbox d-inline-block">

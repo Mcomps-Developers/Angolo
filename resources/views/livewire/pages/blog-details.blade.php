@@ -20,7 +20,7 @@
                         <div class="blog-details">
                             <div class="mr-2 btn-group" role="group" aria-label="Blog Details">
                                 <button type="button" class="btn btn-secondary" style="margin-bottom: 5px">
-                                    <i class="fa fa-calendar-alt"></i> Posted
+                                    <i class="fa fa-calendar"></i>
                                     {{ $blog->created_at->format('F j, Y h:iA') }}
                                 </button>
                             </div>
@@ -30,7 +30,8 @@
                             ?>
                             <div class="mr-2 btn-group" role="group" aria-label="Blog Details">
                                 <button type="button" class="btn btn-warning">
-                                    <i class="fa fa-watch"></i>Read in {{ $readingTime }} Minutes
+                                    <i class="fa fa-eye"></i>
+                                    Read in {{ $readingTime }} Minutes
                                 </button>
                             </div>
                             <div class="mr-2 btn-group" role="group" aria-label="Blog Details">
@@ -45,7 +46,6 @@
                         <hr>
                         <div class="mb-3">
                             <span>Tags:</span>
-                            <span class="btn btn-primary btn-sm">{{ $blog->tag->name }}</span>
                             @foreach (explode(',', $blog->tags) as $tag)
                                 <span class="btn btn-secondary btn-sm"
                                     style="text-transform: capitalize; margin-bottom:5px;">{{ $tag }}</span>
@@ -82,25 +82,6 @@
                             </ul>
                         </div>
                         <hr class="text-primary">
-                        <!-- Author Section -->
-                        <div class="mb-3 media align-items-center">
-                            <br>
-                            <img src="{{ $blog->author->profile_photo_url }}" class="mr-3 rounded-circle"
-                                alt="Author Photo" width="64">
-                            <div class="media-body">
-                                <h5 class="mt-0 mb-1">{{ $blog->author->name }}</h5>
-                                {{-- <p class="mb-1">Thank you for reading my blog. I'm a seasoned blog writer and academic
-                                    content creator for all levels.</p> --}}
-                                <p class="mb-0">Follow me on:
-                                    <a href="{{ $blog->author->facebook_url }}" class="mr-1"
-                                        target="_blank">Facebook</a>
-                                    <a href="{{ $blog->author->twitter_url }}" class="mr-1"
-                                        target="_blank">Twitter</a>
-                                    <a href="{{ $blog->author->instagram_url }}" class="mr-1"
-                                        target="_blank">Instagram</a>
-                                </p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

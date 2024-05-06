@@ -4,34 +4,45 @@
     @endsection
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
-                <div class="row">
-                    @foreach ($blogs as $item)
-                        <div class="col-sm-6">
-                            <div class="iq-card iq-card-block iq-card-stretch iq-card-height iq-mb-3">
-                                <img src="{{ asset('images/blogs/thumbnails') }}/{{ $item->thumbnail }}" height="180px"
-                                    class="card-img-top" alt="#">
-                                <div class="iq-card-body">
-                                    <h4 class="card-title"><a
-                                            href="{{ route('blog.details', ['reference' => $item->reference, 'slug' => $item->slug]) }}">{{ $item->title }} <i class="fa fa-external-link"></i></a>
-                                    </h4>
+            @if ($blogs->count() > 0)
+                <div class="col-md-8">
+                    <div class="row">
+                        @foreach ($blogs as $item)
+                            <div class="col-sm-6">
+                                <div class="iq-card iq-card-block iq-card-stretch iq-card-height iq-mb-3">
+                                    <img src="{{ asset('images/blogs/thumbnails') }}/{{ $item->thumbnail }}"
+                                        height="180px" class="card-img-top" alt="#">
+                                    <div class="iq-card-body">
+                                        <h4 class="card-title"><a
+                                                href="{{ route('blog.details', ['reference' => $item->reference, 'slug' => $item->slug]) }}">{{ $item->title }}
+                                                <i class="fa fa-external-link"></i></a>
+                                        </h4>
 
-                                    {{-- <div class="card-text">{!! strlen($item->content) > 80 ? substr($item->content, 0, 80) . '...' : $item->content !!}</div> --}}
-                                    <a href="{{ route('blog.details', ['reference' => $item->reference, 'slug' => $item->slug]) }}"
-                                        class="btn btn-primary btn-block">Read Now</a>
-                                </div>
-                                <div class="card-footer">
-                                    <p class="card-text"><small
-                                            class="text-muted">{{ $item->created_at->format('F j, Y') }}</small> |
-                                        <small>{{ $item->views }} views</small> | <small><i class="fa fa-user"></i>
-                                            {{ $item->author->name }}</small></p>
+                                        {{-- <div class="card-text">{!! strlen($item->content) > 80 ? substr($item->content, 0, 80) . '...' : $item->content !!}</div> --}}
+                                        <a href="{{ route('blog.details', ['reference' => $item->reference, 'slug' => $item->slug]) }}"
+                                            class="btn btn-primary btn-block">Read Now</a>
+                                    </div>
+                                    <div class="card-footer">
+                                        <p class="card-text"><small
+                                                class="text-muted">{{ $item->created_at->format('F j, Y') }}</small> |
+                                            <small>{{ $item->views }} views</small> | <small><i class="fa fa-user"></i>
+                                                {{ $item->author->name }}</small>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
+                    {{ $blogs->links('pagination::bootstrap-5') }}
                 </div>
-                {{ $blogs->links('pagination::bootstrap-5') }}
-            </div>
+            @else
+                <div style="text-align: center; margin-top:30px">
+                    <h5 class="text-danger">No blogs have been added</h5>
+                    <p>Blogs are underway. As you wait, you can read check out content</p>
+                    <div><a class="btn btn-success" href="{{ route('products.all') }}">Browse Content</a></div>
+                </div>
+            @endif
+
             <div class="col-md-4">
                 <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                     <div class="iq-card-header d-flex justify-content-between align-items-center">

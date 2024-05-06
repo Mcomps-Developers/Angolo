@@ -16,7 +16,7 @@
                         <div class="carousel-inner" style="height: 240px">
                             @foreach ($sliders as $key => $item)
                                 <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                    <a href=""><img src="{{ asset('images/sliders') }}/{{ $item->image }}"
+                                    <a href="#!"><img src="{{ asset('images/sliders') }}/{{ $item->image }}"
                                             class="d-block w-100" alt="#"></a>
                                 </div>
                             @endforeach
@@ -40,9 +40,6 @@
                                 class="iq-card-header d-flex justify-content-between align-items-center position-relative">
                                 <div class="iq-header-title">
                                     <h4 class="mb-0 card-title">Our Categories</h4>
-                                </div>
-                                <div class="iq-card-header-toolbar d-flex align-items-center">
-                                    <a href="#!" class="btn btn-sm btn-primary view-more">View More</a>
                                 </div>
                             </div>
                             <div class="iq-card-body single-similar-contens">
@@ -88,7 +85,7 @@
                                     <h4 class="mb-0 card-title">Trending Now</h4>
                                 </div>
                                 <div class="iq-card-header-toolbar d-flex align-items-center">
-                                    <a href="#!" class="btn btn-sm btn-primary view-more">View More</a>
+                                    <a href="{{route('products.all')}}" class="btn btn-sm btn-primary view-more">View More</a>
                                 </div>
                             </div>
                             <div class="iq-card-body trendy-contens">
@@ -134,12 +131,6 @@
                                                         @endif
 
                                                     </div>
-                                                    {{-- <div class="iq-product-action">
-                                                        <a href="javascript:void();"><i
-                                                                class="ri-shopping-cart-2-fill text-primary"></i></a>
-                                                        <a href="javascript:void();" class="ml-2"><i
-                                                                class="ri-heart-fill text-danger"></i></a>
-                                                    </div> --}}
                                                 </div>
                                             </div>
                                         </li>
@@ -158,7 +149,7 @@
                                     <h4 class="mb-0 card-title">Recent Content</h4>
                                 </div>
                                 <div class="iq-card-header-toolbar d-flex align-items-center">
-                                    <a href="#!" class="btn btn-sm btn-primary view-more">View More</a>
+                                    <a href="{{ route('products.all') }}" class="btn btn-sm btn-primary view-more">View More</a>
                                 </div>
                             </div>
                             <div class="iq-card-body trendy-contens">
@@ -204,12 +195,6 @@
                                                         @endif
 
                                                     </div>
-                                                    {{-- <div class="iq-product-action">
-                                                        <a href="javascript:void();"><i
-                                                                class="ri-shopping-cart-2-fill text-primary"></i></a>
-                                                        <a href="javascript:void();" class="ml-2"><i
-                                                                class="ri-heart-fill text-danger"></i></a>
-                                                    </div> --}}
                                                 </div>
                                             </div>
                                         </li>
@@ -229,7 +214,7 @@
                                     <h4 class="mb-0 card-title">Most read blogs</h4>
                                 </div>
                                 <div class="iq-card-header-toolbar d-flex align-items-center">
-                                    <a href="#!" class="btn btn-sm btn-primary view-more">View More</a>
+                                    <a href="{{ route('display.blogs') }}" class="btn btn-sm btn-primary view-more">View More</a>
                                 </div>
                             </div>
                             <div class="iq-card-body favorites-contens">
