@@ -5,34 +5,36 @@
     <div id="content-page" class="content-page">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12" style="margin-bottom: 30px;">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            @foreach ($sliders as $key => $item)
-                                <li data-target="#carouselExampleIndicators" data-slide-to="{{ $key }}"
-                                    class="{{ $key == 0 ? 'active' : '' }}"></li>
-                            @endforeach
-                        </ol>
-                        <div class="carousel-inner" style="height: 240px">
-                            @foreach ($sliders as $key => $item)
-                                <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                    <a href="#!"><img src="{{ asset('images/sliders') }}/{{ $item->image }}"
-                                            class="d-block w-100" alt="#"></a>
-                                </div>
-                            @endforeach
+                @if ($categories->count() > 0)
+                    <div class="col-lg-12" style="margin-bottom: 20px;">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                @foreach ($sliders as $key => $item)
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{ $key }}"
+                                        class="{{ $key == 0 ? 'active' : '' }}"></li>
+                                @endforeach
+                            </ol>
+                            <div class="carousel-inner" style="height: 240px">
+                                @foreach ($sliders as $key => $item)
+                                    <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                        <a href="#!"><img src="{{ asset('images/sliders') }}/{{ $item->image }}"
+                                                class="d-block w-100" alt="#"></a>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                                data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                                data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-                            data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
-                            data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
                     </div>
-                </div>
+                @endif
                 @if ($categories->count() > 0)
                     <div class="col-lg-12">
                         <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
@@ -85,7 +87,8 @@
                                     <h4 class="mb-0 card-title">Trending Now</h4>
                                 </div>
                                 <div class="iq-card-header-toolbar d-flex align-items-center">
-                                    <a href="{{route('products.all')}}" class="btn btn-sm btn-primary view-more">View More</a>
+                                    <a href="{{ route('products.all') }}" class="btn btn-sm btn-primary view-more">View
+                                        More</a>
                                 </div>
                             </div>
                             <div class="iq-card-body trendy-contens">
@@ -149,7 +152,8 @@
                                     <h4 class="mb-0 card-title">Recent Content</h4>
                                 </div>
                                 <div class="iq-card-header-toolbar d-flex align-items-center">
-                                    <a href="{{ route('products.all') }}" class="btn btn-sm btn-primary view-more">View More</a>
+                                    <a href="{{ route('products.all') }}"
+                                        class="btn btn-sm btn-primary view-more">View More</a>
                                 </div>
                             </div>
                             <div class="iq-card-body trendy-contens">
@@ -214,7 +218,8 @@
                                     <h4 class="mb-0 card-title">Most read blogs</h4>
                                 </div>
                                 <div class="iq-card-header-toolbar d-flex align-items-center">
-                                    <a href="{{ route('display.blogs') }}" class="btn btn-sm btn-primary view-more">View More</a>
+                                    <a href="{{ route('display.blogs') }}"
+                                        class="btn btn-sm btn-primary view-more">View More</a>
                                 </div>
                             </div>
                             <div class="iq-card-body favorites-contens">
