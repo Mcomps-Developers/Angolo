@@ -1,4 +1,4 @@
-{{-- <main>
+<main>
     @section('title')
         Edit Category
     @endsection
@@ -65,4 +65,4 @@
             </div>
         </div>
     </div>
-</main> --}}
+</main>

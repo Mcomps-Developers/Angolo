@@ -1,4 +1,4 @@
-{{-- <main>
+<main>
     @section('title')
         Edit Tag
     @endsection
@@ -41,4 +41,4 @@
             </div>
         </div>
     </div>
-</main> --}}
+</main>
