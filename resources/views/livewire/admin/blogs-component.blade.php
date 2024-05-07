@@ -26,7 +26,6 @@
                                             <tr>
                                                 <th>Title</th>
                                                 <th>Category</th>
-                                                <th>Tags</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -37,14 +36,12 @@
                                                     <td>
                                                         <p class="mb-0">{{ $item->category->name }}</p>
                                                     </td>
-                                                    <td><label
-                                                            class="label label-primary">{{ $item->tag->name }},</label>
-                                                        {{ $item->tags }}</td>
                                                     <td>
                                                         <div class="flex align-items-center list-user-action">
                                                             <a class="bg-primary" data-toggle="tooltip"
                                                                 data-placement="top" title=""
-                                                                data-original-title="Edit" href="#!"><i
+                                                                data-original-title="Edit"
+                                                                href="{{ route('blog.edit', ['blog_id' => $item->id]) }}"><i
                                                                     class="ri-pencil-line"></i></a>
                                                             <a class="bg-danger" data-toggle="tooltip"
                                                                 data-placement="top" title=""

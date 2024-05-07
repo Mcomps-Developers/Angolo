@@ -16,7 +16,7 @@
                                 </div>
                             </div>
                             <div class="iq-card-body">
-                                <form action="" wire:submit.prevent='addBlog'>
+                                <form action="" wire:submit.prevent='editBlog'>
                                     <div class="form-group">
                                         <label>Title:</label>
                                         <input type="text" class="form-control" wire:model.live='title'>
@@ -74,8 +74,8 @@
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary"><span wire:loading.remove
-                                                wire:target='addBlog'>Create</span> <span wire:loading
-                                                wire:target='addBlog' class="spinner-border spinner-border-sm"
+                                                wire:target='editBlog'>Update</span> <span wire:loading
+                                                wire:target='editBlog' class="spinner-border spinner-border-sm"
                                                 role="status" aria-hidden="true"></button>
                                         <button type="reset" class="btn btn-danger">Reset</button>
                                     </div>

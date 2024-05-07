@@ -36,7 +36,7 @@
                                                         <div class="flex align-items-center list-user-action">
                                                             <a class="bg-primary" data-toggle="tooltip"
                                                                 data-placement="top" title=""
-                                                                data-original-title="Edit" href="#!"><i
+                                                                data-original-title="Edit" href="{{ route('tag.edit',['tag_id'=>$item->id]) }}"><i
                                                                     class="ri-pencil-line"></i></a>
                                                             <a class="bg-danger" data-toggle="tooltip"
                                                                 data-placement="top" title=""

@@ -17,7 +17,7 @@
                                 </div>
                             </div>
                             <div class="iq-card-body">
-                                <form wire:submit.prevent='addTag'>
+                                <form wire:submit.prevent='editTag'>
                                     <div class="form-group">
                                         <label>Tag Name:</label>
                                         <input type="text" class="form-control" wire:model.live='name'>
@@ -27,11 +27,11 @@
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary"><span wire:loading.remove
-                                                wire:target='addTag'>Create</span> <span wire:loading
-                                                wire:target='addTag' class="spinner-border spinner-border-sm"
+                                                wire:target='editTag'>Update</span> <span wire:loading
+                                                wire:target='editTag' class="spinner-border spinner-border-sm"
                                                 role="status" aria-hidden="true">
                                         </button>
-                                        <button type="reset" class="btn btn-danger">Update</button>
+                                        <button type="reset" class="btn btn-danger">Reset</button>
                                     </div>
                                 </form>
                             </div>

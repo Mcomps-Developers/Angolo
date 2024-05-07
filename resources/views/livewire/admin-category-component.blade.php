@@ -45,7 +45,8 @@
                                                         <div class="flex align-items-center list-user-action">
                                                             <a class="bg-primary" data-toggle="tooltip"
                                                                 data-placement="top" title=""
-                                                                data-original-title="Edit" href="#!"><i
+                                                                data-original-title="Edit"
+                                                                href="{{ route('category.edit', ['cat_id' => $item->id]) }}"><i
                                                                     class="ri-pencil-line"></i></a>
                                                             <a class="bg-danger" data-toggle="tooltip"
                                                                 data-placement="top" title=""
@@ -62,7 +63,8 @@
                                 </div>
                                 <div class="mt-3 row justify-content-between">
                                     <div id="user-list-page-info" class="col-md-6">
-                                        <span><a href="http://mcomps.co.ke" target="_blank" rel="noopener noreferrer">Mcomps Tables</a></span>
+                                        <span><a href="http://mcomps.co.ke" target="_blank"
+                                                rel="noopener noreferrer">Mcomps Tables</a></span>
                                     </div>
                                     <div class="col-md-6">
                                         <nav aria-label="Page navigation example">

@@ -1,6 +1,6 @@
 <main>
     @section('title')
-        Edit Blog Tag
+        Edit Category
     @endsection
     <!-- loader END -->
     <!-- Wrapper Start -->
@@ -13,22 +13,29 @@
                         <div class="iq-card">
                             <div class="iq-card-header d-flex justify-content-between">
                                 <div class="iq-header-title">
-                                    <h4 class="card-title">Edit Tag</h4>
+                                    <h4 class="card-title">Edit Category</h4>
                                 </div>
                             </div>
                             <div class="iq-card-body">
-                                <form wire:submit.prevent='addTag'>
+                                <form wire:submit.prevent='editCategory'>
                                     <div class="form-group">
-                                        <label>Tag Name:</label>
-                                        <input type="text" class="form-control" wire:model.live='name'>
-                                        @error('name')
+                                        <label>Category Name:</label>
+                                        <input type="text" class="form-control" wire:model.live='category_name'>
+                                        @error('category_name')
+                                            <p class="text text-danger">{{ $message }}</p>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Category Description:</label>
+                                        <textarea class="form-control" columns="2" rows="4" wire:model.live='category_description'></textarea>
+                                        @error('category_description')
                                             <p class="text text-danger">{{ $message }}</p>
                                         @enderror
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary"><span wire:loading.remove
-                                                wire:target='addTag'>Create</span> <span wire:loading
-                                                wire:target='addTag' class="spinner-border spinner-border-sm"
+                                                wire:target='editCategory'>Update</span> <span wire:loading
+                                                wire:target='editCategory' class="spinner-border spinner-border-sm"
                                                 role="status" aria-hidden="true">
                                         </button>
                                         <button type="reset" class="btn btn-danger">Reset</button>

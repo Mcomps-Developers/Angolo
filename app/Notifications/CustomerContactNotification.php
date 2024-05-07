@@ -37,7 +37,7 @@ class CustomerContactNotification extends Notification
         return (new MailMessage)
             ->subject($this->message->subject)
             ->line('Thank you ' . $this->message->full_name . ' for contacting ' . env('APP_NAME'))
-            ->line('We have received you message and we are working to respond the soonest. We will notify you once your message has been processed.')
+            ->line('We have received your message and we are working to respond the soonest. We will notify you once your message has been processed.')
             ->line('Service Ticket: ' . $this->message->ticket_id)
             ->line('Phone Number: ' . $this->message->phone_number)
             ->line('Email: ' . $this->message->email)

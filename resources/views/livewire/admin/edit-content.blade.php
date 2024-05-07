@@ -181,8 +181,8 @@
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary"><span wire:loading.remove
-                                                wire:target='addContent'>Create</span> <span wire:loading
-                                                wire:target='addContent' class="spinner-border spinner-border-sm"
+                                                wire:target='updateContent'>Update</span> <span wire:loading
+                                                wire:target='updateContent' class="spinner-border spinner-border-sm"
                                                 role="status" aria-hidden="true"></button>
                                         <button type="reset" class="btn btn-danger">Reset</button>
                                     </div>

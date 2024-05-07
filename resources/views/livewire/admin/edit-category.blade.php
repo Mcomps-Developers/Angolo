@@ -17,7 +17,7 @@
                                 </div>
                             </div>
                             <div class="iq-card-body">
-                                <form wire:submit.prevent='addCategory'>
+                                <form wire:submit.prevent='editCategory'>
                                     <div class="form-group">
                                         <label>Category Name:</label>
                                         <input type="text" class="form-control" wire:model.live='category_name'>
@@ -51,8 +51,8 @@
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary"><span wire:loading.remove
-                                                wire:target='addCategory'>Create</span> <span wire:loading
-                                                wire:target='addCategory' class="spinner-border spinner-border-sm"
+                                                wire:target='editCategory'>Update</span> <span wire:loading
+                                                wire:target='editCategory' class="spinner-border spinner-border-sm"
                                                 role="status" aria-hidden="true">
                                         </button>
                                         <button type="reset" class="btn btn-danger">Reset</button>
