@@ -5,7 +5,7 @@
     <div id="content-page" class="content-page">
         <div class="container-fluid">
             <div class="row">
-                @if ($categories->count() > 0)
+                @if ($sliders->count() > 0)
                     <div class="col-lg-12" style="margin-bottom: 20px;">
                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
