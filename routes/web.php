@@ -12,6 +12,7 @@ use App\Livewire\Admin\AddTag;
 use App\Livewire\Admin\Blogcategories;
 use App\Livewire\Admin\BlogsComponent;
 use App\Livewire\Admin\Blogtags;
+use App\Livewire\Admin\EditBlog;
 use App\Livewire\Admin\EditBlogTag;
 use App\Livewire\Admin\EditCategory;
 use App\Livewire\Admin\EditContent;
@@ -121,7 +122,7 @@ Route::prefix('/admin')->middleware(['auth:sanctum', config('jetstream.auth_sess
     Route::get('/add-content', AdminAddBookComponent::class)->name('content.add');
     Route::get('/edit-content/{item_id}',EditContent::class)->name('content.edit');
     Route::get('/add-category', AdminAddCategoryComponent::class)->name('category.add');
-    // Route::get('/edit-category/{category_id}',EditCategory::class)->name('category.edit');
+    Route::get('/edit-category/{category_id}',EditCategory::class)->name('category.edit');
     Route::get('/experts', AdminAuthorComponent::class)->name('admin.experts');
     Route::get('/content', AdminBooksComponent::class)->name('admin.content');
     Route::get('/categories', AdminCategoryComponent::class)->name('admin.categories');
@@ -134,11 +135,13 @@ Route::prefix('/admin')->middleware(['auth:sanctum', config('jetstream.auth_sess
     Route::get('/new-slider', NewSlider::class)->name('slider.add');
     Route::get('/blogs', BlogsComponent::class)->name('admin.blogs');
     Route::get('/add-blog', NewBlog::class)->name('blog.new');
+    Route::get('/edit-blog',EditBlog::class)->name('blog.edit');
     Route::get('/pages/modifications', ModifyComponent::class)->name('pages.content');
     Route::get('/blog-categories', Blogcategories::class)->name('blog.categories');
     Route::get('/blog-tags', Blogtags::class)->name('blog.tags');
     Route::get('/edit-blog-tag',EditBlogTag::class)->name('blog.edit.tag');
     Route::get('/add-blog-category', AddBlogCategory::class)->name('blog.category.add');
+    // Route::get('/edit-blog-category',EditBlogCategory::class)->name('blog.edit.category');
     Route::get('/add-blog-tag', AddBlogTag::class)->name('blog.add.tag');
 });
 
