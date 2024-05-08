@@ -98,86 +98,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
-                            <div class="iq-card-header d-flex justify-content-between align-items-center">
-                                <div class="iq-header-title">
-                                    <h4 class="mb-0 card-title">Daily Sales</h4>
-                                </div>
-                            </div>
-                            <div class="iq-card-body">
-                                <div id="dailySalesReport"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
-                            <div class="iq-card-header d-flex justify-content-between align-items-center">
-                                <div class="iq-header-title">
-                                    <h4 class="mb-0 card-title">Summary</h4>
-                                </div>
-                            </div>
-                            <div class="iq-card-body">
-                                <ul class="p-0 mb-0 list-inline">
-                                    <li>
-                                        <div class="mb-2 iq-details">
-                                            <span class="title">Income</span>
-                                            <div class="float-right percentage text-primary">95 <span>%</span></div>
-                                            <div class="iq-progress-bar-linear d-inline-block w-100">
-                                                <div class="iq-progress-bar iq-bg-primary">
-                                                    <span class="bg-primary" data-percent="90"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="mb-2 iq-details">
-                                            <span class="title">Profit</span>
-                                            <div class="float-right percentage text-warning">72 <span>%</span></div>
-                                            <div class="iq-progress-bar-linear d-inline-block w-100">
-                                                <div class="iq-progress-bar iq-bg-warning">
-                                                    <span class="bg-warning" data-percent="75"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="mb-2 iq-details">
-                                            <span class="title">Expenses</span>
-                                            <div class="float-right percentage text-info">75 <span>%</span></div>
-                                            <div class="iq-progress-bar-linear d-inline-block w-100">
-                                                <div class="iq-progress-bar iq-bg-info">
-                                                    <span class="bg-info" data-percent="65"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
-                            <div class="iq-card-body">
-                                <h4 class="mb-0 text-black text-uppercase">Session(Now)</h4>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="text-black font-size-80">12</div>
-                                    <div class="text-left">
-                                        <p class="m-0 text-uppercase font-size-12">1 Hours Ago</p>
-                                        <div class="mb-1 text-black">1500<span class="text-danger"><i
-                                                    class="ri-arrow-down-s-fill"></i>3.25%</span></div>
-                                        <p class="m-0 text-uppercase font-size-12">1 Day Ago</p>
-                                        <div class="mb-1 text-black">1890<span class="text-success"><i
-                                                    class="ri-arrow-down-s-fill"></i>1.00%</span></div>
-                                        <p class="m-0 text-uppercase font-size-12">1 Week Ago</p>
-                                        <div class="text-black">1260<span class="text-danger"><i
-                                                    class="ri-arrow-down-s-fill"></i>9.87%</span></div>
-                                    </div>
-                                </div>
-                                <div id="wave-chart-7"></div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-sm-12">
                         <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                             <div class="iq-card-header d-flex justify-content-between">
@@ -192,15 +112,11 @@
                                         </span>
                                         <div class="dropdown-menu dropdown-menu-right"
                                             aria-labelledby="dropdownMenuButton5">
-                                            <a class="dropdown-item" href="#"><i
-                                                    class="mr-2 ri-eye-fill"></i>View</a>
-                                            <a class="dropdown-item" href="#"><i
-                                                    class="mr-2 ri-delete-bin-6-fill"></i>Delete</a>
-                                            <a class="dropdown-item" href="#"><i
-                                                    class="mr-2 ri-pencil-fill"></i>Edit</a>
-                                            <a class="dropdown-item" href="#"><i
+                                            <a class="dropdown-item" href="#!" title="Request we add the feature"><i
+                                                    class="mr-2 ri-eye-fill"></i>All</a>
+                                            <a class="dropdown-item" href="#!" title="Request we add the feature"><i
                                                     class="mr-2 ri-printer-fill"></i>Print</a>
-                                            <a class="dropdown-item" href="#"><i
+                                            <a class="dropdown-item" href="#!" title="Request we add the feature"><i
                                                     class="mr-2 ri-file-download-fill"></i>Download</a>
                                         </div>
                                     </div>
