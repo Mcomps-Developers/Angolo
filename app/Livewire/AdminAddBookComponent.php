@@ -96,7 +96,7 @@ class AdminAddBookComponent extends Component
                 foreach ($this->attachment as $file) {
                     $timeDifference = random_int(1, 10);
                     $fileName = $now->copy()->addMinutes($timeDifference)->timestamp . random_int(1, 9999) . '.' . $file->extension();
-                    $file->storeAs('images/attachments', $fileName);
+                    $file->storeAs('files/attachments', $fileName);
                     $attachments[] = $fileName;
                 }
                 $content->attachment = implode(",", $attachments);
