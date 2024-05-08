@@ -6,7 +6,8 @@
         <div class="container-fluid">
             <div class="row">
                 @if ($sliders->count() > 0)
-                    <div class="col-lg-12" style="margin-bottom: 20px;">
+                <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                    <div class="col-lg-12">
                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 @foreach ($sliders as $key => $item)
@@ -34,6 +35,7 @@
                             </a>
                         </div>
                     </div>
+                </div>
                 @endif
                 @if ($categories->count() > 0)
                     <div class="col-lg-12">
