@@ -102,9 +102,11 @@ class EditContent extends Component
             // Attachments
             if ($this->attachment) {
                 $attachments = [];
-                foreach ($this->attachment as $key => $file) {
-                    $fileName = Carbon::now()->timestamp . random_int(1, 9999) . '.' . $file->extension();
-                    $file->storeAs('images/attachments', $fileName);
+                $now = Carbon::now();
+                foreach ($this->attachment as $file) {
+                    $timeDifference = random_int(1, 10);
+                    $fileName = $now->copy()->addMinutes($timeDifference)->timestamp . random_int(1, 9999) . '.' . $file->extension();
+                    $file->storeAs('files/attachments', $fileName);
                     $attachments[] = $fileName;
                 }
                 $content->attachment = implode(",", $attachments);
