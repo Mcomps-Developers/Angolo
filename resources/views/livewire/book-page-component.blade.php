@@ -276,7 +276,7 @@
         console.log('Results:', results); // Log the results
 
         const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-        const url = 'https://angolo.mcomps.co.ke/save-transaction';
+        const url = '{{ env('INTASEND_CALL_BACK') }}';
 
         console.log('Sending request to:', url); // Log the URL being requested
 

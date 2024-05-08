@@ -151,5 +151,5 @@ Route::prefix('/super/admin')->middleware(['auth:sanctum', config('jetstream.aut
 
 // Dump Routes
 Route::middleware(['auth:sanctum', config('jetstream.auth_session')])->group(function () {
-    Route::post('/save-transaction', [SaveTransaction::class, 'saveTransaction'])->name('save.transaction');
+    Route::post('/callback-url', [SaveTransaction::class, 'saveTransaction'])->name('save.transaction');
 });
