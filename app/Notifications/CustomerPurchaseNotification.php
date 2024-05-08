@@ -40,12 +40,22 @@ class CustomerPurchaseNotification extends Notification
      */
     public function toMail(object $notifiable): MailMessage
     {
-        return (new MailMessage)
+        $fileNames = explode(',', $this->purchase->content->attachment);
+        $mailMessage = (new MailMessage)
             ->subject('Purchase Receipt ' . $this->purchase->reference)
-            ->line('Your purchase of ' . $this->purchase->content->title . ' with reference ' . $this->purchase->reference . ' at Ksh ' . $this->price . '.00 VAT inclusive was successful.')
-            ->line('This email serves as a receipt. The content is attached to the email. Download to consume.')
-            ->attach(env('APP_URL') . '/files/attachments/' . $this->purchase->content->attachment)
-            ->line('Powered by Mcomps | www.mcomps.co.ke');
+            ->line('Your purchase of ' . $this->purchase->content->title . ' with reference ' . $this->purchase->reference . ' at Ksh ' . $this->price . ' VAT inclusive was successful.')
+            ->line('This email serves as a receipt. The content is attached to the email. Download to consume.');
+
+        foreach ($fileNames as $fileName) {
+            // Trim any whitespace around the filename
+            $fileName = trim($fileName);
+            // Attach each file individually
+            $mailMessage->attach(env('APP_URL') . '/files/attachments/' . $fileName);
+        }
+
+        $mailMessage->line('Powered by Mcomps | www.mcomps.co.ke');
+
+        return $mailMessage;
     }
 
     /**
@@ -56,7 +66,7 @@ class CustomerPurchaseNotification extends Notification
     public function toArray(object $notifiable): array
     {
         return [
-            'title'   => 'Purchase of Ksh ' . $this->price,
+            'title' => 'Purchase of Ksh ' . $this->price,
             'message' => 'You bought ' . $this->purchase->content->title,
             'identity' => 'content_purchase',
         ];
