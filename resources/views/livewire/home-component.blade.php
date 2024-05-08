@@ -15,7 +15,7 @@
                                         class="{{ $key == 0 ? 'active' : '' }}"></li>
                                 @endforeach
                             </ol>
-                            <div class="carousel-inner" style="height: 240px">
+                            <div class="carousel-inner">
                                 @foreach ($sliders as $key => $item)
                                     <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
                                         <a href="#!"><img src="{{ asset('images/sliders') }}/{{ $item->image }}"
