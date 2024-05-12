@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Livewire;
-
 use App\Models\Category;
 use App\Models\Content;
 use App\Models\Tag;
@@ -11,6 +10,7 @@ use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 use Illuminate\Support\Str;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
+
 
 class AdminAddBookComponent extends Component
 {
@@ -37,7 +37,7 @@ class AdminAddBookComponent extends Component
         'category' => 'required',
         'regular_price' => 'required|numeric|min:20',
         'thumbnail' => 'required|mimes:png,jpg,jpeg|max:2048',
-        'description' => 'required|string|max:1000',
+        'description' => 'required',
         'attachment.*' => 'required|mimes:pdf,doc,docx,mp3,mp4,txt,ppt,pptx,xls,xlsx|max:5120',
         'status' => 'required',
         'discount_price' => 'required|numeric|min:10',
@@ -83,6 +83,7 @@ class AdminAddBookComponent extends Component
             $content->status = $this->status;
             $content->slug = $this->slug;
             $content->reference = $this->reference;
+            
 
             // Thumbnail
             $imageName = Carbon::now()->timestamp . '.' . $this->thumbnail->extension();
