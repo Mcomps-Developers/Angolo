@@ -98,7 +98,7 @@
                             <div class="iq-card-body trendy-contens">
                                 <ul id="trendy-slider" class="p-0 mb-0 list-inline row">
                                     @foreach ($nowTrending as $item)
-                                        <li class="col-md-3">
+                                        <li class="col-md-4">
                                             <div class="d-flex align-items-center">
                                                 <div class="p-0 col-5 position-relative image-overlap-shadow">
                                                     <a
@@ -163,7 +163,7 @@
                             <div class="iq-card-body trendy-contens">
                                 <ul id="trendy-slider" class="p-0 mb-0 list-inline row">
                                     @foreach ($recentContent as $item)
-                                        <li class="col-md-3">
+                                        <li class="col-md-4">
                                             <div class="d-flex align-items-center">
                                                 <div class="p-0 col-5 position-relative image-overlap-shadow">
                                                     <a
