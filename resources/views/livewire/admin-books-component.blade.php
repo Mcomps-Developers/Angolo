@@ -51,18 +51,20 @@
                                                           @php
                                                             $attachment = json_decode($item->attachment, true);
                                                           @endphp
-                                                          @foreach($attachment as $attachment)
-                                                            @php
-                                                              $fileExtension = pathinfo($attachment, PATHINFO_EXTENSION);
-                                                              $iconClass = getIconClass($fileExtension);
-                                                            @endphp
-                                                            <a href="{{ asset('files/attachments/' . $attachment) }}">
-                                                              <i class="{{ $iconClass }} text-secondary font-size-18"></i>
-                                                            </a>
-                                                            @if(!$loop->last)
-                                                              ,
-                                                            @endif
-                                                          @endforeach
+                                                          @if($attachment)
+                                                            @foreach($attachment as $attachment)
+                                                              @php
+                                                                $fileExtension = pathinfo($attachment, PATHINFO_EXTENSION);
+                                                                $iconClass = getIconClass($fileExtension);
+                                                              @endphp
+                                                              <a href="{{ asset('files/attachments/' . $attachment) }}">
+                                                                <i class="{{ $iconClass }} text-secondary font-size-18"></i>
+                                                              </a>
+                                                              @if(!$loop->last)
+                                                                ,
+                                                              @endif
+                                                            @endforeach
+                                                          @endif
                                                         @endif
                                                       </td>
                                                     <td>
