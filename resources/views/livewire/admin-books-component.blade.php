@@ -43,7 +43,19 @@
                                                     <td>{{ $item->category->name }}</td>
                                                     <td>{{ $item->publisher->name }}</td>
                                                     <td>
-                                                        <p class="mb-0">{!! $item->description !!}</p>
+                                                        <style>
+                                                            .ellipsis {
+                                                              overflow: hidden;
+                                                              text-overflow: ellipsis;
+                                                              white-space: nowrap;
+                                                              max-width: 200px; /* Adjust this value according to your layout */
+                                                            }
+                                                          </style>
+
+                                                          <p class="mb-0">
+                                                            <span class="ellipsis">{!! $item->description !!}</span>
+                                                          </p>
+
                                                     </td>
                                                     <td>Ksh {{ $item->regular_price }}</td>
                                                     <td><a
