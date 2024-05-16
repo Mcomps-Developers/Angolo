@@ -46,10 +46,26 @@
                                                         <p class="mb-0">{!! mb_strimwidth($item->description, 0, 60, '...') !!}</p>
                                                       </td>
                                                     <td>Ksh {{ $item->regular_price }}</td>
-                                                    <td><a
-                                                            href="{{ asset('files/attachments') }}/{{ $item->attachment }}"><i
-                                                                class="ri-file-fill text-secondary font-size-18"></i></a>
-                                                    </td>
+                                                    <td>
+                                                        @if($item->attachments)
+                                                          @php
+                                                            $attachments = json_decode($item->attachments, true);
+                                                          @endphp
+                                                          @foreach($attachments as $attachment)
+                                                            @php
+                                                              $fileExtension = pathinfo($attachment, PATHINFO_EXTENSION);
+                                                              $iconClass = getIconClass($fileExtension);
+                                                            @endphp
+                                                            <a href="{{ asset('files/attachments/' . $attachment) }}">
+                                                              <i class="{{ $iconClass }} text-secondary font-size-18"></i>
+                                                            </a>
+                                                            @if(!$loop->last)
+                                                              ,
+                                                            @endif
+                                                          @endforeach
+                                                        @endif
+                                                      </td>
+
                                                     <td>
                                                         <div class="flex align-items-center list-user-action">
                                                             <a class="bg-primary" data-toggle="tooltip"
