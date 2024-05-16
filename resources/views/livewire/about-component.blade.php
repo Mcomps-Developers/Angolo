@@ -15,7 +15,7 @@
                                     <h4 class="card-title">About {{config('app.name') }}</h4>
                                 </div>
                             </div>
-                            <div class="p-0 iq-card-body">
+                            <div class="p-6 iq-card-body">
                                 {!! $aboutContent->about_content !!}
                             </div>
                         </div>
