@@ -58,7 +58,7 @@
                                                                 $iconClass = getIconClass($fileExtension);
                                                               @endphp
                                                               <a href="{{ asset('files/attachments/' . $file) }}">
-                                                                <i class="fa fa-{{ $iconClass }} text-secondary font-size-18"></i>
+                                                                <i class="fa fa-file-{{ $iconClass }} text-primary font-size-18"></i>
                                                               </a>
                                                               @if(!$loop->last)
                                                                 ,
