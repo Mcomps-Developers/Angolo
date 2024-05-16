@@ -48,8 +48,7 @@
                                                             overflow: hidden;
                                                             text-overflow: ellipsis;
                                                             white-space: nowrap;
-                                                            max-width: 200px; /* Adjust this value according to your layout */
-                                                            max-height: 20px;
+                                                            max-width: 75ch; /* Adjust this value according to your layout */
                                                           }
                                                         </style>
                                                         <p class="mb-0">
