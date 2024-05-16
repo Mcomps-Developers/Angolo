@@ -43,7 +43,7 @@
                                                     <td>{{ $item->category->name }}</td>
                                                     <td>{{ $item->publisher->name }}</td>
                                                     <td>
-                                                        <p class="mb-0">{{ str_limit($item->description, $limit = 75, $end = '...') }}</p>
+                                                        <p class="mb-0">{{ mb_strimwidth($item->description, 0, 75, '...') }}</p>
                                                       </td>
                                                     <td>Ksh {{ $item->regular_price }}</td>
                                                     <td><a
