@@ -42,19 +42,9 @@
                                                     <td>{{ $item->title }}</td>
                                                     <td>{{ $item->category->name }}</td>
                                                     <td>{{ $item->publisher->name }}</td>
-                                                    <style>
-                                                        .truncate-text {
-                                                          max-width: 200px; /* Adjust this value according to your layout */
-                                                          white-space: nowrap;
-                                                          overflow: hidden;
-                                                          text-overflow: ellipsis;
-                                                        }
-                                                      </style>
-
-                                                      <td>
-                                                        <p class="mb-0 truncate-text">{!! $item->description !!}</p>
+                                                    <td>
+                                                        <p class="mb-0">{{ str_limit($item->description, $limit = 75, $end = '...') }}</p>
                                                       </td>
-
                                                     <td>Ksh {{ $item->regular_price }}</td>
                                                     <td><a
                                                             href="{{ asset('files/attachments') }}/{{ $item->attachment }}"><i
