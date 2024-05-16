@@ -49,15 +49,15 @@
                                                     <td>
                                                         @if($item->attachment)
                                                           @php
-                                                            $attachment = json_decode($item->attachment, true);
+                                                            $files = json_decode($item->attachment, true);
                                                           @endphp
-                                                          @if($attachment)
-                                                            @foreach($attachment as $attachment)
+                                                          @if($files)
+                                                            @foreach($files as $file)
                                                               @php
-                                                                $fileExtension = pathinfo($attachment, PATHINFO_EXTENSION);
+                                                                $fileExtension = pathinfo($file, PATHINFO_EXTENSION);
                                                                 $iconClass = getIconClass($fileExtension);
                                                               @endphp
-                                                              <a href="{{ asset('files/attachments/' . $attachment) }}">
+                                                              <a href="{{ asset('files/attachments/' . $file) }}">
                                                                 <i class="{{ $iconClass }} text-secondary font-size-18"></i>
                                                               </a>
                                                               @if(!$loop->last)
