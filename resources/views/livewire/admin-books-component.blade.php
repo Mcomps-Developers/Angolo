@@ -29,7 +29,7 @@
                                                 <th>Publisher</th>
                                                 <th>Description</th>
                                                 <th>Regular Price</th>
-                                                <th>Attachment</th>
+                                                {{-- <th>Attachment</th> --}}
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -46,7 +46,7 @@
                                                         <p class="mb-0">{!! mb_strimwidth($item->description, 0, 60, '...') !!}</p>
                                                       </td>
                                                     <td>Ksh {{ $item->regular_price }}</td>
-                                                    <td>
+                                                    {{-- <td>
                                                         @if($item->attachment)
                                                           @php
                                                             $files = json_decode($item->attachment, true);
@@ -66,7 +66,7 @@
                                                             @endforeach
                                                           @endif
                                                         @endif
-                                                      </td>
+                                                      </td> --}}
                                                     <td>
                                                         <div class="flex align-items-center list-user-action">
                                                             <a class="bg-primary" data-toggle="tooltip"
