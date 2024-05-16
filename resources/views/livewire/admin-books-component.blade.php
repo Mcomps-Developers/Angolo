@@ -47,11 +47,11 @@
                                                       </td>
                                                     <td>Ksh {{ $item->regular_price }}</td>
                                                     <td>
-                                                        @if($item->attachments)
+                                                        @if($item->attachment)
                                                           @php
-                                                            $attachments = json_decode($item->attachments, true);
+                                                            $attachment = json_decode($item->attachment, true);
                                                           @endphp
-                                                          @foreach($attachments as $attachment)
+                                                          @foreach($attachment as $attachment)
                                                             @php
                                                               $fileExtension = pathinfo($attachment, PATHINFO_EXTENSION);
                                                               $iconClass = getIconClass($fileExtension);
@@ -65,7 +65,6 @@
                                                           @endforeach
                                                         @endif
                                                       </td>
-
                                                     <td>
                                                         <div class="flex align-items-center list-user-action">
                                                             <a class="bg-primary" data-toggle="tooltip"
