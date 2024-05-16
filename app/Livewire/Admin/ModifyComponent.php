@@ -14,6 +14,7 @@ class ModifyComponent extends Component
     {
         $terms_and_policies = Policy::first();
         $this->content = $terms_and_policies->content;
+        $this->about_content=$terms_and_policies->about_content;
     }
 
     protected $rules = [

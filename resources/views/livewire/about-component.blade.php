@@ -15,8 +15,14 @@
                                     <h4 class="card-title">About {{config('app.name') }}</h4>
                                 </div>
                             </div>
-                            <div class="p-12 iq-card-body">
-                                {!! $aboutContent->about_content !!}
+                            <div class="iq-card-body">
+                                <div class="row">
+                                    <div class="col-sm-11">
+                                        {!! $aboutContent->about_content !!}
+                                    </div>
+
+                                </div>
+
                             </div>
                         </div>
                     </div>
