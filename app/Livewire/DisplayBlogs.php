@@ -12,7 +12,7 @@ class DisplayBlogs extends Component
     use WithPagination;
     public function render()
     {
-        $blogs = Blog::orderByDesc('views')->paginate(10);
+        $blogs = Blog::orderByDesc('created_at')->paginate(10);
         $categories = blogcategory::orderBy('name')->limit(20)->get();
         return view('livewire.display-blogs', ['blogs' => $blogs, 'categories' => $categories])->layout('layouts.base');
     }

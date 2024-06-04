@@ -12,7 +12,7 @@
                                 <img src="{{ asset('images/blogs/thumbnails') }}/{{ $item->thumbnail }}" height="180px" class="card-img-top" alt="#">
                                 <div class="iq-card-body">
                                     <h4 class="card-title"><a href="{{ route('blog.details', ['reference' => $item->reference, 'slug' => $item->slug]) }}">{{ $item->title }} <i class="fa fa-external-link"></i></a></h4>
-                                    
+
                                     {{-- <div class="card-text">{!! strlen($item->content) > 80 ? substr($item->content, 0, 80) . '...' : $item->content !!}</div> --}}
                                     <a href="{{ route('blog.details', ['reference' => $item->reference, 'slug' => $item->slug]) }}" class="btn btn-primary btn-block">Read Now</a>
                                 </div>
@@ -64,7 +64,7 @@
         }
 
         .media-body p {
-            color: #666;
+            color: #0c0303;
         }
 
         /* Blog details styling */
@@ -77,7 +77,7 @@
 
         .detail-label {
             font-weight: bold;
-            color: #333;
+            color: #110f0f;
             margin-right: 10px;
         }
 
